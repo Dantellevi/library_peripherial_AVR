@@ -6,13 +6,25 @@
  */ 
 
 
+ #include "Main.h"
 
+ void Port_init(void)
+ {
+ DDRD=0xFF;
+ PORTD=0x00;
+
+ }
+ 
 
 int main(void)
 {
-    /* Replace with your application code */
+	Port_init();
+	LCDinit();
+	LCDstringXY("Hello World",0,1);
+    
     while (1) 
     {
+
     }
 }
 

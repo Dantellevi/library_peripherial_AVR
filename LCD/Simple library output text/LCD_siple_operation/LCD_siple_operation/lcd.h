@@ -21,6 +21,8 @@
 #define LCD_H_
 //---------------------------------------
 #include "Main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 //---------------------------------------
 
@@ -31,15 +33,18 @@
 //========================================
 //цифрами указываем номера выводов мк подключенные к дисплею.
 //	  Пин  МК  LCD
-#define D0 0  //DD0
-#define D1 1  //DD1
-#define D2 2  //DD2
-#define D3 3  //DD3
-#define D4 4  //DD4
-#define D5 5  //DD5
-#define D6 6  //DD6
-#define D7 7  //DD7
+#define DB0 0  //DD0
+#define DB1 1  //DD1
+#define DB2 2  //DD2
+#define DB3 3  //DD3
+#define DB4 4  //DD4
+#define DB5 5  //DD5
+#define DB6 6  //DD6
+#define DB7 7  //DD7
 //===========================================
+//Указываем порт к которому подключены выводы дисплея E, RS, R/W.
+#define CDDR  DDRD
+#define CPORT PORTD
 //--------------Указываем порт к которому подключены выводы управления E,RS,R/W-----------------
 #define E 2			// E	 СТРОБ.
 #define RS 0		// R/W   R/W=1 читаем из LCD, R/W=0 записываем в LCD.
@@ -49,7 +54,35 @@
 
 
 //---------------------------------Пользовательские функции----------------------------------
+void LCDGotoXY(uint8_t,uint8_t);			             //Устанавливаем курсор в X, Y позицию
+void LCDdata(uint8_t);						             //Вывести 1 символ на дисплей.
+void LCDdataXY(uint8_t,uint8_t,uint8_t);	             //Вывести 1 символ на дисплей в X, Y позицию .
+void LCDsendString(char*);                             //Вывести строку на дисплей
+void LCDstringXY(char*,uint8_t,uint8_t);		             //Вывести строку на дисплей в позицию x,y
+void LCDstring_of_sramXY(uint8_t*,uint8_t,uint8_t);			 //Вывести строку на дисплей в позицию x,y из ОЗУ
+void LCDstring_of_flashXY(const uint8_t*,uint8_t, uint8_t);//Вывести строку в позицию x,y из флеша
 
+void LCDinit(void);							//Инициализация LCD
+void LCDblank(void);			//Сделать невидимым инфо на дисплее
+void LCDnblank(void);			//Сделать видимой инфо на дисплее + отключение видимых курсоров.
+void LCDclear(void);			//Очистить дисплей от инфо + курсор на позицию 0,0
+void LCDcursor_bl(void);		//Включить мигающий курсор
+void LCDcursor_on(void);		//Включить подчеркивающий курсор
+void LCDcursor_vi(void);		//Включить оба курсора
+void LCDcursorOFF(void);		//Выключить курсор (любой)
+void LCDacr(void);				//Cчетчик адреса AC всегда будет смещаться на n+1
+void LCDacl(void);				//Cчетчик адреса AC всегда будет смещаться на n-1
+void LCDcursorl(void);			//Сместить курсор влево на 1 символ
+void LCDcursorr(void);			//Сместить курсор вправо на 1 символ
+void LCDcursorln(uint8_t);		//Сместить курсор влево на n символов
+void LCDcursorrn(uint8_t);		//Сместить курсор вправо на n символов
+void LCDscreenl(void);			//Сместить экран влево на 1 символ
+void LCDscreenr(void);			//Сместить экран вправо на 1 символ
+void LCDscreenln(uint8_t);		//Сместить экран влево на n символов
+void LCDscreenrn(uint8_t);		//Сместить экран вправо на n символов
+void LCDscreenL(void);			//С каждым новым символом экран будет смещаться влево
+void LCDscreenR(void);			//С каждым новым символом экран будет смещаться вправо
+void LCDresshift(void);			//Курсор в позицию 0,0 + сброс всех сдвигов, изображение остается
 //-------------------------------------------------------------------------------------------
 
 
