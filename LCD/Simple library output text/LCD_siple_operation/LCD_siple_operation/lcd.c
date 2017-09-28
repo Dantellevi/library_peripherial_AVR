@@ -456,4 +456,14 @@ void LCDstring_of_sram(uint8_t* data,uint8_t nBytes,uint8_t x, uint8_t y)
 	
 	
 }*/
+
+
+void LCDputsIntGotoXY(int val,uint8_t x,uint8_t y)		//преобразование целого в вещественное число
+{
+char str[40];
+itoa(val,str,10);
+
+LCDstringXY(str,x,y);
+
+}
 #endif
