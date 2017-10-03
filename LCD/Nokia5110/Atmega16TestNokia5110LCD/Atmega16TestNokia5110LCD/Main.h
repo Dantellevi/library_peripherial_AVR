@@ -6,6 +6,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "Nokia3310.h"
 //===================================================
 
