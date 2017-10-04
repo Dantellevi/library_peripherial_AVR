@@ -49,6 +49,7 @@
 #define OK                         0   // Безошибочная отрисовка
 #define OUT_OF_BORDER              1   // Выход за границы дисплея
 #define OK_WITH_WRAP               2   // Переход на начало (ситуация автоинкремента указателя курсора при выводе длинного текста)
+#define ERROR_TRIANGLE			   3   //Ошибка при построении треугольника
 //---------------------------------------------------------------------
 typedef unsigned char              byte;
 
@@ -93,7 +94,8 @@ byte Lcd_rect_empty( byte x1, byte y1, byte x2, byte y2, LcdPixelMode mode );   
 byte Lcd_rect( byte baseX, byte baseY, byte height, byte width, LcdPixelMode mode );   // Один
 
 
-
+byte Lcd_rect_Fill ( byte x1, byte y1, byte x2, byte y2, LcdPixelMode mode );
+byte Lcd_triangle(byte x1, byte y1, byte x2, byte y2,byte x3, byte y3,LcdPixelMode mode);
 
 //---------------------------------------------------------------------
 /*

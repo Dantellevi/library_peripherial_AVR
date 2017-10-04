@@ -56,24 +56,35 @@ Lcd_clear();
 	//Lcd_update();
 
 	//--------------------------------------------------------------
-	int ran;
-	ran=rand()%10+25;
-	for (int i=1;i<=8;i++)
-	{
-	Lcd_circle(50,10,i,PIXEL_ON);
-	}
-
-	Lcd_rect_empty(46,10,54,40,PIXEL_ON);
-
-
-	Lcd_line(46,20,30,20,PIXEL_ON);
-	Lcd_line(46,25,30,25,PIXEL_ON);
-	Lcd_line(46,35,30,35,PIXEL_ON);
-	Lcd_rect(46,10,20,8,PIXEL_ON);
-	
-	_delay_ms(100);
+	//int ran;
+	//ran=rand()%10+25;
+	//for (int i=1;i<=8;i++)
+	//{
+	//Lcd_circle(50,10,i,PIXEL_ON);
+	//}
+//
+	//Lcd_rect_empty(46,10,54,40,PIXEL_ON);
+//
+//
+	//Lcd_line(46,20,30,20,PIXEL_ON);
+	//Lcd_line(46,25,30,25,PIXEL_ON);
+	//Lcd_line(46,35,30,35,PIXEL_ON);
+	//Lcd_rect(46,10,20,8,PIXEL_ON);
+	//
+	//_delay_ms(100);
 	//Lcd_rect(54,10,ran,8,PIXEL_OFF);
 	
+	Lcd_pixel(0,0,PIXEL_ON);
+	//Lcd_rect_Fill(10,10,40,30,PIXEL_ON);
+	for (int i=0;i<30;i++)
+	{
+	Lcd_rect_Fill(10,10,i,20,PIXEL_ON);
+
+	Lcd_update();
+	_delay_ms(100);
+	}
+
+	Lcd_triangle(40, 10, 50, 20,50, 10,PIXEL_ON);
 	Lcd_update();
 	
 
