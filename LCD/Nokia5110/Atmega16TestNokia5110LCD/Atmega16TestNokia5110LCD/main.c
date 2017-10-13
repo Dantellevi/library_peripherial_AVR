@@ -74,17 +74,19 @@ Lcd_clear();
 	//_delay_ms(100);
 	//Lcd_rect(54,10,ran,8,PIXEL_OFF);
 	
-	Lcd_pixel(0,0,PIXEL_ON);
-	//Lcd_rect_Fill(10,10,40,30,PIXEL_ON);
-	for (int i=0;i<30;i++)
-	{
-	Lcd_rect_Fill(10,10,i,20,PIXEL_ON);
+	//Lcd_pixel(0,0,PIXEL_ON);
+	////Lcd_rect_Fill(10,10,40,30,PIXEL_ON);
+	//for (int i=0;i<30;i++)
+	//{
+	//Lcd_rect_Fill(10,10,i,20,PIXEL_ON);
+//
+	//Lcd_update();
+	//_delay_ms(100);
+	//}
+//
+	//Lcd_triangle(40, 10, 50, 20,50, 10,PIXEL_ON);
 
-	Lcd_update();
-	_delay_ms(100);
-	}
-
-	Lcd_triangle(40, 10, 50, 20,50, 10,PIXEL_ON);
+	Lcd_Romb(30,5,40,25,30,45,10,20,PIXEL_ON);
 	Lcd_update();
 	
 

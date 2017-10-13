@@ -1,0 +1,1061 @@
+
+AT16ST7735.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000dc2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000046  00800060  00000dc2  00000e36  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000e7c  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000eac  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000c0  00000000  00000000  00000ee8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001b79  00000000  00000000  00000fa8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000007a8  00000000  00000000  00002b21  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000a0b  00000000  00000000  000032c9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000040c  00000000  00000000  00003cd4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000490  00000000  00000000  000040e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00001bea  00000000  00000000  00004570  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000b8  00000000  00000000  0000615a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 95 03 	jmp	0x72a	; 0x72a <__ctors_end>
+   4:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+   8:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+   c:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  10:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  14:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  18:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  1c:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  20:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  24:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  28:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  2c:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  30:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  34:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  38:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  3c:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  40:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  44:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  48:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  4c:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+  50:	0c 94 aa 03 	jmp	0x754	; 0x754 <__bad_interrupt>
+
+00000054 <Font_8x11>:
+	...
+  60:	20 20 20 20 20 00 20 00 00 00 00 50 50 00 00 00          . ....PP...
+  70:	00 00 00 00 00 00 28 28 78 28 78 50 50 00 00 00     ......((x(xPP...
+  80:	00 38 54 50 38 14 54 38 10 00 00 00 12 2c 14 04     .8TP8.T8.....,..
+  90:	0a 0d 0a 00 00 00 00 1c 24 24 38 4a 44 3a 00 00     ........$$8JD:..
+  a0:	00 00 40 40 00 00 00 00 00 00 00 00 00 10 20 40     ..@@.......... @
+  b0:	40 40 40 40 20 10 00 00 40 20 10 10 10 10 10 20     @@@@ ...@ ..... 
+  c0:	40 00 00 70 20 50 00 00 00 00 00 00 00 00 00 00     @..p P..........
+  d0:	10 10 7c 10 10 00 00 00 00 00 00 00 00 00 00 20     ..|............ 
+  e0:	20 00 00 00 00 00 00 00 60 00 00 00 00 00 00 00      .......`.......
+  f0:	00 00 00 00 00 20 00 00 00 00 10 10 20 20 20 40     ..... ......   @
+ 100:	40 00 00 00 00 30 48 48 48 48 48 70 00 00 00 00     @....0HHHHHp....
+ 110:	10 30 10 10 10 10 10 00 00 00 00 30 48 08 10 10     .0.........0H...
+ 120:	20 78 00 00 00 00 30 48 08 10 08 48 30 00 00 00      x....0H...H0...
+ 130:	00 08 18 28 48 7c 08 08 00 00 00 00 38 20 70 48     ...(H|......8 pH
+ 140:	08 48 30 00 00 00 00 30 48 70 48 48 48 30 00 00     .H0....0HpHHH0..
+ 150:	00 00 78 08 10 10 20 20 20 00 00 00 00 30 48 48     ..x...   ....0HH
+ 160:	30 48 48 30 00 00 00 00 30 48 48 48 38 48 30 00     0HH0....0HHH8H0.
+ 170:	00 00 00 00 00 20 00 00 00 20 00 00 00 00 00 00     ..... ... ......
+ 180:	20 00 00 00 20 20 00 00 00 00 08 10 20 10 08 00      ...  ...... ...
+ 190:	00 00 00 00 00 00 78 00 78 00 00 00 00 00 00 00     ......x.x.......
+ 1a0:	20 10 08 10 20 00 00 00 00 00 38 44 04 18 10 00      ... .....8D....
+ 1b0:	10 00 00 00 00 0f 10 25 2b 2a 2a 2f 10 0f 00 00     .......%+**/....
+ 1c0:	08 14 14 22 3e 22 40 00 00 00 00 38 24 24 3c 24     ...">"@....8$$<$
+ 1d0:	24 38 00 00 00 00 1c 22 20 20 20 22 1c 00 00 00     $8....."   "....
+ 1e0:	00 3c 22 22 22 22 22 3c 00 00 00 00 3e 20 20 3e     .<"""""<....>  >
+ 1f0:	20 20 3e 00 00 00 00 3c 20 20 38 20 20 20 00 00       >....<  8   ..
+ 200:	00 00 1c 22 20 26 22 22 1c 00 00 00 00 22 22 22     ..." &""....."""
+ 210:	3e 22 22 22 00 00 00 00 20 20 20 20 20 20 20 00     >"""....       .
+ 220:	00 00 00 08 08 08 08 08 48 70 00 00 00 00 22 24     ........Hp...."$
+ 230:	28 30 28 24 22 00 00 00 00 20 20 20 20 20 20 3c     (0($"....      <
+ 240:	00 00 00 00 41 63 63 55 55 55 49 00 00 00 00 22     ....AccUUUI...."
+ 250:	32 32 2a 26 26 22 00 00 00 00 1c 22 22 22 22 22     22*&&"....."""""
+ 260:	1c 00 00 00 00 3c 24 24 3c 20 20 20 00 00 00 00     .....<$$<   ....
+ 270:	1c 22 22 22 22 24 1e 00 00 00 00 3c 22 22 3c 24     .""""$.....<""<$
+ 280:	22 22 00 00 00 00 18 24 20 18 04 24 18 00 00 00     "".....$ ..$....
+ 290:	00 7c 10 10 10 10 10 10 00 00 00 00 22 22 22 22     .|..........""""
+ 2a0:	22 22 1c 00 00 00 00 40 40 22 22 14 14 08 00 00     "".....@@"".....
+ 2b0:	00 00 44 4a 2a 2a 2a 2a 11 00 00 00 00 44 28 28     ..DJ****.....D((
+ 2c0:	10 28 28 44 00 00 00 00 22 14 14 08 08 08 08 00     .((D....".......
+ 2d0:	00 00 00 7e 04 08 10 20 40 7e 00 00 00 00 30 20     ...~... @~....0 
+ 2e0:	20 20 20 20 20 20 30 00 00 40 40 20 20 20 10 10           0..@@   ..
+ 2f0:	00 00 00 00 60 20 20 20 20 20 20 20 60 00 00 20     ....`       `.. 
+ 300:	50 50 00 00 00 00 00 00 00 00 00 00 00 00 00 00     PP..............
+ 310:	00 00 7c 00 00 40 20 00 00 00 00 00 00 00 00 00     ..|..@ .........
+ 320:	00 00 78 08 38 48 78 00 00 00 00 40 40 70 48 48     ..x.8Hx....@@pHH
+ 330:	48 70 00 00 00 00 00 00 30 48 40 48 30 00 00 00     Hp......0H@H0...
+ 340:	00 08 08 38 48 48 48 38 00 00 00 00 00 00 30 48     ...8HHH8......0H
+ 350:	78 40 38 00 00 00 00 10 20 70 20 20 20 20 00 00     x@8..... p    ..
+ 360:	00 00 00 00 38 48 48 48 38 48 30 00 00 40 40 70     ....8HHH8H0..@@p
+ 370:	48 48 48 48 00 00 00 00 40 00 40 40 40 40 40 00     HHHH....@.@@@@@.
+ 380:	00 00 00 40 00 40 40 40 40 40 40 00 00 00 40 40     ...@.@@@@@@...@@
+ 390:	48 50 70 50 48 00 00 00 00 40 40 40 40 40 40 40     HPpPH....@@@@@@@
+ 3a0:	00 00 00 00 00 00 7e 49 49 49 49 00 00 00 00 00     ......~IIII.....
+ 3b0:	00 70 48 48 48 48 00 00 00 00 00 00 30 48 48 48     .pHHHH......0HHH
+ 3c0:	30 00 00 00 00 00 00 70 48 48 48 70 40 40 00 00     0......pHHHp@@..
+ 3d0:	00 00 38 48 48 48 38 08 08 00 00 00 00 70 40 40     ..8HHH8......p@@
+ 3e0:	40 40 00 00 00 00 00 00 38 40 30 08 70 00 00 00     @@......8@0.p...
+ 3f0:	00 00 40 60 40 40 40 60 00 00 00 00 00 00 48 48     ..@`@@@`......HH
+ 400:	48 48 38 00 00 00 00 00 00 44 28 28 28 10 00 00     HH8......D(((...
+ 410:	00 00 00 00 54 54 54 54 28 00 00 00 00 00 00 48     ....TTTT(......H
+ 420:	30 30 30 48 00 00 00 00 00 00 44 28 28 28 10 10     000H......D(((..
+ 430:	20 00 00 00 00 70 10 20 40 70 00 00 00 00 30 20      ....p. @p....0 
+ 440:	20 20 40 20 20 20 30 00 00 20 20 20 20 20 20 20       @   0..       
+ 450:	20 00 00 00 60 20 20 20 10 20 20 20 60 00 00 00      ...`   .   `...
+ 460:	00 00 68 58 00 00 00 00 00 00 08 14 14 22 3e 22     ..hX.........">"
+ 470:	41 00 00 00 00 38 20 20 38 24 24 38 00 00 00 00     A....8  8$$8....
+ 480:	38 24 24 3c 24 24 38 00 00 00 00 3c 20 20 20 20     8$$<$$8....<    
+ 490:	20 20 00 00 00 00 1e 12 12 12 12 22 7f 41 41 00       .........".AA.
+ 4a0:	00 3e 20 20 3e 20 20 3e 00 00 00 00 c9 49 2a 1c     .>  >  >.....I*.
+ 4b0:	2a 49 c9 00 00 00 00 18 24 04 08 04 24 18 00 00     *I......$...$...
+ 4c0:	00 00 22 26 2a 2a 32 32 22 00 00 00 1c 22 26 2a     .."&**22"...."&*
+ 4d0:	2a 32 32 22 00 00 00 00 24 28 28 30 28 28 24 00     *22"....$((0(($.
+ 4e0:	00 00 00 3c 24 24 24 24 24 44 00 00 00 00 41 63     ...<$$$$$D....Ac
+ 4f0:	63 55 55 55 49 00 00 00 00 22 22 22 3e 22 22 22     cUUUI....""">"""
+ 500:	00 00 00 00 1c 22 22 22 22 22 1c 00 00 00 00 3e     .....""""".....>
+ 510:	22 22 22 22 22 22 00 00 00 00 3c 24 24 3c 20 20     """"""....<$$<  
+ 520:	20 00 00 00 00 1c 22 20 20 20 22 1c 00 00 00 00      ....."   ".....
+ 530:	7c 10 10 10 10 10 10 00 00 00 00 22 22 14 14 08     |..........""...
+ 540:	08 30 00 00 00 00 08 1c 2a 2a 2a 1c 08 00 00 00     .0......***.....
+ 550:	00 44 28 28 10 28 28 44 00 00 00 00 22 22 22 22     .D((.((D....""""
+ 560:	22 22 3f 01 01 00 00 24 24 24 24 1c 04 04 00 00     ""?....$$$$.....
+ 570:	00 00 92 92 92 92 92 92 fe 00 00 00 00 92 92 92     ................
+ 580:	92 92 92 fe 01 01 00 00 70 10 10 1c 12 12 1c 00     ........p.......
+ 590:	00 00 00 21 21 21 39 25 25 39 00 00 00 00 20 20     ...!!!9%%9....  
+ 5a0:	20 38 24 24 38 00 00 00 00 18 24 04 1c 04 24 18      8$$8.....$...$.
+ 5b0:	00 00 00 00 27 29 29 39 29 29 27 00 00 00 00 1e     ....'))9))'.....
+ 5c0:	22 22 1e 12 22 22 00 00 00 00 00 00 78 08 38 48     ""..""......x.8H
+ 5d0:	78 00 00 00 00 38 40 70 48 48 48 30 00 00 00 00     x....8@pHHH0....
+ 5e0:	00 00 30 28 30 28 30 00 00 00 00 00 00 70 40 40     ..0(0(0......p@@
+ 5f0:	40 40 00 00 00 00 00 00 38 28 28 48 78 48 00 00     @@......8((HxH..
+ 600:	00 00 00 30 48 78 40 38 00 00 00 00 00 00 54 38     ...0Hx@8......T8
+ 610:	10 38 54 00 00 00 00 00 00 60 10 20 10 60 00 00     .8T......`. .`..
+ 620:	00 00 00 00 48 58 68 68 48 00 00 00 00 00 30 48     ....HXhhH.....0H
+ 630:	58 68 68 48 00 00 00 00 00 00 50 60 60 60 50 00     XhhH......P```P.
+ 640:	00 00 00 00 00 38 28 28 28 48 00 00 00 00 00 00     .....8(((H......
+ 650:	6c 6c 6c 54 54 00 00 00 00 00 00 48 48 78 48 48     lllTT......HHxHH
+ 660:	00 00 00 00 00 00 30 48 48 48 30 00 00 00 00 00     ......0HHH0.....
+ 670:	00 78 48 48 48 48 00 00 00 00 00 00 70 48 48 48     .xHHHH......pHHH
+ 680:	70 40 40 00 00 00 00 30 48 40 48 30 00 00 00 00     p@@....0H@H0....
+ 690:	00 00 70 20 20 20 20 00 00 00 00 00 00 44 28 28     ..p    ......D((
+ 6a0:	28 10 10 20 00 00 10 10 38 54 54 54 38 10 10 00     (.. ....8TTT8...
+ 6b0:	00 00 00 48 30 30 30 48 00 00 00 00 00 00 48 48     ...H000H......HH
+ 6c0:	48 48 7c 04 04 00 00 00 00 48 48 48 38 08 00 00     HH|......HHH8...
+ 6d0:	00 00 00 00 54 54 54 54 7c 00 00 00 00 00 00 54     ....TTTT|......T
+ 6e0:	54 54 54 7e 02 02 00 00 00 00 30 10 1c 14 1c 00     TTT~......0.....
+ 6f0:	00 00 00 00 00 44 44 74 4c 74 00 00 00 00 00 00     .....DDtLt......
+ 700:	40 40 70 48 70 00 00 00 00 00 00 30 48 18 48 30     @@pHp......0H.H0
+ 710:	00 00 00 00 00 00 4c 52 72 52 4c 00 00 00 00 00     ......LRrRL.....
+ 720:	00 38 48 38 48 48 00 00 00 00                       .8H8HH....
+
+0000072a <__ctors_end>:
+ 72a:	11 24       	eor	r1, r1
+ 72c:	1f be       	out	0x3f, r1	; 63
+ 72e:	cf e5       	ldi	r28, 0x5F	; 95
+ 730:	d4 e0       	ldi	r29, 0x04	; 4
+ 732:	de bf       	out	0x3e, r29	; 62
+ 734:	cd bf       	out	0x3d, r28	; 61
+
+00000736 <__do_copy_data>:
+ 736:	10 e0       	ldi	r17, 0x00	; 0
+ 738:	a0 e6       	ldi	r26, 0x60	; 96
+ 73a:	b0 e0       	ldi	r27, 0x00	; 0
+ 73c:	e2 ec       	ldi	r30, 0xC2	; 194
+ 73e:	fd e0       	ldi	r31, 0x0D	; 13
+ 740:	02 c0       	rjmp	.+4      	; 0x746 <__do_copy_data+0x10>
+ 742:	05 90       	lpm	r0, Z+
+ 744:	0d 92       	st	X+, r0
+ 746:	a6 3a       	cpi	r26, 0xA6	; 166
+ 748:	b1 07       	cpc	r27, r17
+ 74a:	d9 f7       	brne	.-10     	; 0x742 <__do_copy_data+0xc>
+ 74c:	0e 94 ac 03 	call	0x758	; 0x758 <main>
+ 750:	0c 94 df 06 	jmp	0xdbe	; 0xdbe <_exit>
+
+00000754 <__bad_interrupt>:
+ 754:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000758 <main>:
+
+ unsigned char mas[70]="Привет парни";
+
+int main(void)
+{
+    TFTInit();
+ 758:	0e 94 f1 03 	call	0x7e2	; 0x7e2 <TFTInit>
+	//WriteChar8x11(40,40,'S',RED);
+	TFTSingleColor(YELLOW);
+ 75c:	80 ee       	ldi	r24, 0xE0	; 224
+ 75e:	9f ef       	ldi	r25, 0xFF	; 255
+ 760:	0e 94 00 05 	call	0xa00	; 0xa00 <TFTSingleColor>
+	DrawRectangle(20,20,60,60,RED,1);
+ 764:	ee 24       	eor	r14, r14
+ 766:	e3 94       	inc	r14
+ 768:	00 e0       	ldi	r16, 0x00	; 0
+ 76a:	18 ef       	ldi	r17, 0xF8	; 248
+ 76c:	2c e3       	ldi	r18, 0x3C	; 60
+ 76e:	4c e3       	ldi	r20, 0x3C	; 60
+ 770:	64 e1       	ldi	r22, 0x14	; 20
+ 772:	84 e1       	ldi	r24, 0x14	; 20
+ 774:	0e 94 83 06 	call	0xd06	; 0xd06 <DrawRectangle>
+	WriteString8x11(10,10,mas,RED);
+ 778:	20 e0       	ldi	r18, 0x00	; 0
+ 77a:	38 ef       	ldi	r19, 0xF8	; 248
+ 77c:	40 e6       	ldi	r20, 0x60	; 96
+ 77e:	50 e0       	ldi	r21, 0x00	; 0
+ 780:	6a e0       	ldi	r22, 0x0A	; 10
+ 782:	8a e0       	ldi	r24, 0x0A	; 10
+ 784:	0e 94 62 05 	call	0xac4	; 0xac4 <WriteString8x11>
+	
+    while (1) 
+    {
+    }
+ 788:	ff cf       	rjmp	.-2      	; 0x788 <main+0x30>
+
+0000078a <write_byte>:
+		 else
+		 xx--;
+		 if(y0>17)
+		 y0=0;
+	 }
+ }
+ 78a:	92 98       	cbi	0x12, 2	; 18
+ 78c:	61 11       	cpse	r22, r1
+ 78e:	02 c0       	rjmp	.+4      	; 0x794 <write_byte+0xa>
+ 790:	93 98       	cbi	0x12, 3	; 18
+ 792:	01 c0       	rjmp	.+2      	; 0x796 <write_byte+0xc>
+ 794:	93 9a       	sbi	0x12, 3	; 18
+ 796:	95 9a       	sbi	0x12, 5	; 18
+ 798:	27 e0       	ldi	r18, 0x07	; 7
+ 79a:	30 e0       	ldi	r19, 0x00	; 0
+ 79c:	90 e0       	ldi	r25, 0x00	; 0
+ 79e:	ac 01       	movw	r20, r24
+ 7a0:	02 2e       	mov	r0, r18
+ 7a2:	02 c0       	rjmp	.+4      	; 0x7a8 <write_byte+0x1e>
+ 7a4:	55 95       	asr	r21
+ 7a6:	47 95       	ror	r20
+ 7a8:	0a 94       	dec	r0
+ 7aa:	e2 f7       	brpl	.-8      	; 0x7a4 <write_byte+0x1a>
+ 7ac:	40 ff       	sbrs	r20, 0
+ 7ae:	02 c0       	rjmp	.+4      	; 0x7b4 <write_byte+0x2a>
+ 7b0:	94 9a       	sbi	0x12, 4	; 18
+ 7b2:	01 c0       	rjmp	.+2      	; 0x7b6 <write_byte+0x2c>
+ 7b4:	94 98       	cbi	0x12, 4	; 18
+ 7b6:	95 98       	cbi	0x12, 5	; 18
+ 7b8:	95 9a       	sbi	0x12, 5	; 18
+ 7ba:	21 50       	subi	r18, 0x01	; 1
+ 7bc:	31 09       	sbc	r19, r1
+ 7be:	78 f7       	brcc	.-34     	; 0x79e <write_byte+0x14>
+ 7c0:	92 9a       	sbi	0x12, 2	; 18
+ 7c2:	08 95       	ret
+
+000007c4 <Reset>:
+ 7c4:	97 98       	cbi	0x12, 7	; 18
+ 7c6:	8f ec       	ldi	r24, 0xCF	; 207
+ 7c8:	97 e0       	ldi	r25, 0x07	; 7
+ 7ca:	01 97       	sbiw	r24, 0x01	; 1
+ 7cc:	f1 f7       	brne	.-4      	; 0x7ca <Reset+0x6>
+ 7ce:	00 c0       	rjmp	.+0      	; 0x7d0 <Reset+0xc>
+ 7d0:	00 00       	nop
+ 7d2:	97 9a       	sbi	0x12, 7	; 18
+ 7d4:	8f ec       	ldi	r24, 0xCF	; 207
+ 7d6:	97 e0       	ldi	r25, 0x07	; 7
+ 7d8:	01 97       	sbiw	r24, 0x01	; 1
+ 7da:	f1 f7       	brne	.-4      	; 0x7d8 <Reset+0x14>
+ 7dc:	00 c0       	rjmp	.+0      	; 0x7de <Reset+0x1a>
+ 7de:	00 00       	nop
+ 7e0:	08 95       	ret
+
+000007e2 <TFTInit>:
+ 7e2:	cf 93       	push	r28
+ 7e4:	bb 9a       	sbi	0x17, 3	; 23
+ 7e6:	8f 9a       	sbi	0x11, 7	; 17
+ 7e8:	8a 9a       	sbi	0x11, 2	; 17
+ 7ea:	8b 9a       	sbi	0x11, 3	; 17
+ 7ec:	8d 9a       	sbi	0x11, 5	; 17
+ 7ee:	8c 9a       	sbi	0x11, 4	; 17
+ 7f0:	c3 9a       	sbi	0x18, 3	; 24
+ 7f2:	0e 94 e2 03 	call	0x7c4	; 0x7c4 <Reset>
+ 7f6:	60 e0       	ldi	r22, 0x00	; 0
+ 7f8:	89 eb       	ldi	r24, 0xB9	; 185
+ 7fa:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 7fe:	61 e0       	ldi	r22, 0x01	; 1
+ 800:	8f ef       	ldi	r24, 0xFF	; 255
+ 802:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 806:	61 e0       	ldi	r22, 0x01	; 1
+ 808:	83 e8       	ldi	r24, 0x83	; 131
+ 80a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 80e:	61 e0       	ldi	r22, 0x01	; 1
+ 810:	83 e5       	ldi	r24, 0x53	; 83
+ 812:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 816:	60 e0       	ldi	r22, 0x00	; 0
+ 818:	80 eb       	ldi	r24, 0xB0	; 176
+ 81a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 81e:	61 e0       	ldi	r22, 0x01	; 1
+ 820:	8c e3       	ldi	r24, 0x3C	; 60
+ 822:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 826:	61 e0       	ldi	r22, 0x01	; 1
+ 828:	81 e0       	ldi	r24, 0x01	; 1
+ 82a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 82e:	60 e0       	ldi	r22, 0x00	; 0
+ 830:	86 eb       	ldi	r24, 0xB6	; 182
+ 832:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 836:	61 e0       	ldi	r22, 0x01	; 1
+ 838:	84 e9       	ldi	r24, 0x94	; 148
+ 83a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 83e:	61 e0       	ldi	r22, 0x01	; 1
+ 840:	8c e6       	ldi	r24, 0x6C	; 108
+ 842:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 846:	61 e0       	ldi	r22, 0x01	; 1
+ 848:	80 e5       	ldi	r24, 0x50	; 80
+ 84a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 84e:	60 e0       	ldi	r22, 0x00	; 0
+ 850:	81 eb       	ldi	r24, 0xB1	; 177
+ 852:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 856:	61 e0       	ldi	r22, 0x01	; 1
+ 858:	80 e0       	ldi	r24, 0x00	; 0
+ 85a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 85e:	61 e0       	ldi	r22, 0x01	; 1
+ 860:	81 e0       	ldi	r24, 0x01	; 1
+ 862:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 866:	61 e0       	ldi	r22, 0x01	; 1
+ 868:	8b e1       	ldi	r24, 0x1B	; 27
+ 86a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 86e:	61 e0       	ldi	r22, 0x01	; 1
+ 870:	83 e0       	ldi	r24, 0x03	; 3
+ 872:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 876:	61 e0       	ldi	r22, 0x01	; 1
+ 878:	81 e0       	ldi	r24, 0x01	; 1
+ 87a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 87e:	61 e0       	ldi	r22, 0x01	; 1
+ 880:	88 e0       	ldi	r24, 0x08	; 8
+ 882:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 886:	61 e0       	ldi	r22, 0x01	; 1
+ 888:	87 e7       	ldi	r24, 0x77	; 119
+ 88a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 88e:	61 e0       	ldi	r22, 0x01	; 1
+ 890:	89 e8       	ldi	r24, 0x89	; 137
+ 892:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 896:	60 e0       	ldi	r22, 0x00	; 0
+ 898:	80 ee       	ldi	r24, 0xE0	; 224
+ 89a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 89e:	61 e0       	ldi	r22, 0x01	; 1
+ 8a0:	80 e5       	ldi	r24, 0x50	; 80
+ 8a2:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8a6:	61 e0       	ldi	r22, 0x01	; 1
+ 8a8:	87 e7       	ldi	r24, 0x77	; 119
+ 8aa:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8ae:	61 e0       	ldi	r22, 0x01	; 1
+ 8b0:	80 e4       	ldi	r24, 0x40	; 64
+ 8b2:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8b6:	61 e0       	ldi	r22, 0x01	; 1
+ 8b8:	88 e0       	ldi	r24, 0x08	; 8
+ 8ba:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8be:	61 e0       	ldi	r22, 0x01	; 1
+ 8c0:	8f eb       	ldi	r24, 0xBF	; 191
+ 8c2:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8c6:	61 e0       	ldi	r22, 0x01	; 1
+ 8c8:	80 e0       	ldi	r24, 0x00	; 0
+ 8ca:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8ce:	61 e0       	ldi	r22, 0x01	; 1
+ 8d0:	83 e0       	ldi	r24, 0x03	; 3
+ 8d2:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8d6:	61 e0       	ldi	r22, 0x01	; 1
+ 8d8:	8f e0       	ldi	r24, 0x0F	; 15
+ 8da:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8de:	61 e0       	ldi	r22, 0x01	; 1
+ 8e0:	80 e0       	ldi	r24, 0x00	; 0
+ 8e2:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8e6:	61 e0       	ldi	r22, 0x01	; 1
+ 8e8:	81 e0       	ldi	r24, 0x01	; 1
+ 8ea:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8ee:	61 e0       	ldi	r22, 0x01	; 1
+ 8f0:	83 e7       	ldi	r24, 0x73	; 115
+ 8f2:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8f6:	61 e0       	ldi	r22, 0x01	; 1
+ 8f8:	80 e0       	ldi	r24, 0x00	; 0
+ 8fa:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 8fe:	61 e0       	ldi	r22, 0x01	; 1
+ 900:	82 e7       	ldi	r24, 0x72	; 114
+ 902:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 906:	61 e0       	ldi	r22, 0x01	; 1
+ 908:	83 e0       	ldi	r24, 0x03	; 3
+ 90a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 90e:	61 e0       	ldi	r22, 0x01	; 1
+ 910:	80 eb       	ldi	r24, 0xB0	; 176
+ 912:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 916:	61 e0       	ldi	r22, 0x01	; 1
+ 918:	8f e0       	ldi	r24, 0x0F	; 15
+ 91a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 91e:	61 e0       	ldi	r22, 0x01	; 1
+ 920:	88 e0       	ldi	r24, 0x08	; 8
+ 922:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 926:	61 e0       	ldi	r22, 0x01	; 1
+ 928:	80 e0       	ldi	r24, 0x00	; 0
+ 92a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 92e:	61 e0       	ldi	r22, 0x01	; 1
+ 930:	8f e0       	ldi	r24, 0x0F	; 15
+ 932:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 936:	60 e0       	ldi	r22, 0x00	; 0
+ 938:	8a e3       	ldi	r24, 0x3A	; 58
+ 93a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 93e:	61 e0       	ldi	r22, 0x01	; 1
+ 940:	85 e0       	ldi	r24, 0x05	; 5
+ 942:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 946:	60 e0       	ldi	r22, 0x00	; 0
+ 948:	86 e3       	ldi	r24, 0x36	; 54
+ 94a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 94e:	61 e0       	ldi	r22, 0x01	; 1
+ 950:	80 ec       	ldi	r24, 0xC0	; 192
+ 952:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 956:	60 e0       	ldi	r22, 0x00	; 0
+ 958:	81 e1       	ldi	r24, 0x11	; 17
+ 95a:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 95e:	2f e7       	ldi	r18, 0x7F	; 127
+ 960:	89 ea       	ldi	r24, 0xA9	; 169
+ 962:	93 e0       	ldi	r25, 0x03	; 3
+ 964:	21 50       	subi	r18, 0x01	; 1
+ 966:	80 40       	sbci	r24, 0x00	; 0
+ 968:	90 40       	sbci	r25, 0x00	; 0
+ 96a:	e1 f7       	brne	.-8      	; 0x964 <TFTInit+0x182>
+ 96c:	00 c0       	rjmp	.+0      	; 0x96e <TFTInit+0x18c>
+ 96e:	00 00       	nop
+ 970:	60 e0       	ldi	r22, 0x00	; 0
+ 972:	89 e2       	ldi	r24, 0x29	; 41
+ 974:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 978:	2f e7       	ldi	r18, 0x7F	; 127
+ 97a:	89 ea       	ldi	r24, 0xA9	; 169
+ 97c:	93 e0       	ldi	r25, 0x03	; 3
+ 97e:	21 50       	subi	r18, 0x01	; 1
+ 980:	80 40       	sbci	r24, 0x00	; 0
+ 982:	90 40       	sbci	r25, 0x00	; 0
+ 984:	e1 f7       	brne	.-8      	; 0x97e <TFTInit+0x19c>
+ 986:	00 c0       	rjmp	.+0      	; 0x988 <TFTInit+0x1a6>
+ 988:	00 00       	nop
+ 98a:	60 e0       	ldi	r22, 0x00	; 0
+ 98c:	8d e2       	ldi	r24, 0x2D	; 45
+ 98e:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 992:	c0 e0       	ldi	r28, 0x00	; 0
+ 994:	61 e0       	ldi	r22, 0x01	; 1
+ 996:	8c 2f       	mov	r24, r28
+ 998:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 99c:	ce 5f       	subi	r28, 0xFE	; 254
+ 99e:	c0 34       	cpi	r28, 0x40	; 64
+ 9a0:	c9 f7       	brne	.-14     	; 0x994 <TFTInit+0x1b2>
+ 9a2:	c0 e0       	ldi	r28, 0x00	; 0
+ 9a4:	61 e0       	ldi	r22, 0x01	; 1
+ 9a6:	8c 2f       	mov	r24, r28
+ 9a8:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 9ac:	cf 5f       	subi	r28, 0xFF	; 255
+ 9ae:	c0 34       	cpi	r28, 0x40	; 64
+ 9b0:	c9 f7       	brne	.-14     	; 0x9a4 <TFTInit+0x1c2>
+ 9b2:	c0 e0       	ldi	r28, 0x00	; 0
+ 9b4:	61 e0       	ldi	r22, 0x01	; 1
+ 9b6:	8c 2f       	mov	r24, r28
+ 9b8:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 9bc:	ce 5f       	subi	r28, 0xFE	; 254
+ 9be:	c0 34       	cpi	r28, 0x40	; 64
+ 9c0:	c9 f7       	brne	.-14     	; 0x9b4 <TFTInit+0x1d2>
+ 9c2:	60 e0       	ldi	r22, 0x00	; 0
+ 9c4:	8c e2       	ldi	r24, 0x2C	; 44
+ 9c6:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 9ca:	2f e7       	ldi	r18, 0x7F	; 127
+ 9cc:	89 ea       	ldi	r24, 0xA9	; 169
+ 9ce:	93 e0       	ldi	r25, 0x03	; 3
+ 9d0:	21 50       	subi	r18, 0x01	; 1
+ 9d2:	80 40       	sbci	r24, 0x00	; 0
+ 9d4:	90 40       	sbci	r25, 0x00	; 0
+ 9d6:	e1 f7       	brne	.-8      	; 0x9d0 <TFTInit+0x1ee>
+ 9d8:	00 c0       	rjmp	.+0      	; 0x9da <TFTInit+0x1f8>
+ 9da:	00 00       	nop
+ 9dc:	cf 91       	pop	r28
+ 9de:	08 95       	ret
+
+000009e0 <WriteTwoByte>:
+ 9e0:	cf 93       	push	r28
+ 9e2:	c6 2f       	mov	r28, r22
+ 9e4:	61 e0       	ldi	r22, 0x01	; 1
+ 9e6:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 9ea:	61 e0       	ldi	r22, 0x01	; 1
+ 9ec:	8c 2f       	mov	r24, r28
+ 9ee:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ 9f2:	cf 91       	pop	r28
+ 9f4:	08 95       	ret
+
+000009f6 <OutColor>:
+ 9f6:	68 2f       	mov	r22, r24
+ 9f8:	89 2f       	mov	r24, r25
+ 9fa:	0e 94 f0 04 	call	0x9e0	; 0x9e0 <WriteTwoByte>
+ 9fe:	08 95       	ret
+
+00000a00 <TFTSingleColor>:
+ a00:	ff 92       	push	r15
+ a02:	0f 93       	push	r16
+ a04:	1f 93       	push	r17
+ a06:	cf 93       	push	r28
+ a08:	df 93       	push	r29
+ a0a:	8c 01       	movw	r16, r24
+ a0c:	d0 ea       	ldi	r29, 0xA0	; 160
+ a0e:	f1 2c       	mov	r15, r1
+ a10:	08 c0       	rjmp	.+16     	; 0xa22 <TFTSingleColor+0x22>
+ a12:	c8 01       	movw	r24, r16
+ a14:	0e 94 fb 04 	call	0x9f6	; 0x9f6 <OutColor>
+ a18:	cf 5f       	subi	r28, 0xFF	; 255
+ a1a:	c0 38       	cpi	r28, 0x80	; 128
+ a1c:	d1 f7       	brne	.-12     	; 0xa12 <TFTSingleColor+0x12>
+ a1e:	d1 50       	subi	r29, 0x01	; 1
+ a20:	11 f0       	breq	.+4      	; 0xa26 <TFTSingleColor+0x26>
+ a22:	cf 2d       	mov	r28, r15
+ a24:	f6 cf       	rjmp	.-20     	; 0xa12 <TFTSingleColor+0x12>
+ a26:	df 91       	pop	r29
+ a28:	cf 91       	pop	r28
+ a2a:	1f 91       	pop	r17
+ a2c:	0f 91       	pop	r16
+ a2e:	ff 90       	pop	r15
+ a30:	08 95       	ret
+
+00000a32 <Area>:
+ a32:	0f 93       	push	r16
+ a34:	1f 93       	push	r17
+ a36:	cf 93       	push	r28
+ a38:	df 93       	push	r29
+ a3a:	d8 2f       	mov	r29, r24
+ a3c:	06 2f       	mov	r16, r22
+ a3e:	c4 2f       	mov	r28, r20
+ a40:	12 2f       	mov	r17, r18
+ a42:	60 e0       	ldi	r22, 0x00	; 0
+ a44:	8a e2       	ldi	r24, 0x2A	; 42
+ a46:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a4a:	61 e0       	ldi	r22, 0x01	; 1
+ a4c:	80 e0       	ldi	r24, 0x00	; 0
+ a4e:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a52:	61 e0       	ldi	r22, 0x01	; 1
+ a54:	80 2f       	mov	r24, r16
+ a56:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a5a:	61 e0       	ldi	r22, 0x01	; 1
+ a5c:	80 e0       	ldi	r24, 0x00	; 0
+ a5e:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a62:	61 e0       	ldi	r22, 0x01	; 1
+ a64:	81 2f       	mov	r24, r17
+ a66:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a6a:	60 e0       	ldi	r22, 0x00	; 0
+ a6c:	8b e2       	ldi	r24, 0x2B	; 43
+ a6e:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a72:	61 e0       	ldi	r22, 0x01	; 1
+ a74:	80 e0       	ldi	r24, 0x00	; 0
+ a76:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a7a:	61 e0       	ldi	r22, 0x01	; 1
+ a7c:	8d 2f       	mov	r24, r29
+ a7e:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a82:	61 e0       	ldi	r22, 0x01	; 1
+ a84:	80 e0       	ldi	r24, 0x00	; 0
+ a86:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a8a:	61 e0       	ldi	r22, 0x01	; 1
+ a8c:	8c 2f       	mov	r24, r28
+ a8e:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a92:	60 e0       	ldi	r22, 0x00	; 0
+ a94:	8c e2       	ldi	r24, 0x2C	; 44
+ a96:	0e 94 c5 03 	call	0x78a	; 0x78a <write_byte>
+ a9a:	df 91       	pop	r29
+ a9c:	cf 91       	pop	r28
+ a9e:	1f 91       	pop	r17
+ aa0:	0f 91       	pop	r16
+ aa2:	08 95       	ret
+
+00000aa4 <DrawPixel>:
+ aa4:	cf 93       	push	r28
+ aa6:	df 93       	push	r29
+ aa8:	ea 01       	movw	r28, r20
+ aaa:	90 ea       	ldi	r25, 0xA0	; 160
+ aac:	98 1b       	sub	r25, r24
+ aae:	89 2f       	mov	r24, r25
+ ab0:	26 2f       	mov	r18, r22
+ ab2:	49 2f       	mov	r20, r25
+ ab4:	0e 94 19 05 	call	0xa32	; 0xa32 <Area>
+ ab8:	ce 01       	movw	r24, r28
+ aba:	0e 94 fb 04 	call	0x9f6	; 0x9f6 <OutColor>
+ abe:	df 91       	pop	r29
+ ac0:	cf 91       	pop	r28
+ ac2:	08 95       	ret
+
+00000ac4 <WriteString8x11>:
+ ac4:	2f 92       	push	r2
+ ac6:	3f 92       	push	r3
+ ac8:	4f 92       	push	r4
+ aca:	5f 92       	push	r5
+ acc:	6f 92       	push	r6
+ ace:	7f 92       	push	r7
+ ad0:	8f 92       	push	r8
+ ad2:	9f 92       	push	r9
+ ad4:	af 92       	push	r10
+ ad6:	bf 92       	push	r11
+ ad8:	cf 92       	push	r12
+ ada:	df 92       	push	r13
+ adc:	ef 92       	push	r14
+ ade:	ff 92       	push	r15
+ ae0:	0f 93       	push	r16
+ ae2:	1f 93       	push	r17
+ ae4:	cf 93       	push	r28
+ ae6:	df 93       	push	r29
+ ae8:	00 d0       	rcall	.+0      	; 0xaea <WriteString8x11+0x26>
+ aea:	00 d0       	rcall	.+0      	; 0xaec <WriteString8x11+0x28>
+ aec:	cd b7       	in	r28, 0x3d	; 61
+ aee:	de b7       	in	r29, 0x3e	; 62
+ af0:	6a 83       	std	Y+2, r22	; 0x02
+ af2:	69 01       	movw	r12, r18
+ af4:	23 e1       	ldi	r18, 0x13	; 19
+ af6:	30 e0       	ldi	r19, 0x00	; 0
+ af8:	39 01       	movw	r6, r18
+ afa:	68 1a       	sub	r6, r24
+ afc:	71 08       	sbc	r7, r1
+ afe:	fa 01       	movw	r30, r20
+ b00:	80 81       	ld	r24, Z
+ b02:	88 23       	and	r24, r24
+ b04:	09 f4       	brne	.+2      	; 0xb08 <WriteString8x11+0x44>
+ b06:	7a c0       	rjmp	.+244    	; 0xbfc <WriteString8x11+0x138>
+ b08:	7a 01       	movw	r14, r20
+ b0a:	88 24       	eor	r8, r8
+ b0c:	83 94       	inc	r8
+ b0e:	91 2c       	mov	r9, r1
+ b10:	0f 2e       	mov	r0, r31
+ b12:	fb e0       	ldi	r31, 0x0B	; 11
+ b14:	3f 2e       	mov	r3, r31
+ b16:	f0 2d       	mov	r31, r0
+ b18:	19 82       	std	Y+1, r1	; 0x01
+ b1a:	21 2c       	mov	r2, r1
+ b1c:	41 2c       	mov	r4, r1
+ b1e:	52 2c       	mov	r5, r2
+ b20:	6a 81       	ldd	r22, Y+2	; 0x02
+ b22:	66 0f       	add	r22, r22
+ b24:	86 2f       	mov	r24, r22
+ b26:	88 0f       	add	r24, r24
+ b28:	88 0f       	add	r24, r24
+ b2a:	68 0f       	add	r22, r24
+ b2c:	fa 81       	ldd	r31, Y+2	; 0x02
+ b2e:	6f 0f       	add	r22, r31
+ b30:	2a e0       	ldi	r18, 0x0A	; 10
+ b32:	26 0f       	add	r18, r22
+ b34:	86 2d       	mov	r24, r6
+ b36:	88 0f       	add	r24, r24
+ b38:	88 0f       	add	r24, r24
+ b3a:	88 0f       	add	r24, r24
+ b3c:	47 e0       	ldi	r20, 0x07	; 7
+ b3e:	48 0f       	add	r20, r24
+ b40:	0e 94 19 05 	call	0xa32	; 0xa32 <Area>
+ b44:	a1 2c       	mov	r10, r1
+ b46:	b1 2c       	mov	r11, r1
+ b48:	34 c0       	rjmp	.+104    	; 0xbb2 <WriteString8x11+0xee>
+ b4a:	f7 01       	movw	r30, r14
+ b4c:	80 81       	ld	r24, Z
+ b4e:	80 3c       	cpi	r24, 0xC0	; 192
+ b50:	18 f4       	brcc	.+6      	; 0xb58 <WriteString8x11+0x94>
+ b52:	24 2d       	mov	r18, r4
+ b54:	35 2d       	mov	r19, r5
+ b56:	02 c0       	rjmp	.+4      	; 0xb5c <WriteString8x11+0x98>
+ b58:	21 e4       	ldi	r18, 0x41	; 65
+ b5a:	30 e0       	ldi	r19, 0x00	; 0
+ b5c:	90 e0       	ldi	r25, 0x00	; 0
+ b5e:	80 97       	sbiw	r24, 0x20	; 32
+ b60:	82 1b       	sub	r24, r18
+ b62:	93 0b       	sbc	r25, r19
+ b64:	38 9e       	mul	r3, r24
+ b66:	f0 01       	movw	r30, r0
+ b68:	39 9e       	mul	r3, r25
+ b6a:	f0 0d       	add	r31, r0
+ b6c:	11 24       	eor	r1, r1
+ b6e:	8b 81       	ldd	r24, Y+3	; 0x03
+ b70:	9c 81       	ldd	r25, Y+4	; 0x04
+ b72:	e8 0f       	add	r30, r24
+ b74:	f9 1f       	adc	r31, r25
+ b76:	ec 5a       	subi	r30, 0xAC	; 172
+ b78:	ff 4f       	sbci	r31, 0xFF	; 255
+ b7a:	80 81       	ld	r24, Z
+ b7c:	90 e0       	ldi	r25, 0x00	; 0
+ b7e:	80 23       	and	r24, r16
+ b80:	91 23       	and	r25, r17
+ b82:	89 2b       	or	r24, r25
+ b84:	21 f0       	breq	.+8      	; 0xb8e <WriteString8x11+0xca>
+ b86:	c6 01       	movw	r24, r12
+ b88:	0e 94 fb 04 	call	0x9f6	; 0x9f6 <OutColor>
+ b8c:	04 c0       	rjmp	.+8      	; 0xb96 <WriteString8x11+0xd2>
+ b8e:	84 2d       	mov	r24, r4
+ b90:	95 2d       	mov	r25, r5
+ b92:	0e 94 fb 04 	call	0x9f6	; 0x9f6 <OutColor>
+ b96:	eb 81       	ldd	r30, Y+3	; 0x03
+ b98:	fc 81       	ldd	r31, Y+4	; 0x04
+ b9a:	31 96       	adiw	r30, 0x01	; 1
+ b9c:	fc 83       	std	Y+4, r31	; 0x04
+ b9e:	eb 83       	std	Y+3, r30	; 0x03
+ ba0:	3b 97       	sbiw	r30, 0x0b	; 11
+ ba2:	99 f6       	brne	.-90     	; 0xb4a <WriteString8x11+0x86>
+ ba4:	ff ef       	ldi	r31, 0xFF	; 255
+ ba6:	af 1a       	sub	r10, r31
+ ba8:	bf 0a       	sbc	r11, r31
+ baa:	88 e0       	ldi	r24, 0x08	; 8
+ bac:	a8 16       	cp	r10, r24
+ bae:	b1 04       	cpc	r11, r1
+ bb0:	59 f0       	breq	.+22     	; 0xbc8 <WriteString8x11+0x104>
+ bb2:	84 01       	movw	r16, r8
+ bb4:	0a 2c       	mov	r0, r10
+ bb6:	02 c0       	rjmp	.+4      	; 0xbbc <WriteString8x11+0xf8>
+ bb8:	00 0f       	add	r16, r16
+ bba:	11 1f       	adc	r17, r17
+ bbc:	0a 94       	dec	r0
+ bbe:	e2 f7       	brpl	.-8      	; 0xbb8 <WriteString8x11+0xf4>
+ bc0:	99 81       	ldd	r25, Y+1	; 0x01
+ bc2:	9b 83       	std	Y+3, r25	; 0x03
+ bc4:	2c 82       	std	Y+4, r2	; 0x04
+ bc6:	c1 cf       	rjmp	.-126    	; 0xb4a <WriteString8x11+0x86>
+ bc8:	61 14       	cp	r6, r1
+ bca:	71 04       	cpc	r7, r1
+ bcc:	49 f4       	brne	.+18     	; 0xbe0 <WriteString8x11+0x11c>
+ bce:	ea 81       	ldd	r30, Y+2	; 0x02
+ bd0:	ef 5f       	subi	r30, 0xFF	; 255
+ bd2:	ea 83       	std	Y+2, r30	; 0x02
+ bd4:	0f 2e       	mov	r0, r31
+ bd6:	f3 e1       	ldi	r31, 0x13	; 19
+ bd8:	6f 2e       	mov	r6, r31
+ bda:	f0 2d       	mov	r31, r0
+ bdc:	71 2c       	mov	r7, r1
+ bde:	03 c0       	rjmp	.+6      	; 0xbe6 <WriteString8x11+0x122>
+ be0:	f1 e0       	ldi	r31, 0x01	; 1
+ be2:	6f 1a       	sub	r6, r31
+ be4:	71 08       	sbc	r7, r1
+ be6:	8a 81       	ldd	r24, Y+2	; 0x02
+ be8:	8b 30       	cpi	r24, 0x0B	; 11
+ bea:	08 f0       	brcs	.+2      	; 0xbee <WriteString8x11+0x12a>
+ bec:	1a 82       	std	Y+2, r1	; 0x02
+ bee:	9f ef       	ldi	r25, 0xFF	; 255
+ bf0:	e9 1a       	sub	r14, r25
+ bf2:	f9 0a       	sbc	r15, r25
+ bf4:	f7 01       	movw	r30, r14
+ bf6:	80 81       	ld	r24, Z
+ bf8:	81 11       	cpse	r24, r1
+ bfa:	92 cf       	rjmp	.-220    	; 0xb20 <WriteString8x11+0x5c>
+ bfc:	0f 90       	pop	r0
+ bfe:	0f 90       	pop	r0
+ c00:	0f 90       	pop	r0
+ c02:	0f 90       	pop	r0
+ c04:	df 91       	pop	r29
+ c06:	cf 91       	pop	r28
+ c08:	1f 91       	pop	r17
+ c0a:	0f 91       	pop	r16
+ c0c:	ff 90       	pop	r15
+ c0e:	ef 90       	pop	r14
+ c10:	df 90       	pop	r13
+ c12:	cf 90       	pop	r12
+ c14:	bf 90       	pop	r11
+ c16:	af 90       	pop	r10
+ c18:	9f 90       	pop	r9
+ c1a:	8f 90       	pop	r8
+ c1c:	7f 90       	pop	r7
+ c1e:	6f 90       	pop	r6
+ c20:	5f 90       	pop	r5
+ c22:	4f 90       	pop	r4
+ c24:	3f 90       	pop	r3
+ c26:	2f 90       	pop	r2
+ c28:	08 95       	ret
+
+00000c2a <DrawLine>:
+
+ void DrawLine(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1, unsigned int color)
+ {
+ c2a:	4f 92       	push	r4
+ c2c:	5f 92       	push	r5
+ c2e:	6f 92       	push	r6
+ c30:	7f 92       	push	r7
+ c32:	8f 92       	push	r8
+ c34:	9f 92       	push	r9
+ c36:	af 92       	push	r10
+ c38:	bf 92       	push	r11
+ c3a:	cf 92       	push	r12
+ c3c:	df 92       	push	r13
+ c3e:	ef 92       	push	r14
+ c40:	ff 92       	push	r15
+ c42:	0f 93       	push	r16
+ c44:	1f 93       	push	r17
+ c46:	cf 93       	push	r28
+ c48:	df 93       	push	r29
+ c4a:	c8 2f       	mov	r28, r24
+ c4c:	d6 2f       	mov	r29, r22
+ c4e:	74 2e       	mov	r7, r20
+ c50:	62 2e       	mov	r6, r18
+	 const signed char signX=(x0<x1) ? 1 : -1;
+ c52:	84 17       	cp	r24, r20
+ c54:	18 f0       	brcs	.+6      	; 0xc5c <DrawLine+0x32>
+ c56:	55 24       	eor	r5, r5
+ c58:	5a 94       	dec	r5
+ c5a:	02 c0       	rjmp	.+4      	; 0xc60 <DrawLine+0x36>
+ c5c:	55 24       	eor	r5, r5
+ c5e:	53 94       	inc	r5
+	 const signed char signY=(y0<y1) ? 1 : -1;
+ c60:	d6 15       	cp	r29, r6
+ c62:	18 f0       	brcs	.+6      	; 0xc6a <DrawLine+0x40>
+ c64:	44 24       	eor	r4, r4
+ c66:	4a 94       	dec	r4
+ c68:	02 c0       	rjmp	.+4      	; 0xc6e <DrawLine+0x44>
+ c6a:	44 24       	eor	r4, r4
+ c6c:	43 94       	inc	r4
+	 const unsigned char deltaX=((x1-x0)>0) ? (x1-x0) : (x0-x1);
+ c6e:	87 2d       	mov	r24, r7
+ c70:	90 e0       	ldi	r25, 0x00	; 0
+ c72:	8c 1b       	sub	r24, r28
+ c74:	91 09       	sbc	r25, r1
+ c76:	6c 01       	movw	r12, r24
+ c78:	22 f4       	brpl	.+8      	; 0xc82 <DrawLine+0x58>
+ c7a:	cc 24       	eor	r12, r12
+ c7c:	dd 24       	eor	r13, r13
+ c7e:	c8 1a       	sub	r12, r24
+ c80:	d9 0a       	sbc	r13, r25
+	 const unsigned char deltaY=((y1-y0)>0) ? (y1-y0) : (y0-y1);
+	 short int error = deltaX - deltaY;
+ c82:	dd 24       	eor	r13, r13
+ void DrawLine(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1, unsigned int color)
+ {
+	 const signed char signX=(x0<x1) ? 1 : -1;
+	 const signed char signY=(y0<y1) ? 1 : -1;
+	 const unsigned char deltaX=((x1-x0)>0) ? (x1-x0) : (x0-x1);
+	 const unsigned char deltaY=((y1-y0)>0) ? (y1-y0) : (y0-y1);
+ c84:	86 2d       	mov	r24, r6
+ c86:	90 e0       	ldi	r25, 0x00	; 0
+ c88:	8d 1b       	sub	r24, r29
+ c8a:	91 09       	sbc	r25, r1
+ c8c:	4c 01       	movw	r8, r24
+ c8e:	22 f4       	brpl	.+8      	; 0xc98 <DrawLine+0x6e>
+ c90:	88 24       	eor	r8, r8
+ c92:	99 24       	eor	r9, r9
+ c94:	88 1a       	sub	r8, r24
+ c96:	99 0a       	sbc	r9, r25
+	 short int error = deltaX - deltaY;
+ c98:	99 24       	eor	r9, r9
+ c9a:	76 01       	movw	r14, r12
+ c9c:	e8 18       	sub	r14, r8
+ c9e:	f9 08       	sbc	r15, r9
+	 DrawPixel(x1,y1,color);
+ ca0:	a8 01       	movw	r20, r16
+ ca2:	66 2d       	mov	r22, r6
+ ca4:	87 2d       	mov	r24, r7
+ ca6:	0e 94 52 05 	call	0xaa4	; 0xaa4 <DrawPixel>
+	 while((x0!=x1)||(y0!=y1))
+	 {
+		 DrawPixel(x0,y0,color);
+		 int error2=error*2;
+		 if(error2 > (-deltaY))
+ caa:	aa 24       	eor	r10, r10
+ cac:	bb 24       	eor	r11, r11
+ cae:	a8 18       	sub	r10, r8
+ cb0:	b9 08       	sbc	r11, r9
+	 const signed char signY=(y0<y1) ? 1 : -1;
+	 const unsigned char deltaX=((x1-x0)>0) ? (x1-x0) : (x0-x1);
+	 const unsigned char deltaY=((y1-y0)>0) ? (y1-y0) : (y0-y1);
+	 short int error = deltaX - deltaY;
+	 DrawPixel(x1,y1,color);
+	 while((x0!=x1)||(y0!=y1))
+ cb2:	14 c0       	rjmp	.+40     	; 0xcdc <DrawLine+0xb2>
+	 {
+		 DrawPixel(x0,y0,color);
+ cb4:	a8 01       	movw	r20, r16
+ cb6:	6d 2f       	mov	r22, r29
+ cb8:	8c 2f       	mov	r24, r28
+ cba:	0e 94 52 05 	call	0xaa4	; 0xaa4 <DrawPixel>
+		 int error2=error*2;
+ cbe:	f7 01       	movw	r30, r14
+ cc0:	ee 0f       	add	r30, r30
+ cc2:	ff 1f       	adc	r31, r31
+		 if(error2 > (-deltaY))
+ cc4:	ae 16       	cp	r10, r30
+ cc6:	bf 06       	cpc	r11, r31
+ cc8:	1c f4       	brge	.+6      	; 0xcd0 <DrawLine+0xa6>
+		 {
+			 error -= deltaY;
+ cca:	e8 18       	sub	r14, r8
+ ccc:	f9 08       	sbc	r15, r9
+			 x0+=signX;
+ cce:	c5 0d       	add	r28, r5
+		 }
+		 if(error2 < deltaX)
+ cd0:	ec 15       	cp	r30, r12
+ cd2:	fd 05       	cpc	r31, r13
+ cd4:	1c f4       	brge	.+6      	; 0xcdc <DrawLine+0xb2>
+		 {
+			 error+=deltaX;
+ cd6:	ec 0c       	add	r14, r12
+ cd8:	fd 1c       	adc	r15, r13
+			 y0+=signY;
+ cda:	d4 0d       	add	r29, r4
+	 const signed char signY=(y0<y1) ? 1 : -1;
+	 const unsigned char deltaX=((x1-x0)>0) ? (x1-x0) : (x0-x1);
+	 const unsigned char deltaY=((y1-y0)>0) ? (y1-y0) : (y0-y1);
+	 short int error = deltaX - deltaY;
+	 DrawPixel(x1,y1,color);
+	 while((x0!=x1)||(y0!=y1))
+ cdc:	c7 11       	cpse	r28, r7
+ cde:	ea cf       	rjmp	.-44     	; 0xcb4 <DrawLine+0x8a>
+ ce0:	d6 11       	cpse	r29, r6
+ ce2:	e8 cf       	rjmp	.-48     	; 0xcb4 <DrawLine+0x8a>
+		 {
+			 error+=deltaX;
+			 y0+=signY;
+		 }
+	 }
+ }
+ ce4:	df 91       	pop	r29
+ ce6:	cf 91       	pop	r28
+ ce8:	1f 91       	pop	r17
+ cea:	0f 91       	pop	r16
+ cec:	ff 90       	pop	r15
+ cee:	ef 90       	pop	r14
+ cf0:	df 90       	pop	r13
+ cf2:	cf 90       	pop	r12
+ cf4:	bf 90       	pop	r11
+ cf6:	af 90       	pop	r10
+ cf8:	9f 90       	pop	r9
+ cfa:	8f 90       	pop	r8
+ cfc:	7f 90       	pop	r7
+ cfe:	6f 90       	pop	r6
+ d00:	5f 90       	pop	r5
+ d02:	4f 90       	pop	r4
+ d04:	08 95       	ret
+
+00000d06 <DrawRectangle>:
+
+ void DrawRectangle(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1, unsigned int color, unsigned char fill)
+ {
+ d06:	bf 92       	push	r11
+ d08:	cf 92       	push	r12
+ d0a:	df 92       	push	r13
+ d0c:	ef 92       	push	r14
+ d0e:	ff 92       	push	r15
+ d10:	0f 93       	push	r16
+ d12:	1f 93       	push	r17
+ d14:	cf 93       	push	r28
+ d16:	df 93       	push	r29
+ d18:	f8 2e       	mov	r15, r24
+ d1a:	b6 2e       	mov	r11, r22
+ d1c:	d4 2f       	mov	r29, r20
+ d1e:	c2 2f       	mov	r28, r18
+ d20:	68 01       	movw	r12, r16
+	 unsigned char x,y;
+	 if(fill==0)
+ d22:	e1 10       	cpse	r14, r1
+ d24:	16 c0       	rjmp	.+44     	; 0xd52 <DrawRectangle+0x4c>
+	 {
+		 DrawLine(x0,y0,x1,y0,color);
+ d26:	26 2f       	mov	r18, r22
+ d28:	0e 94 15 06 	call	0xc2a	; 0xc2a <DrawLine>
+		 DrawLine(x0,y1,x1,y1,color);
+ d2c:	2c 2f       	mov	r18, r28
+ d2e:	4d 2f       	mov	r20, r29
+ d30:	6c 2f       	mov	r22, r28
+ d32:	8f 2d       	mov	r24, r15
+ d34:	0e 94 15 06 	call	0xc2a	; 0xc2a <DrawLine>
+		 DrawLine(x0,y0,x0,y1,color);
+ d38:	2c 2f       	mov	r18, r28
+ d3a:	4f 2d       	mov	r20, r15
+ d3c:	6b 2d       	mov	r22, r11
+ d3e:	8f 2d       	mov	r24, r15
+ d40:	0e 94 15 06 	call	0xc2a	; 0xc2a <DrawLine>
+		 DrawLine(x1,y0,x1,y1,color);
+ d44:	2c 2f       	mov	r18, r28
+ d46:	4d 2f       	mov	r20, r29
+ d48:	6b 2d       	mov	r22, r11
+ d4a:	8d 2f       	mov	r24, r29
+ d4c:	0e 94 15 06 	call	0xc2a	; 0xc2a <DrawLine>
+ d50:	2c c0       	rjmp	.+88     	; 0xdaa <DrawRectangle+0xa4>
+	 }
+	 else
+	 {
+		 Area((160-x1), y0, (160-x0), y1);
+ d52:	80 ea       	ldi	r24, 0xA0	; 160
+ d54:	48 2f       	mov	r20, r24
+ d56:	4f 19       	sub	r20, r15
+ d58:	8d 1b       	sub	r24, r29
+ d5a:	0e 94 19 05 	call	0xa32	; 0xa32 <Area>
+		 for(x=0;x<(x1-x0);x++)
+ d5e:	0d 2f       	mov	r16, r29
+ d60:	10 e0       	ldi	r17, 0x00	; 0
+ d62:	0f 19       	sub	r16, r15
+ d64:	11 09       	sbc	r17, r1
+ d66:	10 16       	cp	r1, r16
+ d68:	11 06       	cpc	r1, r17
+ d6a:	94 f0       	brlt	.+36     	; 0xd90 <DrawRectangle+0x8a>
+ d6c:	1e c0       	rjmp	.+60     	; 0xdaa <DrawRectangle+0xa4>
+		 for(y=0;y<(y1-y0+1);y++)
+ d6e:	cb 2d       	mov	r28, r11
+		 OutColor(color);
+ d70:	c6 01       	movw	r24, r12
+ d72:	0e 94 fb 04 	call	0x9f6	; 0x9f6 <OutColor>
+	 }
+	 else
+	 {
+		 Area((160-x1), y0, (160-x0), y1);
+		 for(x=0;x<(x1-x0);x++)
+		 for(y=0;y<(y1-y0+1);y++)
+ d76:	cf 5f       	subi	r28, 0xFF	; 255
+ d78:	2c 2f       	mov	r18, r28
+ d7a:	30 e0       	ldi	r19, 0x00	; 0
+ d7c:	2e 15       	cp	r18, r14
+ d7e:	3f 05       	cpc	r19, r15
+ d80:	bc f3       	brlt	.-18     	; 0xd70 <DrawRectangle+0x6a>
+		 DrawLine(x1,y0,x1,y1,color);
+	 }
+	 else
+	 {
+		 Area((160-x1), y0, (160-x0), y1);
+		 for(x=0;x<(x1-x0);x++)
+ d82:	df 5f       	subi	r29, 0xFF	; 255
+ d84:	8d 2f       	mov	r24, r29
+ d86:	90 e0       	ldi	r25, 0x00	; 0
+ d88:	80 17       	cp	r24, r16
+ d8a:	91 07       	cpc	r25, r17
+ d8c:	54 f0       	brlt	.+20     	; 0xda2 <DrawRectangle+0x9c>
+ d8e:	0d c0       	rjmp	.+26     	; 0xdaa <DrawRectangle+0xa4>
+ d90:	d0 e0       	ldi	r29, 0x00	; 0
+		 for(y=0;y<(y1-y0+1);y++)
+ d92:	ec 2e       	mov	r14, r28
+ d94:	f1 2c       	mov	r15, r1
+ d96:	eb 18       	sub	r14, r11
+ d98:	f1 08       	sbc	r15, r1
+ d9a:	8f ef       	ldi	r24, 0xFF	; 255
+ d9c:	e8 1a       	sub	r14, r24
+ d9e:	f8 0a       	sbc	r15, r24
+ da0:	b1 2c       	mov	r11, r1
+ da2:	1e 14       	cp	r1, r14
+ da4:	1f 04       	cpc	r1, r15
+ da6:	1c f3       	brlt	.-58     	; 0xd6e <DrawRectangle+0x68>
+ da8:	ec cf       	rjmp	.-40     	; 0xd82 <DrawRectangle+0x7c>
+		 OutColor(color);
+	 }
+ }
+ daa:	df 91       	pop	r29
+ dac:	cf 91       	pop	r28
+ dae:	1f 91       	pop	r17
+ db0:	0f 91       	pop	r16
+ db2:	ff 90       	pop	r15
+ db4:	ef 90       	pop	r14
+ db6:	df 90       	pop	r13
+ db8:	cf 90       	pop	r12
+ dba:	bf 90       	pop	r11
+ dbc:	08 95       	ret
+
+00000dbe <_exit>:
+ dbe:	f8 94       	cli
+
+00000dc0 <__stop_program>:
+ dc0:	ff cf       	rjmp	.-2      	; 0xdc0 <__stop_program>

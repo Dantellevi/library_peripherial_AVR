@@ -96,7 +96,7 @@ byte Lcd_rect( byte baseX, byte baseY, byte height, byte width, LcdPixelMode mod
 
 byte Lcd_rect_Fill ( byte x1, byte y1, byte x2, byte y2, LcdPixelMode mode );
 byte Lcd_triangle(byte x1, byte y1, byte x2, byte y2,byte x3, byte y3,LcdPixelMode mode);
-
+byte Lcd_Romb(byte x1, byte y1, byte x2, byte y2,byte x3, byte y3, byte x4, byte y4,LcdPixelMode mode);
 //---------------------------------------------------------------------
 /*
  * Таблица для отображения символов (ASCII[0x20-0x7F] + CP1251[0xC0-0xFF] = всего 160 символов)
