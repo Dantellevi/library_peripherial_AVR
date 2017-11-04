@@ -1,0 +1,822 @@
+
+GCC-RTOS.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000003e4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000010  00800060  000003e4  00000478  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000006d  00800070  00800070  00000488  2**0
+                  ALLOC
+  3 .debug_aranges 00000080  00000000  00000000  00000488  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000125  00000000  00000000  00000508  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000004b5  00000000  00000000  0000062d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000253  00000000  00000000  00000ae2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000004a1  00000000  00000000  00000d35  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000110  00000000  00000000  000011d8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000185  00000000  00000000  000012e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000a4  00000000  00000000  0000146d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__vector_1>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 ab 00 	jmp	0x156	; 0x156 <__vector_3>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 5a 00 	jmp	0xb4	; 0xb4 <__vector_12>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 ee       	ldi	r30, 0xE4	; 228
+  68:	f3 e0       	ldi	r31, 0x03	; 3
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
+
+0000006c <.do_copy_data_loop>:
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+
+00000070 <.do_copy_data_start>:
+  70:	a0 37       	cpi	r26, 0x70	; 112
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <.do_copy_data_loop>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e7       	ldi	r26, 0x70	; 112
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	ad 3d       	cpi	r26, 0xDD	; 221
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 79 00 	call	0xf2	; 0xf2 <main>
+  8a:	0c 94 f0 01 	jmp	0x3e0	; 0x3e0 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <__vector_1>:
+UDR = ADCH;
+}
+*/
+
+ISR(INT0_vect)				// Обработчик прерывания INT0
+{
+  92:	1f 92       	push	r1
+  94:	0f 92       	push	r0
+  96:	0f b6       	in	r0, 0x3f	; 63
+  98:	0f 92       	push	r0
+  9a:	11 24       	eor	r1, r1
+  9c:	8f 93       	push	r24
+Cycle++;					// Увеличиваем число оборотов
+  9e:	80 91 db 00 	lds	r24, 0x00DB
+  a2:	8f 5f       	subi	r24, 0xFF	; 255
+  a4:	80 93 db 00 	sts	0x00DB, r24
+}
+  a8:	8f 91       	pop	r24
+  aa:	0f 90       	pop	r0
+  ac:	0f be       	out	0x3f, r0	; 63
+  ae:	0f 90       	pop	r0
+  b0:	1f 90       	pop	r1
+  b2:	18 95       	reti
+
+000000b4 <__vector_12>:
+
+ISR (USART_UDRE_vect)		// Прерывание по опустошению буффера УАПП
+{
+  b4:	1f 92       	push	r1
+  b6:	0f 92       	push	r0
+  b8:	0f b6       	in	r0, 0x3f	; 63
+  ba:	0f 92       	push	r0
+  bc:	11 24       	eor	r1, r1
+  be:	8f 93       	push	r24
+  c0:	ef 93       	push	r30
+  c2:	ff 93       	push	r31
+if (buffer[buffer_index]) UDR = buffer[buffer_index];  // Если текущее значение не 0х00 вывод
+  c4:	80 91 dc 00 	lds	r24, 0x00DC
+  c8:	e8 2f       	mov	r30, r24
+  ca:	f0 e0       	ldi	r31, 0x00	; 0
+  cc:	e0 5a       	subi	r30, 0xA0	; 160
+  ce:	ff 4f       	sbci	r31, 0xFF	; 255
+  d0:	e0 81       	ld	r30, Z
+  d2:	e1 11       	cpse	r30, r1
+  d4:	ec b9       	out	0x0c, r30	; 12
+
+buffer_index ++;			// Увеличиваем индекс
+  d6:	8f 5f       	subi	r24, 0xFF	; 255
+  d8:	80 93 dc 00 	sts	0x00DC, r24
+
+if(buffer_index == buffer_MAX)  // Вывели весь буффер? 
+  dc:	80 31       	cpi	r24, 0x10	; 16
+  de:	09 f4       	brne	.+2      	; 0xe2 <__vector_12+0x2e>
+	{
+	UCSRB &=~(1<<UDRIE);		// Запрещаем прерывание по опустошению - передача закончена
+  e0:	55 98       	cbi	0x0a, 5	; 10
+	}
+}
+  e2:	ff 91       	pop	r31
+  e4:	ef 91       	pop	r30
+  e6:	8f 91       	pop	r24
+  e8:	0f 90       	pop	r0
+  ea:	0f be       	out	0x3f, r0	; 63
+  ec:	0f 90       	pop	r0
+  ee:	1f 90       	pop	r1
+  f0:	18 95       	reti
+
+000000f2 <main>:
+Cycle = 0;					// Обнуляем счетчик циклов
+}
+//==============================================================================
+int main(void)
+{
+InitAll();			// Инициализируем периферию
+  f2:	0e 94 93 01 	call	0x326	; 0x326 <InitAll>
+InitRTOS();			// Инициализируем ядро
+  f6:	0e 94 cf 00 	call	0x19e	; 0x19e <InitRTOS>
+RunRTOS();			// Старт ядра. 
+  fa:	0e 94 a2 01 	call	0x344	; 0x344 <RunRTOS>
+
+// Запуск фоновых задач.
+//SetTask(Task1);
+//SetTask(ScanADC);
+//SetTask(UpdatePWM);
+SetTask(Catch);
+  fe:	87 e8       	ldi	r24, 0x87	; 135
+ 100:	90 e0       	ldi	r25, 0x00	; 0
+ 102:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <SetTask>
+
+while(1) 		// Главный цикл диспетчера
+{
+wdt_reset();	// Сброс собачьего таймера
+ 106:	a8 95       	wdr
+TaskManager();	// Вызов диспетчера
+ 108:	0e 94 50 01 	call	0x2a0	; 0x2a0 <TaskManager>
+ 10c:	fc cf       	rjmp	.-8      	; 0x106 <main+0x14>
+
+0000010e <Catch>:
+*/
+
+void Catch(void)    // Задача подсчета и обработки данных. 
+{
+u16 RPM=0;
+SetTimerTask(Catch,2000); 	// Время подсчета - 2с
+ 10e:	87 e8       	ldi	r24, 0x87	; 135
+ 110:	90 e0       	ldi	r25, 0x00	; 0
+ 112:	60 ed       	ldi	r22, 0xD0	; 208
+ 114:	77 e0       	ldi	r23, 0x07	; 7
+ 116:	0e 94 0d 01 	call	0x21a	; 0x21a <SetTimerTask>
+
+buffer[7]=0;				// Зануляем знакоместа в буффере
+ 11a:	67 e6       	ldi	r22, 0x67	; 103
+ 11c:	70 e0       	ldi	r23, 0x00	; 0
+ 11e:	10 92 67 00 	sts	0x0067, r1
+buffer[8]=0;				// Чтобы там не было пустых мест
+ 122:	10 92 68 00 	sts	0x0068, r1
+buffer[9]=0;				// Иначе будет гнать при снежении оборотов
+ 126:	10 92 69 00 	sts	0x0069, r1
+
+RPM = Cycle*30;				// Вычисляем число оборотов в минуту
+ 12a:	90 91 db 00 	lds	r25, 0x00DB
+
+itoa(RPM,buffer+6,10);		// Перевеодим его в ASCII строку. Вписывая в наш буффер
+ 12e:	61 50       	subi	r22, 0x01	; 1
+ 130:	70 40       	sbci	r23, 0x00	; 0
+ 132:	8e e1       	ldi	r24, 0x1E	; 30
+ 134:	98 9f       	mul	r25, r24
+ 136:	c0 01       	movw	r24, r0
+ 138:	11 24       	eor	r1, r1
+ 13a:	4a e0       	ldi	r20, 0x0A	; 10
+ 13c:	50 e0       	ldi	r21, 0x00	; 0
+ 13e:	0e 94 ab 01 	call	0x356	; 0x356 <itoa>
+
+SEND(buffer[0]);			// Запускаем передачу (макрос в файле HAL.h)
+ 142:	81 e0       	ldi	r24, 0x01	; 1
+ 144:	80 93 dc 00 	sts	0x00DC, r24
+ 148:	80 91 60 00 	lds	r24, 0x0060
+ 14c:	8c b9       	out	0x0c, r24	; 12
+ 14e:	55 9a       	sbi	0x0a, 5	; 10
+
+Cycle = 0;					// Обнуляем счетчик циклов
+ 150:	10 92 db 00 	sts	0x00DB, r1
+}
+ 154:	08 95       	ret
+
+00000156 <__vector_3>:
+
+
+
+//RTOS Interrupt
+ISR(RTOS_ISR)
+{
+ 156:	1f 92       	push	r1
+ 158:	0f 92       	push	r0
+ 15a:	0f b6       	in	r0, 0x3f	; 63
+ 15c:	0f 92       	push	r0
+ 15e:	11 24       	eor	r1, r1
+ 160:	2f 93       	push	r18
+ 162:	3f 93       	push	r19
+ 164:	4f 93       	push	r20
+ 166:	5f 93       	push	r21
+ 168:	6f 93       	push	r22
+ 16a:	7f 93       	push	r23
+ 16c:	8f 93       	push	r24
+ 16e:	9f 93       	push	r25
+ 170:	af 93       	push	r26
+ 172:	bf 93       	push	r27
+ 174:	ef 93       	push	r30
+ 176:	ff 93       	push	r31
+TimerService();						// Прерывание ядра диспетчера
+ 178:	0e 94 6d 01 	call	0x2da	; 0x2da <TimerService>
+}
+ 17c:	ff 91       	pop	r31
+ 17e:	ef 91       	pop	r30
+ 180:	bf 91       	pop	r27
+ 182:	af 91       	pop	r26
+ 184:	9f 91       	pop	r25
+ 186:	8f 91       	pop	r24
+ 188:	7f 91       	pop	r23
+ 18a:	6f 91       	pop	r22
+ 18c:	5f 91       	pop	r21
+ 18e:	4f 91       	pop	r20
+ 190:	3f 91       	pop	r19
+ 192:	2f 91       	pop	r18
+ 194:	0f 90       	pop	r0
+ 196:	0f be       	out	0x3f, r0	; 63
+ 198:	0f 90       	pop	r0
+ 19a:	1f 90       	pop	r1
+ 19c:	18 95       	reti
+
+0000019e <InitRTOS>:
+						MainTimer[MainTimerQueueSize+1];	// Очередь таймеров
+
+
+// RTOS Подготовка. Очистка очередей
+inline void InitRTOS(void)
+{
+ 19e:	e0 e7       	ldi	r30, 0x70	; 112
+ 1a0:	f0 e0       	ldi	r31, 0x00	; 0
+u08	index;
+
+for(index=0;index!=TaskQueueSize+1;index++)	// Во все позиции записываем Idle
+	{
+	TaskQueue[index] = Idle;
+ 1a2:	87 ee       	ldi	r24, 0xE7	; 231
+ 1a4:	90 e0       	ldi	r25, 0x00	; 0
+ 1a6:	81 93       	st	Z+, r24
+ 1a8:	91 93       	st	Z+, r25
+// RTOS Подготовка. Очистка очередей
+inline void InitRTOS(void)
+{
+u08	index;
+
+for(index=0;index!=TaskQueueSize+1;index++)	// Во все позиции записываем Idle
+ 1aa:	20 e0       	ldi	r18, 0x00	; 0
+ 1ac:	ea 39       	cpi	r30, 0x9A	; 154
+ 1ae:	f2 07       	cpc	r31, r18
+ 1b0:	d1 f7       	brne	.-12     	; 0x1a6 <InitRTOS+0x8>
+ 1b2:	ea e9       	ldi	r30, 0x9A	; 154
+ 1b4:	f0 e0       	ldi	r31, 0x00	; 0
+	}
+
+
+for(index=0;index!=MainTimerQueueSize+1;index++) // Обнуляем все таймеры.
+	{
+	MainTimer[index].GoToTask = Idle;
+ 1b6:	28 2f       	mov	r18, r24
+ 1b8:	89 2f       	mov	r24, r25
+ 1ba:	20 83       	st	Z, r18
+ 1bc:	81 83       	std	Z+1, r24	; 0x01
+	MainTimer[index].Time = 0;
+ 1be:	13 82       	std	Z+3, r1	; 0x03
+ 1c0:	12 82       	std	Z+2, r1	; 0x02
+ 1c2:	34 96       	adiw	r30, 0x04	; 4
+	{
+	TaskQueue[index] = Idle;
+	}
+
+
+for(index=0;index!=MainTimerQueueSize+1;index++) // Обнуляем все таймеры.
+ 1c4:	90 e0       	ldi	r25, 0x00	; 0
+ 1c6:	ea 3d       	cpi	r30, 0xDA	; 218
+ 1c8:	f9 07       	cpc	r31, r25
+ 1ca:	b9 f7       	brne	.-18     	; 0x1ba <InitRTOS+0x1c>
+	{
+	MainTimer[index].GoToTask = Idle;
+	MainTimer[index].Time = 0;
+	}
+}
+ 1cc:	08 95       	ret
+
+000001ce <Idle>:
+
+//Пустая процедура - простой ядра. 
+inline void  Idle(void)
+{
+
+}
+ 1ce:	08 95       	ret
+
+000001d0 <SetTask>:
+
+
+// Функция установки задачи в очередь. Передаваемый параметр - указатель на функцию
+// Отдаваемое значение - код ошибки.
+void SetTask(TPTR TS)
+{
+ 1d0:	ac 01       	movw	r20, r24
+
+u08		index = 0;
+u08		nointerrupted = 0;
+
+if (STATUS_REG & (1<<Interrupt_Flag))  // Если прерывания разрешены, то запрещаем их.
+ 1d2:	0f b6       	in	r0, 0x3f	; 63
+ 1d4:	07 fe       	sbrs	r0, 7
+ 1d6:	0c c0       	rjmp	.+24     	; 0x1f0 <SetTask+0x20>
+	{
+	Disable_Interrupt
+ 1d8:	f8 94       	cli
+ 1da:	21 e0       	ldi	r18, 0x01	; 1
+ 1dc:	0a c0       	rjmp	.+20     	; 0x1f2 <SetTask+0x22>
+ 1de:	31 96       	adiw	r30, 0x01	; 1
+ 1e0:	12 96       	adiw	r26, 0x02	; 2
+	}
+
+while(TaskQueue[index]!=Idle) 			// Прочесываем очередь задач на предмет свободной ячейки
+	{									// с значением Idle - конец очереди.
+	index++;
+	if (index==TaskQueueSize+1) 		// Если очередь переполнена то выходим не солоно хлебавши
+ 1e2:	e5 31       	cpi	r30, 0x15	; 21
+ 1e4:	f1 05       	cpc	r31, r1
+ 1e6:	49 f4       	brne	.+18     	; 0x1fa <SetTask+0x2a>
+		{
+		if (nointerrupted)	Enable_Interrupt 	// Если мы не в прерывании, то разрешаем прерывания
+ 1e8:	22 23       	and	r18, r18
+ 1ea:	b1 f0       	breq	.+44     	; 0x218 <SetTask+0x48>
+ 1ec:	78 94       	sei
+ 1ee:	08 95       	ret
+ 1f0:	20 e0       	ldi	r18, 0x00	; 0
+ 1f2:	a0 e7       	ldi	r26, 0x70	; 112
+ 1f4:	b0 e0       	ldi	r27, 0x00	; 0
+ 1f6:	e0 e0       	ldi	r30, 0x00	; 0
+ 1f8:	f0 e0       	ldi	r31, 0x00	; 0
+	{
+	Disable_Interrupt
+	nointerrupted = 1;					// И ставим флаг, что мы не в прерывании. 
+	}
+
+while(TaskQueue[index]!=Idle) 			// Прочесываем очередь задач на предмет свободной ячейки
+ 1fa:	8d 91       	ld	r24, X+
+ 1fc:	9c 91       	ld	r25, X
+ 1fe:	11 97       	sbiw	r26, 0x01	; 1
+ 200:	87 5e       	subi	r24, 0xE7	; 231
+ 202:	90 40       	sbci	r25, 0x00	; 0
+ 204:	61 f7       	brne	.-40     	; 0x1de <SetTask+0xe>
+		if (nointerrupted)	Enable_Interrupt 	// Если мы не в прерывании, то разрешаем прерывания
+		return;									// Раньше функция возвращала код ошибки - очередь переполнена. Пока убрал.
+		}
+	}
+												// Если нашли свободное место, то
+TaskQueue[index] = TS;							// Записываем в очередь задачу
+ 206:	ee 0f       	add	r30, r30
+ 208:	ff 1f       	adc	r31, r31
+ 20a:	e0 59       	subi	r30, 0x90	; 144
+ 20c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 20e:	51 83       	std	Z+1, r21	; 0x01
+ 210:	40 83       	st	Z, r20
+if (nointerrupted) Enable_Interrupt				// И включаем прерывания если не в обработчике прерывания.
+ 212:	22 23       	and	r18, r18
+ 214:	09 f0       	breq	.+2      	; 0x218 <SetTask+0x48>
+ 216:	78 94       	sei
+ 218:	08 95       	ret
+
+0000021a <SetTimerTask>:
+
+
+//Функция установки задачи по таймеру. Передаваемые параметры - указатель на функцию, 
+// Время выдержки в тиках системного таймера. Возвращет код ошибки.
+void SetTimerTask(TPTR TS, u16 NewTime)
+{
+ 21a:	cf 93       	push	r28
+ 21c:	df 93       	push	r29
+ 21e:	ac 01       	movw	r20, r24
+u08		index = 0;
+u08		nointerrupted = 0;
+u08		Idle_i = 0;
+
+if (STATUS_REG & (1<<Interrupt_Flag)) 			// Проверка запрета прерывания, аналогично функции выше
+ 220:	0f b6       	in	r0, 0x3f	; 63
+ 222:	07 fc       	sbrc	r0, 7
+ 224:	02 c0       	rjmp	.+4      	; 0x22a <SetTimerTask+0x10>
+ 226:	20 e0       	ldi	r18, 0x00	; 0
+ 228:	02 c0       	rjmp	.+4      	; 0x22e <SetTimerTask+0x14>
+	{
+	Disable_Interrupt
+ 22a:	f8 94       	cli
+ 22c:	21 e0       	ldi	r18, 0x01	; 1
+ 22e:	ca e9       	ldi	r28, 0x9A	; 154
+ 230:	d0 e0       	ldi	r29, 0x00	; 0
+ 232:	de 01       	movw	r26, r28
+ 234:	e0 e0       	ldi	r30, 0x00	; 0
+ 236:	f0 e0       	ldi	r31, 0x00	; 0
+	}
+
+
+for(index=0;index!=MainTimerQueueSize+1;++index)	//Прочесываем очередь таймеров
+	{
+	if(MainTimer[index].GoToTask == TS)				// Если уже есть запись с таким адресом
+ 238:	8d 91       	ld	r24, X+
+ 23a:	9c 91       	ld	r25, X
+ 23c:	11 97       	sbiw	r26, 0x01	; 1
+ 23e:	84 17       	cp	r24, r20
+ 240:	95 07       	cpc	r25, r21
+ 242:	61 f4       	brne	.+24     	; 0x25c <SetTimerTask+0x42>
+		{
+		MainTimer[index].Time = NewTime;			// Перезаписываем ей выдержку
+ 244:	ee 0f       	add	r30, r30
+ 246:	ff 1f       	adc	r31, r31
+ 248:	ee 0f       	add	r30, r30
+ 24a:	ff 1f       	adc	r31, r31
+ 24c:	e6 56       	subi	r30, 0x66	; 102
+ 24e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 250:	73 83       	std	Z+3, r23	; 0x03
+ 252:	62 83       	std	Z+2, r22	; 0x02
+		if (nointerrupted) 	Enable_Interrupt		// Разрешаем прерывания если не были запрещены.
+ 254:	22 23       	and	r18, r18
+ 256:	09 f1       	breq	.+66     	; 0x29a <SetTimerTask+0x80>
+ 258:	78 94       	sei
+ 25a:	1f c0       	rjmp	.+62     	; 0x29a <SetTimerTask+0x80>
+ 25c:	31 96       	adiw	r30, 0x01	; 1
+ 25e:	14 96       	adiw	r26, 0x04	; 4
+	Disable_Interrupt
+	nointerrupted = 1;
+	}
+
+
+for(index=0;index!=MainTimerQueueSize+1;++index)	//Прочесываем очередь таймеров
+ 260:	e0 31       	cpi	r30, 0x10	; 16
+ 262:	f1 05       	cpc	r31, r1
+ 264:	49 f7       	brne	.-46     	; 0x238 <SetTimerTask+0x1e>
+ 266:	e0 e0       	ldi	r30, 0x00	; 0
+ 268:	f0 e0       	ldi	r31, 0x00	; 0
+	}
+	
+
+for(index=0;index!=MainTimerQueueSize+1;++index)	// Если не находим похожий таймер, то ищем любой пустой	
+	{
+	if (MainTimer[index].GoToTask == Idle)		
+ 26a:	88 81       	ld	r24, Y
+ 26c:	99 81       	ldd	r25, Y+1	; 0x01
+ 26e:	87 5e       	subi	r24, 0xE7	; 231
+ 270:	90 40       	sbci	r25, 0x00	; 0
+ 272:	71 f4       	brne	.+28     	; 0x290 <SetTimerTask+0x76>
+		{
+		MainTimer[index].GoToTask = TS;			// Заполняем поле перехода задачи
+ 274:	ee 0f       	add	r30, r30
+ 276:	ff 1f       	adc	r31, r31
+ 278:	ee 0f       	add	r30, r30
+ 27a:	ff 1f       	adc	r31, r31
+ 27c:	e6 56       	subi	r30, 0x66	; 102
+ 27e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 280:	51 83       	std	Z+1, r21	; 0x01
+ 282:	40 83       	st	Z, r20
+		MainTimer[index].Time = NewTime;		// И поле выдержки времени
+ 284:	73 83       	std	Z+3, r23	; 0x03
+ 286:	62 83       	std	Z+2, r22	; 0x02
+		if (nointerrupted) 	Enable_Interrupt	// Разрешаем прерывания
+ 288:	22 23       	and	r18, r18
+ 28a:	39 f0       	breq	.+14     	; 0x29a <SetTimerTask+0x80>
+ 28c:	78 94       	sei
+ 28e:	05 c0       	rjmp	.+10     	; 0x29a <SetTimerTask+0x80>
+ 290:	31 96       	adiw	r30, 0x01	; 1
+ 292:	24 96       	adiw	r28, 0x04	; 4
+			}
+		}
+	}
+	
+
+for(index=0;index!=MainTimerQueueSize+1;++index)	// Если не находим похожий таймер, то ищем любой пустой	
+ 294:	e0 31       	cpi	r30, 0x10	; 16
+ 296:	f1 05       	cpc	r31, r1
+ 298:	41 f7       	brne	.-48     	; 0x26a <SetTimerTask+0x50>
+		if (nointerrupted) 	Enable_Interrupt	// Разрешаем прерывания
+		return;									// Выход. 
+		}
+		
+	}												// тут можно сделать return c кодом ошибки - нет свободных таймеров
+}
+ 29a:	df 91       	pop	r29
+ 29c:	cf 91       	pop	r28
+ 29e:	08 95       	ret
+
+000002a0 <TaskManager>:
+inline void TaskManager(void)
+{
+u08		index=0;
+TPTR	GoToTask = Idle;		// Инициализируем переменные
+
+Disable_Interrupt				// Запрещаем прерывания!!!
+ 2a0:	f8 94       	cli
+GoToTask = TaskQueue[0];		// Хватаем первое значение из очереди
+ 2a2:	20 91 70 00 	lds	r18, 0x0070
+ 2a6:	30 91 71 00 	lds	r19, 0x0071
+
+if (GoToTask==Idle) 			// Если там пусто
+ 2aa:	80 e0       	ldi	r24, 0x00	; 0
+ 2ac:	27 3e       	cpi	r18, 0xE7	; 231
+ 2ae:	38 07       	cpc	r19, r24
+ 2b0:	11 f4       	brne	.+4      	; 0x2b6 <TaskManager+0x16>
+	{
+	Enable_Interrupt			// Разрешаем прерывания
+ 2b2:	78 94       	sei
+ 2b4:	08 95       	ret
+ 2b6:	e0 e7       	ldi	r30, 0x70	; 112
+ 2b8:	f0 e0       	ldi	r31, 0x00	; 0
+	}
+else
+	{
+	for(index=0;index!=TaskQueueSize;index++)	// В противном случае сдвигаем всю очередь
+		{
+		TaskQueue[index]=TaskQueue[index+1];
+ 2ba:	82 81       	ldd	r24, Z+2	; 0x02
+ 2bc:	93 81       	ldd	r25, Z+3	; 0x03
+ 2be:	81 93       	st	Z+, r24
+ 2c0:	91 93       	st	Z+, r25
+	Enable_Interrupt			// Разрешаем прерывания
+	(Idle)(); 					// Переходим на обработку пустого цикла
+	}
+else
+	{
+	for(index=0;index!=TaskQueueSize;index++)	// В противном случае сдвигаем всю очередь
+ 2c2:	80 e0       	ldi	r24, 0x00	; 0
+ 2c4:	e8 39       	cpi	r30, 0x98	; 152
+ 2c6:	f8 07       	cpc	r31, r24
+ 2c8:	c1 f7       	brne	.-16     	; 0x2ba <TaskManager+0x1a>
+		{
+		TaskQueue[index]=TaskQueue[index+1];
+		}
+
+	TaskQueue[TaskQueueSize]= Idle;				// В последнюю запись пихаем затычку
+ 2ca:	87 ee       	ldi	r24, 0xE7	; 231
+ 2cc:	90 e0       	ldi	r25, 0x00	; 0
+ 2ce:	91 83       	std	Z+1, r25	; 0x01
+ 2d0:	80 83       	st	Z, r24
+
+	Enable_Interrupt							// Разрешаем прерывания
+ 2d2:	78 94       	sei
+	(GoToTask)();								// Переходим к задаче
+ 2d4:	f9 01       	movw	r30, r18
+ 2d6:	09 95       	icall
+ 2d8:	08 95       	ret
+
+000002da <TimerService>:
+To DO: Привести к возможности загружать произвольную очередь таймеров. Тогда можно будет создавать их целую прорву. 
+А также использовать эту функцию произвольным образом. 
+В этом случае не забыть добавить проверку прерывания. 
+*/
+INLINE void TimerService(void)
+{
+ 2da:	0f 93       	push	r16
+ 2dc:	1f 93       	push	r17
+ 2de:	cf 93       	push	r28
+ 2e0:	df 93       	push	r29
+ 2e2:	ca e9       	ldi	r28, 0x9A	; 154
+ 2e4:	d0 e0       	ldi	r29, 0x00	; 0
+u08 index;
+
+for(index=0;index!=MainTimerQueueSize+1;index++)		// Прочесываем очередь таймеров
+	{
+	if(MainTimer[index].GoToTask == Idle) continue;		// Если нашли пустышку - щелкаем следующую итерацию
+ 2e6:	07 ee       	ldi	r16, 0xE7	; 231
+ 2e8:	10 e0       	ldi	r17, 0x00	; 0
+ 2ea:	88 81       	ld	r24, Y
+ 2ec:	99 81       	ldd	r25, Y+1	; 0x01
+ 2ee:	20 e0       	ldi	r18, 0x00	; 0
+ 2f0:	87 3e       	cpi	r24, 0xE7	; 231
+ 2f2:	92 07       	cpc	r25, r18
+ 2f4:	71 f0       	breq	.+28     	; 0x312 <TimerService+0x38>
+
+	if(MainTimer[index].Time !=1)						// Если таймер не выщелкал, то щелкаем еще раз. 
+ 2f6:	2a 81       	ldd	r18, Y+2	; 0x02
+ 2f8:	3b 81       	ldd	r19, Y+3	; 0x03
+ 2fa:	21 30       	cpi	r18, 0x01	; 1
+ 2fc:	31 05       	cpc	r19, r1
+ 2fe:	29 f0       	breq	.+10     	; 0x30a <TimerService+0x30>
+		{												// To Do: Вычислить по тактам, что лучше !=1 или !=0. 
+		MainTimer[index].Time --;						// Уменьшаем число в ячейке если не конец.
+ 300:	21 50       	subi	r18, 0x01	; 1
+ 302:	30 40       	sbci	r19, 0x00	; 0
+ 304:	3b 83       	std	Y+3, r19	; 0x03
+ 306:	2a 83       	std	Y+2, r18	; 0x02
+ 308:	04 c0       	rjmp	.+8      	; 0x312 <TimerService+0x38>
+		}
+	else
+		{
+		SetTask(MainTimer[index].GoToTask);				// Дощелкали до нуля? Пихаем в очередь задачу
+ 30a:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <SetTask>
+		MainTimer[index].GoToTask = Idle;				// А в ячейку пишем затычку
+ 30e:	19 83       	std	Y+1, r17	; 0x01
+ 310:	08 83       	st	Y, r16
+ 312:	24 96       	adiw	r28, 0x04	; 4
+*/
+INLINE void TimerService(void)
+{
+u08 index;
+
+for(index=0;index!=MainTimerQueueSize+1;index++)		// Прочесываем очередь таймеров
+ 314:	80 e0       	ldi	r24, 0x00	; 0
+ 316:	ca 3d       	cpi	r28, 0xDA	; 218
+ 318:	d8 07       	cpc	r29, r24
+ 31a:	39 f7       	brne	.-50     	; 0x2ea <TimerService+0x10>
+		{
+		SetTask(MainTimer[index].GoToTask);				// Дощелкали до нуля? Пихаем в очередь задачу
+		MainTimer[index].GoToTask = Idle;				// А в ячейку пишем затычку
+		}
+	}
+}
+ 31c:	df 91       	pop	r29
+ 31e:	cf 91       	pop	r28
+ 320:	1f 91       	pop	r17
+ 322:	0f 91       	pop	r16
+ 324:	08 95       	ret
+
+00000326 <InitAll>:
+
+inline void InitAll(void)
+{
+
+//InitUSART
+UBRRL = LO(bauddivider);
+ 326:	83 e3       	ldi	r24, 0x33	; 51
+ 328:	89 b9       	out	0x09, r24	; 9
+UBRRH = HI(bauddivider);
+ 32a:	10 bc       	out	0x20, r1	; 32
+UCSRA = 0;
+ 32c:	1b b8       	out	0x0b, r1	; 11
+UCSRB = 1<<RXEN|1<<TXEN|0<<RXCIE|0<<TXCIE|0<<UDRIE;
+ 32e:	88 e1       	ldi	r24, 0x18	; 24
+ 330:	8a b9       	out	0x0a, r24	; 10
+UCSRC = 1<<URSEL|1<<UCSZ0|1<<UCSZ1;
+ 332:	86 e8       	ldi	r24, 0x86	; 134
+ 334:	80 bd       	out	0x20, r24	; 32
+
+//Init PWM
+//TCCR0 = 1<<WGM00|3<<COM00|1<<WGM01|1<<CS00;
+
+//Init Interrupts
+MCUCR |= 1<<ISC00|1<<ISC01;
+ 336:	85 b7       	in	r24, 0x35	; 53
+ 338:	83 60       	ori	r24, 0x03	; 3
+ 33a:	85 bf       	out	0x35, r24	; 53
+GICR |= 1<<INT0;
+ 33c:	8b b7       	in	r24, 0x3b	; 59
+ 33e:	80 64       	ori	r24, 0x40	; 64
+ 340:	8b bf       	out	0x3b, r24	; 59
+}
+ 342:	08 95       	ret
+
+00000344 <RunRTOS>:
+#include <EERTOSHAL.h>
+
+//RTOS Запуск системного таймера
+inline void RunRTOS (void)
+{
+TCCR2 = 1<<WGM21|4<<CS20; 				// Freq = CK/64 - Установить режим и предделитель
+ 344:	8c e0       	ldi	r24, 0x0C	; 12
+ 346:	85 bd       	out	0x25, r24	; 37
+										// Автосброс после достижения регистра сравнения
+TCNT2 = 0;								// Установить начальное значение счётчиков
+ 348:	14 bc       	out	0x24, r1	; 36
+OCR2  = LO(TimerDivider); 				// Установить значение в регистр сравнения
+ 34a:	8d e7       	ldi	r24, 0x7D	; 125
+ 34c:	83 bd       	out	0x23, r24	; 35
+TIMSK = 0<<TOIE0|1<<OCF2|0<<TOIE0;		// Разрешаем прерывание RTOS - запуск ОС
+ 34e:	80 e8       	ldi	r24, 0x80	; 128
+ 350:	89 bf       	out	0x39, r24	; 57
+
+sei();
+ 352:	78 94       	sei
+}
+ 354:	08 95       	ret
+
+00000356 <itoa>:
+ 356:	fb 01       	movw	r30, r22
+ 358:	9f 01       	movw	r18, r30
+ 35a:	e8 94       	clt
+ 35c:	42 30       	cpi	r20, 0x02	; 2
+ 35e:	c4 f0       	brlt	.+48     	; 0x390 <itoa+0x3a>
+ 360:	45 32       	cpi	r20, 0x25	; 37
+ 362:	b4 f4       	brge	.+44     	; 0x390 <itoa+0x3a>
+ 364:	4a 30       	cpi	r20, 0x0A	; 10
+ 366:	29 f4       	brne	.+10     	; 0x372 <itoa+0x1c>
+ 368:	97 fb       	bst	r25, 7
+ 36a:	1e f4       	brtc	.+6      	; 0x372 <itoa+0x1c>
+ 36c:	90 95       	com	r25
+ 36e:	81 95       	neg	r24
+ 370:	9f 4f       	sbci	r25, 0xFF	; 255
+ 372:	64 2f       	mov	r22, r20
+ 374:	77 27       	eor	r23, r23
+ 376:	0e 94 dc 01 	call	0x3b8	; 0x3b8 <__udivmodhi4>
+ 37a:	80 5d       	subi	r24, 0xD0	; 208
+ 37c:	8a 33       	cpi	r24, 0x3A	; 58
+ 37e:	0c f0       	brlt	.+2      	; 0x382 <itoa+0x2c>
+ 380:	89 5d       	subi	r24, 0xD9	; 217
+ 382:	81 93       	st	Z+, r24
+ 384:	cb 01       	movw	r24, r22
+ 386:	00 97       	sbiw	r24, 0x00	; 0
+ 388:	a1 f7       	brne	.-24     	; 0x372 <itoa+0x1c>
+ 38a:	16 f4       	brtc	.+4      	; 0x390 <itoa+0x3a>
+ 38c:	5d e2       	ldi	r21, 0x2D	; 45
+ 38e:	51 93       	st	Z+, r21
+ 390:	10 82       	st	Z, r1
+ 392:	c9 01       	movw	r24, r18
+ 394:	0c 94 cc 01 	jmp	0x398	; 0x398 <strrev>
+
+00000398 <strrev>:
+ 398:	dc 01       	movw	r26, r24
+ 39a:	fc 01       	movw	r30, r24
+ 39c:	67 2f       	mov	r22, r23
+ 39e:	71 91       	ld	r23, Z+
+ 3a0:	77 23       	and	r23, r23
+ 3a2:	e1 f7       	brne	.-8      	; 0x39c <strrev+0x4>
+ 3a4:	32 97       	sbiw	r30, 0x02	; 2
+ 3a6:	04 c0       	rjmp	.+8      	; 0x3b0 <strrev+0x18>
+ 3a8:	7c 91       	ld	r23, X
+ 3aa:	6d 93       	st	X+, r22
+ 3ac:	70 83       	st	Z, r23
+ 3ae:	62 91       	ld	r22, -Z
+ 3b0:	ae 17       	cp	r26, r30
+ 3b2:	bf 07       	cpc	r27, r31
+ 3b4:	c8 f3       	brcs	.-14     	; 0x3a8 <strrev+0x10>
+ 3b6:	08 95       	ret
+
+000003b8 <__udivmodhi4>:
+ 3b8:	aa 1b       	sub	r26, r26
+ 3ba:	bb 1b       	sub	r27, r27
+ 3bc:	51 e1       	ldi	r21, 0x11	; 17
+ 3be:	07 c0       	rjmp	.+14     	; 0x3ce <__udivmodhi4_ep>
+
+000003c0 <__udivmodhi4_loop>:
+ 3c0:	aa 1f       	adc	r26, r26
+ 3c2:	bb 1f       	adc	r27, r27
+ 3c4:	a6 17       	cp	r26, r22
+ 3c6:	b7 07       	cpc	r27, r23
+ 3c8:	10 f0       	brcs	.+4      	; 0x3ce <__udivmodhi4_ep>
+ 3ca:	a6 1b       	sub	r26, r22
+ 3cc:	b7 0b       	sbc	r27, r23
+
+000003ce <__udivmodhi4_ep>:
+ 3ce:	88 1f       	adc	r24, r24
+ 3d0:	99 1f       	adc	r25, r25
+ 3d2:	5a 95       	dec	r21
+ 3d4:	a9 f7       	brne	.-22     	; 0x3c0 <__udivmodhi4_loop>
+ 3d6:	80 95       	com	r24
+ 3d8:	90 95       	com	r25
+ 3da:	bc 01       	movw	r22, r24
+ 3dc:	cd 01       	movw	r24, r26
+ 3de:	08 95       	ret
+
+000003e0 <_exit>:
+ 3e0:	f8 94       	cli
+
+000003e2 <__stop_program>:
+ 3e2:	ff cf       	rjmp	.-2      	; 0x3e2 <__stop_program>
