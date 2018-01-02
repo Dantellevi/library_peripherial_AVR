@@ -1,0 +1,365 @@
+
+2_Servoprivoda.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000262  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000006  00800060  00800060  000002d6  2**0
+                  ALLOC
+  2 .stab         000006cc  00000000  00000000  000002d8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000097  00000000  00000000  000009a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000020  00000000  00000000  00000a3b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_pubnames 00000072  00000000  00000000  00000a5b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000012e  00000000  00000000  00000acd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000000ae  00000000  00000000  00000bfb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000001d2  00000000  00000000  00000ca9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000050  00000000  00000000  00000e7c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000000d8  00000000  00000000  00000ecc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_pubtypes 0000002b  00000000  00000000  00000fa4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__vector_7>
+  20:	0c 94 6c 00 	jmp	0xd8	; 0xd8 <__vector_8>
+  24:	0c 94 9a 00 	jmp	0x134	; 0x134 <__vector_9>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a6 36       	cpi	r26, 0x66	; 102
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 d1 00 	call	0x1a2	; 0x1a2 <main>
+  74:	0c 94 2f 01 	jmp	0x25e	; 0x25e <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <__vector_7>:
+ */ 
+#include <avr/io.h>
+#include <avr/interrupt.h>           //подгружаем прерывание 
+volatile unsigned int Danie_1Servo = 0,Danie_2Servo = 0,Sot = 0;   
+ ISR (TIMER1_COMPA_vect)             //формируем угол здвига 1 сервопривода
+  {
+  7c:	1f 92       	push	r1
+  7e:	0f 92       	push	r0
+  80:	0f b6       	in	r0, 0x3f	; 63
+  82:	0f 92       	push	r0
+  84:	11 24       	eor	r1, r1
+  86:	2f 93       	push	r18
+  88:	3f 93       	push	r19
+  8a:	8f 93       	push	r24
+  8c:	9f 93       	push	r25
+  8e:	ef 93       	push	r30
+  90:	ff 93       	push	r31
+  92:	df 93       	push	r29
+  94:	cf 93       	push	r28
+  96:	cd b7       	in	r28, 0x3d	; 61
+  98:	de b7       	in	r29, 0x3e	; 62
+	PORTA &=~(1<<0); 	             // завершаем импульса дл€  1 сервопривода
+  9a:	8b e3       	ldi	r24, 0x3B	; 59
+  9c:	90 e0       	ldi	r25, 0x00	; 0
+  9e:	2b e3       	ldi	r18, 0x3B	; 59
+  a0:	30 e0       	ldi	r19, 0x00	; 0
+  a2:	f9 01       	movw	r30, r18
+  a4:	20 81       	ld	r18, Z
+  a6:	2e 7f       	andi	r18, 0xFE	; 254
+  a8:	fc 01       	movw	r30, r24
+  aa:	20 83       	st	Z, r18
+  	OCR1A =  Danie_1Servo;				 		 			   		  		  			 			   	 
+  ac:	8a e4       	ldi	r24, 0x4A	; 74
+  ae:	90 e0       	ldi	r25, 0x00	; 0
+  b0:	20 91 60 00 	lds	r18, 0x0060
+  b4:	30 91 61 00 	lds	r19, 0x0061
+  b8:	fc 01       	movw	r30, r24
+  ba:	31 83       	std	Z+1, r19	; 0x01
+  bc:	20 83       	st	Z, r18
+  }
+  be:	cf 91       	pop	r28
+  c0:	df 91       	pop	r29
+  c2:	ff 91       	pop	r31
+  c4:	ef 91       	pop	r30
+  c6:	9f 91       	pop	r25
+  c8:	8f 91       	pop	r24
+  ca:	3f 91       	pop	r19
+  cc:	2f 91       	pop	r18
+  ce:	0f 90       	pop	r0
+  d0:	0f be       	out	0x3f, r0	; 63
+  d2:	0f 90       	pop	r0
+  d4:	1f 90       	pop	r1
+  d6:	18 95       	reti
+
+000000d8 <__vector_8>:
+ ISR (TIMER1_COMPB_vect)             //формируем угол здвига 2 сервопривода
+  {
+  d8:	1f 92       	push	r1
+  da:	0f 92       	push	r0
+  dc:	0f b6       	in	r0, 0x3f	; 63
+  de:	0f 92       	push	r0
+  e0:	11 24       	eor	r1, r1
+  e2:	2f 93       	push	r18
+  e4:	3f 93       	push	r19
+  e6:	8f 93       	push	r24
+  e8:	9f 93       	push	r25
+  ea:	ef 93       	push	r30
+  ec:	ff 93       	push	r31
+  ee:	df 93       	push	r29
+  f0:	cf 93       	push	r28
+  f2:	cd b7       	in	r28, 0x3d	; 61
+  f4:	de b7       	in	r29, 0x3e	; 62
+	PORTA &=~(1<<1);                 // завершаем импульса дл€  2 сервопривода
+  f6:	8b e3       	ldi	r24, 0x3B	; 59
+  f8:	90 e0       	ldi	r25, 0x00	; 0
+  fa:	2b e3       	ldi	r18, 0x3B	; 59
+  fc:	30 e0       	ldi	r19, 0x00	; 0
+  fe:	f9 01       	movw	r30, r18
+ 100:	20 81       	ld	r18, Z
+ 102:	2d 7f       	andi	r18, 0xFD	; 253
+ 104:	fc 01       	movw	r30, r24
+ 106:	20 83       	st	Z, r18
+	OCR1B =  Danie_2Servo; 			  		 			   		  		  			 			   	 
+ 108:	88 e4       	ldi	r24, 0x48	; 72
+ 10a:	90 e0       	ldi	r25, 0x00	; 0
+ 10c:	20 91 62 00 	lds	r18, 0x0062
+ 110:	30 91 63 00 	lds	r19, 0x0063
+ 114:	fc 01       	movw	r30, r24
+ 116:	31 83       	std	Z+1, r19	; 0x01
+ 118:	20 83       	st	Z, r18
+  } 
+ 11a:	cf 91       	pop	r28
+ 11c:	df 91       	pop	r29
+ 11e:	ff 91       	pop	r31
+ 120:	ef 91       	pop	r30
+ 122:	9f 91       	pop	r25
+ 124:	8f 91       	pop	r24
+ 126:	3f 91       	pop	r19
+ 128:	2f 91       	pop	r18
+ 12a:	0f 90       	pop	r0
+ 12c:	0f be       	out	0x3f, r0	; 63
+ 12e:	0f 90       	pop	r0
+ 130:	1f 90       	pop	r1
+ 132:	18 95       	reti
+
+00000134 <__vector_9>:
+ ISR(TIMER1_OVF_vect)               //формеруем 20мс. 50гц
+  {	 
+ 134:	1f 92       	push	r1
+ 136:	0f 92       	push	r0
+ 138:	0f b6       	in	r0, 0x3f	; 63
+ 13a:	0f 92       	push	r0
+ 13c:	11 24       	eor	r1, r1
+ 13e:	2f 93       	push	r18
+ 140:	3f 93       	push	r19
+ 142:	8f 93       	push	r24
+ 144:	9f 93       	push	r25
+ 146:	ef 93       	push	r30
+ 148:	ff 93       	push	r31
+ 14a:	df 93       	push	r29
+ 14c:	cf 93       	push	r28
+ 14e:	cd b7       	in	r28, 0x3d	; 61
+ 150:	de b7       	in	r29, 0x3e	; 62
+	PORTA |=(1<<0);   //нач€ло импульса дл€  1 сервопривода 
+ 152:	8b e3       	ldi	r24, 0x3B	; 59
+ 154:	90 e0       	ldi	r25, 0x00	; 0
+ 156:	2b e3       	ldi	r18, 0x3B	; 59
+ 158:	30 e0       	ldi	r19, 0x00	; 0
+ 15a:	f9 01       	movw	r30, r18
+ 15c:	20 81       	ld	r18, Z
+ 15e:	21 60       	ori	r18, 0x01	; 1
+ 160:	fc 01       	movw	r30, r24
+ 162:	20 83       	st	Z, r18
+	PORTA |=(1<<1);   //нач€ло импульса дл€  2 сервопривода 
+ 164:	8b e3       	ldi	r24, 0x3B	; 59
+ 166:	90 e0       	ldi	r25, 0x00	; 0
+ 168:	2b e3       	ldi	r18, 0x3B	; 59
+ 16a:	30 e0       	ldi	r19, 0x00	; 0
+ 16c:	f9 01       	movw	r30, r18
+ 16e:	20 81       	ld	r18, Z
+ 170:	22 60       	ori	r18, 0x02	; 2
+ 172:	fc 01       	movw	r30, r24
+ 174:	20 83       	st	Z, r18
+	Sot++;
+ 176:	80 91 64 00 	lds	r24, 0x0064
+ 17a:	90 91 65 00 	lds	r25, 0x0065
+ 17e:	01 96       	adiw	r24, 0x01	; 1
+ 180:	90 93 65 00 	sts	0x0065, r25
+ 184:	80 93 64 00 	sts	0x0064, r24
+  }
+ 188:	cf 91       	pop	r28
+ 18a:	df 91       	pop	r29
+ 18c:	ff 91       	pop	r31
+ 18e:	ef 91       	pop	r30
+ 190:	9f 91       	pop	r25
+ 192:	8f 91       	pop	r24
+ 194:	3f 91       	pop	r19
+ 196:	2f 91       	pop	r18
+ 198:	0f 90       	pop	r0
+ 19a:	0f be       	out	0x3f, r0	; 63
+ 19c:	0f 90       	pop	r0
+ 19e:	1f 90       	pop	r1
+ 1a0:	18 95       	reti
+
+000001a2 <main>:
+//*******************//
+//*******************//
+int main(void)
+{
+ 1a2:	df 93       	push	r29
+ 1a4:	cf 93       	push	r28
+ 1a6:	cd b7       	in	r28, 0x3d	; 61
+ 1a8:	de b7       	in	r29, 0x3e	; 62
+	DDRA |=(1<<0)|(1<<1);           
+ 1aa:	8a e3       	ldi	r24, 0x3A	; 58
+ 1ac:	90 e0       	ldi	r25, 0x00	; 0
+ 1ae:	2a e3       	ldi	r18, 0x3A	; 58
+ 1b0:	30 e0       	ldi	r19, 0x00	; 0
+ 1b2:	f9 01       	movw	r30, r18
+ 1b4:	20 81       	ld	r18, Z
+ 1b6:	23 60       	ori	r18, 0x03	; 3
+ 1b8:	fc 01       	movw	r30, r24
+ 1ba:	20 83       	st	Z, r18
+	ICR1 = 5000;                    //формеруем 20мс. дл€ 16ћгц.	
+ 1bc:	86 e4       	ldi	r24, 0x46	; 70
+ 1be:	90 e0       	ldi	r25, 0x00	; 0
+ 1c0:	28 e8       	ldi	r18, 0x88	; 136
+ 1c2:	33 e1       	ldi	r19, 0x13	; 19
+ 1c4:	fc 01       	movw	r30, r24
+ 1c6:	31 83       	std	Z+1, r19	; 0x01
+ 1c8:	20 83       	st	Z, r18
+	OCR1A = 150;
+ 1ca:	8a e4       	ldi	r24, 0x4A	; 74
+ 1cc:	90 e0       	ldi	r25, 0x00	; 0
+ 1ce:	26 e9       	ldi	r18, 0x96	; 150
+ 1d0:	30 e0       	ldi	r19, 0x00	; 0
+ 1d2:	fc 01       	movw	r30, r24
+ 1d4:	31 83       	std	Z+1, r19	; 0x01
+ 1d6:	20 83       	st	Z, r18
+	OCR1B = 150;			 
+ 1d8:	88 e4       	ldi	r24, 0x48	; 72
+ 1da:	90 e0       	ldi	r25, 0x00	; 0
+ 1dc:	26 e9       	ldi	r18, 0x96	; 150
+ 1de:	30 e0       	ldi	r19, 0x00	; 0
+ 1e0:	fc 01       	movw	r30, r24
+ 1e2:	31 83       	std	Z+1, r19	; 0x01
+ 1e4:	20 83       	st	Z, r18
+	TCCR1B |= (1 << ICES1)|(1<<CS10)|(1<<CS11)|(1<<WGM12)|(1<<WGM13);   //пределитель 64,старший бит режим FastPWM (сброс при совпадении)
+ 1e6:	8e e4       	ldi	r24, 0x4E	; 78
+ 1e8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ea:	2e e4       	ldi	r18, 0x4E	; 78
+ 1ec:	30 e0       	ldi	r19, 0x00	; 0
+ 1ee:	f9 01       	movw	r30, r18
+ 1f0:	20 81       	ld	r18, Z
+ 1f2:	2b 65       	ori	r18, 0x5B	; 91
+ 1f4:	fc 01       	movw	r30, r24
+ 1f6:	20 83       	st	Z, r18
+	TCCR1A |=(1<<WGM11);            // младшие бит режим FastPWM 	
+ 1f8:	8f e4       	ldi	r24, 0x4F	; 79
+ 1fa:	90 e0       	ldi	r25, 0x00	; 0
+ 1fc:	2f e4       	ldi	r18, 0x4F	; 79
+ 1fe:	30 e0       	ldi	r19, 0x00	; 0
+ 200:	f9 01       	movw	r30, r18
+ 202:	20 81       	ld	r18, Z
+ 204:	22 60       	ori	r18, 0x02	; 2
+ 206:	fc 01       	movw	r30, r24
+ 208:	20 83       	st	Z, r18
+	TIMSK |=(1<<TOIE1)|(1<<OCIE1A)|(1<<OCIE1B);  // разрешаем работу прерывани€м 
+ 20a:	89 e5       	ldi	r24, 0x59	; 89
+ 20c:	90 e0       	ldi	r25, 0x00	; 0
+ 20e:	29 e5       	ldi	r18, 0x59	; 89
+ 210:	30 e0       	ldi	r19, 0x00	; 0
+ 212:	f9 01       	movw	r30, r18
+ 214:	20 81       	ld	r18, Z
+ 216:	2c 61       	ori	r18, 0x1C	; 28
+ 218:	fc 01       	movw	r30, r24
+ 21a:	20 83       	st	Z, r18
+	
+	asm("sei");
+ 21c:	78 94       	sei
+  //===========//   
+    while(1)
+    {
+		if ( Sot == 100)
+ 21e:	80 91 64 00 	lds	r24, 0x0064
+ 222:	90 91 65 00 	lds	r25, 0x0065
+ 226:	84 36       	cpi	r24, 0x64	; 100
+ 228:	91 05       	cpc	r25, r1
+ 22a:	31 f4       	brne	.+12     	; 0x238 <main+0x96>
+		 {		
+		   Danie_1Servo = 500;  // данные дл€ 1 сервопривода
+ 22c:	84 ef       	ldi	r24, 0xF4	; 244
+ 22e:	91 e0       	ldi	r25, 0x01	; 1
+ 230:	90 93 61 00 	sts	0x0061, r25
+ 234:	80 93 60 00 	sts	0x0060, r24
+		 }		  
+		if ( Sot == 200) 
+ 238:	80 91 64 00 	lds	r24, 0x0064
+ 23c:	90 91 65 00 	lds	r25, 0x0065
+ 240:	88 3c       	cpi	r24, 0xC8	; 200
+ 242:	91 05       	cpc	r25, r1
+ 244:	51 f4       	brne	.+20     	; 0x25a <main+0xb8>
+		 {
+		   Danie_1Servo = 150;  // данные дл€ 1 сервопривода
+ 246:	86 e9       	ldi	r24, 0x96	; 150
+ 248:	90 e0       	ldi	r25, 0x00	; 0
+ 24a:	90 93 61 00 	sts	0x0061, r25
+ 24e:	80 93 60 00 	sts	0x0060, r24
+		   Sot = 0;  			 
+ 252:	10 92 65 00 	sts	0x0065, r1
+ 256:	10 92 64 00 	sts	0x0064, r1
+		 }
+		asm("nop"); 			  				 		 
+ 25a:	00 00       	nop
+    }
+ 25c:	e0 cf       	rjmp	.-64     	; 0x21e <main+0x7c>
+
+0000025e <_exit>:
+ 25e:	f8 94       	cli
+
+00000260 <__stop_program>:
+ 260:	ff cf       	rjmp	.-2      	; 0x260 <__stop_program>

@@ -1,0 +1,1091 @@
+
+MultiplexServo.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000670  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000006e4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          000000ba  00800060  00800060  000006e4  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000006e4  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000714  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000058  00000000  00000000  00000750  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000009b6  00000000  00000000  000007a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000694  00000000  00000000  0000115e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000005d0  00000000  00000000  000017f2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000104  00000000  00000000  00001dc4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000044f  00000000  00000000  00001ec8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000003ad  00000000  00000000  00002317  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000038  00000000  00000000  000026c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 62 00 	jmp	0xc4	; 0xc4 <__ctors_end>
+   4:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+   8:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+   c:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  10:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  14:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  18:	0c 94 c6 00 	jmp	0x18c	; 0x18c <__vector_6>
+  1c:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  20:	0c 94 61 01 	jmp	0x2c2	; 0x2c2 <__vector_8>
+  24:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  28:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  2c:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  30:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  34:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  38:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  3c:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  40:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  44:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  48:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  4c:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  50:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__bad_interrupt>
+  54:	c8 02       	muls	r28, r24
+  56:	c8 02       	muls	r28, r24
+  58:	c8 02       	muls	r28, r24
+  5a:	c8 02       	muls	r28, r24
+  5c:	c8 02       	muls	r28, r24
+  5e:	c8 02       	muls	r28, r24
+  60:	c8 02       	muls	r28, r24
+  62:	c8 02       	muls	r28, r24
+  64:	17 03       	mulsu	r17, r23
+  66:	17 03       	mulsu	r17, r23
+  68:	17 03       	mulsu	r17, r23
+  6a:	17 03       	mulsu	r17, r23
+  6c:	17 03       	mulsu	r17, r23
+  6e:	17 03       	mulsu	r17, r23
+  70:	17 03       	mulsu	r17, r23
+  72:	17 03       	mulsu	r17, r23
+  74:	dc 02       	muls	r29, r28
+  76:	dc 02       	muls	r29, r28
+  78:	dc 02       	muls	r29, r28
+  7a:	dc 02       	muls	r29, r28
+  7c:	dc 02       	muls	r29, r28
+  7e:	dc 02       	muls	r29, r28
+  80:	dc 02       	muls	r29, r28
+  82:	dc 02       	muls	r29, r28
+  84:	17 03       	mulsu	r17, r23
+  86:	17 03       	mulsu	r17, r23
+  88:	17 03       	mulsu	r17, r23
+  8a:	17 03       	mulsu	r17, r23
+  8c:	17 03       	mulsu	r17, r23
+  8e:	17 03       	mulsu	r17, r23
+  90:	17 03       	mulsu	r17, r23
+  92:	17 03       	mulsu	r17, r23
+  94:	f0 02       	muls	r31, r16
+  96:	f0 02       	muls	r31, r16
+  98:	f0 02       	muls	r31, r16
+  9a:	f0 02       	muls	r31, r16
+  9c:	f0 02       	muls	r31, r16
+  9e:	f0 02       	muls	r31, r16
+  a0:	f0 02       	muls	r31, r16
+  a2:	f0 02       	muls	r31, r16
+  a4:	17 03       	mulsu	r17, r23
+  a6:	17 03       	mulsu	r17, r23
+  a8:	17 03       	mulsu	r17, r23
+  aa:	17 03       	mulsu	r17, r23
+  ac:	17 03       	mulsu	r17, r23
+  ae:	17 03       	mulsu	r17, r23
+  b0:	17 03       	mulsu	r17, r23
+  b2:	17 03       	mulsu	r17, r23
+  b4:	04 03       	mulsu	r16, r20
+  b6:	04 03       	mulsu	r16, r20
+  b8:	04 03       	mulsu	r16, r20
+  ba:	04 03       	mulsu	r16, r20
+  bc:	04 03       	mulsu	r16, r20
+  be:	04 03       	mulsu	r16, r20
+  c0:	04 03       	mulsu	r16, r20
+  c2:	04 03       	mulsu	r16, r20
+
+000000c4 <__ctors_end>:
+  c4:	11 24       	eor	r1, r1
+  c6:	1f be       	out	0x3f, r1	; 63
+  c8:	cf e5       	ldi	r28, 0x5F	; 95
+  ca:	d4 e0       	ldi	r29, 0x04	; 4
+  cc:	de bf       	out	0x3e, r29	; 62
+  ce:	cd bf       	out	0x3d, r28	; 61
+
+000000d0 <__do_clear_bss>:
+  d0:	21 e0       	ldi	r18, 0x01	; 1
+  d2:	a0 e6       	ldi	r26, 0x60	; 96
+  d4:	b0 e0       	ldi	r27, 0x00	; 0
+  d6:	01 c0       	rjmp	.+2      	; 0xda <.do_clear_bss_start>
+
+000000d8 <.do_clear_bss_loop>:
+  d8:	1d 92       	st	X+, r1
+
+000000da <.do_clear_bss_start>:
+  da:	aa 31       	cpi	r26, 0x1A	; 26
+  dc:	b2 07       	cpc	r27, r18
+  de:	e1 f7       	brne	.-8      	; 0xd8 <.do_clear_bss_loop>
+  e0:	0e 94 76 00 	call	0xec	; 0xec <main>
+  e4:	0c 94 36 03 	jmp	0x66c	; 0x66c <_exit>
+
+000000e8 <__bad_interrupt>:
+  e8:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ec <main>:
+
+#include "Main.h"
+
+int main(void)
+{
+   Servo[0].BitPorta=0xA6;
+  ec:	ea ec       	ldi	r30, 0xCA	; 202
+  ee:	f0 e0       	ldi	r31, 0x00	; 0
+  f0:	86 ea       	ldi	r24, 0xA6	; 166
+  f2:	81 83       	std	Z+1, r24	; 0x01
+   Servo[1].BitPorta=0xB0;
+  f4:	80 eb       	ldi	r24, 0xB0	; 176
+  f6:	83 83       	std	Z+3, r24	; 0x03
+   Servo[2].BitPorta=0xC6;
+  f8:	86 ec       	ldi	r24, 0xC6	; 198
+  fa:	85 83       	std	Z+5, r24	; 0x05
+   Servo[3].BitPorta=0xD0;
+  fc:	80 ed       	ldi	r24, 0xD0	; 208
+  fe:	87 83       	std	Z+7, r24	; 0x07
+   Servo[4].BitPorta=0xA7;
+ 100:	87 ea       	ldi	r24, 0xA7	; 167
+ 102:	81 87       	std	Z+9, r24	; 0x09
+   Servo[5].BitPorta=0xC7;
+ 104:	87 ec       	ldi	r24, 0xC7	; 199
+ 106:	83 87       	std	Z+11, r24	; 0x0b
+   Servo[6].BitPorta=0xD1;
+ 108:	81 ed       	ldi	r24, 0xD1	; 209
+ 10a:	85 87       	std	Z+13, r24	; 0x0d
+   Servo[7].BitPorta=0xB1;
+ 10c:	81 eb       	ldi	r24, 0xB1	; 177
+ 10e:	87 87       	std	Z+15, r24	; 0x0f
+   Servo[8].BitPorta=0xA2;
+ 110:	82 ea       	ldi	r24, 0xA2	; 162
+ 112:	81 8b       	std	Z+17, r24	; 0x11
+   Servo[9].BitPorta=0xC2;
+ 114:	82 ec       	ldi	r24, 0xC2	; 194
+ 116:	83 8b       	std	Z+19, r24	; 0x13
+   Servo[10].BitPorta=0xB2;
+ 118:	82 eb       	ldi	r24, 0xB2	; 178
+ 11a:	85 8b       	std	Z+21, r24	; 0x15
+   Servo[11].BitPorta=0xD2;
+ 11c:	82 ed       	ldi	r24, 0xD2	; 210
+ 11e:	87 8b       	std	Z+23, r24	; 0x17
+   Servo[12].BitPorta=0xA3;
+ 120:	83 ea       	ldi	r24, 0xA3	; 163
+ 122:	81 8f       	std	Z+25, r24	; 0x19
+   Servo[13].BitPorta=0xB3;
+ 124:	83 eb       	ldi	r24, 0xB3	; 179
+ 126:	83 8f       	std	Z+27, r24	; 0x1b
+   Servo[14].BitPorta=0xC3;
+ 128:	83 ec       	ldi	r24, 0xC3	; 195
+ 12a:	85 8f       	std	Z+29, r24	; 0x1d
+   Servo[15].BitPorta=0xD3;
+ 12c:	83 ed       	ldi	r24, 0xD3	; 211
+ 12e:	87 8f       	std	Z+31, r24	; 0x1f
+   Servo[16].BitPorta=0xA4;
+ 130:	84 ea       	ldi	r24, 0xA4	; 164
+ 132:	81 a3       	std	Z+33, r24	; 0x21
+   Servo[17].BitPorta=0xB4;
+ 134:	84 eb       	ldi	r24, 0xB4	; 180
+ 136:	83 a3       	std	Z+35, r24	; 0x23
+   Servo[18].BitPorta=0xC4;
+ 138:	84 ec       	ldi	r24, 0xC4	; 196
+ 13a:	85 a3       	std	Z+37, r24	; 0x25
+   Servo[19].BitPorta=0xD4;
+ 13c:	84 ed       	ldi	r24, 0xD4	; 212
+ 13e:	87 a3       	std	Z+39, r24	; 0x27
+   //-----------------------------------------
+   Servo[0].Position=125;
+ 140:	8d e7       	ldi	r24, 0x7D	; 125
+ 142:	80 83       	st	Z, r24
+   Servo[1].Position=125;
+ 144:	82 83       	std	Z+2, r24	; 0x02
+   Servo[2].Position=100;
+ 146:	94 e6       	ldi	r25, 0x64	; 100
+ 148:	94 83       	std	Z+4, r25	; 0x04
+   Servo[3].Position=80;
+ 14a:	80 e5       	ldi	r24, 0x50	; 80
+ 14c:	86 83       	std	Z+6, r24	; 0x06
+   Servo[4].Position=75;
+ 14e:	2b e4       	ldi	r18, 0x4B	; 75
+ 150:	20 87       	std	Z+8, r18	; 0x08
+   Servo[5].Position=75;
+ 152:	22 87       	std	Z+10, r18	; 0x0a
+   Servo[6].Position=70;
+ 154:	26 e4       	ldi	r18, 0x46	; 70
+ 156:	24 87       	std	Z+12, r18	; 0x0c
+   Servo[7].Position=70;
+ 158:	26 87       	std	Z+14, r18	; 0x0e
+   Servo[8].Position=110;
+ 15a:	2e e6       	ldi	r18, 0x6E	; 110
+ 15c:	20 8b       	std	Z+16, r18	; 0x10
+   Servo[9].Position=110;
+ 15e:	22 8b       	std	Z+18, r18	; 0x12
+   Servo[10].Position=105;
+ 160:	29 e6       	ldi	r18, 0x69	; 105
+ 162:	24 8b       	std	Z+20, r18	; 0x14
+   Servo[11].Position=105;
+ 164:	26 8b       	std	Z+22, r18	; 0x16
+   Servo[12].Position=100;
+ 166:	90 8f       	std	Z+24, r25	; 0x18
+   Servo[13].Position=80;
+ 168:	82 8f       	std	Z+26, r24	; 0x1a
+   Servo[14].Position=130;
+ 16a:	82 e8       	ldi	r24, 0x82	; 130
+ 16c:	84 8f       	std	Z+28, r24	; 0x1c
+   Servo[15].Position=135;
+ 16e:	87 e8       	ldi	r24, 0x87	; 135
+ 170:	86 8f       	std	Z+30, r24	; 0x1e
+	Servo[16].Position=145;
+ 172:	81 e9       	ldi	r24, 0x91	; 145
+ 174:	80 a3       	std	Z+32, r24	; 0x20
+	Servo[17].Position=150;
+ 176:	86 e9       	ldi	r24, 0x96	; 150
+ 178:	82 a3       	std	Z+34, r24	; 0x22
+	Servo[18].Position=150;
+ 17a:	84 a3       	std	Z+36, r24	; 0x24
+	Servo[19].Position=155;
+ 17c:	8b e9       	ldi	r24, 0x9B	; 155
+ 17e:	86 a3       	std	Z+38, r24	; 0x26
+	//================================================
+	Servo_Port_Ustanovki();
+ 180:	0e 94 a3 02 	call	0x546	; 0x546 <Servo_Port_Ustanovki>
+	sei();
+ 184:	78 94       	sei
+
+    while (1) 
+    {
+		DanieServo_Port();
+ 186:	0e 94 93 01 	call	0x326	; 0x326 <DanieServo_Port>
+
+    }
+ 18a:	fd cf       	rjmp	.-6      	; 0x186 <main+0x9a>
+
+0000018c <__vector_6>:
+#include "ServoPrivodMUX.h"
+
+ISR (TIMER1_COMPA_vect)  //формируем углы здвига
+{
+ 18c:	1f 92       	push	r1
+ 18e:	0f 92       	push	r0
+ 190:	0f b6       	in	r0, 0x3f	; 63
+ 192:	0f 92       	push	r0
+ 194:	11 24       	eor	r1, r1
+ 196:	2f 93       	push	r18
+ 198:	8f 93       	push	r24
+ 19a:	9f 93       	push	r25
+ 19c:	ef 93       	push	r30
+ 19e:	ff 93       	push	r31
+	volatile static unsigned char Danie;
+	register unsigned char Temp ;
+	TCCR1A &=~(1<<WGM11);
+ 1a0:	8f b5       	in	r24, 0x2f	; 47
+ 1a2:	8d 7f       	andi	r24, 0xFD	; 253
+ 1a4:	8f bd       	out	0x2f, r24	; 47
+	PORTA &=  Servo_W[ Danie].Servo_portA_;      // сброс портов относящиеся к данному времени
+ 1a6:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 1aa:	2b b3       	in	r18, 0x1b	; 27
+ 1ac:	90 e0       	ldi	r25, 0x00	; 0
+ 1ae:	fc 01       	movw	r30, r24
+ 1b0:	ee 0f       	add	r30, r30
+ 1b2:	ff 1f       	adc	r31, r31
+ 1b4:	ee 0f       	add	r30, r30
+ 1b6:	ff 1f       	adc	r31, r31
+ 1b8:	8e 0f       	add	r24, r30
+ 1ba:	9f 1f       	adc	r25, r31
+ 1bc:	fc 01       	movw	r30, r24
+ 1be:	ef 59       	subi	r30, 0x9F	; 159
+ 1c0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1c2:	80 81       	ld	r24, Z
+ 1c4:	82 23       	and	r24, r18
+ 1c6:	8b bb       	out	0x1b, r24	; 27
+	PORTB &=  Servo_W[  Danie].Servo_portB_;
+ 1c8:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 1cc:	28 b3       	in	r18, 0x18	; 24
+ 1ce:	90 e0       	ldi	r25, 0x00	; 0
+ 1d0:	fc 01       	movw	r30, r24
+ 1d2:	ee 0f       	add	r30, r30
+ 1d4:	ff 1f       	adc	r31, r31
+ 1d6:	ee 0f       	add	r30, r30
+ 1d8:	ff 1f       	adc	r31, r31
+ 1da:	8e 0f       	add	r24, r30
+ 1dc:	9f 1f       	adc	r25, r31
+ 1de:	fc 01       	movw	r30, r24
+ 1e0:	ef 59       	subi	r30, 0x9F	; 159
+ 1e2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1e4:	82 81       	ldd	r24, Z+2	; 0x02
+ 1e6:	82 23       	and	r24, r18
+ 1e8:	88 bb       	out	0x18, r24	; 24
+	PORTC &=  Servo_W[ Danie].Servo_portC_;
+ 1ea:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 1ee:	25 b3       	in	r18, 0x15	; 21
+ 1f0:	90 e0       	ldi	r25, 0x00	; 0
+ 1f2:	fc 01       	movw	r30, r24
+ 1f4:	ee 0f       	add	r30, r30
+ 1f6:	ff 1f       	adc	r31, r31
+ 1f8:	ee 0f       	add	r30, r30
+ 1fa:	ff 1f       	adc	r31, r31
+ 1fc:	8e 0f       	add	r24, r30
+ 1fe:	9f 1f       	adc	r25, r31
+ 200:	fc 01       	movw	r30, r24
+ 202:	ef 59       	subi	r30, 0x9F	; 159
+ 204:	ff 4f       	sbci	r31, 0xFF	; 255
+ 206:	81 81       	ldd	r24, Z+1	; 0x01
+ 208:	82 23       	and	r24, r18
+ 20a:	85 bb       	out	0x15, r24	; 21
+	PORTD &=  Servo_W[ Danie].Servo_portD_;
+ 20c:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 210:	22 b3       	in	r18, 0x12	; 18
+ 212:	90 e0       	ldi	r25, 0x00	; 0
+ 214:	fc 01       	movw	r30, r24
+ 216:	ee 0f       	add	r30, r30
+ 218:	ff 1f       	adc	r31, r31
+ 21a:	ee 0f       	add	r30, r30
+ 21c:	ff 1f       	adc	r31, r31
+ 21e:	8e 0f       	add	r24, r30
+ 220:	9f 1f       	adc	r25, r31
+ 222:	fc 01       	movw	r30, r24
+ 224:	ef 59       	subi	r30, 0x9F	; 159
+ 226:	ff 4f       	sbci	r31, 0xFF	; 255
+ 228:	83 81       	ldd	r24, Z+3	; 0x03
+ 22a:	82 23       	and	r24, r18
+ 22c:	82 bb       	out	0x12, r24	; 18
+	Danie++;
+ 22e:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 232:	8f 5f       	subi	r24, 0xFF	; 255
+ 234:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <_edata>
+	Temp = Servo_W[Danie].Servo_Position_;	     //считуем следующее врема
+ 238:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+	if ((Temp == 0xFF) | (Danie == MaxServo))    // проверяем на конец данных 0xFF или передача всех данных закончена
+ 23c:	20 91 60 00 	lds	r18, 0x0060	; 0x800060 <_edata>
+ 240:	91 e0       	ldi	r25, 0x01	; 1
+ 242:	24 31       	cpi	r18, 0x14	; 20
+ 244:	09 f0       	breq	.+2      	; 0x248 <__vector_6+0xbc>
+ 246:	90 e0       	ldi	r25, 0x00	; 0
+ 248:	91 11       	cpse	r25, r1
+ 24a:	12 c0       	rjmp	.+36     	; 0x270 <__vector_6+0xe4>
+	PORTA &=  Servo_W[ Danie].Servo_portA_;      // сброс портов относящиеся к данному времени
+	PORTB &=  Servo_W[  Danie].Servo_portB_;
+	PORTC &=  Servo_W[ Danie].Servo_portC_;
+	PORTD &=  Servo_W[ Danie].Servo_portD_;
+	Danie++;
+	Temp = Servo_W[Danie].Servo_Position_;	     //считуем следующее врема
+ 24c:	90 e0       	ldi	r25, 0x00	; 0
+ 24e:	fc 01       	movw	r30, r24
+ 250:	ee 0f       	add	r30, r30
+ 252:	ff 1f       	adc	r31, r31
+ 254:	ee 0f       	add	r30, r30
+ 256:	ff 1f       	adc	r31, r31
+ 258:	8e 0f       	add	r24, r30
+ 25a:	9f 1f       	adc	r25, r31
+ 25c:	fc 01       	movw	r30, r24
+ 25e:	ef 59       	subi	r30, 0x9F	; 159
+ 260:	ff 4f       	sbci	r31, 0xFF	; 255
+	if ((Temp == 0xFF) | (Danie == MaxServo))    // проверяем на конец данных 0xFF или передача всех данных закончена
+ 262:	81 e0       	ldi	r24, 0x01	; 1
+ 264:	94 81       	ldd	r25, Z+4	; 0x04
+ 266:	9f 3f       	cpi	r25, 0xFF	; 255
+ 268:	09 f0       	breq	.+2      	; 0x26c <__vector_6+0xe0>
+ 26a:	80 e0       	ldi	r24, 0x00	; 0
+ 26c:	88 23       	and	r24, r24
+ 26e:	41 f0       	breq	.+16     	; 0x280 <__vector_6+0xf4>
+	{
+		Danie = 0;
+ 270:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <_edata>
+		Servo_Dan &=~ (1<<0);
+ 274:	80 91 c9 00 	lds	r24, 0x00C9	; 0x8000c9 <Servo_Dan>
+ 278:	8e 7f       	andi	r24, 0xFE	; 254
+ 27a:	80 93 c9 00 	sts	0x00C9, r24	; 0x8000c9 <Servo_Dan>
+ 27e:	11 c0       	rjmp	.+34     	; 0x2a2 <__vector_6+0x116>
+	}
+	else
+	{
+		OCR1A  = Servo_W[Danie].Servo_Position_;  //первые данные по времени
+ 280:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	fc 01       	movw	r30, r24
+ 288:	ee 0f       	add	r30, r30
+ 28a:	ff 1f       	adc	r31, r31
+ 28c:	ee 0f       	add	r30, r30
+ 28e:	ff 1f       	adc	r31, r31
+ 290:	8e 0f       	add	r24, r30
+ 292:	9f 1f       	adc	r25, r31
+ 294:	fc 01       	movw	r30, r24
+ 296:	ef 59       	subi	r30, 0x9F	; 159
+ 298:	ff 4f       	sbci	r31, 0xFF	; 255
+ 29a:	84 81       	ldd	r24, Z+4	; 0x04
+ 29c:	90 e0       	ldi	r25, 0x00	; 0
+ 29e:	9b bd       	out	0x2b, r25	; 43
+ 2a0:	8a bd       	out	0x2a, r24	; 42
+	}
+	TIFR |=(1<<OCIE1A);               //сброс флагов
+ 2a2:	88 b7       	in	r24, 0x38	; 56
+ 2a4:	80 61       	ori	r24, 0x10	; 16
+ 2a6:	88 bf       	out	0x38, r24	; 56
+	TCCR1A |=(1<<WGM11);
+ 2a8:	8f b5       	in	r24, 0x2f	; 47
+ 2aa:	82 60       	ori	r24, 0x02	; 2
+ 2ac:	8f bd       	out	0x2f, r24	; 47
+}
+ 2ae:	ff 91       	pop	r31
+ 2b0:	ef 91       	pop	r30
+ 2b2:	9f 91       	pop	r25
+ 2b4:	8f 91       	pop	r24
+ 2b6:	2f 91       	pop	r18
+ 2b8:	0f 90       	pop	r0
+ 2ba:	0f be       	out	0x3f, r0	; 63
+ 2bc:	0f 90       	pop	r0
+ 2be:	1f 90       	pop	r1
+ 2c0:	18 95       	reti
+
+000002c2 <__vector_8>:
+
+ISR(TIMER1_OVF_vect)                 //формеруем 20мс.
+{
+ 2c2:	1f 92       	push	r1
+ 2c4:	0f 92       	push	r0
+ 2c6:	0f b6       	in	r0, 0x3f	; 63
+ 2c8:	0f 92       	push	r0
+ 2ca:	11 24       	eor	r1, r1
+ 2cc:	8f 93       	push	r24
+ 2ce:	9f 93       	push	r25
+ 2d0:	ef 93       	push	r30
+ 2d2:	ff 93       	push	r31
+	PORTA |= Servo_Uctanovka[0];      //устанавливаем высокое состояние на порт(в зависимости с определением серводвигателей)
+ 2d4:	9b b3       	in	r25, 0x1b	; 27
+ 2d6:	e5 ec       	ldi	r30, 0xC5	; 197
+ 2d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 2da:	80 81       	ld	r24, Z
+ 2dc:	89 2b       	or	r24, r25
+ 2de:	8b bb       	out	0x1b, r24	; 27
+	PORTB |= Servo_Uctanovka[1];      //устанавливаем высокое состояние на порт(в зависимости с определением серводвигателей)
+ 2e0:	98 b3       	in	r25, 0x18	; 24
+ 2e2:	81 81       	ldd	r24, Z+1	; 0x01
+ 2e4:	89 2b       	or	r24, r25
+ 2e6:	88 bb       	out	0x18, r24	; 24
+	PORTC |= Servo_Uctanovka[2];      //устанавливаем высокое состояние на порт(в зависимости с определением серводвигателей)
+ 2e8:	95 b3       	in	r25, 0x15	; 21
+ 2ea:	82 81       	ldd	r24, Z+2	; 0x02
+ 2ec:	89 2b       	or	r24, r25
+ 2ee:	85 bb       	out	0x15, r24	; 21
+	PORTD |= Servo_Uctanovka[3];      //устанавливаем высокое состояние на порт(в зависимости с определением серводвигателей)
+ 2f0:	92 b3       	in	r25, 0x12	; 18
+ 2f2:	83 81       	ldd	r24, Z+3	; 0x03
+ 2f4:	89 2b       	or	r24, r25
+ 2f6:	82 bb       	out	0x12, r24	; 18
+	TCCR1A &=~(1<<WGM11);
+ 2f8:	8f b5       	in	r24, 0x2f	; 47
+ 2fa:	8d 7f       	andi	r24, 0xFD	; 253
+ 2fc:	8f bd       	out	0x2f, r24	; 47
+	OCR1A  =Servo_W[0].Servo_Position_;  //первые данные по времени
+ 2fe:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <Servo_W+0x4>
+ 302:	90 e0       	ldi	r25, 0x00	; 0
+ 304:	9b bd       	out	0x2b, r25	; 43
+ 306:	8a bd       	out	0x2a, r24	; 42
+	TIFR |=(1<<OCIE1A);                  //сброс флагов
+ 308:	88 b7       	in	r24, 0x38	; 56
+ 30a:	80 61       	ori	r24, 0x10	; 16
+ 30c:	88 bf       	out	0x38, r24	; 56
+	TCCR1A |=(1<<WGM11);
+ 30e:	8f b5       	in	r24, 0x2f	; 47
+ 310:	82 60       	ori	r24, 0x02	; 2
+ 312:	8f bd       	out	0x2f, r24	; 47
+}
+ 314:	ff 91       	pop	r31
+ 316:	ef 91       	pop	r30
+ 318:	9f 91       	pop	r25
+ 31a:	8f 91       	pop	r24
+ 31c:	0f 90       	pop	r0
+ 31e:	0f be       	out	0x3f, r0	; 63
+ 320:	0f 90       	pop	r0
+ 322:	1f 90       	pop	r1
+ 324:	18 95       	reti
+
+00000326 <DanieServo_Port>:
+//*******************************//
+//*******************************//
+void DanieServo_Port(void)
+{
+ 326:	cf 92       	push	r12
+ 328:	df 92       	push	r13
+ 32a:	ef 92       	push	r14
+ 32c:	ff 92       	push	r15
+ 32e:	0f 93       	push	r16
+ 330:	1f 93       	push	r17
+ 332:	cf 93       	push	r28
+ 334:	df 93       	push	r29
+	register unsigned char i,DD,Temp,S = (MaxServo - 1);
+	unsigned char *F;
+	if ( Servo_Dan & (1<<0))
+ 336:	60 91 c9 00 	lds	r22, 0x00C9	; 0x8000c9 <Servo_Dan>
+ 33a:	60 fd       	sbrc	r22, 0
+ 33c:	fb c0       	rjmp	.+502    	; 0x534 <__stack+0xd5>
+	return;
+	asm("cli");
+ 33e:	f8 94       	cli
+ 340:	72 e1       	ldi	r23, 0x12	; 18
+ 342:	02 ef       	ldi	r16, 0xF2	; 242
+ 344:	10 e0       	ldi	r17, 0x00	; 0
+ 346:	01 c0       	rjmp	.+2      	; 0x34a <DanieServo_Port+0x24>
+ 348:	71 50       	subi	r23, 0x01	; 1
+	//  ** сортируем данные угла по возрастанию от меншего к болшему ** //
+	do
+	{
+		i = 0;
+		DD = 0;
+		while ( DD < S )
+ 34a:	7f 3f       	cpi	r23, 0xFF	; 255
+ 34c:	e9 f3       	breq	.-6      	; 0x348 <DanieServo_Port+0x22>
+ 34e:	a8 01       	movw	r20, r16
+ 350:	27 2f       	mov	r18, r23
+ 352:	30 e0       	ldi	r19, 0x00	; 0
+ 354:	22 0f       	add	r18, r18
+ 356:	33 1f       	adc	r19, r19
+ 358:	2c 50       	subi	r18, 0x0C	; 12
+ 35a:	3f 4f       	sbci	r19, 0xFF	; 255
+ 35c:	f8 01       	movw	r30, r16
+		{
+			DD++;
+			if ( Servo_[i]->Position > Servo_[DD]->Position ) //определяем больше или нет первые данные прием вторые
+ 35e:	e1 90       	ld	r14, Z+
+ 360:	f1 90       	ld	r15, Z+
+ 362:	c0 81       	ld	r28, Z
+ 364:	d1 81       	ldd	r29, Z+1	; 0x01
+ 366:	d7 01       	movw	r26, r14
+ 368:	9c 91       	ld	r25, X
+ 36a:	88 81       	ld	r24, Y
+ 36c:	89 17       	cp	r24, r25
+ 36e:	48 f4       	brcc	.+18     	; 0x382 <DanieServo_Port+0x5c>
+ 370:	cf 01       	movw	r24, r30
+ 372:	02 97       	sbiw	r24, 0x02	; 2
+			{
+				Temp =Servo_[i];                               //сохраняем первые данные
+				Servo_[i] = Servo_[DD];                        //презаписываем первые данные
+ 374:	dc 01       	movw	r26, r24
+ 376:	cd 93       	st	X+, r28
+ 378:	dc 93       	st	X, r29
+				Servo_[DD]= Temp;                              //перезаписываем вторые данные
+ 37a:	d7 01       	movw	r26, r14
+ 37c:	bb 27       	eor	r27, r27
+ 37e:	b1 83       	std	Z+1, r27	; 0x01
+ 380:	a0 83       	st	Z, r26
+	//  ** сортируем данные угла по возрастанию от меншего к болшему ** //
+	do
+	{
+		i = 0;
+		DD = 0;
+		while ( DD < S )
+ 382:	e2 17       	cp	r30, r18
+ 384:	f3 07       	cpc	r31, r19
+ 386:	59 f7       	brne	.-42     	; 0x35e <DanieServo_Port+0x38>
+				Servo_[DD]= Temp;                              //перезаписываем вторые данные
+			}
+			i++;
+		}
+		S--;
+	} while (S > 0);                                       //сортируем массив в зависимости от значения MaxServo
+ 388:	71 11       	cpse	r23, r1
+ 38a:	de cf       	rjmp	.-68     	; 0x348 <DanieServo_Port+0x22>
+	// ** устанавливаем порты и данные по здвигу ** //
+	DD = 0;
+	i = 0;
+	Servo_W[0].Servo_portA_ = 255;
+ 38c:	e1 e6       	ldi	r30, 0x61	; 97
+ 38e:	f0 e0       	ldi	r31, 0x00	; 0
+ 390:	8f ef       	ldi	r24, 0xFF	; 255
+ 392:	80 83       	st	Z, r24
+	Servo_W[0].Servo_portB_ = 255;
+ 394:	82 83       	std	Z+2, r24	; 0x02
+	Servo_W[0].Servo_portC_ = 255;
+ 396:	81 83       	std	Z+1, r24	; 0x01
+	Servo_W[0].Servo_portD_ = 255;
+ 398:	83 83       	std	Z+3, r24	; 0x03
+ 39a:	2a e1       	ldi	r18, 0x1A	; 26
+ 39c:	31 e0       	ldi	r19, 0x01	; 1
+	{
+		Temp = Servo_[S]->BitPorta;	 //считываем данные по порту и пина
+		switch ( Temp & 0b11110000)   //налажуем маску и узнаем имя порта
+		{
+			case 0xA0: Servo_W[DD].Servo_portA_ ^= (1<<(Temp & 0b00001111)); break;	//устанавливаем бит в ноль на портуA
+			case 0xB0: Servo_W[DD].Servo_portB_ ^= (1<<(Temp & 0b00001111)); break;	//устанавливаем бит в ноль на портуB
+ 39e:	cc 24       	eor	r12, r12
+ 3a0:	c3 94       	inc	r12
+ 3a2:	d1 2c       	mov	r13, r1
+		break;
+		if (!(Servo_[S]->Position == Servo_[i]->Position))     //проверяем следующие данные такиеже или нет
+		{
+			Servo_W[DD].Servo_Position_ = Servo_[S]->Position; //сохраняем угол сдвига	к выставленым портам
+			DD++;
+			Servo_W[DD].Servo_portA_ = 255;
+ 3a4:	cf ef       	ldi	r28, 0xFF	; 255
+	Servo_W[0].Servo_portB_ = 255;
+	Servo_W[0].Servo_portC_ = 255;
+	Servo_W[0].Servo_portD_ = 255;
+	while (1)
+	{
+		Temp = Servo_[S]->BitPorta;	 //считываем данные по порту и пина
+ 3a6:	da 01       	movw	r26, r20
+ 3a8:	ed 91       	ld	r30, X+
+ 3aa:	fd 91       	ld	r31, X+
+ 3ac:	ad 01       	movw	r20, r26
+ 3ae:	81 81       	ldd	r24, Z+1	; 0x01
+		switch ( Temp & 0b11110000)   //налажуем маску и узнаем имя порта
+ 3b0:	98 2f       	mov	r25, r24
+ 3b2:	90 7f       	andi	r25, 0xF0	; 240
+ 3b4:	90 3b       	cpi	r25, 0xB0	; 176
+ 3b6:	11 f1       	breq	.+68     	; 0x3fc <DanieServo_Port+0xd6>
+ 3b8:	18 f4       	brcc	.+6      	; 0x3c0 <DanieServo_Port+0x9a>
+ 3ba:	90 3a       	cpi	r25, 0xA0	; 160
+ 3bc:	39 f0       	breq	.+14     	; 0x3cc <DanieServo_Port+0xa6>
+ 3be:	6e c0       	rjmp	.+220    	; 0x49c <__stack+0x3d>
+ 3c0:	90 3c       	cpi	r25, 0xC0	; 192
+ 3c2:	b9 f1       	breq	.+110    	; 0x432 <__LOCK_REGION_LENGTH__+0x32>
+ 3c4:	90 3d       	cpi	r25, 0xD0	; 208
+ 3c6:	09 f4       	brne	.+2      	; 0x3ca <DanieServo_Port+0xa4>
+ 3c8:	4f c0       	rjmp	.+158    	; 0x468 <__stack+0x9>
+ 3ca:	68 c0       	rjmp	.+208    	; 0x49c <__stack+0x3d>
+		{
+			case 0xA0: Servo_W[DD].Servo_portA_ ^= (1<<(Temp & 0b00001111)); break;	//устанавливаем бит в ноль на портуA
+ 3cc:	07 2f       	mov	r16, r23
+ 3ce:	10 e0       	ldi	r17, 0x00	; 0
+ 3d0:	78 01       	movw	r14, r16
+ 3d2:	ee 0c       	add	r14, r14
+ 3d4:	ff 1c       	adc	r15, r15
+ 3d6:	ee 0c       	add	r14, r14
+ 3d8:	ff 1c       	adc	r15, r15
+ 3da:	0e 0d       	add	r16, r14
+ 3dc:	1f 1d       	adc	r17, r15
+ 3de:	0f 59       	subi	r16, 0x9F	; 159
+ 3e0:	1f 4f       	sbci	r17, 0xFF	; 255
+ 3e2:	8f 70       	andi	r24, 0x0F	; 15
+ 3e4:	d6 01       	movw	r26, r12
+ 3e6:	02 c0       	rjmp	.+4      	; 0x3ec <DanieServo_Port+0xc6>
+ 3e8:	aa 0f       	add	r26, r26
+ 3ea:	bb 1f       	adc	r27, r27
+ 3ec:	8a 95       	dec	r24
+ 3ee:	e2 f7       	brpl	.-8      	; 0x3e8 <DanieServo_Port+0xc2>
+ 3f0:	cd 01       	movw	r24, r26
+ 3f2:	d8 01       	movw	r26, r16
+ 3f4:	9c 91       	ld	r25, X
+ 3f6:	89 27       	eor	r24, r25
+ 3f8:	8c 93       	st	X, r24
+ 3fa:	50 c0       	rjmp	.+160    	; 0x49c <__stack+0x3d>
+			case 0xB0: Servo_W[DD].Servo_portB_ ^= (1<<(Temp & 0b00001111)); break;	//устанавливаем бит в ноль на портуB
+ 3fc:	07 2f       	mov	r16, r23
+ 3fe:	10 e0       	ldi	r17, 0x00	; 0
+ 400:	78 01       	movw	r14, r16
+ 402:	ee 0c       	add	r14, r14
+ 404:	ff 1c       	adc	r15, r15
+ 406:	ee 0c       	add	r14, r14
+ 408:	ff 1c       	adc	r15, r15
+ 40a:	0e 0d       	add	r16, r14
+ 40c:	1f 1d       	adc	r17, r15
+ 40e:	0f 59       	subi	r16, 0x9F	; 159
+ 410:	1f 4f       	sbci	r17, 0xFF	; 255
+ 412:	8f 70       	andi	r24, 0x0F	; 15
+ 414:	d6 01       	movw	r26, r12
+ 416:	02 c0       	rjmp	.+4      	; 0x41c <__LOCK_REGION_LENGTH__+0x1c>
+ 418:	aa 0f       	add	r26, r26
+ 41a:	bb 1f       	adc	r27, r27
+ 41c:	8a 95       	dec	r24
+ 41e:	e2 f7       	brpl	.-8      	; 0x418 <__LOCK_REGION_LENGTH__+0x18>
+ 420:	cd 01       	movw	r24, r26
+ 422:	d8 01       	movw	r26, r16
+ 424:	12 96       	adiw	r26, 0x02	; 2
+ 426:	9c 91       	ld	r25, X
+ 428:	12 97       	sbiw	r26, 0x02	; 2
+ 42a:	89 27       	eor	r24, r25
+ 42c:	12 96       	adiw	r26, 0x02	; 2
+ 42e:	8c 93       	st	X, r24
+ 430:	35 c0       	rjmp	.+106    	; 0x49c <__stack+0x3d>
+			case 0xC0: Servo_W[DD].Servo_portC_ ^= (1<<(Temp & 0b00001111)); break;	//устанавливаем бит в ноль на портуC
+ 432:	07 2f       	mov	r16, r23
+ 434:	10 e0       	ldi	r17, 0x00	; 0
+ 436:	78 01       	movw	r14, r16
+ 438:	ee 0c       	add	r14, r14
+ 43a:	ff 1c       	adc	r15, r15
+ 43c:	ee 0c       	add	r14, r14
+ 43e:	ff 1c       	adc	r15, r15
+ 440:	0e 0d       	add	r16, r14
+ 442:	1f 1d       	adc	r17, r15
+ 444:	0f 59       	subi	r16, 0x9F	; 159
+ 446:	1f 4f       	sbci	r17, 0xFF	; 255
+ 448:	8f 70       	andi	r24, 0x0F	; 15
+ 44a:	d6 01       	movw	r26, r12
+ 44c:	02 c0       	rjmp	.+4      	; 0x452 <__LOCK_REGION_LENGTH__+0x52>
+ 44e:	aa 0f       	add	r26, r26
+ 450:	bb 1f       	adc	r27, r27
+ 452:	8a 95       	dec	r24
+ 454:	e2 f7       	brpl	.-8      	; 0x44e <__LOCK_REGION_LENGTH__+0x4e>
+ 456:	cd 01       	movw	r24, r26
+ 458:	d8 01       	movw	r26, r16
+ 45a:	11 96       	adiw	r26, 0x01	; 1
+ 45c:	9c 91       	ld	r25, X
+ 45e:	11 97       	sbiw	r26, 0x01	; 1
+ 460:	89 27       	eor	r24, r25
+ 462:	11 96       	adiw	r26, 0x01	; 1
+ 464:	8c 93       	st	X, r24
+ 466:	1a c0       	rjmp	.+52     	; 0x49c <__stack+0x3d>
+			case 0xD0: Servo_W[DD].Servo_portD_ ^= (1<<(Temp & 0b00001111)); break;	//устанавливаем бит в ноль на портуD
+ 468:	07 2f       	mov	r16, r23
+ 46a:	10 e0       	ldi	r17, 0x00	; 0
+ 46c:	78 01       	movw	r14, r16
+ 46e:	ee 0c       	add	r14, r14
+ 470:	ff 1c       	adc	r15, r15
+ 472:	ee 0c       	add	r14, r14
+ 474:	ff 1c       	adc	r15, r15
+ 476:	0e 0d       	add	r16, r14
+ 478:	1f 1d       	adc	r17, r15
+ 47a:	0f 59       	subi	r16, 0x9F	; 159
+ 47c:	1f 4f       	sbci	r17, 0xFF	; 255
+ 47e:	8f 70       	andi	r24, 0x0F	; 15
+ 480:	d6 01       	movw	r26, r12
+ 482:	02 c0       	rjmp	.+4      	; 0x488 <__stack+0x29>
+ 484:	aa 0f       	add	r26, r26
+ 486:	bb 1f       	adc	r27, r27
+ 488:	8a 95       	dec	r24
+ 48a:	e2 f7       	brpl	.-8      	; 0x484 <__stack+0x25>
+ 48c:	cd 01       	movw	r24, r26
+ 48e:	d8 01       	movw	r26, r16
+ 490:	13 96       	adiw	r26, 0x03	; 3
+ 492:	9c 91       	ld	r25, X
+ 494:	13 97       	sbiw	r26, 0x03	; 3
+ 496:	89 27       	eor	r24, r25
+ 498:	13 96       	adiw	r26, 0x03	; 3
+ 49a:	8c 93       	st	X, r24
+		}
+		i++;
+		if ( i == MaxServo )
+ 49c:	42 17       	cp	r20, r18
+ 49e:	53 07       	cpc	r21, r19
+ 4a0:	31 f1       	breq	.+76     	; 0x4ee <__stack+0x8f>
+		break;
+		if (!(Servo_[S]->Position == Servo_[i]->Position))     //проверяем следующие данные такиеже или нет
+ 4a2:	d0 81       	ld	r29, Z
+ 4a4:	da 01       	movw	r26, r20
+ 4a6:	ed 91       	ld	r30, X+
+ 4a8:	fc 91       	ld	r31, X
+ 4aa:	80 81       	ld	r24, Z
+ 4ac:	d8 17       	cp	r29, r24
+ 4ae:	09 f4       	brne	.+2      	; 0x4b2 <__stack+0x53>
+ 4b0:	7a cf       	rjmp	.-268    	; 0x3a6 <DanieServo_Port+0x80>
+		{
+			Servo_W[DD].Servo_Position_ = Servo_[S]->Position; //сохраняем угол сдвига	к выставленым портам
+ 4b2:	87 2f       	mov	r24, r23
+ 4b4:	90 e0       	ldi	r25, 0x00	; 0
+ 4b6:	fc 01       	movw	r30, r24
+ 4b8:	ee 0f       	add	r30, r30
+ 4ba:	ff 1f       	adc	r31, r31
+ 4bc:	ee 0f       	add	r30, r30
+ 4be:	ff 1f       	adc	r31, r31
+ 4c0:	8e 0f       	add	r24, r30
+ 4c2:	9f 1f       	adc	r25, r31
+ 4c4:	fc 01       	movw	r30, r24
+ 4c6:	ef 59       	subi	r30, 0x9F	; 159
+ 4c8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 4ca:	d4 83       	std	Z+4, r29	; 0x04
+			DD++;
+ 4cc:	7f 5f       	subi	r23, 0xFF	; 255
+			Servo_W[DD].Servo_portA_ = 255;
+ 4ce:	87 2f       	mov	r24, r23
+ 4d0:	90 e0       	ldi	r25, 0x00	; 0
+ 4d2:	fc 01       	movw	r30, r24
+ 4d4:	ee 0f       	add	r30, r30
+ 4d6:	ff 1f       	adc	r31, r31
+ 4d8:	ee 0f       	add	r30, r30
+ 4da:	ff 1f       	adc	r31, r31
+ 4dc:	e8 0f       	add	r30, r24
+ 4de:	f9 1f       	adc	r31, r25
+ 4e0:	ef 59       	subi	r30, 0x9F	; 159
+ 4e2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 4e4:	c0 83       	st	Z, r28
+			Servo_W[DD].Servo_portB_ = 255;
+ 4e6:	c2 83       	std	Z+2, r28	; 0x02
+			Servo_W[DD].Servo_portC_ = 255;
+ 4e8:	c1 83       	std	Z+1, r28	; 0x01
+			Servo_W[DD].Servo_portD_ = 255;
+ 4ea:	c3 83       	std	Z+3, r28	; 0x03
+		}
+		S++;
+	}
+ 4ec:	5c cf       	rjmp	.-328    	; 0x3a6 <DanieServo_Port+0x80>
+	if ( DD < MaxServo )
+ 4ee:	74 31       	cpi	r23, 0x14	; 20
+ 4f0:	e8 f4       	brcc	.+58     	; 0x52c <__stack+0xcd>
+	{
+		Servo_W[DD].Servo_Position_ = Servo_[S]->Position; //сохраняем угол сдвига	к выставленым портам
+ 4f2:	20 81       	ld	r18, Z
+ 4f4:	87 2f       	mov	r24, r23
+ 4f6:	90 e0       	ldi	r25, 0x00	; 0
+ 4f8:	fc 01       	movw	r30, r24
+ 4fa:	ee 0f       	add	r30, r30
+ 4fc:	ff 1f       	adc	r31, r31
+ 4fe:	ee 0f       	add	r30, r30
+ 500:	ff 1f       	adc	r31, r31
+ 502:	8e 0f       	add	r24, r30
+ 504:	9f 1f       	adc	r25, r31
+ 506:	fc 01       	movw	r30, r24
+ 508:	ef 59       	subi	r30, 0x9F	; 159
+ 50a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 50c:	24 83       	std	Z+4, r18	; 0x04
+		DD++;
+ 50e:	81 e0       	ldi	r24, 0x01	; 1
+ 510:	87 0f       	add	r24, r23
+		Servo_W[DD].Servo_Position_ = 0xFF;
+ 512:	90 e0       	ldi	r25, 0x00	; 0
+ 514:	fc 01       	movw	r30, r24
+ 516:	ee 0f       	add	r30, r30
+ 518:	ff 1f       	adc	r31, r31
+ 51a:	ee 0f       	add	r30, r30
+ 51c:	ff 1f       	adc	r31, r31
+ 51e:	8e 0f       	add	r24, r30
+ 520:	9f 1f       	adc	r25, r31
+ 522:	fc 01       	movw	r30, r24
+ 524:	ef 59       	subi	r30, 0x9F	; 159
+ 526:	ff 4f       	sbci	r31, 0xFF	; 255
+ 528:	8f ef       	ldi	r24, 0xFF	; 255
+ 52a:	84 83       	std	Z+4, r24	; 0x04
+	}
+	Servo_Dan |=(1<<0);
+ 52c:	61 60       	ori	r22, 0x01	; 1
+ 52e:	60 93 c9 00 	sts	0x00C9, r22	; 0x8000c9 <Servo_Dan>
+	asm("sei");
+ 532:	78 94       	sei
+}
+ 534:	df 91       	pop	r29
+ 536:	cf 91       	pop	r28
+ 538:	1f 91       	pop	r17
+ 53a:	0f 91       	pop	r16
+ 53c:	ff 90       	pop	r15
+ 53e:	ef 90       	pop	r14
+ 540:	df 90       	pop	r13
+ 542:	cf 90       	pop	r12
+ 544:	08 95       	ret
+
+00000546 <Servo_Port_Ustanovki>:
+//********************************//
+void Servo_Port_Ustanovki(void)
+{
+ 546:	ef 92       	push	r14
+ 548:	ff 92       	push	r15
+ 54a:	0f 93       	push	r16
+ 54c:	1f 93       	push	r17
+ 54e:	cf 93       	push	r28
+ 550:	df 93       	push	r29
+ 552:	42 ef       	ldi	r20, 0xF2	; 242
+ 554:	50 e0       	ldi	r21, 0x00	; 0
+ 556:	cb ec       	ldi	r28, 0xCB	; 203
+ 558:	d0 e0       	ldi	r29, 0x00	; 0
+ 55a:	03 ef       	ldi	r16, 0xF3	; 243
+ 55c:	10 e0       	ldi	r17, 0x00	; 0
+			PORTC &=~ Temp;                  //сброс порта в ноль
+			DDRC |= Temp;                    //переопределяем порт на выход
+			Servo_Uctanovka[2] |=Temp;	     //устанавливаем какие биты портаC нужно вкл. каждые 20милесикунд
+			break;
+			case 0xD0 ... 0xD7:
+			Temp = (1<<(Temp & 0b00001111)); //определяем какой бит выставить на порту
+ 55e:	ee 24       	eor	r14, r14
+ 560:	e3 94       	inc	r14
+ 562:	f1 2c       	mov	r15, r1
+			PORTD &=~ Temp;                  //сброс порта в ноль
+			DDRD |= Temp;                    //переопределяем порт на выход
+			Servo_Uctanovka[3] |=Temp;	     //устанавливаем какие биты портаD нужно вкл. каждые 20милесикунд
+ 564:	65 ec       	ldi	r22, 0xC5	; 197
+ 566:	70 e0       	ldi	r23, 0x00	; 0
+ 568:	ce 01       	movw	r24, r28
+ 56a:	01 97       	sbiw	r24, 0x01	; 1
+{
+	register uint8_t Temp,i = 0;
+	//=================//
+	while ( i < MaxServo )
+	{
+		Servo_[i]= &Servo[i];
+ 56c:	fa 01       	movw	r30, r20
+ 56e:	81 93       	st	Z+, r24
+ 570:	91 93       	st	Z+, r25
+ 572:	af 01       	movw	r20, r30
+		Temp = Servo[i].BitPorta;      //узнаем привязку даного сервопривода (какой порт и бит )
+ 574:	28 81       	ld	r18, Y
+		switch ( Temp )                //определяем с каким портом будем работать
+ 576:	82 2f       	mov	r24, r18
+ 578:	90 e0       	ldi	r25, 0x00	; 0
+ 57a:	fc 01       	movw	r30, r24
+ 57c:	e0 5a       	subi	r30, 0xA0	; 160
+ 57e:	f1 09       	sbc	r31, r1
+ 580:	e8 33       	cpi	r30, 0x38	; 56
+ 582:	f1 05       	cpc	r31, r1
+ 584:	08 f0       	brcs	.+2      	; 0x588 <Servo_Port_Ustanovki+0x42>
+ 586:	53 c0       	rjmp	.+166    	; 0x62e <Servo_Port_Ustanovki+0xe8>
+ 588:	e6 5d       	subi	r30, 0xD6	; 214
+ 58a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 58c:	0c 94 30 03 	jmp	0x660	; 0x660 <__tablejump2__>
+		{
+			case 0xA0 ... 0xA7:
+			Temp = (1<<(Temp & 0b00001111)); //определяем какой бит выставить на порту
+ 590:	2f 70       	andi	r18, 0x0F	; 15
+ 592:	c7 01       	movw	r24, r14
+ 594:	02 c0       	rjmp	.+4      	; 0x59a <Servo_Port_Ustanovki+0x54>
+ 596:	88 0f       	add	r24, r24
+ 598:	99 1f       	adc	r25, r25
+ 59a:	2a 95       	dec	r18
+ 59c:	e2 f7       	brpl	.-8      	; 0x596 <Servo_Port_Ustanovki+0x50>
+			PORTA &=~ Temp;                  //сброс порта в ноль
+ 59e:	9b b3       	in	r25, 0x1b	; 27
+ 5a0:	28 2f       	mov	r18, r24
+ 5a2:	20 95       	com	r18
+ 5a4:	92 23       	and	r25, r18
+ 5a6:	9b bb       	out	0x1b, r25	; 27
+			DDRA |= Temp;                    //переопределяем порт на выход
+ 5a8:	9a b3       	in	r25, 0x1a	; 26
+ 5aa:	98 2b       	or	r25, r24
+ 5ac:	9a bb       	out	0x1a, r25	; 26
+			Servo_Uctanovka[0] |=Temp;    	 //устанавливаем какие биты портаА нужно вкл. каждые 20милесикунд
+ 5ae:	fb 01       	movw	r30, r22
+ 5b0:	90 81       	ld	r25, Z
+ 5b2:	89 2b       	or	r24, r25
+ 5b4:	80 83       	st	Z, r24
+			break;
+ 5b6:	3b c0       	rjmp	.+118    	; 0x62e <Servo_Port_Ustanovki+0xe8>
+			case 0xB0 ... 0xB7:
+			Temp = (1<<(Temp & 0b00001111)); //определяем какой бит выставить на порту
+ 5b8:	2f 70       	andi	r18, 0x0F	; 15
+ 5ba:	c7 01       	movw	r24, r14
+ 5bc:	02 c0       	rjmp	.+4      	; 0x5c2 <Servo_Port_Ustanovki+0x7c>
+ 5be:	88 0f       	add	r24, r24
+ 5c0:	99 1f       	adc	r25, r25
+ 5c2:	2a 95       	dec	r18
+ 5c4:	e2 f7       	brpl	.-8      	; 0x5be <Servo_Port_Ustanovki+0x78>
+			PORTB &=~ Temp;                  //сброс порта в ноль
+ 5c6:	98 b3       	in	r25, 0x18	; 24
+ 5c8:	28 2f       	mov	r18, r24
+ 5ca:	20 95       	com	r18
+ 5cc:	92 23       	and	r25, r18
+ 5ce:	98 bb       	out	0x18, r25	; 24
+			DDRB |= Temp;                    //переопределяем порт на выход
+ 5d0:	97 b3       	in	r25, 0x17	; 23
+ 5d2:	98 2b       	or	r25, r24
+ 5d4:	97 bb       	out	0x17, r25	; 23
+			Servo_Uctanovka[1] |=Temp;	     //устанавливаем какие биты портаВ нужно вкл. каждые 20милесикунд
+ 5d6:	fb 01       	movw	r30, r22
+ 5d8:	91 81       	ldd	r25, Z+1	; 0x01
+ 5da:	89 2b       	or	r24, r25
+ 5dc:	81 83       	std	Z+1, r24	; 0x01
+			break;
+ 5de:	27 c0       	rjmp	.+78     	; 0x62e <Servo_Port_Ustanovki+0xe8>
+			case 0xC0 ... 0xC7:
+			Temp = (1<<(Temp & 0b00001111)); //определяем какой бит выставить на порту
+ 5e0:	2f 70       	andi	r18, 0x0F	; 15
+ 5e2:	c7 01       	movw	r24, r14
+ 5e4:	02 c0       	rjmp	.+4      	; 0x5ea <Servo_Port_Ustanovki+0xa4>
+ 5e6:	88 0f       	add	r24, r24
+ 5e8:	99 1f       	adc	r25, r25
+ 5ea:	2a 95       	dec	r18
+ 5ec:	e2 f7       	brpl	.-8      	; 0x5e6 <Servo_Port_Ustanovki+0xa0>
+			PORTC &=~ Temp;                  //сброс порта в ноль
+ 5ee:	95 b3       	in	r25, 0x15	; 21
+ 5f0:	28 2f       	mov	r18, r24
+ 5f2:	20 95       	com	r18
+ 5f4:	92 23       	and	r25, r18
+ 5f6:	95 bb       	out	0x15, r25	; 21
+			DDRC |= Temp;                    //переопределяем порт на выход
+ 5f8:	94 b3       	in	r25, 0x14	; 20
+ 5fa:	98 2b       	or	r25, r24
+ 5fc:	94 bb       	out	0x14, r25	; 20
+			Servo_Uctanovka[2] |=Temp;	     //устанавливаем какие биты портаC нужно вкл. каждые 20милесикунд
+ 5fe:	fb 01       	movw	r30, r22
+ 600:	92 81       	ldd	r25, Z+2	; 0x02
+ 602:	89 2b       	or	r24, r25
+ 604:	82 83       	std	Z+2, r24	; 0x02
+			break;
+ 606:	13 c0       	rjmp	.+38     	; 0x62e <Servo_Port_Ustanovki+0xe8>
+			case 0xD0 ... 0xD7:
+			Temp = (1<<(Temp & 0b00001111)); //определяем какой бит выставить на порту
+ 608:	2f 70       	andi	r18, 0x0F	; 15
+ 60a:	c7 01       	movw	r24, r14
+ 60c:	02 c0       	rjmp	.+4      	; 0x612 <Servo_Port_Ustanovki+0xcc>
+ 60e:	88 0f       	add	r24, r24
+ 610:	99 1f       	adc	r25, r25
+ 612:	2a 95       	dec	r18
+ 614:	e2 f7       	brpl	.-8      	; 0x60e <Servo_Port_Ustanovki+0xc8>
+			PORTD &=~ Temp;                  //сброс порта в ноль
+ 616:	92 b3       	in	r25, 0x12	; 18
+ 618:	28 2f       	mov	r18, r24
+ 61a:	20 95       	com	r18
+ 61c:	92 23       	and	r25, r18
+ 61e:	92 bb       	out	0x12, r25	; 18
+			DDRD |= Temp;                    //переопределяем порт на выход
+ 620:	91 b3       	in	r25, 0x11	; 17
+ 622:	98 2b       	or	r25, r24
+ 624:	91 bb       	out	0x11, r25	; 17
+			Servo_Uctanovka[3] |=Temp;	     //устанавливаем какие биты портаD нужно вкл. каждые 20милесикунд
+ 626:	fb 01       	movw	r30, r22
+ 628:	93 81       	ldd	r25, Z+3	; 0x03
+ 62a:	89 2b       	or	r24, r25
+ 62c:	83 83       	std	Z+3, r24	; 0x03
+ 62e:	22 96       	adiw	r28, 0x02	; 2
+//********************************//
+void Servo_Port_Ustanovki(void)
+{
+	register uint8_t Temp,i = 0;
+	//=================//
+	while ( i < MaxServo )
+ 630:	c0 17       	cp	r28, r16
+ 632:	d1 07       	cpc	r29, r17
+ 634:	09 f0       	breq	.+2      	; 0x638 <Servo_Port_Ustanovki+0xf2>
+ 636:	98 cf       	rjmp	.-208    	; 0x568 <Servo_Port_Ustanovki+0x22>
+			Servo_Uctanovka[3] |=Temp;	     //устанавливаем какие биты портаD нужно вкл. каждые 20милесикунд
+			break;
+		}
+		i++;
+	}
+	ICR1 = 2500;//5000 формеруем 20мс. для 16Мгц. //2500 формеруем 20мс. для 8Мгц.
+ 638:	84 ec       	ldi	r24, 0xC4	; 196
+ 63a:	99 e0       	ldi	r25, 0x09	; 9
+ 63c:	97 bd       	out	0x27, r25	; 39
+ 63e:	86 bd       	out	0x26, r24	; 38
+	TCCR1B |= (1 << ICES1)|(1<<CS10)|(1<<CS11)|(1<<WGM12)|(1<<WGM13);
+ 640:	8e b5       	in	r24, 0x2e	; 46
+ 642:	8b 65       	ori	r24, 0x5B	; 91
+ 644:	8e bd       	out	0x2e, r24	; 46
+	TIMSK |=(1<<TOIE1)|(1<<OCIE1A);
+ 646:	89 b7       	in	r24, 0x39	; 57
+ 648:	84 61       	ori	r24, 0x14	; 20
+ 64a:	89 bf       	out	0x39, r24	; 57
+	TCCR1A |=(1<<WGM11);
+ 64c:	8f b5       	in	r24, 0x2f	; 47
+ 64e:	82 60       	ori	r24, 0x02	; 2
+ 650:	8f bd       	out	0x2f, r24	; 47
+}
+ 652:	df 91       	pop	r29
+ 654:	cf 91       	pop	r28
+ 656:	1f 91       	pop	r17
+ 658:	0f 91       	pop	r16
+ 65a:	ff 90       	pop	r15
+ 65c:	ef 90       	pop	r14
+ 65e:	08 95       	ret
+
+00000660 <__tablejump2__>:
+ 660:	ee 0f       	add	r30, r30
+ 662:	ff 1f       	adc	r31, r31
+ 664:	05 90       	lpm	r0, Z+
+ 666:	f4 91       	lpm	r31, Z
+ 668:	e0 2d       	mov	r30, r0
+ 66a:	09 94       	ijmp
+
+0000066c <_exit>:
+ 66c:	f8 94       	cli
+
+0000066e <__stop_program>:
+ 66e:	ff cf       	rjmp	.-2      	; 0x66e <__stop_program>

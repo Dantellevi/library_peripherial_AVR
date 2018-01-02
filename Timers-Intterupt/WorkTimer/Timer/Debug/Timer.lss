@@ -1,0 +1,710 @@
+
+Timer.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000037c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000003f0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000003  00800060  00800060  000003f0  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000003f0  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000420  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000f8  00000000  00000000  0000045c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000bdd  00000000  00000000  00000554  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000711  00000000  00000000  00001131  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000d66  00000000  00000000  00001842  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000250  00000000  00000000  000025a8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000004dd  00000000  00000000  000027f8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000857  00000000  00000000  00002cd5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000c8  00000000  00000000  0000352c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 94 01 	jmp	0x328	; 0x328 <__vector_1>
+   8:	0c 94 9e 01 	jmp	0x33c	; 0x33c <__vector_2>
+   c:	0c 94 6f 00 	jmp	0xde	; 0xde <__vector_3>
+  10:	0c 94 5a 00 	jmp	0xb4	; 0xb4 <__vector_4>
+  14:	0c 94 99 00 	jmp	0x132	; 0x132 <__vector_5>
+  18:	0c 94 ab 00 	jmp	0x156	; 0x156 <__vector_6>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 81 00 	jmp	0x102	; 0x102 <__vector_8>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__vector_9>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 48 00 	jmp	0x90	; 0x90 <__vector_19>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	20 e0       	ldi	r18, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a3 36       	cpi	r26, 0x63	; 99
+  6c:	b2 07       	cpc	r27, r18
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 a8 01 	call	0x350	; 0x350 <main>
+  74:	0c 94 bc 01 	jmp	0x378	; 0x378 <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <__vector_9>:
+
+}
+void SetPWM2_Value(char value)
+{
+
+	OCR2=value;
+  7c:	1f 92       	push	r1
+  7e:	0f 92       	push	r0
+  80:	0f b6       	in	r0, 0x3f	; 63
+  82:	0f 92       	push	r0
+  84:	11 24       	eor	r1, r1
+  86:	0f 90       	pop	r0
+  88:	0f be       	out	0x3f, r0	; 63
+  8a:	0f 90       	pop	r0
+  8c:	1f 90       	pop	r1
+  8e:	18 95       	reti
+
+00000090 <__vector_19>:
+  90:	1f 92       	push	r1
+  92:	0f 92       	push	r0
+  94:	0f b6       	in	r0, 0x3f	; 63
+  96:	0f 92       	push	r0
+  98:	11 24       	eor	r1, r1
+  9a:	8f 93       	push	r24
+  9c:	9f 93       	push	r25
+  9e:	92 b3       	in	r25, 0x12	; 18
+  a0:	81 e0       	ldi	r24, 0x01	; 1
+  a2:	89 27       	eor	r24, r25
+  a4:	82 bb       	out	0x12, r24	; 18
+  a6:	9f 91       	pop	r25
+  a8:	8f 91       	pop	r24
+  aa:	0f 90       	pop	r0
+  ac:	0f be       	out	0x3f, r0	; 63
+  ae:	0f 90       	pop	r0
+  b0:	1f 90       	pop	r1
+  b2:	18 95       	reti
+
+000000b4 <__vector_4>:
+  b4:	1f 92       	push	r1
+  b6:	0f 92       	push	r0
+  b8:	0f b6       	in	r0, 0x3f	; 63
+  ba:	0f 92       	push	r0
+  bc:	11 24       	eor	r1, r1
+  be:	8f 93       	push	r24
+  c0:	9f 93       	push	r25
+  c2:	92 b3       	in	r25, 0x12	; 18
+  c4:	82 e0       	ldi	r24, 0x02	; 2
+  c6:	89 27       	eor	r24, r25
+  c8:	82 bb       	out	0x12, r24	; 18
+  ca:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <valInter2>
+  ce:	84 bd       	out	0x24, r24	; 36
+  d0:	9f 91       	pop	r25
+  d2:	8f 91       	pop	r24
+  d4:	0f 90       	pop	r0
+  d6:	0f be       	out	0x3f, r0	; 63
+  d8:	0f 90       	pop	r0
+  da:	1f 90       	pop	r1
+  dc:	18 95       	reti
+
+000000de <__vector_3>:
+  de:	1f 92       	push	r1
+  e0:	0f 92       	push	r0
+  e2:	0f b6       	in	r0, 0x3f	; 63
+  e4:	0f 92       	push	r0
+  e6:	11 24       	eor	r1, r1
+  e8:	8f 93       	push	r24
+  ea:	9f 93       	push	r25
+  ec:	92 b3       	in	r25, 0x12	; 18
+  ee:	82 e0       	ldi	r24, 0x02	; 2
+  f0:	89 27       	eor	r24, r25
+  f2:	82 bb       	out	0x12, r24	; 18
+  f4:	9f 91       	pop	r25
+  f6:	8f 91       	pop	r24
+  f8:	0f 90       	pop	r0
+  fa:	0f be       	out	0x3f, r0	; 63
+  fc:	0f 90       	pop	r0
+  fe:	1f 90       	pop	r1
+ 100:	18 95       	reti
+
+00000102 <__vector_8>:
+ 102:	1f 92       	push	r1
+ 104:	0f 92       	push	r0
+ 106:	0f b6       	in	r0, 0x3f	; 63
+ 108:	0f 92       	push	r0
+ 10a:	11 24       	eor	r1, r1
+ 10c:	8f 93       	push	r24
+ 10e:	9f 93       	push	r25
+ 110:	92 b3       	in	r25, 0x12	; 18
+ 112:	84 e0       	ldi	r24, 0x04	; 4
+ 114:	89 27       	eor	r24, r25
+ 116:	82 bb       	out	0x12, r24	; 18
+ 118:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 11c:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <_edata+0x1>
+ 120:	9d bd       	out	0x2d, r25	; 45
+ 122:	8c bd       	out	0x2c, r24	; 44
+ 124:	9f 91       	pop	r25
+ 126:	8f 91       	pop	r24
+ 128:	0f 90       	pop	r0
+ 12a:	0f be       	out	0x3f, r0	; 63
+ 12c:	0f 90       	pop	r0
+ 12e:	1f 90       	pop	r1
+ 130:	18 95       	reti
+
+00000132 <__vector_5>:
+ 132:	1f 92       	push	r1
+ 134:	0f 92       	push	r0
+ 136:	0f b6       	in	r0, 0x3f	; 63
+ 138:	0f 92       	push	r0
+ 13a:	11 24       	eor	r1, r1
+ 13c:	8f 93       	push	r24
+ 13e:	9f 93       	push	r25
+ 140:	92 b3       	in	r25, 0x12	; 18
+ 142:	84 e0       	ldi	r24, 0x04	; 4
+ 144:	89 27       	eor	r24, r25
+ 146:	82 bb       	out	0x12, r24	; 18
+ 148:	9f 91       	pop	r25
+ 14a:	8f 91       	pop	r24
+ 14c:	0f 90       	pop	r0
+ 14e:	0f be       	out	0x3f, r0	; 63
+ 150:	0f 90       	pop	r0
+ 152:	1f 90       	pop	r1
+ 154:	18 95       	reti
+
+00000156 <__vector_6>:
+ 156:	1f 92       	push	r1
+ 158:	0f 92       	push	r0
+ 15a:	0f b6       	in	r0, 0x3f	; 63
+ 15c:	0f 92       	push	r0
+ 15e:	11 24       	eor	r1, r1
+ 160:	8f 93       	push	r24
+ 162:	9f 93       	push	r25
+ 164:	92 b3       	in	r25, 0x12	; 18
+ 166:	84 e0       	ldi	r24, 0x04	; 4
+ 168:	89 27       	eor	r24, r25
+ 16a:	82 bb       	out	0x12, r24	; 18
+ 16c:	9f 91       	pop	r25
+ 16e:	8f 91       	pop	r24
+ 170:	0f 90       	pop	r0
+ 172:	0f be       	out	0x3f, r0	; 63
+ 174:	0f 90       	pop	r0
+ 176:	1f 90       	pop	r1
+ 178:	18 95       	reti
+
+0000017a <SelectFreqDel>:
+
+
+//===========================функция выбора частоты для ШИМ===================================================
+void SelectFreqDel(char flag)
+{
+	switch(flag)
+ 17a:	82 30       	cpi	r24, 0x02	; 2
+ 17c:	99 f0       	breq	.+38     	; 0x1a4 <SelectFreqDel+0x2a>
+ 17e:	28 f4       	brcc	.+10     	; 0x18a <SelectFreqDel+0x10>
+ 180:	88 23       	and	r24, r24
+ 182:	49 f0       	breq	.+18     	; 0x196 <SelectFreqDel+0x1c>
+ 184:	81 30       	cpi	r24, 0x01	; 1
+ 186:	51 f0       	breq	.+20     	; 0x19c <SelectFreqDel+0x22>
+ 188:	08 95       	ret
+ 18a:	84 30       	cpi	r24, 0x04	; 4
+ 18c:	99 f0       	breq	.+38     	; 0x1b4 <SelectFreqDel+0x3a>
+ 18e:	70 f0       	brcs	.+28     	; 0x1ac <SelectFreqDel+0x32>
+ 190:	85 30       	cpi	r24, 0x05	; 5
+ 192:	a1 f0       	breq	.+40     	; 0x1bc <SelectFreqDel+0x42>
+ 194:	08 95       	ret
+	{
+
+		case 0:
+		{
+			TCCR1B|=(0<<CS10)|(0<<CS11)|(0<<CS12);
+ 196:	8e b5       	in	r24, 0x2e	; 46
+ 198:	8e bd       	out	0x2e, r24	; 46
+			break;
+ 19a:	08 95       	ret
+		}
+
+		case 1://1
+		{
+			TCCR1B|=(1<<CS10)|(0<<CS11)|(0<<CS12);
+ 19c:	8e b5       	in	r24, 0x2e	; 46
+ 19e:	81 60       	ori	r24, 0x01	; 1
+ 1a0:	8e bd       	out	0x2e, r24	; 46
+			break;
+ 1a2:	08 95       	ret
+		}
+		case 2://8
+		{
+			TCCR1B|=(0<<CS10)|(1<<CS11)|(0<<CS12);
+ 1a4:	8e b5       	in	r24, 0x2e	; 46
+ 1a6:	82 60       	ori	r24, 0x02	; 2
+ 1a8:	8e bd       	out	0x2e, r24	; 46
+			break;
+ 1aa:	08 95       	ret
+		}
+
+		case 3://64
+		{
+			TCCR1B|=(1<<CS10)|(1<<CS11)|(0<<CS12);
+ 1ac:	8e b5       	in	r24, 0x2e	; 46
+ 1ae:	83 60       	ori	r24, 0x03	; 3
+ 1b0:	8e bd       	out	0x2e, r24	; 46
+			break;
+ 1b2:	08 95       	ret
+		}
+		case 4://256
+		{
+			TCCR1B|=(0<<CS10)|(0<<CS11)|(1<<CS12);
+ 1b4:	8e b5       	in	r24, 0x2e	; 46
+ 1b6:	84 60       	ori	r24, 0x04	; 4
+ 1b8:	8e bd       	out	0x2e, r24	; 46
+			break;
+ 1ba:	08 95       	ret
+		}
+
+		case 5://1024
+		{
+			TCCR1B|=(1<<CS10)|(0<<CS11)|(1<<CS12);
+ 1bc:	8e b5       	in	r24, 0x2e	; 46
+ 1be:	85 60       	ori	r24, 0x05	; 5
+ 1c0:	8e bd       	out	0x2e, r24	; 46
+ 1c2:	08 95       	ret
+
+000001c4 <PWM1_init>:
+char flagdel-делитель частоты для работы
+char channel-канал работы ШИМ :OCR1A,OCR1B
+char flagBits-разрядность ШИМ:8,9,10 бит
+*/
+void PWM1_init(int starVal,char flagBits,char Mode,char flagdel,char channel)
+{
+ 1c4:	0f 93       	push	r16
+ 1c6:	cf 93       	push	r28
+ 1c8:	df 93       	push	r29
+ 1ca:	c8 2f       	mov	r28, r24
+ 1cc:	d9 2f       	mov	r29, r25
+	if(Mode==PWM_MODE_FIRST)
+ 1ce:	41 30       	cpi	r20, 0x01	; 1
+ 1d0:	09 f0       	breq	.+2      	; 0x1d4 <PWM1_init+0x10>
+ 1d2:	55 c0       	rjmp	.+170    	; 0x27e <PWM1_init+0xba>
+	{
+		switch(flagBits)
+ 1d4:	69 30       	cpi	r22, 0x09	; 9
+ 1d6:	f9 f0       	breq	.+62     	; 0x216 <PWM1_init+0x52>
+ 1d8:	6a 30       	cpi	r22, 0x0A	; 10
+ 1da:	b9 f1       	breq	.+110    	; 0x24a <PWM1_init+0x86>
+ 1dc:	68 30       	cpi	r22, 0x08	; 8
+ 1de:	09 f0       	breq	.+2      	; 0x1e2 <PWM1_init+0x1e>
+ 1e0:	9f c0       	rjmp	.+318    	; 0x320 <PWM1_init+0x15c>
+		{
+
+			case 8:{
+				TCCR1A|=(1<<WGM10)|(0<<WGM11);
+ 1e2:	8f b5       	in	r24, 0x2f	; 47
+ 1e4:	81 60       	ori	r24, 0x01	; 1
+ 1e6:	8f bd       	out	0x2f, r24	; 47
+				TCCR1B|=(1<<WGM12)|(0<<WGM13);
+ 1e8:	8e b5       	in	r24, 0x2e	; 46
+ 1ea:	88 60       	ori	r24, 0x08	; 8
+ 1ec:	8e bd       	out	0x2e, r24	; 46
+				SelectFreqDel(flagdel);
+ 1ee:	82 2f       	mov	r24, r18
+ 1f0:	0e 94 bd 00 	call	0x17a	; 0x17a <SelectFreqDel>
+
+				if (channel==FLAG_CH_OCR1A)
+ 1f4:	01 11       	cpse	r16, r1
+ 1f6:	06 c0       	rjmp	.+12     	; 0x204 <PWM1_init+0x40>
+				{
+					TCCR1A|=(1<<COM1A1);
+ 1f8:	8f b5       	in	r24, 0x2f	; 47
+ 1fa:	80 68       	ori	r24, 0x80	; 128
+ 1fc:	8f bd       	out	0x2f, r24	; 47
+					OCR1AH=(char)(starVal>>8);
+ 1fe:	db bd       	out	0x2b, r29	; 43
+					OCR1AL=(char)starVal;
+ 200:	ca bd       	out	0x2a, r28	; 42
+ 202:	8e c0       	rjmp	.+284    	; 0x320 <PWM1_init+0x15c>
+				}
+				else if (channel==FLAG_CH_OCR1B)
+ 204:	01 30       	cpi	r16, 0x01	; 1
+ 206:	09 f0       	breq	.+2      	; 0x20a <PWM1_init+0x46>
+ 208:	8b c0       	rjmp	.+278    	; 0x320 <PWM1_init+0x15c>
+				{
+					TCCR1A|=(1<<COM1B1);
+ 20a:	8f b5       	in	r24, 0x2f	; 47
+ 20c:	80 62       	ori	r24, 0x20	; 32
+ 20e:	8f bd       	out	0x2f, r24	; 47
+					OCR1BH=(char)(starVal>>8);
+ 210:	d9 bd       	out	0x29, r29	; 41
+					OCR1BL=(char)starVal;
+ 212:	c8 bd       	out	0x28, r28	; 40
+ 214:	85 c0       	rjmp	.+266    	; 0x320 <PWM1_init+0x15c>
+				}
+				
+				break;
+			}
+			case 9:{
+				TCCR1A|=(0<<WGM10)|(1<<WGM11);
+ 216:	8f b5       	in	r24, 0x2f	; 47
+ 218:	82 60       	ori	r24, 0x02	; 2
+ 21a:	8f bd       	out	0x2f, r24	; 47
+				TCCR1B|=(1<<WGM12)|(0<<WGM13);
+ 21c:	8e b5       	in	r24, 0x2e	; 46
+ 21e:	88 60       	ori	r24, 0x08	; 8
+ 220:	8e bd       	out	0x2e, r24	; 46
+				SelectFreqDel(flagdel);
+ 222:	82 2f       	mov	r24, r18
+ 224:	0e 94 bd 00 	call	0x17a	; 0x17a <SelectFreqDel>
+
+				if (channel==FLAG_CH_OCR1A)
+ 228:	01 11       	cpse	r16, r1
+ 22a:	06 c0       	rjmp	.+12     	; 0x238 <PWM1_init+0x74>
+				{
+					TCCR1A|=(1<<COM1A1);
+ 22c:	8f b5       	in	r24, 0x2f	; 47
+ 22e:	80 68       	ori	r24, 0x80	; 128
+ 230:	8f bd       	out	0x2f, r24	; 47
+					OCR1AH=(char)(starVal>>8);
+ 232:	db bd       	out	0x2b, r29	; 43
+					OCR1AL=(char)starVal;
+ 234:	ca bd       	out	0x2a, r28	; 42
+ 236:	74 c0       	rjmp	.+232    	; 0x320 <PWM1_init+0x15c>
+				}
+				else if (channel==FLAG_CH_OCR1B)
+ 238:	01 30       	cpi	r16, 0x01	; 1
+ 23a:	09 f0       	breq	.+2      	; 0x23e <PWM1_init+0x7a>
+ 23c:	71 c0       	rjmp	.+226    	; 0x320 <PWM1_init+0x15c>
+				{
+					TCCR1A|=(1<<COM1B1);
+ 23e:	8f b5       	in	r24, 0x2f	; 47
+ 240:	80 62       	ori	r24, 0x20	; 32
+ 242:	8f bd       	out	0x2f, r24	; 47
+					OCR1BH=(char)(starVal>>8);
+ 244:	d9 bd       	out	0x29, r29	; 41
+					OCR1BL=(char)starVal;
+ 246:	c8 bd       	out	0x28, r28	; 40
+ 248:	6b c0       	rjmp	.+214    	; 0x320 <PWM1_init+0x15c>
+				}
+				break;
+			}
+
+			case 10:{
+				TCCR1A|=(1<<WGM10)|(1<<WGM11);
+ 24a:	8f b5       	in	r24, 0x2f	; 47
+ 24c:	83 60       	ori	r24, 0x03	; 3
+ 24e:	8f bd       	out	0x2f, r24	; 47
+				TCCR1B|=(1<<WGM12)|(0<<WGM13);
+ 250:	8e b5       	in	r24, 0x2e	; 46
+ 252:	88 60       	ori	r24, 0x08	; 8
+ 254:	8e bd       	out	0x2e, r24	; 46
+				SelectFreqDel(flagdel);
+ 256:	82 2f       	mov	r24, r18
+ 258:	0e 94 bd 00 	call	0x17a	; 0x17a <SelectFreqDel>
+
+				if (channel==FLAG_CH_OCR1A)
+ 25c:	01 11       	cpse	r16, r1
+ 25e:	06 c0       	rjmp	.+12     	; 0x26c <PWM1_init+0xa8>
+				{
+					TCCR1A|=(1<<COM1A1);
+ 260:	8f b5       	in	r24, 0x2f	; 47
+ 262:	80 68       	ori	r24, 0x80	; 128
+ 264:	8f bd       	out	0x2f, r24	; 47
+					OCR1AH=(char)(starVal>>8);
+ 266:	db bd       	out	0x2b, r29	; 43
+					OCR1AL=(char)starVal;
+ 268:	ca bd       	out	0x2a, r28	; 42
+ 26a:	5a c0       	rjmp	.+180    	; 0x320 <PWM1_init+0x15c>
+				}
+				else if (channel==FLAG_CH_OCR1B)
+ 26c:	01 30       	cpi	r16, 0x01	; 1
+ 26e:	09 f0       	breq	.+2      	; 0x272 <PWM1_init+0xae>
+ 270:	57 c0       	rjmp	.+174    	; 0x320 <PWM1_init+0x15c>
+				{
+					TCCR1A|=(1<<COM1B1);
+ 272:	8f b5       	in	r24, 0x2f	; 47
+ 274:	80 62       	ori	r24, 0x20	; 32
+ 276:	8f bd       	out	0x2f, r24	; 47
+					OCR1BH=(char)(starVal>>8);
+ 278:	d9 bd       	out	0x29, r29	; 41
+					OCR1BL=(char)starVal;
+ 27a:	c8 bd       	out	0x28, r28	; 40
+ 27c:	51 c0       	rjmp	.+162    	; 0x320 <PWM1_init+0x15c>
+
+
+	}
+
+	//====================
+	else if (Mode==PWM_MODE_PHASECORRECT)
+ 27e:	42 30       	cpi	r20, 0x02	; 2
+ 280:	09 f0       	breq	.+2      	; 0x284 <PWM1_init+0xc0>
+ 282:	4e c0       	rjmp	.+156    	; 0x320 <PWM1_init+0x15c>
+	{
+		switch(flagBits)
+ 284:	69 30       	cpi	r22, 0x09	; 9
+ 286:	e9 f0       	breq	.+58     	; 0x2c2 <PWM1_init+0xfe>
+ 288:	6a 30       	cpi	r22, 0x0A	; 10
+ 28a:	99 f1       	breq	.+102    	; 0x2f2 <PWM1_init+0x12e>
+ 28c:	68 30       	cpi	r22, 0x08	; 8
+ 28e:	09 f0       	breq	.+2      	; 0x292 <PWM1_init+0xce>
+ 290:	47 c0       	rjmp	.+142    	; 0x320 <PWM1_init+0x15c>
+		{
+
+			case 8:{
+				TCCR1A|=(1<<WGM10)|(0<<WGM11);
+ 292:	8f b5       	in	r24, 0x2f	; 47
+ 294:	81 60       	ori	r24, 0x01	; 1
+ 296:	8f bd       	out	0x2f, r24	; 47
+				TCCR1B|=(0<<WGM12)|(0<<WGM13);
+ 298:	8e b5       	in	r24, 0x2e	; 46
+ 29a:	8e bd       	out	0x2e, r24	; 46
+				SelectFreqDel(flagdel);
+ 29c:	82 2f       	mov	r24, r18
+ 29e:	0e 94 bd 00 	call	0x17a	; 0x17a <SelectFreqDel>
+
+				if (channel==FLAG_CH_OCR1A)
+ 2a2:	01 11       	cpse	r16, r1
+ 2a4:	06 c0       	rjmp	.+12     	; 0x2b2 <PWM1_init+0xee>
+				{
+					TCCR1A|=(1<<COM1A1);
+ 2a6:	8f b5       	in	r24, 0x2f	; 47
+ 2a8:	80 68       	ori	r24, 0x80	; 128
+ 2aa:	8f bd       	out	0x2f, r24	; 47
+					OCR1AH=(char)(starVal>>8);
+ 2ac:	db bd       	out	0x2b, r29	; 43
+					OCR1AL=(char)starVal;
+ 2ae:	ca bd       	out	0x2a, r28	; 42
+ 2b0:	37 c0       	rjmp	.+110    	; 0x320 <PWM1_init+0x15c>
+				}
+				else if (channel==FLAG_CH_OCR1B)
+ 2b2:	01 30       	cpi	r16, 0x01	; 1
+ 2b4:	a9 f5       	brne	.+106    	; 0x320 <PWM1_init+0x15c>
+				{
+					TCCR1A|=(1<<COM1B1);
+ 2b6:	8f b5       	in	r24, 0x2f	; 47
+ 2b8:	80 62       	ori	r24, 0x20	; 32
+ 2ba:	8f bd       	out	0x2f, r24	; 47
+					OCR1BH=(char)(starVal>>8);
+ 2bc:	d9 bd       	out	0x29, r29	; 41
+					OCR1BL=(char)starVal;
+ 2be:	c8 bd       	out	0x28, r28	; 40
+ 2c0:	2f c0       	rjmp	.+94     	; 0x320 <PWM1_init+0x15c>
+				}
+				break;
+			}
+			case 9:{
+				TCCR1A|=(0<<WGM10)|(1<<WGM11);
+ 2c2:	8f b5       	in	r24, 0x2f	; 47
+ 2c4:	82 60       	ori	r24, 0x02	; 2
+ 2c6:	8f bd       	out	0x2f, r24	; 47
+				TCCR1B|=(0<<WGM12)|(0<<WGM13);
+ 2c8:	8e b5       	in	r24, 0x2e	; 46
+ 2ca:	8e bd       	out	0x2e, r24	; 46
+				SelectFreqDel(flagdel);
+ 2cc:	82 2f       	mov	r24, r18
+ 2ce:	0e 94 bd 00 	call	0x17a	; 0x17a <SelectFreqDel>
+
+				if (channel==FLAG_CH_OCR1A)
+ 2d2:	01 11       	cpse	r16, r1
+ 2d4:	06 c0       	rjmp	.+12     	; 0x2e2 <PWM1_init+0x11e>
+				{
+					TCCR1A|=(1<<COM1A1);
+ 2d6:	8f b5       	in	r24, 0x2f	; 47
+ 2d8:	80 68       	ori	r24, 0x80	; 128
+ 2da:	8f bd       	out	0x2f, r24	; 47
+					OCR1AH=(char)(starVal>>8);
+ 2dc:	db bd       	out	0x2b, r29	; 43
+					OCR1AL=(char)starVal;
+ 2de:	ca bd       	out	0x2a, r28	; 42
+ 2e0:	1f c0       	rjmp	.+62     	; 0x320 <PWM1_init+0x15c>
+				}
+				else if (channel==FLAG_CH_OCR1B)
+ 2e2:	01 30       	cpi	r16, 0x01	; 1
+ 2e4:	e9 f4       	brne	.+58     	; 0x320 <PWM1_init+0x15c>
+				{
+					TCCR1A|=(1<<COM1B1);
+ 2e6:	8f b5       	in	r24, 0x2f	; 47
+ 2e8:	80 62       	ori	r24, 0x20	; 32
+ 2ea:	8f bd       	out	0x2f, r24	; 47
+					OCR1BH=(char)(starVal>>8);
+ 2ec:	d9 bd       	out	0x29, r29	; 41
+					OCR1BL=(char)starVal;
+ 2ee:	c8 bd       	out	0x28, r28	; 40
+ 2f0:	17 c0       	rjmp	.+46     	; 0x320 <PWM1_init+0x15c>
+				}
+				break;
+			}
+
+			case 10:{
+				TCCR1A|=(1<<WGM10)|(1<<WGM11);
+ 2f2:	8f b5       	in	r24, 0x2f	; 47
+ 2f4:	83 60       	ori	r24, 0x03	; 3
+ 2f6:	8f bd       	out	0x2f, r24	; 47
+				TCCR1B|=(0<<WGM12)|(0<<WGM13);
+ 2f8:	8e b5       	in	r24, 0x2e	; 46
+ 2fa:	8e bd       	out	0x2e, r24	; 46
+				SelectFreqDel(flagdel);
+ 2fc:	82 2f       	mov	r24, r18
+ 2fe:	0e 94 bd 00 	call	0x17a	; 0x17a <SelectFreqDel>
+
+				if (channel==FLAG_CH_OCR1A)
+ 302:	01 11       	cpse	r16, r1
+ 304:	06 c0       	rjmp	.+12     	; 0x312 <PWM1_init+0x14e>
+				{
+					TCCR1A|=(1<<COM1A1);
+ 306:	8f b5       	in	r24, 0x2f	; 47
+ 308:	80 68       	ori	r24, 0x80	; 128
+ 30a:	8f bd       	out	0x2f, r24	; 47
+					OCR1AH=(char)(starVal>>8);
+ 30c:	db bd       	out	0x2b, r29	; 43
+					OCR1AL=(char)starVal;
+ 30e:	ca bd       	out	0x2a, r28	; 42
+ 310:	07 c0       	rjmp	.+14     	; 0x320 <PWM1_init+0x15c>
+				}
+				else if (channel==FLAG_CH_OCR1B)
+ 312:	01 30       	cpi	r16, 0x01	; 1
+ 314:	29 f4       	brne	.+10     	; 0x320 <PWM1_init+0x15c>
+				{
+					TCCR1A|=(1<<COM1B1);
+ 316:	8f b5       	in	r24, 0x2f	; 47
+ 318:	80 62       	ori	r24, 0x20	; 32
+ 31a:	8f bd       	out	0x2f, r24	; 47
+					OCR1BH=(char)(starVal>>8);
+ 31c:	d9 bd       	out	0x29, r29	; 41
+					OCR1BL=(char)starVal;
+ 31e:	c8 bd       	out	0x28, r28	; 40
+			}
+
+		}
+	}
+
+}
+ 320:	df 91       	pop	r29
+ 322:	cf 91       	pop	r28
+ 324:	0f 91       	pop	r16
+ 326:	08 95       	ret
+
+00000328 <__vector_1>:
+#include "Interrupt.h"
+
+
+//==========================Обработчик прерываний=====================
+ISR(INT0_vect)
+{
+ 328:	1f 92       	push	r1
+ 32a:	0f 92       	push	r0
+ 32c:	0f b6       	in	r0, 0x3f	; 63
+ 32e:	0f 92       	push	r0
+ 330:	11 24       	eor	r1, r1
+
+
+}
+ 332:	0f 90       	pop	r0
+ 334:	0f be       	out	0x3f, r0	; 63
+ 336:	0f 90       	pop	r0
+ 338:	1f 90       	pop	r1
+ 33a:	18 95       	reti
+
+0000033c <__vector_2>:
+
+
+ISR(INT1_vect)
+{
+ 33c:	1f 92       	push	r1
+ 33e:	0f 92       	push	r0
+ 340:	0f b6       	in	r0, 0x3f	; 63
+ 342:	0f 92       	push	r0
+ 344:	11 24       	eor	r1, r1
+
+
+}
+ 346:	0f 90       	pop	r0
+ 348:	0f be       	out	0x3f, r0	; 63
+ 34a:	0f 90       	pop	r0
+ 34c:	1f 90       	pop	r1
+ 34e:	18 95       	reti
+
+00000350 <main>:
+
+
+
+int main(void)
+{
+	DDRD|=(1<<PD0);
+ 350:	88 9a       	sbi	0x11, 0	; 17
+	PORTD&=~(1<<PD0);
+ 352:	90 98       	cbi	0x12, 0	; 18
+	DDRD|=(1<<PD1);
+ 354:	89 9a       	sbi	0x11, 1	; 17
+	PORTD&=~(1<<PD1);
+ 356:	91 98       	cbi	0x12, 1	; 18
+	DDRD|=(1<<PD2);
+ 358:	8a 9a       	sbi	0x11, 2	; 17
+	PORTD&=~(1<<PD2);
+ 35a:	92 98       	cbi	0x12, 2	; 18
+	DDRD|=(1<<PD4);
+ 35c:	8c 9a       	sbi	0x11, 4	; 17
+	PORTD&=~(1<<PD4);
+ 35e:	94 98       	cbi	0x12, 4	; 18
+	DDRD|=(1<<PD5);
+ 360:	8d 9a       	sbi	0x11, 5	; 17
+	PORTD&=~(1<<PD5);
+ 362:	95 98       	cbi	0x12, 5	; 18
+	//Timer0_init(0,CTC_MODE,156,FLAG_DEL_1024);
+	//Timer2_init_normalMode(21,NORMAL_MODE,0,FLAG_DEL_1024);
+	//Timer2_init_normalMode(0,CTC_MODE,195,FLAG_DEL_1024);
+	//Timer_init_16bit(57722,NORMAL_MODE,0,0,FLAG_DEL_1024);
+	//Timer_init_16bit(0,CTC_MODE,CTC_OCR1A,7812,FLAG_DEL_1024);
+	PWM1_init(900,FLAG_10BIT,PWM_MODE_FIRST,FLAG_DEL_1024,FLAG_CH_OCR1A);
+ 364:	00 e0       	ldi	r16, 0x00	; 0
+ 366:	25 e0       	ldi	r18, 0x05	; 5
+ 368:	41 e0       	ldi	r20, 0x01	; 1
+ 36a:	6a e0       	ldi	r22, 0x0A	; 10
+ 36c:	84 e8       	ldi	r24, 0x84	; 132
+ 36e:	93 e0       	ldi	r25, 0x03	; 3
+ 370:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <PWM1_init>
+	sei();
+ 374:	78 94       	sei
+    /* Replace with your application code */
+    while (1) 
+    {
+    }
+ 376:	ff cf       	rjmp	.-2      	; 0x376 <main+0x26>
+
+00000378 <_exit>:
+ 378:	f8 94       	cli
+
+0000037a <__stop_program>:
+ 37a:	ff cf       	rjmp	.-2      	; 0x37a <__stop_program>

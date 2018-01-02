@@ -1,0 +1,1084 @@
+
+gsm_mod.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000005a0  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000013c  00800060  000005a0  00000634  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000006  0080019c  0080019c  00000770  2**0
+                  ALLOC
+  3 .stab         000006cc  00000000  00000000  00000770  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000085  00000000  00000000  00000e3c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000020  00000000  00000000  00000ec1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_pubnames 00000154  00000000  00000000  00000ee1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00000710  00000000  00000000  00001035  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000001e4  00000000  00000000  00001745  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00000859  00000000  00000000  00001929  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000120  00000000  00000000  00002184  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    000001e4  00000000  00000000  000022a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    0000033a  00000000  00000000  00002488  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_pubtypes 00000038  00000000  00000000  000027c2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 4b 02 	jmp	0x496	; 0x496 <__vector_11>
+  30:	0c 94 20 02 	jmp	0x440	; 0x440 <__vector_12>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	11 e0       	ldi	r17, 0x01	; 1
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e0 ea       	ldi	r30, 0xA0	; 160
+  68:	f5 e0       	ldi	r31, 0x05	; 5
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ac 39       	cpi	r26, 0x9C	; 156
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	11 e0       	ldi	r17, 0x01	; 1
+  78:	ac e9       	ldi	r26, 0x9C	; 156
+  7a:	b1 e0       	ldi	r27, 0x01	; 1
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a2 3a       	cpi	r26, 0xA2	; 162
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 83 02 	call	0x506	; 0x506 <main>
+  8a:	0c 94 ce 02 	jmp	0x59c	; 0x59c <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <init_all>:
+#define LCD_PORT PORTB   //pinboard - PORTB, ATmega8 for Tower PORTD
+#define LCD_DELAY _delay_us (780)
+
+void init_all (void)
+	{
+	MCUCSR |= (1<<JTD); //Cancel JTAG
+  92:	84 b7       	in	r24, 0x34	; 52
+  94:	80 68       	ori	r24, 0x80	; 128
+  96:	84 bf       	out	0x34, r24	; 52
+	MCUCSR |= (1<<JTD);
+  98:	84 b7       	in	r24, 0x34	; 52
+  9a:	80 68       	ori	r24, 0x80	; 128
+  9c:	84 bf       	out	0x34, r24	; 52
+	//Timers
+	TCCR0 = 0;
+  9e:	13 be       	out	0x33, r1	; 51
+	TCCR1A = 0;
+  a0:	1f bc       	out	0x2f, r1	; 47
+	TCCR1B = 0;
+  a2:	1e bc       	out	0x2e, r1	; 46
+	TCCR2 = 0;
+  a4:	15 bc       	out	0x25, r1	; 37
+	DDRA = 0xFF;  //Comment on ATmega8
+  a6:	8f ef       	ldi	r24, 0xFF	; 255
+  a8:	8a bb       	out	0x1a, r24	; 26
+	DDRB = 0xFF;   //Config out port LCD PORT
+  aa:	87 bb       	out	0x17, r24	; 23
+	DDRD = 0xFF;   //
+  ac:	81 bb       	out	0x11, r24	; 17
+	DDRC = 0x00;   //Button port
+  ae:	14 ba       	out	0x14, r1	; 20
+	PORTA = 0;    //Comment on ATmega8
+  b0:	1b ba       	out	0x1b, r1	; 27
+	PORTC = 0xFF;
+  b2:	85 bb       	out	0x15, r24	; 21
+	PORTD = 0;
+  b4:	12 ba       	out	0x12, r1	; 18
+	PORTB = 0;
+  b6:	18 ba       	out	0x18, r1	; 24
+	#define baudrate 9600L
+	#define bauddivider (F_CPU/(16*baudrate)-1)
+	#define HI(x) ((x)>>8)
+	#define LO(x) ((x)& 0xFF)
+ 
+	UBRRL = LO(bauddivider);
+  b8:	83 e3       	ldi	r24, 0x33	; 51
+  ba:	89 b9       	out	0x09, r24	; 9
+	UBRRH = HI(bauddivider);
+  bc:	10 bc       	out	0x20, r1	; 32
+	UCSRA = 0;
+  be:	1b b8       	out	0x0b, r1	; 11
+	UCSRB = 1<<RXEN|1<<TXEN|1<<RXCIE|0<<TXCIE;
+  c0:	88 e9       	ldi	r24, 0x98	; 152
+  c2:	8a b9       	out	0x0a, r24	; 10
+	UCSRC = 1<<URSEL|1<<UCSZ0|1<<UCSZ1;
+  c4:	86 e8       	ldi	r24, 0x86	; 134
+  c6:	80 bd       	out	0x20, r24	; 32
+	UCSRA &= ~(1<< UDRE);
+  c8:	5d 98       	cbi	0x0b, 5	; 11
+	sei(); 		//Enable inerupts
+  ca:	78 94       	sei
+	}
+  cc:	08 95       	ret
+
+000000ce <lcd_com>:
+
+//LCD functions------------------
+
+void lcd_com (uint8_t cmd1)
+	{
+	LCD_PORT = ((cmd1 & 0xF0)); //RS=0 - it's command
+  ce:	98 2f       	mov	r25, r24
+  d0:	90 7f       	andi	r25, 0xF0	; 240
+  d2:	98 bb       	out	0x18, r25	; 24
+	LCD_PORT |= (1<<E);
+  d4:	c2 9a       	sbi	0x18, 2	; 24
+	asm ("nop");
+  d6:	00 00       	nop
+	LCD_PORT  &=~(1<<E);
+  d8:	c2 98       	cbi	0x18, 2	; 24
+	LCD_PORT = ((cmd1 & 0x0F)<<4); //Write low tetrade, RS, E to port
+  da:	90 e0       	ldi	r25, 0x00	; 0
+  dc:	24 e0       	ldi	r18, 0x04	; 4
+  de:	88 0f       	add	r24, r24
+  e0:	99 1f       	adc	r25, r25
+  e2:	2a 95       	dec	r18
+  e4:	e1 f7       	brne	.-8      	; 0xde <lcd_com+0x10>
+  e6:	88 bb       	out	0x18, r24	; 24
+	LCD_PORT |= (1<<E); //Write low tetrade to LCD
+  e8:	c2 9a       	sbi	0x18, 2	; 24
+	asm ("nop");
+  ea:	00 00       	nop
+	LCD_PORT &=(~(1<<E));
+  ec:	c2 98       	cbi	0x18, 2	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  ee:	87 e1       	ldi	r24, 0x17	; 23
+  f0:	96 e0       	ldi	r25, 0x06	; 6
+  f2:	01 97       	sbiw	r24, 0x01	; 1
+  f4:	f1 f7       	brne	.-4      	; 0xf2 <lcd_com+0x24>
+  f6:	00 c0       	rjmp	.+0      	; 0xf8 <lcd_com+0x2a>
+  f8:	00 00       	nop
+	LCD_DELAY;
+	}
+  fa:	08 95       	ret
+
+000000fc <lcd_data>:
+
+void lcd_data (uint8_t cmd1)
+	{
+	LCD_PORT=((cmd1 & 0xF0));
+  fc:	98 2f       	mov	r25, r24
+  fe:	90 7f       	andi	r25, 0xF0	; 240
+ 100:	98 bb       	out	0x18, r25	; 24
+	LCD_PORT|= ((1<<E)|(1<<RS)); //RS=1 - it's data Write higth tetrade to LCD
+ 102:	98 b3       	in	r25, 0x18	; 24
+ 104:	95 60       	ori	r25, 0x05	; 5
+ 106:	98 bb       	out	0x18, r25	; 24
+	asm ("nop");
+ 108:	00 00       	nop
+	LCD_PORT&=~(1<<E);
+ 10a:	c2 98       	cbi	0x18, 2	; 24
+	LCD_PORT = ((cmd1 & 0x0F)<<4); //Write low tetrade, RS, E to port 
+ 10c:	90 e0       	ldi	r25, 0x00	; 0
+ 10e:	34 e0       	ldi	r19, 0x04	; 4
+ 110:	88 0f       	add	r24, r24
+ 112:	99 1f       	adc	r25, r25
+ 114:	3a 95       	dec	r19
+ 116:	e1 f7       	brne	.-8      	; 0x110 <lcd_data+0x14>
+ 118:	88 bb       	out	0x18, r24	; 24
+	LCD_PORT|= ((1<<E)|(1<<RS)); //RS=1 - it's dataWrite low tetrade to LCD
+ 11a:	88 b3       	in	r24, 0x18	; 24
+ 11c:	85 60       	ori	r24, 0x05	; 5
+ 11e:	88 bb       	out	0x18, r24	; 24
+	asm ("nop");
+ 120:	00 00       	nop
+	LCD_PORT&=~(1<<E);
+ 122:	c2 98       	cbi	0x18, 2	; 24
+ 124:	87 e1       	ldi	r24, 0x17	; 23
+ 126:	96 e0       	ldi	r25, 0x06	; 6
+ 128:	01 97       	sbiw	r24, 0x01	; 1
+ 12a:	f1 f7       	brne	.-4      	; 0x128 <lcd_data+0x2c>
+ 12c:	00 c0       	rjmp	.+0      	; 0x12e <lcd_data+0x32>
+ 12e:	00 00       	nop
+	LCD_DELAY;
+	}
+ 130:	08 95       	ret
+
+00000132 <init_lcd>:
+
+void init_lcd (void)
+	{
+	lcd_com (LCD_START);
+ 132:	80 e3       	ldi	r24, 0x30	; 48
+ 134:	0e 94 67 00 	call	0xce	; 0xce <lcd_com>
+	lcd_com (LCD_MODE_4);
+ 138:	88 e2       	ldi	r24, 0x28	; 40
+ 13a:	0e 94 67 00 	call	0xce	; 0xce <lcd_com>
+	lcd_com (LCD_NO_CURS);	
+ 13e:	8c e0       	ldi	r24, 0x0C	; 12
+ 140:	0e 94 67 00 	call	0xce	; 0xce <lcd_com>
+	}
+ 144:	08 95       	ret
+
+00000146 <lcd_clr>:
+
+void lcd_clr ()
+	{
+	lcd_com (0x01);
+ 146:	81 e0       	ldi	r24, 0x01	; 1
+ 148:	0e 94 67 00 	call	0xce	; 0xce <lcd_com>
+ 14c:	87 e1       	ldi	r24, 0x17	; 23
+ 14e:	96 e0       	ldi	r25, 0x06	; 6
+ 150:	01 97       	sbiw	r24, 0x01	; 1
+ 152:	f1 f7       	brne	.-4      	; 0x150 <lcd_clr+0xa>
+ 154:	00 c0       	rjmp	.+0      	; 0x156 <lcd_clr+0x10>
+ 156:	00 00       	nop
+	LCD_DELAY;
+	}
+ 158:	08 95       	ret
+
+0000015a <lcd_string>:
+
+void lcd_string (char *s)
+	{
+ 15a:	ef 92       	push	r14
+ 15c:	ff 92       	push	r15
+ 15e:	cf 93       	push	r28
+ 160:	df 93       	push	r29
+ 162:	e8 2e       	mov	r14, r24
+ 164:	e7 01       	movw	r28, r14
+ 166:	7e 01       	movw	r14, r28
+ 168:	f9 2e       	mov	r15, r25
+ 16a:	e7 01       	movw	r28, r14
+	while  (*s!='\n') 
+ 16c:	02 c0       	rjmp	.+4      	; 0x172 <lcd_string+0x18>
+		lcd_data (*s++);
+ 16e:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+	LCD_DELAY;
+	}
+
+void lcd_string (char *s)
+	{
+	while  (*s!='\n') 
+ 172:	89 91       	ld	r24, Y+
+ 174:	8a 30       	cpi	r24, 0x0A	; 10
+ 176:	d9 f7       	brne	.-10     	; 0x16e <lcd_string+0x14>
+		lcd_data (*s++);
+	}
+ 178:	df 91       	pop	r29
+ 17a:	cf 91       	pop	r28
+ 17c:	ff 90       	pop	r15
+ 17e:	ef 90       	pop	r14
+ 180:	08 95       	ret
+
+00000182 <lcd_hex_out>:
+
+void lcd_hex_out (char sim)
+	{
+ 182:	1f 93       	push	r17
+ 184:	18 2f       	mov	r17, r24
+	uint8_t tmp;
+	tmp = ((sim & 0xF0) >> 4); //first sim
+ 186:	82 95       	swap	r24
+ 188:	8f 70       	andi	r24, 0x0F	; 15
+	if (tmp >= 0x0A) tmp += 7; //if simbol (ascii)
+ 18a:	8a 30       	cpi	r24, 0x0A	; 10
+ 18c:	08 f0       	brcs	.+2      	; 0x190 <lcd_hex_out+0xe>
+ 18e:	89 5f       	subi	r24, 0xF9	; 249
+	tmp += 0x30;    //add ascii
+	lcd_data (tmp);
+ 190:	80 5d       	subi	r24, 0xD0	; 208
+ 192:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+	tmp = sim & 0x0F; //second sim
+ 196:	81 2f       	mov	r24, r17
+ 198:	8f 70       	andi	r24, 0x0F	; 15
+	if (tmp >= 0x0A) tmp += 7; //if simbol (ascii)
+ 19a:	8a 30       	cpi	r24, 0x0A	; 10
+ 19c:	08 f0       	brcs	.+2      	; 0x1a0 <lcd_hex_out+0x1e>
+ 19e:	89 5f       	subi	r24, 0xF9	; 249
+	tmp += 0x30;    //add ascii
+	lcd_data (tmp);
+ 1a0:	80 5d       	subi	r24, 0xD0	; 208
+ 1a2:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+	}
+ 1a6:	1f 91       	pop	r17
+ 1a8:	08 95       	ret
+
+000001aa <SendByte>:
+//sending RS232 with interupt
+void SendByte(char byte)
+	{
+//	while(!(UCSRA & (1<<UDRE))); //Stop interrupt for correct position
+//	UDR = byte;
+	buffer[ind_in++] = byte;
+ 1aa:	90 91 9c 01 	lds	r25, 0x019C
+ 1ae:	eb ed       	ldi	r30, 0xDB	; 219
+ 1b0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b2:	e9 0f       	add	r30, r25
+ 1b4:	f1 1d       	adc	r31, r1
+ 1b6:	80 83       	st	Z, r24
+ 1b8:	9f 5f       	subi	r25, 0xFF	; 255
+ 1ba:	90 93 9c 01 	sts	0x019C, r25
+	ind_in &= BUF_MASK;
+ 1be:	80 91 9c 01 	lds	r24, 0x019C
+ 1c2:	8f 77       	andi	r24, 0x7F	; 127
+ 1c4:	80 93 9c 01 	sts	0x019C, r24
+	}
+ 1c8:	08 95       	ret
+
+000001ca <SendStr>:
+
+void SendStr(char *string)
+	{
+ 1ca:	ef 92       	push	r14
+ 1cc:	ff 92       	push	r15
+ 1ce:	cf 93       	push	r28
+ 1d0:	df 93       	push	r29
+ 1d2:	e8 2e       	mov	r14, r24
+ 1d4:	e7 01       	movw	r28, r14
+ 1d6:	7e 01       	movw	r14, r28
+ 1d8:	f9 2e       	mov	r15, r25
+ 1da:	e7 01       	movw	r28, r14
+	while (*string!='\n')  //check if End
+ 1dc:	02 c0       	rjmp	.+4      	; 0x1e2 <SendStr+0x18>
+		{
+		SendByte(*string);
+ 1de:	0e 94 d5 00 	call	0x1aa	; 0x1aa <SendByte>
+	ind_in &= BUF_MASK;
+	}
+
+void SendStr(char *string)
+	{
+	while (*string!='\n')  //check if End
+ 1e2:	89 91       	ld	r24, Y+
+ 1e4:	8a 30       	cpi	r24, 0x0A	; 10
+ 1e6:	d9 f7       	brne	.-10     	; 0x1de <SendStr+0x14>
+		{
+		SendByte(*string);
+		string++;
+		}
+	}
+ 1e8:	df 91       	pop	r29
+ 1ea:	cf 91       	pop	r28
+ 1ec:	ff 90       	pop	r15
+ 1ee:	ef 90       	pop	r14
+ 1f0:	08 95       	ret
+
+000001f2 <Ready_Snd>:
+
+void Ready_Snd (void)
+	{
+	SND_OFF;
+ 1f2:	95 98       	cbi	0x12, 5	; 18
+	RDY_ON;
+ 1f4:	94 9a       	sbi	0x12, 4	; 18
+	LCD_CLR;
+ 1f6:	0e 94 a3 00 	call	0x146	; 0x146 <lcd_clr>
+	lcd_string ("Ready\n");
+ 1fa:	80 e6       	ldi	r24, 0x60	; 96
+ 1fc:	90 e0       	ldi	r25, 0x00	; 0
+ 1fe:	0e 94 ad 00 	call	0x15a	; 0x15a <lcd_string>
+	}
+ 202:	08 95       	ret
+
+00000204 <ErrMes>:
+
+void ErrMes (void)
+	{
+	ERR_ON;
+ 204:	97 9a       	sbi	0x12, 7	; 18
+	SND_OFF;
+ 206:	95 98       	cbi	0x12, 5	; 18
+	RDY_ON;
+ 208:	94 9a       	sbi	0x12, 4	; 18
+	LCD_CLR;
+ 20a:	0e 94 a3 00 	call	0x146	; 0x146 <lcd_clr>
+	lcd_string ("Error\n");
+ 20e:	87 e6       	ldi	r24, 0x67	; 103
+ 210:	90 e0       	ldi	r25, 0x00	; 0
+ 212:	0e 94 ad 00 	call	0x15a	; 0x15a <lcd_string>
+	}
+ 216:	08 95       	ret
+
+00000218 <code_com>:
+
+
+void code_com (uint8_t count)
+	{
+	switch (com_detect)
+ 218:	90 91 a1 01 	lds	r25, 0x01A1
+ 21c:	92 31       	cpi	r25, 0x12	; 18
+ 21e:	51 f0       	breq	.+20     	; 0x234 <code_com+0x1c>
+ 220:	93 31       	cpi	r25, 0x13	; 19
+ 222:	18 f4       	brcc	.+6      	; 0x22a <code_com+0x12>
+ 224:	94 30       	cpi	r25, 0x04	; 4
+ 226:	c1 f4       	brne	.+48     	; 0x258 <code_com+0x40>
+ 228:	0d c0       	rjmp	.+26     	; 0x244 <code_com+0x2c>
+ 22a:	98 35       	cpi	r25, 0x58	; 88
+ 22c:	39 f0       	breq	.+14     	; 0x23c <code_com+0x24>
+ 22e:	9c 35       	cpi	r25, 0x5C	; 92
+ 230:	99 f4       	brne	.+38     	; 0x258 <code_com+0x40>
+ 232:	0c c0       	rjmp	.+24     	; 0x24c <code_com+0x34>
+		{
+		case (0x12): if (count == 4) com_detect = 2; break; //R^I^N^G
+ 234:	84 30       	cpi	r24, 0x04	; 4
+ 236:	91 f4       	brne	.+36     	; 0x25c <code_com+0x44>
+ 238:	82 e0       	ldi	r24, 0x02	; 2
+ 23a:	0b c0       	rjmp	.+22     	; 0x252 <code_com+0x3a>
+		case (0x58): if (count == 5) com_detect = 3; break; //ERROR
+ 23c:	85 30       	cpi	r24, 0x05	; 5
+ 23e:	71 f4       	brne	.+28     	; 0x25c <code_com+0x44>
+ 240:	83 e0       	ldi	r24, 0x03	; 3
+ 242:	07 c0       	rjmp	.+14     	; 0x252 <code_com+0x3a>
+		case (0x04): if (count == 2) com_detect = 1; break; //OK
+ 244:	82 30       	cpi	r24, 0x02	; 2
+ 246:	51 f4       	brne	.+20     	; 0x25c <code_com+0x44>
+ 248:	81 e0       	ldi	r24, 0x01	; 1
+ 24a:	03 c0       	rjmp	.+6      	; 0x252 <code_com+0x3a>
+		case (0x5C): if (count == 3) com_detect = 4; break; //ATI
+ 24c:	83 30       	cpi	r24, 0x03	; 3
+ 24e:	31 f4       	brne	.+12     	; 0x25c <code_com+0x44>
+ 250:	84 e0       	ldi	r24, 0x04	; 4
+ 252:	80 93 a1 01 	sts	0x01A1, r24
+ 256:	08 95       	ret
+		default: com_detect = 0;
+ 258:	10 92 a1 01 	sts	0x01A1, r1
+ 25c:	08 95       	ret
+
+0000025e <rx_check_in>:
+		}
+	}
+
+void rx_check_in (void)
+	{
+ 25e:	1f 93       	push	r17
+	uint8_t count=0;
+	com_detect = 0;  //zero command scaner
+ 260:	10 92 a1 01 	sts	0x01A1, r1
+	LCD_CLR;
+ 264:	0e 94 a3 00 	call	0x146	; 0x146 <lcd_clr>
+	lcd_string ("Mess in BUF: \n");
+ 268:	8e e6       	ldi	r24, 0x6E	; 110
+ 26a:	90 e0       	ldi	r25, 0x00	; 0
+ 26c:	0e 94 ad 00 	call	0x15a	; 0x15a <lcd_string>
+	lcd_data (mess+0x30);   //how many mess in buf (ASCII)
+ 270:	80 91 a0 01 	lds	r24, 0x01A0
+ 274:	80 5d       	subi	r24, 0xD0	; 208
+ 276:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+	lcd_com (LCD_LINE2);
+ 27a:	88 ea       	ldi	r24, 0xA8	; 168
+ 27c:	0e 94 67 00 	call	0xce	; 0xce <lcd_com>
+		}
+	}
+
+void rx_check_in (void)
+	{
+	uint8_t count=0;
+ 280:	10 e0       	ldi	r17, 0x00	; 0
+	lcd_string ("Mess in BUF: \n");
+	lcd_data (mess+0x30);   //how many mess in buf (ASCII)
+	lcd_com (LCD_LINE2);
+	while (1)
+		{
+		if (inbuf[rxind_out] != '$') //if mess separator detected
+ 282:	e0 91 9e 01 	lds	r30, 0x019E
+ 286:	f0 e0       	ldi	r31, 0x00	; 0
+ 288:	e5 5a       	subi	r30, 0xA5	; 165
+ 28a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 28c:	80 81       	ld	r24, Z
+ 28e:	84 32       	cpi	r24, 0x24	; 36
+ 290:	f1 f0       	breq	.+60     	; 0x2ce <rx_check_in+0x70>
+			{
+			com_detect ^=  inbuf[rxind_out];
+ 292:	90 91 a1 01 	lds	r25, 0x01A1
+ 296:	e0 91 9e 01 	lds	r30, 0x019E
+ 29a:	f0 e0       	ldi	r31, 0x00	; 0
+ 29c:	e5 5a       	subi	r30, 0xA5	; 165
+ 29e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 2a0:	80 81       	ld	r24, Z
+ 2a2:	89 27       	eor	r24, r25
+ 2a4:	80 93 a1 01 	sts	0x01A1, r24
+			lcd_data (inbuf[rxind_out++]);
+ 2a8:	90 91 9e 01 	lds	r25, 0x019E
+ 2ac:	e9 2f       	mov	r30, r25
+ 2ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 2b0:	e5 5a       	subi	r30, 0xA5	; 165
+ 2b2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 2b4:	80 81       	ld	r24, Z
+ 2b6:	9f 5f       	subi	r25, 0xFF	; 255
+ 2b8:	90 93 9e 01 	sts	0x019E, r25
+ 2bc:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+			rxind_out &= IN_BUF_MASK;
+ 2c0:	80 91 9e 01 	lds	r24, 0x019E
+ 2c4:	8f 73       	andi	r24, 0x3F	; 63
+ 2c6:	80 93 9e 01 	sts	0x019E, r24
+			count++;
+ 2ca:	1f 5f       	subi	r17, 0xFF	; 255
+			rxind_out++;
+			rxind_out &= IN_BUF_MASK;
+			code_com (count);
+			break;
+			}
+		}
+ 2cc:	da cf       	rjmp	.-76     	; 0x282 <rx_check_in+0x24>
+			rxind_out &= IN_BUF_MASK;
+			count++;
+			}
+		else 
+			{
+			rxind_out++;
+ 2ce:	80 91 9e 01 	lds	r24, 0x019E
+ 2d2:	8f 5f       	subi	r24, 0xFF	; 255
+ 2d4:	80 93 9e 01 	sts	0x019E, r24
+			rxind_out &= IN_BUF_MASK;
+ 2d8:	80 91 9e 01 	lds	r24, 0x019E
+ 2dc:	8f 73       	andi	r24, 0x3F	; 63
+ 2de:	80 93 9e 01 	sts	0x019E, r24
+			code_com (count);
+ 2e2:	81 2f       	mov	r24, r17
+ 2e4:	0e 94 0c 01 	call	0x218	; 0x218 <code_com>
+			break;
+			}
+		}
+	if (com_detect != 0)
+ 2e8:	80 91 a1 01 	lds	r24, 0x01A1
+ 2ec:	88 23       	and	r24, r24
+ 2ee:	41 f0       	breq	.+16     	; 0x300 <rx_check_in+0xa2>
+		{
+		lcd_data (' ');
+ 2f0:	80 e2       	ldi	r24, 0x20	; 32
+ 2f2:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+		lcd_data (com_detect + 0x30);
+ 2f6:	80 91 a1 01 	lds	r24, 0x01A1
+ 2fa:	80 5d       	subi	r24, 0xD0	; 208
+ 2fc:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+		}
+	}
+ 300:	1f 91       	pop	r17
+ 302:	08 95       	ret
+
+00000304 <send_sms>:
+
+int send_sms (uint8_t fun, char *number)
+	{
+ 304:	ff 92       	push	r15
+ 306:	0f 93       	push	r16
+ 308:	1f 93       	push	r17
+ 30a:	cf 93       	push	r28
+ 30c:	df 93       	push	r29
+ 30e:	f8 2e       	mov	r15, r24
+ 310:	eb 01       	movw	r28, r22
+	int clock = 0;
+	SND_ON;	//turn on LED
+ 312:	95 9a       	sbi	0x12, 5	; 18
+	RDY_OFF;
+ 314:	94 98       	cbi	0x12, 4	; 18
+	ERR_OFF;
+ 316:	97 98       	cbi	0x12, 7	; 18
+	SendStr("AT+CMGF=1\n");
+ 318:	8d e7       	ldi	r24, 0x7D	; 125
+ 31a:	90 e0       	ldi	r25, 0x00	; 0
+ 31c:	0e 94 e5 00 	call	0x1ca	; 0x1ca <SendStr>
+	SendByte(CR);
+ 320:	8d e0       	ldi	r24, 0x0D	; 13
+ 322:	0e 94 d5 00 	call	0x1aa	; 0x1aa <SendByte>
+	UCSRB &= ~(1<<RXEN);   //disable recieve
+ 326:	54 98       	cbi	0x0a, 4	; 10
+	SEND;
+ 328:	55 9a       	sbi	0x0a, 5	; 10
+	LCD_CLR;
+ 32a:	0e 94 a3 00 	call	0x146	; 0x146 <lcd_clr>
+	lcd_string ("Sending to:\n");
+ 32e:	88 e8       	ldi	r24, 0x88	; 136
+ 330:	90 e0       	ldi	r25, 0x00	; 0
+ 332:	0e 94 ad 00 	call	0x15a	; 0x15a <lcd_string>
+	lcd_com (LCD_LINE2);
+ 336:	88 ea       	ldi	r24, 0xA8	; 168
+ 338:	0e 94 67 00 	call	0xce	; 0xce <lcd_com>
+		}
+	}
+
+int send_sms (uint8_t fun, char *number)
+	{
+	int clock = 0;
+ 33c:	00 e0       	ldi	r16, 0x00	; 0
+ 33e:	10 e0       	ldi	r17, 0x00	; 0
+	UCSRB &= ~(1<<RXEN);   //disable recieve
+	SEND;
+	LCD_CLR;
+	lcd_string ("Sending to:\n");
+	lcd_com (LCD_LINE2);
+	while (com_detect != 1)
+ 340:	1a c0       	rjmp	.+52     	; 0x376 <send_sms+0x72>
+		{
+		if (++clock == TIMEOUT)	return 0;
+ 342:	0f 5f       	subi	r16, 0xFF	; 255
+ 344:	1f 4f       	sbci	r17, 0xFF	; 255
+ 346:	04 36       	cpi	r16, 0x64	; 100
+ 348:	11 05       	cpc	r17, r1
+ 34a:	09 f4       	brne	.+2      	; 0x34e <send_sms+0x4a>
+ 34c:	70 c0       	rjmp	.+224    	; 0x42e <send_sms+0x12a>
+		if (mess != 0) //if we have mess in buffer
+ 34e:	80 91 a0 01 	lds	r24, 0x01A0
+ 352:	88 23       	and	r24, r24
+ 354:	39 f0       	breq	.+14     	; 0x364 <send_sms+0x60>
+			{
+			// code 
+			mess--;   //minus one
+ 356:	80 91 a0 01 	lds	r24, 0x01A0
+ 35a:	81 50       	subi	r24, 0x01	; 1
+ 35c:	80 93 a0 01 	sts	0x01A0, r24
+			rx_check_in ();
+ 360:	0e 94 2f 01 	call	0x25e	; 0x25e <rx_check_in>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 364:	8f ef       	ldi	r24, 0xFF	; 255
+ 366:	90 e7       	ldi	r25, 0x70	; 112
+ 368:	a2 e0       	ldi	r26, 0x02	; 2
+ 36a:	81 50       	subi	r24, 0x01	; 1
+ 36c:	90 40       	sbci	r25, 0x00	; 0
+ 36e:	a0 40       	sbci	r26, 0x00	; 0
+ 370:	e1 f7       	brne	.-8      	; 0x36a <send_sms+0x66>
+ 372:	00 c0       	rjmp	.+0      	; 0x374 <send_sms+0x70>
+ 374:	00 00       	nop
+	UCSRB &= ~(1<<RXEN);   //disable recieve
+	SEND;
+	LCD_CLR;
+	lcd_string ("Sending to:\n");
+	lcd_com (LCD_LINE2);
+	while (com_detect != 1)
+ 376:	80 91 a1 01 	lds	r24, 0x01A1
+ 37a:	81 30       	cpi	r24, 0x01	; 1
+ 37c:	11 f7       	brne	.-60     	; 0x342 <send_sms+0x3e>
+			mess--;   //minus one
+			rx_check_in ();
+			}
+		DELL;
+		}
+	com_detect = 0;
+ 37e:	10 92 a1 01 	sts	0x01A1, r1
+	clock = 0;
+	SendStr("AT+CMGS=\n");
+ 382:	85 e9       	ldi	r24, 0x95	; 149
+ 384:	90 e0       	ldi	r25, 0x00	; 0
+ 386:	0e 94 e5 00 	call	0x1ca	; 0x1ca <SendStr>
+	while (*number != '\n')
+ 38a:	05 c0       	rjmp	.+10     	; 0x396 <send_sms+0x92>
+		{
+		SendByte (*number);
+ 38c:	0e 94 d5 00 	call	0x1aa	; 0x1aa <SendByte>
+		lcd_data (*number);
+ 390:	89 91       	ld	r24, Y+
+ 392:	0e 94 7e 00 	call	0xfc	; 0xfc <lcd_data>
+		DELL;
+		}
+	com_detect = 0;
+	clock = 0;
+	SendStr("AT+CMGS=\n");
+	while (*number != '\n')
+ 396:	88 81       	ld	r24, Y
+ 398:	8a 30       	cpi	r24, 0x0A	; 10
+ 39a:	c1 f7       	brne	.-16     	; 0x38c <send_sms+0x88>
+		{
+		SendByte (*number);
+		lcd_data (*number);
+		number++;
+		}
+	SendByte(CR);  //send ENTER
+ 39c:	8d e0       	ldi	r24, 0x0D	; 13
+ 39e:	0e 94 d5 00 	call	0x1aa	; 0x1aa <SendByte>
+	UCSRB &= ~(1<<RXEN);
+ 3a2:	54 98       	cbi	0x0a, 4	; 10
+	SEND;
+ 3a4:	55 9a       	sbi	0x0a, 5	; 10
+ 3a6:	8f ef       	ldi	r24, 0xFF	; 255
+ 3a8:	90 e7       	ldi	r25, 0x70	; 112
+ 3aa:	a2 e0       	ldi	r26, 0x02	; 2
+ 3ac:	81 50       	subi	r24, 0x01	; 1
+ 3ae:	90 40       	sbci	r25, 0x00	; 0
+ 3b0:	a0 40       	sbci	r26, 0x00	; 0
+ 3b2:	e1 f7       	brne	.-8      	; 0x3ac <send_sms+0xa8>
+ 3b4:	00 c0       	rjmp	.+0      	; 0x3b6 <send_sms+0xb2>
+ 3b6:	00 00       	nop
+	DELL;
+	if (fun == 1) SendStr(STR_MESS);
+ 3b8:	9f 2d       	mov	r25, r15
+ 3ba:	91 30       	cpi	r25, 0x01	; 1
+ 3bc:	19 f4       	brne	.+6      	; 0x3c4 <send_sms+0xc0>
+ 3be:	8f e9       	ldi	r24, 0x9F	; 159
+ 3c0:	90 e0       	ldi	r25, 0x00	; 0
+ 3c2:	02 c0       	rjmp	.+4      	; 0x3c8 <send_sms+0xc4>
+	else SendStr(REG_MESS);
+ 3c4:	85 eb       	ldi	r24, 0xB5	; 181
+ 3c6:	90 e0       	ldi	r25, 0x00	; 0
+ 3c8:	0e 94 e5 00 	call	0x1ca	; 0x1ca <SendStr>
+	SendByte(SUB);
+ 3cc:	8a e1       	ldi	r24, 0x1A	; 26
+ 3ce:	0e 94 d5 00 	call	0x1aa	; 0x1aa <SendByte>
+	UCSRB &= ~(1<<RXEN);
+ 3d2:	54 98       	cbi	0x0a, 4	; 10
+	SEND;
+ 3d4:	55 9a       	sbi	0x0a, 5	; 10
+			rx_check_in ();
+			}
+		DELL;
+		}
+	com_detect = 0;
+	clock = 0;
+ 3d6:	c0 e0       	ldi	r28, 0x00	; 0
+ 3d8:	d0 e0       	ldi	r29, 0x00	; 0
+	if (fun == 1) SendStr(STR_MESS);
+	else SendStr(REG_MESS);
+	SendByte(SUB);
+	UCSRB &= ~(1<<RXEN);
+	SEND;
+	while (com_detect != 1)
+ 3da:	1c c0       	rjmp	.+56     	; 0x414 <send_sms+0x110>
+		{
+		if (++clock == TIMEOUT || com_detect == 3)	return 0;
+ 3dc:	21 96       	adiw	r28, 0x01	; 1
+ 3de:	c4 36       	cpi	r28, 0x64	; 100
+ 3e0:	d1 05       	cpc	r29, r1
+ 3e2:	29 f1       	breq	.+74     	; 0x42e <send_sms+0x12a>
+ 3e4:	80 91 a1 01 	lds	r24, 0x01A1
+ 3e8:	83 30       	cpi	r24, 0x03	; 3
+ 3ea:	09 f1       	breq	.+66     	; 0x42e <send_sms+0x12a>
+		if (mess != 0) //if we have mess in buffer
+ 3ec:	80 91 a0 01 	lds	r24, 0x01A0
+ 3f0:	88 23       	and	r24, r24
+ 3f2:	39 f0       	breq	.+14     	; 0x402 <send_sms+0xfe>
+			{
+			// code 
+			mess--;   //minus one
+ 3f4:	80 91 a0 01 	lds	r24, 0x01A0
+ 3f8:	81 50       	subi	r24, 0x01	; 1
+ 3fa:	80 93 a0 01 	sts	0x01A0, r24
+			rx_check_in ();
+ 3fe:	0e 94 2f 01 	call	0x25e	; 0x25e <rx_check_in>
+ 402:	8f ef       	ldi	r24, 0xFF	; 255
+ 404:	90 e7       	ldi	r25, 0x70	; 112
+ 406:	a2 e0       	ldi	r26, 0x02	; 2
+ 408:	81 50       	subi	r24, 0x01	; 1
+ 40a:	90 40       	sbci	r25, 0x00	; 0
+ 40c:	a0 40       	sbci	r26, 0x00	; 0
+ 40e:	e1 f7       	brne	.-8      	; 0x408 <send_sms+0x104>
+ 410:	00 c0       	rjmp	.+0      	; 0x412 <send_sms+0x10e>
+ 412:	00 00       	nop
+	if (fun == 1) SendStr(STR_MESS);
+	else SendStr(REG_MESS);
+	SendByte(SUB);
+	UCSRB &= ~(1<<RXEN);
+	SEND;
+	while (com_detect != 1)
+ 414:	80 91 a1 01 	lds	r24, 0x01A1
+ 418:	81 30       	cpi	r24, 0x01	; 1
+ 41a:	01 f7       	brne	.-64     	; 0x3dc <send_sms+0xd8>
+			mess--;   //minus one
+			rx_check_in ();
+			}
+		DELL;
+		}
+	LCD_CLR;
+ 41c:	0e 94 a3 00 	call	0x146	; 0x146 <lcd_clr>
+	lcd_string ("Sended\n");
+ 420:	86 ec       	ldi	r24, 0xC6	; 198
+ 422:	90 e0       	ldi	r25, 0x00	; 0
+ 424:	0e 94 ad 00 	call	0x15a	; 0x15a <lcd_string>
+	return 1;
+ 428:	21 e0       	ldi	r18, 0x01	; 1
+ 42a:	30 e0       	ldi	r19, 0x00	; 0
+ 42c:	02 c0       	rjmp	.+4      	; 0x432 <send_sms+0x12e>
+	SendByte(SUB);
+	UCSRB &= ~(1<<RXEN);
+	SEND;
+	while (com_detect != 1)
+		{
+		if (++clock == TIMEOUT || com_detect == 3)	return 0;
+ 42e:	20 e0       	ldi	r18, 0x00	; 0
+ 430:	30 e0       	ldi	r19, 0x00	; 0
+		DELL;
+		}
+	LCD_CLR;
+	lcd_string ("Sended\n");
+	return 1;
+	}
+ 432:	c9 01       	movw	r24, r18
+ 434:	df 91       	pop	r29
+ 436:	cf 91       	pop	r28
+ 438:	1f 91       	pop	r17
+ 43a:	0f 91       	pop	r16
+ 43c:	ff 90       	pop	r15
+ 43e:	08 95       	ret
+
+00000440 <__vector_12>:
+
+//Sending data from buffer
+ISR (USART_UDRE_vect)		
+	{
+ 440:	1f 92       	push	r1
+ 442:	0f 92       	push	r0
+ 444:	0f b6       	in	r0, 0x3f	; 63
+ 446:	0f 92       	push	r0
+ 448:	11 24       	eor	r1, r1
+ 44a:	8f 93       	push	r24
+ 44c:	9f 93       	push	r25
+ 44e:	ef 93       	push	r30
+ 450:	ff 93       	push	r31
+	UDR = buffer[ind_out++];
+ 452:	80 91 9d 01 	lds	r24, 0x019D
+ 456:	e8 2f       	mov	r30, r24
+ 458:	f0 e0       	ldi	r31, 0x00	; 0
+ 45a:	e5 52       	subi	r30, 0x25	; 37
+ 45c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 45e:	90 81       	ld	r25, Z
+ 460:	9c b9       	out	0x0c, r25	; 12
+ 462:	8f 5f       	subi	r24, 0xFF	; 255
+ 464:	80 93 9d 01 	sts	0x019D, r24
+	ind_out &= BUF_MASK;
+ 468:	80 91 9d 01 	lds	r24, 0x019D
+ 46c:	8f 77       	andi	r24, 0x7F	; 127
+ 46e:	80 93 9d 01 	sts	0x019D, r24
+	if (ind_in == ind_out)  //if last byte
+ 472:	90 91 9c 01 	lds	r25, 0x019C
+ 476:	80 91 9d 01 	lds	r24, 0x019D
+ 47a:	98 17       	cp	r25, r24
+ 47c:	11 f4       	brne	.+4      	; 0x482 <__stack+0x23>
+		{
+		UCSRB &= ~(1<<UDRIE); //disable instrupt UDR empty
+ 47e:	55 98       	cbi	0x0a, 5	; 10
+		RESEN;
+ 480:	54 9a       	sbi	0x0a, 4	; 10
+		}
+	sei ();
+ 482:	78 94       	sei
+	}
+ 484:	ff 91       	pop	r31
+ 486:	ef 91       	pop	r30
+ 488:	9f 91       	pop	r25
+ 48a:	8f 91       	pop	r24
+ 48c:	0f 90       	pop	r0
+ 48e:	0f be       	out	0x3f, r0	; 63
+ 490:	0f 90       	pop	r0
+ 492:	1f 90       	pop	r1
+ 494:	18 95       	reti
+
+00000496 <__vector_11>:
+
+//recieving Data from RS232 and LCD out
+ISR (USART_RXC_vect)		
+{
+ 496:	1f 92       	push	r1
+ 498:	0f 92       	push	r0
+ 49a:	0f b6       	in	r0, 0x3f	; 63
+ 49c:	0f 92       	push	r0
+ 49e:	11 24       	eor	r1, r1
+ 4a0:	8f 93       	push	r24
+ 4a2:	9f 93       	push	r25
+ 4a4:	ef 93       	push	r30
+ 4a6:	ff 93       	push	r31
+	uint8_t tmp;
+	tmp = UDR;
+ 4a8:	8c b1       	in	r24, 0x0c	; 12
+	if (tmp == 0x0D) 	
+ 4aa:	8d 30       	cpi	r24, 0x0D	; 13
+ 4ac:	89 f4       	brne	.+34     	; 0x4d0 <__vector_11+0x3a>
+		{
+		mess++; //one more message
+ 4ae:	80 91 a0 01 	lds	r24, 0x01A0
+ 4b2:	8f 5f       	subi	r24, 0xFF	; 255
+ 4b4:	80 93 a0 01 	sts	0x01A0, r24
+		inbuf[rxind_in++] = '$'; //set separate between mess
+ 4b8:	80 91 9f 01 	lds	r24, 0x019F
+ 4bc:	e8 2f       	mov	r30, r24
+ 4be:	f0 e0       	ldi	r31, 0x00	; 0
+ 4c0:	e5 5a       	subi	r30, 0xA5	; 165
+ 4c2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4c4:	94 e2       	ldi	r25, 0x24	; 36
+ 4c6:	90 83       	st	Z, r25
+ 4c8:	8f 5f       	subi	r24, 0xFF	; 255
+ 4ca:	80 93 9f 01 	sts	0x019F, r24
+ 4ce:	0c c0       	rjmp	.+24     	; 0x4e8 <__vector_11+0x52>
+		rxind_in &= IN_BUF_MASK;
+		}
+    else 
+		{
+		if (tmp != 0x0A) //clear bad simble
+ 4d0:	8a 30       	cpi	r24, 0x0A	; 10
+ 4d2:	79 f0       	breq	.+30     	; 0x4f2 <__vector_11+0x5c>
+			{
+			inbuf[rxind_in++] = tmp;
+ 4d4:	90 91 9f 01 	lds	r25, 0x019F
+ 4d8:	e9 2f       	mov	r30, r25
+ 4da:	f0 e0       	ldi	r31, 0x00	; 0
+ 4dc:	e5 5a       	subi	r30, 0xA5	; 165
+ 4de:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4e0:	80 83       	st	Z, r24
+ 4e2:	9f 5f       	subi	r25, 0xFF	; 255
+ 4e4:	90 93 9f 01 	sts	0x019F, r25
+			rxind_in &= IN_BUF_MASK;
+ 4e8:	80 91 9f 01 	lds	r24, 0x019F
+ 4ec:	8f 73       	andi	r24, 0x3F	; 63
+ 4ee:	80 93 9f 01 	sts	0x019F, r24
+			}
+		}
+	sei ();
+ 4f2:	78 94       	sei
+}
+ 4f4:	ff 91       	pop	r31
+ 4f6:	ef 91       	pop	r30
+ 4f8:	9f 91       	pop	r25
+ 4fa:	8f 91       	pop	r24
+ 4fc:	0f 90       	pop	r0
+ 4fe:	0f be       	out	0x3f, r0	; 63
+ 500:	0f 90       	pop	r0
+ 502:	1f 90       	pop	r1
+ 504:	18 95       	reti
+
+00000506 <main>:
+
+
+int main (void)
+	{
+	uint8_t tmp;
+	init_all ();
+ 506:	0e 94 49 00 	call	0x92	; 0x92 <init_all>
+	LED_LGT;
+ 50a:	80 eb       	ldi	r24, 0xB0	; 176
+ 50c:	82 bb       	out	0x12, r24	; 18
+	init_lcd ();
+ 50e:	0e 94 99 00 	call	0x132	; 0x132 <init_lcd>
+ 512:	8f ef       	ldi	r24, 0xFF	; 255
+ 514:	94 e4       	ldi	r25, 0x44	; 68
+ 516:	a3 e3       	ldi	r26, 0x33	; 51
+ 518:	81 50       	subi	r24, 0x01	; 1
+ 51a:	90 40       	sbci	r25, 0x00	; 0
+ 51c:	a0 40       	sbci	r26, 0x00	; 0
+ 51e:	e1 f7       	brne	.-8      	; 0x518 <main+0x12>
+ 520:	00 c0       	rjmp	.+0      	; 0x522 <main+0x1c>
+ 522:	00 00       	nop
+	LONG_DELAY;
+	LCD_CLR;
+ 524:	0e 94 a3 00 	call	0x146	; 0x146 <lcd_clr>
+	if (!send_sms (1,NUM0)) ErrMes ();
+ 528:	81 e0       	ldi	r24, 0x01	; 1
+ 52a:	6e ec       	ldi	r22, 0xCE	; 206
+ 52c:	70 e0       	ldi	r23, 0x00	; 0
+ 52e:	0e 94 82 01 	call	0x304	; 0x304 <send_sms>
+ 532:	00 97       	sbiw	r24, 0x00	; 0
+ 534:	11 f4       	brne	.+4      	; 0x53a <main+0x34>
+ 536:	0e 94 02 01 	call	0x204	; 0x204 <ErrMes>
+ 53a:	8f ef       	ldi	r24, 0xFF	; 255
+ 53c:	94 e4       	ldi	r25, 0x44	; 68
+ 53e:	a3 e3       	ldi	r26, 0x33	; 51
+ 540:	81 50       	subi	r24, 0x01	; 1
+ 542:	90 40       	sbci	r25, 0x00	; 0
+ 544:	a0 40       	sbci	r26, 0x00	; 0
+ 546:	e1 f7       	brne	.-8      	; 0x540 <main+0x3a>
+ 548:	00 c0       	rjmp	.+0      	; 0x54a <main+0x44>
+ 54a:	00 00       	nop
+	LONG_DELAY;
+	Ready_Snd ();
+ 54c:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <Ready_Snd>
+	ERR_OFF;
+ 550:	97 98       	cbi	0x12, 7	; 18
+ 	while (1)
+		{
+		if (mess != 0) //if we have mess in buffer
+ 552:	80 91 a0 01 	lds	r24, 0x01A0
+ 556:	88 23       	and	r24, r24
+ 558:	b1 f0       	breq	.+44     	; 0x586 <main+0x80>
+			{
+			// code 
+			mess--;   //minus one
+ 55a:	80 91 a0 01 	lds	r24, 0x01A0
+ 55e:	81 50       	subi	r24, 0x01	; 1
+ 560:	80 93 a0 01 	sts	0x01A0, r24
+			rx_check_in ();
+ 564:	0e 94 2f 01 	call	0x25e	; 0x25e <rx_check_in>
+			if (com_detect == 2) 
+ 568:	80 91 a1 01 	lds	r24, 0x01A1
+ 56c:	82 30       	cpi	r24, 0x02	; 2
+ 56e:	49 f4       	brne	.+18     	; 0x582 <main+0x7c>
+				{
+				if (!send_sms (1,NUM0)) ErrMes ();
+ 570:	81 e0       	ldi	r24, 0x01	; 1
+ 572:	6e ec       	ldi	r22, 0xCE	; 206
+ 574:	70 e0       	ldi	r23, 0x00	; 0
+ 576:	0e 94 82 01 	call	0x304	; 0x304 <send_sms>
+ 57a:	00 97       	sbiw	r24, 0x00	; 0
+ 57c:	11 f4       	brne	.+4      	; 0x582 <main+0x7c>
+ 57e:	0e 94 02 01 	call	0x204	; 0x204 <ErrMes>
+				}
+			com_detect = 0;
+ 582:	10 92 a1 01 	sts	0x01A1, r1
+			}
+		tmp = PINC & 1;  //If push button:
+ 586:	83 b3       	in	r24, 0x13	; 19
+		if (tmp != 1)
+ 588:	80 fd       	sbrc	r24, 0
+ 58a:	e3 cf       	rjmp	.-58     	; 0x552 <main+0x4c>
+			{
+			send_sms(0,NUM0);
+ 58c:	80 e0       	ldi	r24, 0x00	; 0
+ 58e:	6e ec       	ldi	r22, 0xCE	; 206
+ 590:	70 e0       	ldi	r23, 0x00	; 0
+ 592:	0e 94 82 01 	call	0x304	; 0x304 <send_sms>
+			Ready_Snd ();
+ 596:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <Ready_Snd>
+ 59a:	db cf       	rjmp	.-74     	; 0x552 <main+0x4c>
+
+0000059c <_exit>:
+ 59c:	f8 94       	cli
+
+0000059e <__stop_program>:
+ 59e:	ff cf       	rjmp	.-2      	; 0x59e <__stop_program>

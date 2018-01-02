@@ -37,15 +37,18 @@ unsigned char Val_humidity_sensor(unsigned char channel)
 	{
 		return LOW_LEVEL_HUMIDITY;
 	}
-	else if(data>300 &&data<=700)
+	else if(data>300 && data<=700)
 	{
 		return MIDLLE_LEVEL_HUMIDITY;
 	}
-	else
+	else if(data>700)
 	{
-		return HIGH_LEVEL_HUMIDITY;
-
+	return HIGH_LEVEL_HUMIDITY;
 	}
+	
+		
+
+	
 
 }
 

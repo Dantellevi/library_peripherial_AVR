@@ -1,0 +1,1744 @@
+
+SIM_300.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000aa2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000174  00800060  00000aa2  00000b36  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          000000c2  008001d4  008001d4  00000caa  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000caa  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000cdc  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000240  00000000  00000000  00000d18  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00002a58  00000000  00000000  00000f58  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000eb1  00000000  00000000  000039b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000012d1  00000000  00000000  00004861  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000604  00000000  00000000  00005b34  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000079b  00000000  00000000  00006138  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001ab7  00000000  00000000  000068d3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000238  00000000  00000000  0000838a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 52 04 	jmp	0x8a4	; 0x8a4 <__vector_11>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	11 e0       	ldi	r17, 0x01	; 1
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e2 ea       	ldi	r30, 0xA2	; 162
+  68:	fa e0       	ldi	r31, 0x0A	; 10
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a4 3d       	cpi	r26, 0xD4	; 212
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	22 e0       	ldi	r18, 0x02	; 2
+  78:	a4 ed       	ldi	r26, 0xD4	; 212
+  7a:	b1 e0       	ldi	r27, 0x01	; 1
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a6 39       	cpi	r26, 0x96	; 150
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 15 01 	call	0x22a	; 0x22a <main>
+  8a:	0c 94 4f 05 	jmp	0xa9e	; 0xa9e <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <OutPin>:
+{
+	LCDcommand(0b1000);
+}
+void LCDnblank(void)		//Сделать видимой инфо на дисплее + отключить видимые курсоры.
+{
+	LCDcommand(0b1100);
+  92:	8a b3       	in	r24, 0x1a	; 26
+  94:	80 6f       	ori	r24, 0xF0	; 240
+  96:	8a bb       	out	0x1a, r24	; 26
+  98:	8b b3       	in	r24, 0x1b	; 27
+  9a:	8f 70       	andi	r24, 0x0F	; 15
+  9c:	8b bb       	out	0x1b, r24	; 27
+  9e:	08 95       	ret
+
+000000a0 <Strob>:
+  a0:	da 9a       	sbi	0x1b, 2	; 27
+  a2:	82 e0       	ldi	r24, 0x02	; 2
+  a4:	8a 95       	dec	r24
+  a6:	f1 f7       	brne	.-4      	; 0xa4 <Strob+0x4>
+  a8:	00 c0       	rjmp	.+0      	; 0xaa <Strob+0xa>
+  aa:	da 98       	cbi	0x1b, 2	; 27
+  ac:	08 95       	ret
+
+000000ae <Busy_flag>:
+  ae:	cf 93       	push	r28
+  b0:	8a b3       	in	r24, 0x1a	; 26
+  b2:	8f 70       	andi	r24, 0x0F	; 15
+  b4:	8a bb       	out	0x1a, r24	; 26
+  b6:	8b b3       	in	r24, 0x1b	; 27
+  b8:	80 6f       	ori	r24, 0xF0	; 240
+  ba:	8b bb       	out	0x1b, r24	; 27
+  bc:	d9 9a       	sbi	0x1b, 1	; 27
+  be:	da 9a       	sbi	0x1b, 2	; 27
+  c0:	00 00       	nop
+  c2:	00 00       	nop
+  c4:	c9 b3       	in	r28, 0x19	; 25
+  c6:	da 98       	cbi	0x1b, 2	; 27
+  c8:	00 00       	nop
+  ca:	00 00       	nop
+  cc:	0e 94 50 00 	call	0xa0	; 0xa0 <Strob>
+  d0:	00 00       	nop
+  d2:	00 00       	nop
+  d4:	cc 23       	and	r28, r28
+  d6:	9c f3       	brlt	.-26     	; 0xbe <Busy_flag+0x10>
+  d8:	d9 98       	cbi	0x1b, 1	; 27
+  da:	cf 91       	pop	r28
+  dc:	08 95       	ret
+
+000000de <Send_byte>:
+  de:	cf 93       	push	r28
+  e0:	df 93       	push	r29
+  e2:	d8 2f       	mov	r29, r24
+  e4:	0e 94 49 00 	call	0x92	; 0x92 <OutPin>
+  e8:	9d 2f       	mov	r25, r29
+  ea:	92 95       	swap	r25
+  ec:	9f 70       	andi	r25, 0x0F	; 15
+  ee:	cd 2f       	mov	r28, r29
+  f0:	cf 70       	andi	r28, 0x0F	; 15
+  f2:	90 fd       	sbrc	r25, 0
+  f4:	dc 9a       	sbi	0x1b, 4	; 27
+  f6:	96 95       	lsr	r25
+  f8:	90 fd       	sbrc	r25, 0
+  fa:	dd 9a       	sbi	0x1b, 5	; 27
+  fc:	96 95       	lsr	r25
+  fe:	90 fd       	sbrc	r25, 0
+ 100:	de 9a       	sbi	0x1b, 6	; 27
+ 102:	96 95       	lsr	r25
+ 104:	09 f0       	breq	.+2      	; 0x108 <Send_byte+0x2a>
+ 106:	df 9a       	sbi	0x1b, 7	; 27
+ 108:	0e 94 50 00 	call	0xa0	; 0xa0 <Strob>
+ 10c:	0e 94 49 00 	call	0x92	; 0x92 <OutPin>
+ 110:	d0 fd       	sbrc	r29, 0
+ 112:	dc 9a       	sbi	0x1b, 4	; 27
+ 114:	8c 2f       	mov	r24, r28
+ 116:	86 95       	lsr	r24
+ 118:	80 fd       	sbrc	r24, 0
+ 11a:	dd 9a       	sbi	0x1b, 5	; 27
+ 11c:	86 95       	lsr	r24
+ 11e:	80 fd       	sbrc	r24, 0
+ 120:	de 9a       	sbi	0x1b, 6	; 27
+ 122:	86 95       	lsr	r24
+ 124:	09 f0       	breq	.+2      	; 0x128 <Send_byte+0x4a>
+ 126:	df 9a       	sbi	0x1b, 7	; 27
+ 128:	0e 94 50 00 	call	0xa0	; 0xa0 <Strob>
+ 12c:	8a b3       	in	r24, 0x1a	; 26
+ 12e:	8f 70       	andi	r24, 0x0F	; 15
+ 130:	8a bb       	out	0x1a, r24	; 26
+ 132:	8b b3       	in	r24, 0x1b	; 27
+ 134:	8f 70       	andi	r24, 0x0F	; 15
+ 136:	8b bb       	out	0x1b, r24	; 27
+ 138:	df 91       	pop	r29
+ 13a:	cf 91       	pop	r28
+ 13c:	08 95       	ret
+
+0000013e <LCDcommand>:
+ 13e:	cf 93       	push	r28
+ 140:	c8 2f       	mov	r28, r24
+ 142:	0e 94 57 00 	call	0xae	; 0xae <Busy_flag>
+ 146:	8c 2f       	mov	r24, r28
+ 148:	0e 94 6f 00 	call	0xde	; 0xde <Send_byte>
+ 14c:	cf 91       	pop	r28
+ 14e:	08 95       	ret
+
+00000150 <LCDdata>:
+ 150:	cf 93       	push	r28
+ 152:	c8 2f       	mov	r28, r24
+ 154:	0e 94 57 00 	call	0xae	; 0xae <Busy_flag>
+ 158:	d8 9a       	sbi	0x1b, 0	; 27
+ 15a:	8c 2f       	mov	r24, r28
+ 15c:	0e 94 6f 00 	call	0xde	; 0xde <Send_byte>
+ 160:	d8 98       	cbi	0x1b, 0	; 27
+ 162:	cf 91       	pop	r28
+ 164:	08 95       	ret
+
+00000166 <LCDGotoXY>:
+ 166:	62 30       	cpi	r22, 0x02	; 2
+ 168:	31 f0       	breq	.+12     	; 0x176 <LCDGotoXY+0x10>
+ 16a:	63 30       	cpi	r22, 0x03	; 3
+ 16c:	31 f0       	breq	.+12     	; 0x17a <LCDGotoXY+0x14>
+ 16e:	61 30       	cpi	r22, 0x01	; 1
+ 170:	29 f4       	brne	.+10     	; 0x17c <LCDGotoXY+0x16>
+ 172:	80 5c       	subi	r24, 0xC0	; 192
+ 174:	03 c0       	rjmp	.+6      	; 0x17c <LCDGotoXY+0x16>
+ 176:	8c 5e       	subi	r24, 0xEC	; 236
+ 178:	01 c0       	rjmp	.+2      	; 0x17c <LCDGotoXY+0x16>
+ 17a:	8c 5a       	subi	r24, 0xAC	; 172
+ 17c:	80 68       	ori	r24, 0x80	; 128
+ 17e:	0e 94 9f 00 	call	0x13e	; 0x13e <LCDcommand>
+ 182:	08 95       	ret
+
+00000184 <LCDstringXY>:
+ 184:	cf 93       	push	r28
+ 186:	df 93       	push	r29
+ 188:	ec 01       	movw	r28, r24
+ 18a:	86 2f       	mov	r24, r22
+ 18c:	64 2f       	mov	r22, r20
+ 18e:	0e 94 b3 00 	call	0x166	; 0x166 <LCDGotoXY>
+ 192:	88 81       	ld	r24, Y
+ 194:	88 23       	and	r24, r24
+ 196:	31 f0       	breq	.+12     	; 0x1a4 <LCDstringXY+0x20>
+ 198:	21 96       	adiw	r28, 0x01	; 1
+ 19a:	0e 94 a8 00 	call	0x150	; 0x150 <LCDdata>
+ 19e:	89 91       	ld	r24, Y+
+ 1a0:	81 11       	cpse	r24, r1
+ 1a2:	fb cf       	rjmp	.-10     	; 0x19a <LCDstringXY+0x16>
+ 1a4:	df 91       	pop	r29
+ 1a6:	cf 91       	pop	r28
+ 1a8:	08 95       	ret
+
+000001aa <LCDinit>:
+ 1aa:	cf 93       	push	r28
+ 1ac:	2f ef       	ldi	r18, 0xFF	; 255
+ 1ae:	80 e7       	ldi	r24, 0x70	; 112
+ 1b0:	92 e0       	ldi	r25, 0x02	; 2
+ 1b2:	21 50       	subi	r18, 0x01	; 1
+ 1b4:	80 40       	sbci	r24, 0x00	; 0
+ 1b6:	90 40       	sbci	r25, 0x00	; 0
+ 1b8:	e1 f7       	brne	.-8      	; 0x1b2 <LCDinit+0x8>
+ 1ba:	00 c0       	rjmp	.+0      	; 0x1bc <LCDinit+0x12>
+ 1bc:	00 00       	nop
+ 1be:	8a b3       	in	r24, 0x1a	; 26
+ 1c0:	87 60       	ori	r24, 0x07	; 7
+ 1c2:	8a bb       	out	0x1a, r24	; 26
+ 1c4:	8b b3       	in	r24, 0x1b	; 27
+ 1c6:	88 7f       	andi	r24, 0xF8	; 248
+ 1c8:	8b bb       	out	0x1b, r24	; 27
+ 1ca:	0e 94 49 00 	call	0x92	; 0x92 <OutPin>
+ 1ce:	c3 e0       	ldi	r28, 0x03	; 3
+ 1d0:	8b b3       	in	r24, 0x1b	; 27
+ 1d2:	80 63       	ori	r24, 0x30	; 48
+ 1d4:	8b bb       	out	0x1b, r24	; 27
+ 1d6:	0e 94 50 00 	call	0xa0	; 0xa0 <Strob>
+ 1da:	8f e0       	ldi	r24, 0x0F	; 15
+ 1dc:	97 e2       	ldi	r25, 0x27	; 39
+ 1de:	01 97       	sbiw	r24, 0x01	; 1
+ 1e0:	f1 f7       	brne	.-4      	; 0x1de <LCDinit+0x34>
+ 1e2:	00 c0       	rjmp	.+0      	; 0x1e4 <LCDinit+0x3a>
+ 1e4:	00 00       	nop
+ 1e6:	c1 50       	subi	r28, 0x01	; 1
+ 1e8:	99 f7       	brne	.-26     	; 0x1d0 <LCDinit+0x26>
+ 1ea:	0e 94 57 00 	call	0xae	; 0xae <Busy_flag>
+ 1ee:	0e 94 49 00 	call	0x92	; 0x92 <OutPin>
+ 1f2:	dd 9a       	sbi	0x1b, 5	; 27
+ 1f4:	0e 94 50 00 	call	0xa0	; 0xa0 <Strob>
+ 1f8:	88 e2       	ldi	r24, 0x28	; 40
+ 1fa:	0e 94 9f 00 	call	0x13e	; 0x13e <LCDcommand>
+ 1fe:	8c e0       	ldi	r24, 0x0C	; 12
+ 200:	0e 94 9f 00 	call	0x13e	; 0x13e <LCDcommand>
+ 204:	86 e0       	ldi	r24, 0x06	; 6
+ 206:	0e 94 9f 00 	call	0x13e	; 0x13e <LCDcommand>
+ 20a:	82 e0       	ldi	r24, 0x02	; 2
+ 20c:	0e 94 9f 00 	call	0x13e	; 0x13e <LCDcommand>
+ 210:	81 e0       	ldi	r24, 0x01	; 1
+ 212:	0e 94 9f 00 	call	0x13e	; 0x13e <LCDcommand>
+ 216:	cf 91       	pop	r28
+ 218:	08 95       	ret
+
+0000021a <LCDclear>:
+}
+void LCDclear(void)			//Очистка дисплея + курсор на позицию 0,0
+{
+	LCDcommand(0b1);
+ 21a:	81 e0       	ldi	r24, 0x01	; 1
+ 21c:	0e 94 9f 00 	call	0x13e	; 0x13e <LCDcommand>
+ 220:	08 95       	ret
+
+00000222 <Port_Init>:
+extern char sim300_buffer[128];
+
+void Halt(void);
+void Port_Init(void)
+{
+	DDRA=0xFF;
+ 222:	8f ef       	ldi	r24, 0xFF	; 255
+ 224:	8a bb       	out	0x1a, r24	; 26
+	PORTA=0x00;
+ 226:	1b ba       	out	0x1b, r1	; 27
+ 228:	08 95       	ret
+
+0000022a <main>:
+
+}
+
+int main(void)
+{
+ 22a:	cf 93       	push	r28
+ 22c:	df 93       	push	r29
+ 22e:	cd b7       	in	r28, 0x3d	; 61
+ 230:	de b7       	in	r29, 0x3e	; 62
+ 232:	c0 56       	subi	r28, 0x60	; 96
+ 234:	d1 09       	sbc	r29, r1
+ 236:	0f b6       	in	r0, 0x3f	; 63
+ 238:	f8 94       	cli
+ 23a:	de bf       	out	0x3e, r29	; 62
+ 23c:	0f be       	out	0x3f, r0	; 63
+ 23e:	cd bf       	out	0x3d, r28	; 61
+	Port_Init();
+ 240:	0e 94 11 01 	call	0x222	; 0x222 <Port_Init>
+	LCDinit();
+ 244:	0e 94 d5 00 	call	0x1aa	; 0x1aa <LCDinit>
+    Usart_Init(Usart_baud);
+ 248:	60 e8       	ldi	r22, 0x80	; 128
+ 24a:	75 e2       	ldi	r23, 0x25	; 37
+ 24c:	80 e0       	ldi	r24, 0x00	; 0
+ 24e:	90 e0       	ldi	r25, 0x00	; 0
+ 250:	0e 94 33 04 	call	0x866	; 0x866 <Usart_Init>
+	LCDstringXY("SIM300 Demo !",0,0);
+ 254:	40 e0       	ldi	r20, 0x00	; 0
+ 256:	60 e0       	ldi	r22, 0x00	; 0
+ 258:	80 e6       	ldi	r24, 0x60	; 96
+ 25a:	90 e0       	ldi	r25, 0x00	; 0
+ 25c:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 260:	2f ef       	ldi	r18, 0xFF	; 255
+ 262:	39 e6       	ldi	r19, 0x69	; 105
+ 264:	88 e1       	ldi	r24, 0x18	; 24
+ 266:	21 50       	subi	r18, 0x01	; 1
+ 268:	30 40       	sbci	r19, 0x00	; 0
+ 26a:	80 40       	sbci	r24, 0x00	; 0
+ 26c:	e1 f7       	brne	.-8      	; 0x266 <main+0x3c>
+ 26e:	00 c0       	rjmp	.+0      	; 0x270 <main+0x46>
+ 270:	00 00       	nop
+	_delay_ms(1000);
+	//Initialize SIM300 module
+	LCDstringXY("Initializing ...",0,0);
+ 272:	40 e0       	ldi	r20, 0x00	; 0
+ 274:	60 e0       	ldi	r22, 0x00	; 0
+ 276:	8e e6       	ldi	r24, 0x6E	; 110
+ 278:	90 e0       	ldi	r25, 0x00	; 0
+ 27a:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+	int8_t r=SIM300Init();
+ 27e:	0e 94 0c 03 	call	0x618	; 0x618 <SIM300Init>
+ 282:	9f ef       	ldi	r25, 0xFF	; 255
+ 284:	29 e6       	ldi	r18, 0x69	; 105
+ 286:	38 e1       	ldi	r19, 0x18	; 24
+ 288:	91 50       	subi	r25, 0x01	; 1
+ 28a:	20 40       	sbci	r18, 0x00	; 0
+ 28c:	30 40       	sbci	r19, 0x00	; 0
+ 28e:	e1 f7       	brne	.-8      	; 0x288 <main+0x5e>
+ 290:	00 c0       	rjmp	.+0      	; 0x292 <main+0x68>
+ 292:	00 00       	nop
+	_delay_ms(1000);
+
+	//Проверяем статус программы
+	switch(r)
+ 294:	8e 3f       	cpi	r24, 0xFE	; 254
+ 296:	71 f1       	breq	.+92     	; 0x2f4 <main+0xca>
+ 298:	1c f4       	brge	.+6      	; 0x2a0 <main+0x76>
+ 29a:	8d 3f       	cpi	r24, 0xFD	; 253
+ 29c:	e9 f0       	breq	.+58     	; 0x2d8 <main+0xae>
+ 29e:	31 c0       	rjmp	.+98     	; 0x302 <main+0xd8>
+ 2a0:	8f 3f       	cpi	r24, 0xFF	; 255
+ 2a2:	09 f1       	breq	.+66     	; 0x2e6 <main+0xbc>
+ 2a4:	81 30       	cpi	r24, 0x01	; 1
+ 2a6:	69 f5       	brne	.+90     	; 0x302 <main+0xd8>
+	{
+		case SIM300_OK:
+		LCDstringXY("OK !",0,1);
+ 2a8:	41 e0       	ldi	r20, 0x01	; 1
+ 2aa:	60 e0       	ldi	r22, 0x00	; 0
+ 2ac:	8f e7       	ldi	r24, 0x7F	; 127
+ 2ae:	90 e0       	ldi	r25, 0x00	; 0
+ 2b0:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 2b4:	8f ef       	ldi	r24, 0xFF	; 255
+ 2b6:	99 e6       	ldi	r25, 0x69	; 105
+ 2b8:	28 e1       	ldi	r18, 0x18	; 24
+ 2ba:	81 50       	subi	r24, 0x01	; 1
+ 2bc:	90 40       	sbci	r25, 0x00	; 0
+ 2be:	20 40       	sbci	r18, 0x00	; 0
+ 2c0:	e1 f7       	brne	.-8      	; 0x2ba <main+0x90>
+ 2c2:	00 c0       	rjmp	.+0      	; 0x2c4 <main+0x9a>
+ 2c4:	00 00       	nop
+
+	
+	_delay_ms(1000);
+
+	//IMEI No display
+	LCDclear();
+ 2c6:	0e 94 0d 01 	call	0x21a	; 0x21a <LCDclear>
+	
+	char imei[16];
+	
+	r=SIM300GetIMEI(imei);
+ 2ca:	ce 01       	movw	r24, r28
+ 2cc:	01 96       	adiw	r24, 0x01	; 1
+ 2ce:	0e 94 f5 03 	call	0x7ea	; 0x7ea <SIM300GetIMEI>
+	if(r==SIM300_TIMEOUT)
+ 2d2:	8d 3f       	cpi	r24, 0xFD	; 253
+ 2d4:	21 f5       	brne	.+72     	; 0x31e <main+0xf4>
+ 2d6:	1c c0       	rjmp	.+56     	; 0x310 <main+0xe6>
+	{
+		case SIM300_OK:
+		LCDstringXY("OK !",0,1);
+		break;
+		case SIM300_TIMEOUT:
+		LCDstringXY("No response",0,1);
+ 2d8:	41 e0       	ldi	r20, 0x01	; 1
+ 2da:	60 e0       	ldi	r22, 0x00	; 0
+ 2dc:	84 e8       	ldi	r24, 0x84	; 132
+ 2de:	90 e0       	ldi	r25, 0x00	; 0
+ 2e0:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 2e4:	ff cf       	rjmp	.-2      	; 0x2e4 <main+0xba>
+		
+		Halt();
+		case SIM300_INVALID_RESPONSE:
+		LCDstringXY("Inv response",0,1);
+ 2e6:	41 e0       	ldi	r20, 0x01	; 1
+ 2e8:	60 e0       	ldi	r22, 0x00	; 0
+ 2ea:	80 e9       	ldi	r24, 0x90	; 144
+ 2ec:	90 e0       	ldi	r25, 0x00	; 0
+ 2ee:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 2f2:	ff cf       	rjmp	.-2      	; 0x2f2 <main+0xc8>
+		
+		Halt();
+		case SIM300_FAIL:
+		LCDstringXY("Fail",0,1);
+ 2f4:	41 e0       	ldi	r20, 0x01	; 1
+ 2f6:	60 e0       	ldi	r22, 0x00	; 0
+ 2f8:	8d e9       	ldi	r24, 0x9D	; 157
+ 2fa:	90 e0       	ldi	r25, 0x00	; 0
+ 2fc:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 300:	ff cf       	rjmp	.-2      	; 0x300 <main+0xd6>
+		
+		Halt();
+		default:
+		LCDstringXY("Unknown Error",0,1);
+ 302:	41 e0       	ldi	r20, 0x01	; 1
+ 304:	60 e0       	ldi	r22, 0x00	; 0
+ 306:	82 ea       	ldi	r24, 0xA2	; 162
+ 308:	90 e0       	ldi	r25, 0x00	; 0
+ 30a:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 30e:	ff cf       	rjmp	.-2      	; 0x30e <main+0xe4>
+	char imei[16];
+	
+	r=SIM300GetIMEI(imei);
+	if(r==SIM300_TIMEOUT)
+	{
+		LCDstringXY("Comm Error !",0,0);
+ 310:	40 e0       	ldi	r20, 0x00	; 0
+ 312:	60 e0       	ldi	r22, 0x00	; 0
+ 314:	80 eb       	ldi	r24, 0xB0	; 176
+ 316:	90 e0       	ldi	r25, 0x00	; 0
+ 318:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 31c:	ff cf       	rjmp	.-2      	; 0x31c <main+0xf2>
+		Halt();
+	}
+	else{
+	LCDstringXY("Device IMEI:",0,0);
+ 31e:	40 e0       	ldi	r20, 0x00	; 0
+ 320:	60 e0       	ldi	r22, 0x00	; 0
+ 322:	8d eb       	ldi	r24, 0xBD	; 189
+ 324:	90 e0       	ldi	r25, 0x00	; 0
+ 326:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+	LCDstringXY(imei,0,1);
+ 32a:	41 e0       	ldi	r20, 0x01	; 1
+ 32c:	60 e0       	ldi	r22, 0x00	; 0
+ 32e:	ce 01       	movw	r24, r28
+ 330:	01 96       	adiw	r24, 0x01	; 1
+ 332:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 336:	3f ef       	ldi	r19, 0xFF	; 255
+ 338:	89 e6       	ldi	r24, 0x69	; 105
+ 33a:	98 e1       	ldi	r25, 0x18	; 24
+ 33c:	31 50       	subi	r19, 0x01	; 1
+ 33e:	80 40       	sbci	r24, 0x00	; 0
+ 340:	90 40       	sbci	r25, 0x00	; 0
+ 342:	e1 f7       	brne	.-8      	; 0x33c <main+0x112>
+ 344:	00 c0       	rjmp	.+0      	; 0x346 <main+0x11c>
+ 346:	00 00       	nop
+	}
+	_delay_ms(1000);
+
+	//Manufacturer ID
+	LCDclear();
+ 348:	0e 94 0d 01 	call	0x21a	; 0x21a <LCDclear>
+	
+	char model[48];
+	
+	r=SIM300GetModel(model);
+ 34c:	ce 01       	movw	r24, r28
+ 34e:	41 96       	adiw	r24, 0x11	; 17
+ 350:	0e 94 14 04 	call	0x828	; 0x828 <SIM300GetModel>
+	
+	if(r==SIM300_TIMEOUT)
+ 354:	8d 3f       	cpi	r24, 0xFD	; 253
+ 356:	39 f4       	brne	.+14     	; 0x366 <main+0x13c>
+	{
+		LCDstringXY("Command Error !",0,0);
+ 358:	40 e0       	ldi	r20, 0x00	; 0
+ 35a:	60 e0       	ldi	r22, 0x00	; 0
+ 35c:	8a ec       	ldi	r24, 0xCA	; 202
+ 35e:	90 e0       	ldi	r25, 0x00	; 0
+ 360:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 364:	ff cf       	rjmp	.-2      	; 0x364 <main+0x13a>
+		Halt();
+	}
+	else{
+		LCDstringXY("Model:",0,1);
+ 366:	41 e0       	ldi	r20, 0x01	; 1
+ 368:	60 e0       	ldi	r22, 0x00	; 0
+ 36a:	8a ed       	ldi	r24, 0xDA	; 218
+ 36c:	90 e0       	ldi	r25, 0x00	; 0
+ 36e:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+		LCDstringXY(model,8,1);
+ 372:	41 e0       	ldi	r20, 0x01	; 1
+ 374:	68 e0       	ldi	r22, 0x08	; 8
+ 376:	ce 01       	movw	r24, r28
+ 378:	41 96       	adiw	r24, 0x11	; 17
+ 37a:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 37e:	2f ef       	ldi	r18, 0xFF	; 255
+ 380:	39 e6       	ldi	r19, 0x69	; 105
+ 382:	88 e1       	ldi	r24, 0x18	; 24
+ 384:	21 50       	subi	r18, 0x01	; 1
+ 386:	30 40       	sbci	r19, 0x00	; 0
+ 388:	80 40       	sbci	r24, 0x00	; 0
+ 38a:	e1 f7       	brne	.-8      	; 0x384 <main+0x15a>
+ 38c:	00 c0       	rjmp	.+0      	; 0x38e <main+0x164>
+ 38e:	00 00       	nop
+	}
+	
+	_delay_ms(1000);
+	
+	//Проверка сим-карты
+	LCDclear();
+ 390:	0e 94 0d 01 	call	0x21a	; 0x21a <LCDclear>
+	LCDstringXY("Checking SIMCard",0,1);
+ 394:	41 e0       	ldi	r20, 0x01	; 1
+ 396:	60 e0       	ldi	r22, 0x00	; 0
+ 398:	81 ee       	ldi	r24, 0xE1	; 225
+ 39a:	90 e0       	ldi	r25, 0x00	; 0
+ 39c:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 3a0:	9f ef       	ldi	r25, 0xFF	; 255
+ 3a2:	29 e6       	ldi	r18, 0x69	; 105
+ 3a4:	38 e1       	ldi	r19, 0x18	; 24
+ 3a6:	91 50       	subi	r25, 0x01	; 1
+ 3a8:	20 40       	sbci	r18, 0x00	; 0
+ 3aa:	30 40       	sbci	r19, 0x00	; 0
+ 3ac:	e1 f7       	brne	.-8      	; 0x3a6 <main+0x17c>
+ 3ae:	00 c0       	rjmp	.+0      	; 0x3b0 <main+0x186>
+ 3b0:	00 00       	nop
+	
+	_delay_ms(1000);
+	
+	r=SIM300IsSIMInserted();
+ 3b2:	0e 94 9b 03 	call	0x736	; 0x736 <SIM300IsSIMInserted>
+	
+	if (r==SIM300_SIM_NOT_PRESENT)
+ 3b6:	81 11       	cpse	r24, r1
+ 3b8:	07 c0       	rjmp	.+14     	; 0x3c8 <main+0x19e>
+	{
+		//Отсутствует симкарта
+		LCDstringXY("No SIM Card !",0,1);
+ 3ba:	41 e0       	ldi	r20, 0x01	; 1
+ 3bc:	60 e0       	ldi	r22, 0x00	; 0
+ 3be:	82 ef       	ldi	r24, 0xF2	; 242
+ 3c0:	90 e0       	ldi	r25, 0x00	; 0
+ 3c2:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 3c6:	ff cf       	rjmp	.-2      	; 0x3c6 <main+0x19c>
+		
+		Halt();
+	}
+	else if(r==SIM300_TIMEOUT)
+ 3c8:	8d 3f       	cpi	r24, 0xFD	; 253
+ 3ca:	39 f4       	brne	.+14     	; 0x3da <main+0x1b0>
+	{
+		//Ошибка соединения
+		LCDstringXY("Comm Error !",0,1);
+ 3cc:	41 e0       	ldi	r20, 0x01	; 1
+ 3ce:	60 e0       	ldi	r22, 0x00	; 0
+ 3d0:	80 eb       	ldi	r24, 0xB0	; 176
+ 3d2:	90 e0       	ldi	r25, 0x00	; 0
+ 3d4:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 3d8:	ff cf       	rjmp	.-2      	; 0x3d8 <main+0x1ae>
+		
+		Halt();
+	}
+	else if(r==SIM300_SIM_PRESENT)
+ 3da:	81 30       	cpi	r24, 0x01	; 1
+ 3dc:	79 f4       	brne	.+30     	; 0x3fc <main+0x1d2>
+	{
+		//Обнаружена симкарты
+		LCDstringXY("SIM Card Present",0,1);
+ 3de:	41 e0       	ldi	r20, 0x01	; 1
+ 3e0:	60 e0       	ldi	r22, 0x00	; 0
+ 3e2:	80 e0       	ldi	r24, 0x00	; 0
+ 3e4:	91 e0       	ldi	r25, 0x01	; 1
+ 3e6:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 3ea:	8f ef       	ldi	r24, 0xFF	; 255
+ 3ec:	99 e6       	ldi	r25, 0x69	; 105
+ 3ee:	28 e1       	ldi	r18, 0x18	; 24
+ 3f0:	81 50       	subi	r24, 0x01	; 1
+ 3f2:	90 40       	sbci	r25, 0x00	; 0
+ 3f4:	20 40       	sbci	r18, 0x00	; 0
+ 3f6:	e1 f7       	brne	.-8      	; 0x3f0 <main+0x1c6>
+ 3f8:	00 c0       	rjmp	.+0      	; 0x3fa <main+0x1d0>
+ 3fa:	00 00       	nop
+		
+		_delay_ms(1000);
+	}
+
+	//Network search
+	LCDclear();
+ 3fc:	0e 94 0d 01 	call	0x21a	; 0x21a <LCDclear>
+	LCDstringXY("SearchingNetwork",0,0);
+ 400:	40 e0       	ldi	r20, 0x00	; 0
+ 402:	60 e0       	ldi	r22, 0x00	; 0
+ 404:	81 e1       	ldi	r24, 0x11	; 17
+ 406:	91 e0       	ldi	r25, 0x01	; 1
+ 408:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+	
+	uint8_t		nw_found=0;
+	uint16_t	tries=0;
+	uint8_t		x=0;
+	
+	while(!nw_found)
+ 40c:	0f 2e       	mov	r0, r31
+ 40e:	f8 e5       	ldi	r31, 0x58	; 88
+ 410:	ef 2e       	mov	r14, r31
+ 412:	f2 e0       	ldi	r31, 0x02	; 2
+ 414:	ff 2e       	mov	r15, r31
+ 416:	f0 2d       	mov	r31, r0
+	LCDclear();
+	LCDstringXY("SearchingNetwork",0,0);
+	
+	uint8_t		nw_found=0;
+	uint16_t	tries=0;
+	uint8_t		x=0;
+ 418:	10 e0       	ldi	r17, 0x00	; 0
+	
+	while(!nw_found)
+ 41a:	22 c0       	rjmp	.+68     	; 0x460 <__stack+0x1>
+	{
+		r=SIM300GetNetStat();
+		
+		if(r==SIM300_NW_SEARCHING)
+		{
+			LCDstringXY("%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0",0,1);
+ 41c:	41 e0       	ldi	r20, 0x01	; 1
+ 41e:	60 e0       	ldi	r22, 0x00	; 0
+ 420:	82 e2       	ldi	r24, 0x22	; 34
+ 422:	91 e0       	ldi	r25, 0x01	; 1
+ 424:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+			LCDstringXY("%1",x,1);
+ 428:	41 e0       	ldi	r20, 0x01	; 1
+ 42a:	61 2f       	mov	r22, r17
+ 42c:	83 e4       	ldi	r24, 0x43	; 67
+ 42e:	91 e0       	ldi	r25, 0x01	; 1
+ 430:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+			LCDGotoXY(17,1);
+ 434:	61 e0       	ldi	r22, 0x01	; 1
+ 436:	81 e1       	ldi	r24, 0x11	; 17
+ 438:	0e 94 b3 00 	call	0x166	; 0x166 <LCDGotoXY>
+			
+			x++;
+ 43c:	1f 5f       	subi	r17, 0xFF	; 255
+			
+			if(x==16) x=0;
+ 43e:	10 31       	cpi	r17, 0x10	; 16
+ 440:	09 f4       	brne	.+2      	; 0x444 <__LOCK_REGION_LENGTH__+0x44>
+ 442:	10 e0       	ldi	r17, 0x00	; 0
+ 444:	3f e7       	ldi	r19, 0x7F	; 127
+ 446:	88 e3       	ldi	r24, 0x38	; 56
+ 448:	91 e0       	ldi	r25, 0x01	; 1
+ 44a:	31 50       	subi	r19, 0x01	; 1
+ 44c:	80 40       	sbci	r24, 0x00	; 0
+ 44e:	90 40       	sbci	r25, 0x00	; 0
+ 450:	e1 f7       	brne	.-8      	; 0x44a <__LOCK_REGION_LENGTH__+0x4a>
+ 452:	00 c0       	rjmp	.+0      	; 0x454 <__LOCK_REGION_LENGTH__+0x54>
+ 454:	00 00       	nop
+ 456:	21 e0       	ldi	r18, 0x01	; 1
+ 458:	e2 1a       	sub	r14, r18
+ 45a:	f1 08       	sbc	r15, r1
+			
+			_delay_ms(50);
+			
+			tries++;
+			
+			if(tries==600)
+ 45c:	09 f4       	brne	.+2      	; 0x460 <__stack+0x1>
+ 45e:	41 c0       	rjmp	.+130    	; 0x4e2 <__stack+0x83>
+	uint16_t	tries=0;
+	uint8_t		x=0;
+	
+	while(!nw_found)
+	{
+		r=SIM300GetNetStat();
+ 460:	0e 94 6d 03 	call	0x6da	; 0x6da <SIM300GetNetStat>
+ 464:	08 2f       	mov	r16, r24
+		
+		if(r==SIM300_NW_SEARCHING)
+ 466:	82 30       	cpi	r24, 0x02	; 2
+ 468:	c9 f2       	breq	.-78     	; 0x41c <__LOCK_REGION_LENGTH__+0x1c>
+		}
+		else
+		break;
+		
+	}
+	LCDclear();
+ 46a:	0e 94 0d 01 	call	0x21a	; 0x21a <LCDclear>
+	
+	if(r==SIM300_NW_REGISTERED_HOME)
+ 46e:	01 30       	cpi	r16, 0x01	; 1
+ 470:	c9 f4       	brne	.+50     	; 0x4a4 <__stack+0x45>
+	{
+		LCDstringXY("Network Found",0,2);
+ 472:	42 e0       	ldi	r20, 0x02	; 2
+ 474:	60 e0       	ldi	r22, 0x00	; 0
+ 476:	86 e4       	ldi	r24, 0x46	; 70
+ 478:	91 e0       	ldi	r25, 0x01	; 1
+ 47a:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 47e:	3f ef       	ldi	r19, 0xFF	; 255
+ 480:	89 e6       	ldi	r24, 0x69	; 105
+ 482:	98 e1       	ldi	r25, 0x18	; 24
+ 484:	31 50       	subi	r19, 0x01	; 1
+ 486:	80 40       	sbci	r24, 0x00	; 0
+ 488:	90 40       	sbci	r25, 0x00	; 0
+ 48a:	e1 f7       	brne	.-8      	; 0x484 <__stack+0x25>
+ 48c:	00 c0       	rjmp	.+0      	; 0x48e <__stack+0x2f>
+ 48e:	00 00       	nop
+		Halt();
+	}
+	
+	_delay_ms(1000);
+	
+	LCDclear();
+ 490:	0e 94 0d 01 	call	0x21a	; 0x21a <LCDclear>
+	
+	//показать имя провайдера
+	char pname[32];
+	r=SIM300GetProviderName(pname);
+ 494:	ce 01       	movw	r24, r28
+ 496:	8f 5b       	subi	r24, 0xBF	; 191
+ 498:	9f 4f       	sbci	r25, 0xFF	; 255
+ 49a:	0e 94 c2 03 	call	0x784	; 0x784 <SIM300GetProviderName>
+	
+	if(r==0)
+ 49e:	88 23       	and	r24, r24
+ 4a0:	41 f0       	breq	.+16     	; 0x4b2 <__stack+0x53>
+ 4a2:	0e c0       	rjmp	.+28     	; 0x4c0 <__stack+0x61>
+	{
+		LCDstringXY("Network Found",0,2);
+	}
+	else
+	{
+		LCDstringXY("Cant Connt to NW!",0,1);
+ 4a4:	41 e0       	ldi	r20, 0x01	; 1
+ 4a6:	60 e0       	ldi	r22, 0x00	; 0
+ 4a8:	84 e5       	ldi	r24, 0x54	; 84
+ 4aa:	91 e0       	ldi	r25, 0x01	; 1
+ 4ac:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 4b0:	ff cf       	rjmp	.-2      	; 0x4b0 <__stack+0x51>
+	char pname[32];
+	r=SIM300GetProviderName(pname);
+	
+	if(r==0)
+	{
+		LCDstringXY("Comm Error !",0,1);
+ 4b2:	41 e0       	ldi	r20, 0x01	; 1
+ 4b4:	60 e0       	ldi	r22, 0x00	; 0
+ 4b6:	80 eb       	ldi	r24, 0xB0	; 176
+ 4b8:	90 e0       	ldi	r25, 0x00	; 0
+ 4ba:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 4be:	ff cf       	rjmp	.-2      	; 0x4be <__stack+0x5f>
+		Halt();
+	}
+	
+	LCDstringXY(pname,0,1);
+ 4c0:	41 e0       	ldi	r20, 0x01	; 1
+ 4c2:	60 e0       	ldi	r22, 0x00	; 0
+ 4c4:	ce 01       	movw	r24, r28
+ 4c6:	8f 5b       	subi	r24, 0xBF	; 191
+ 4c8:	9f 4f       	sbci	r25, 0xFF	; 255
+ 4ca:	0e 94 c2 00 	call	0x184	; 0x184 <LCDstringXY>
+ 4ce:	2f ef       	ldi	r18, 0xFF	; 255
+ 4d0:	39 e6       	ldi	r19, 0x69	; 105
+ 4d2:	88 e1       	ldi	r24, 0x18	; 24
+ 4d4:	21 50       	subi	r18, 0x01	; 1
+ 4d6:	30 40       	sbci	r19, 0x00	; 0
+ 4d8:	80 40       	sbci	r24, 0x00	; 0
+ 4da:	e1 f7       	brne	.-8      	; 0x4d4 <__stack+0x75>
+ 4dc:	00 c0       	rjmp	.+0      	; 0x4de <__stack+0x7f>
+ 4de:	00 00       	nop
+ 4e0:	ff cf       	rjmp	.-2      	; 0x4e0 <__stack+0x81>
+		}
+		else
+		break;
+		
+	}
+	LCDclear();
+ 4e2:	0e 94 0d 01 	call	0x21a	; 0x21a <LCDclear>
+ 4e6:	de cf       	rjmp	.-68     	; 0x4a4 <__stack+0x45>
+
+000004e8 <SIM300Cmd>:
+	sim300_buffer[len-1]='\0';
+	
+	strcpy(man_id,sim300_buffer+2);//исключаем \r\n
+	
+	return SIM300_OK;
+}
+ 4e8:	ef 92       	push	r14
+ 4ea:	ff 92       	push	r15
+ 4ec:	0f 93       	push	r16
+ 4ee:	1f 93       	push	r17
+ 4f0:	cf 93       	push	r28
+ 4f2:	df 93       	push	r29
+ 4f4:	ec 01       	movw	r28, r24
+ 4f6:	0e 94 ee 04 	call	0x9dc	; 0x9dc <USART_WriteString>
+ 4fa:	8d e0       	ldi	r24, 0x0D	; 13
+ 4fc:	0e 94 4e 04 	call	0x89c	; 0x89c <Usart_Transmit_SendChar>
+ 500:	fe 01       	movw	r30, r28
+ 502:	01 90       	ld	r0, Z+
+ 504:	00 20       	and	r0, r0
+ 506:	e9 f7       	brne	.-6      	; 0x502 <SIM300Cmd+0x1a>
+ 508:	8e 2f       	mov	r24, r30
+ 50a:	8c 1b       	sub	r24, r28
+ 50c:	c8 2f       	mov	r28, r24
+ 50e:	90 e0       	ldi	r25, 0x00	; 0
+ 510:	8c 01       	movw	r16, r24
+ 512:	00 0f       	add	r16, r16
+ 514:	11 1f       	adc	r17, r17
+ 516:	88 0f       	add	r24, r24
+ 518:	99 1f       	adc	r25, r25
+ 51a:	88 0f       	add	r24, r24
+ 51c:	99 1f       	adc	r25, r25
+ 51e:	88 0f       	add	r24, r24
+ 520:	99 1f       	adc	r25, r25
+ 522:	08 0f       	add	r16, r24
+ 524:	19 1f       	adc	r17, r25
+ 526:	01 15       	cp	r16, r1
+ 528:	11 05       	cpc	r17, r1
+ 52a:	e1 f0       	breq	.+56     	; 0x564 <SIM300Cmd+0x7c>
+ 52c:	e1 2c       	mov	r14, r1
+ 52e:	f1 2c       	mov	r15, r1
+ 530:	0e 94 cc 04 	call	0x998	; 0x998 <UDataAvailable>
+ 534:	8c 17       	cp	r24, r28
+ 536:	70 f4       	brcc	.+28     	; 0x554 <SIM300Cmd+0x6c>
+ 538:	8f ef       	ldi	r24, 0xFF	; 255
+ 53a:	e8 1a       	sub	r14, r24
+ 53c:	f8 0a       	sbc	r15, r24
+ 53e:	8f e1       	ldi	r24, 0x1F	; 31
+ 540:	9e e4       	ldi	r25, 0x4E	; 78
+ 542:	01 97       	sbiw	r24, 0x01	; 1
+ 544:	f1 f7       	brne	.-4      	; 0x542 <SIM300Cmd+0x5a>
+ 546:	00 c0       	rjmp	.+0      	; 0x548 <SIM300Cmd+0x60>
+ 548:	00 00       	nop
+ 54a:	e0 16       	cp	r14, r16
+ 54c:	f1 06       	cpc	r15, r17
+ 54e:	81 f7       	brne	.-32     	; 0x530 <SIM300Cmd+0x48>
+ 550:	8d ef       	ldi	r24, 0xFD	; 253
+ 552:	09 c0       	rjmp	.+18     	; 0x566 <SIM300Cmd+0x7e>
+ 554:	6c 2f       	mov	r22, r28
+ 556:	70 e0       	ldi	r23, 0x00	; 0
+ 558:	86 e1       	ldi	r24, 0x16	; 22
+ 55a:	92 e0       	ldi	r25, 0x02	; 2
+ 55c:	0e 94 fd 04 	call	0x9fa	; 0x9fa <UReadBuffer>
+ 560:	81 e0       	ldi	r24, 0x01	; 1
+ 562:	01 c0       	rjmp	.+2      	; 0x566 <SIM300Cmd+0x7e>
+ 564:	8d ef       	ldi	r24, 0xFD	; 253
+ 566:	df 91       	pop	r29
+ 568:	cf 91       	pop	r28
+ 56a:	1f 91       	pop	r17
+ 56c:	0f 91       	pop	r16
+ 56e:	ff 90       	pop	r15
+ 570:	ef 90       	pop	r14
+ 572:	08 95       	ret
+
+00000574 <SIM300CheckResponse>:
+ 574:	cf 93       	push	r28
+ 576:	df 93       	push	r29
+ 578:	ec 01       	movw	r28, r24
+ 57a:	5e ef       	ldi	r21, 0xFE	; 254
+ 57c:	54 0f       	add	r21, r20
+ 57e:	21 e0       	ldi	r18, 0x01	; 1
+ 580:	39 81       	ldd	r19, Y+1	; 0x01
+ 582:	3a 30       	cpi	r19, 0x0A	; 10
+ 584:	09 f4       	brne	.+2      	; 0x588 <SIM300CheckResponse+0x14>
+ 586:	20 e0       	ldi	r18, 0x00	; 0
+ 588:	21 11       	cpse	r18, r1
+ 58a:	3a c0       	rjmp	.+116    	; 0x600 <SIM300CheckResponse+0x8c>
+ 58c:	21 e0       	ldi	r18, 0x01	; 1
+ 58e:	38 81       	ld	r19, Y
+ 590:	3d 30       	cpi	r19, 0x0D	; 13
+ 592:	09 f4       	brne	.+2      	; 0x596 <SIM300CheckResponse+0x22>
+ 594:	20 e0       	ldi	r18, 0x00	; 0
+ 596:	21 11       	cpse	r18, r1
+ 598:	33 c0       	rjmp	.+102    	; 0x600 <SIM300CheckResponse+0x8c>
+ 59a:	25 2f       	mov	r18, r21
+ 59c:	30 e0       	ldi	r19, 0x00	; 0
+ 59e:	de 01       	movw	r26, r28
+ 5a0:	a2 0f       	add	r26, r18
+ 5a2:	b3 1f       	adc	r27, r19
+ 5a4:	e1 e0       	ldi	r30, 0x01	; 1
+ 5a6:	11 96       	adiw	r26, 0x01	; 1
+ 5a8:	fc 91       	ld	r31, X
+ 5aa:	fa 30       	cpi	r31, 0x0A	; 10
+ 5ac:	09 f4       	brne	.+2      	; 0x5b0 <SIM300CheckResponse+0x3c>
+ 5ae:	e0 e0       	ldi	r30, 0x00	; 0
+ 5b0:	e1 11       	cpse	r30, r1
+ 5b2:	28 c0       	rjmp	.+80     	; 0x604 <SIM300CheckResponse+0x90>
+ 5b4:	de 01       	movw	r26, r28
+ 5b6:	a2 0f       	add	r26, r18
+ 5b8:	b3 1f       	adc	r27, r19
+ 5ba:	e1 e0       	ldi	r30, 0x01	; 1
+ 5bc:	2c 91       	ld	r18, X
+ 5be:	2d 30       	cpi	r18, 0x0D	; 13
+ 5c0:	09 f4       	brne	.+2      	; 0x5c4 <SIM300CheckResponse+0x50>
+ 5c2:	e0 e0       	ldi	r30, 0x00	; 0
+ 5c4:	e1 11       	cpse	r30, r1
+ 5c6:	1e c0       	rjmp	.+60     	; 0x604 <SIM300CheckResponse+0x90>
+ 5c8:	53 30       	cpi	r21, 0x03	; 3
+ 5ca:	f0 f0       	brcs	.+60     	; 0x608 <SIM300CheckResponse+0x94>
+ 5cc:	3a 81       	ldd	r19, Y+2	; 0x02
+ 5ce:	fb 01       	movw	r30, r22
+ 5d0:	20 81       	ld	r18, Z
+ 5d2:	32 13       	cpse	r19, r18
+ 5d4:	1b c0       	rjmp	.+54     	; 0x60c <SIM300CheckResponse+0x98>
+ 5d6:	fe 01       	movw	r30, r28
+ 5d8:	33 96       	adiw	r30, 0x03	; 3
+ 5da:	db 01       	movw	r26, r22
+ 5dc:	11 96       	adiw	r26, 0x01	; 1
+ 5de:	45 50       	subi	r20, 0x05	; 5
+ 5e0:	50 e0       	ldi	r21, 0x00	; 0
+ 5e2:	4d 5f       	subi	r20, 0xFD	; 253
+ 5e4:	5f 4f       	sbci	r21, 0xFF	; 255
+ 5e6:	ce 01       	movw	r24, r28
+ 5e8:	84 0f       	add	r24, r20
+ 5ea:	95 1f       	adc	r25, r21
+ 5ec:	04 c0       	rjmp	.+8      	; 0x5f6 <SIM300CheckResponse+0x82>
+ 5ee:	31 91       	ld	r19, Z+
+ 5f0:	2d 91       	ld	r18, X+
+ 5f2:	32 13       	cpse	r19, r18
+ 5f4:	0d c0       	rjmp	.+26     	; 0x610 <SIM300CheckResponse+0x9c>
+ 5f6:	e8 17       	cp	r30, r24
+ 5f8:	f9 07       	cpc	r31, r25
+ 5fa:	c9 f7       	brne	.-14     	; 0x5ee <SIM300CheckResponse+0x7a>
+ 5fc:	81 e0       	ldi	r24, 0x01	; 1
+ 5fe:	09 c0       	rjmp	.+18     	; 0x612 <SIM300CheckResponse+0x9e>
+ 600:	8f ef       	ldi	r24, 0xFF	; 255
+ 602:	07 c0       	rjmp	.+14     	; 0x612 <SIM300CheckResponse+0x9e>
+ 604:	8f ef       	ldi	r24, 0xFF	; 255
+ 606:	05 c0       	rjmp	.+10     	; 0x612 <SIM300CheckResponse+0x9e>
+ 608:	81 e0       	ldi	r24, 0x01	; 1
+ 60a:	03 c0       	rjmp	.+6      	; 0x612 <SIM300CheckResponse+0x9e>
+ 60c:	8e ef       	ldi	r24, 0xFE	; 254
+ 60e:	01 c0       	rjmp	.+2      	; 0x612 <SIM300CheckResponse+0x9e>
+ 610:	8e ef       	ldi	r24, 0xFE	; 254
+ 612:	df 91       	pop	r29
+ 614:	cf 91       	pop	r28
+ 616:	08 95       	ret
+
+00000618 <SIM300Init>:
+ 618:	cf 93       	push	r28
+ 61a:	df 93       	push	r29
+ 61c:	60 e8       	ldi	r22, 0x80	; 128
+ 61e:	75 e2       	ldi	r23, 0x25	; 37
+ 620:	80 e0       	ldi	r24, 0x00	; 0
+ 622:	90 e0       	ldi	r25, 0x00	; 0
+ 624:	0e 94 33 04 	call	0x866	; 0x866 <Usart_Init>
+ 628:	86 e6       	ldi	r24, 0x66	; 102
+ 62a:	91 e0       	ldi	r25, 0x01	; 1
+ 62c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <SIM300Cmd>
+ 630:	ca e0       	ldi	r28, 0x0A	; 10
+ 632:	d0 e0       	ldi	r29, 0x00	; 0
+ 634:	0e 94 cc 04 	call	0x998	; 0x998 <UDataAvailable>
+ 638:	86 30       	cpi	r24, 0x06	; 6
+ 63a:	50 f4       	brcc	.+20     	; 0x650 <SIM300Init+0x38>
+ 63c:	8f e1       	ldi	r24, 0x1F	; 31
+ 63e:	9e e4       	ldi	r25, 0x4E	; 78
+ 640:	01 97       	sbiw	r24, 0x01	; 1
+ 642:	f1 f7       	brne	.-4      	; 0x640 <SIM300Init+0x28>
+ 644:	00 c0       	rjmp	.+0      	; 0x646 <SIM300Init+0x2e>
+ 646:	00 00       	nop
+ 648:	21 97       	sbiw	r28, 0x01	; 1
+ 64a:	a1 f7       	brne	.-24     	; 0x634 <SIM300Init+0x1c>
+ 64c:	8d ef       	ldi	r24, 0xFD	; 253
+ 64e:	0d c0       	rjmp	.+26     	; 0x66a <SIM300Init+0x52>
+ 650:	66 e0       	ldi	r22, 0x06	; 6
+ 652:	70 e0       	ldi	r23, 0x00	; 0
+ 654:	86 e1       	ldi	r24, 0x16	; 22
+ 656:	92 e0       	ldi	r25, 0x02	; 2
+ 658:	0e 94 fd 04 	call	0x9fa	; 0x9fa <UReadBuffer>
+ 65c:	46 e0       	ldi	r20, 0x06	; 6
+ 65e:	69 e6       	ldi	r22, 0x69	; 105
+ 660:	71 e0       	ldi	r23, 0x01	; 1
+ 662:	86 e1       	ldi	r24, 0x16	; 22
+ 664:	92 e0       	ldi	r25, 0x02	; 2
+ 666:	0e 94 ba 02 	call	0x574	; 0x574 <SIM300CheckResponse>
+ 66a:	df 91       	pop	r29
+ 66c:	cf 91       	pop	r28
+ 66e:	08 95       	ret
+
+00000670 <SIM300WaitForResponse>:
+ 670:	ef 92       	push	r14
+ 672:	ff 92       	push	r15
+ 674:	0f 93       	push	r16
+ 676:	1f 93       	push	r17
+ 678:	cf 93       	push	r28
+ 67a:	7c 01       	movw	r14, r24
+ 67c:	00 e0       	ldi	r16, 0x00	; 0
+ 67e:	10 e0       	ldi	r17, 0x00	; 0
+ 680:	c0 e0       	ldi	r28, 0x00	; 0
+ 682:	08 c0       	rjmp	.+16     	; 0x694 <SIM300WaitForResponse+0x24>
+ 684:	0f 5f       	subi	r16, 0xFF	; 255
+ 686:	1f 4f       	sbci	r17, 0xFF	; 255
+ 688:	8f ec       	ldi	r24, 0xCF	; 207
+ 68a:	97 e0       	ldi	r25, 0x07	; 7
+ 68c:	01 97       	sbiw	r24, 0x01	; 1
+ 68e:	f1 f7       	brne	.-4      	; 0x68c <SIM300WaitForResponse+0x1c>
+ 690:	00 c0       	rjmp	.+0      	; 0x692 <SIM300WaitForResponse+0x22>
+ 692:	00 00       	nop
+ 694:	0e 94 cc 04 	call	0x998	; 0x998 <UDataAvailable>
+ 698:	81 11       	cpse	r24, r1
+ 69a:	03 c0       	rjmp	.+6      	; 0x6a2 <SIM300WaitForResponse+0x32>
+ 69c:	0e 15       	cp	r16, r14
+ 69e:	1f 05       	cpc	r17, r15
+ 6a0:	88 f3       	brcs	.-30     	; 0x684 <SIM300WaitForResponse+0x14>
+ 6a2:	0e 15       	cp	r16, r14
+ 6a4:	1f 05       	cpc	r17, r15
+ 6a6:	91 f0       	breq	.+36     	; 0x6cc <SIM300WaitForResponse+0x5c>
+ 6a8:	0e 94 a6 04 	call	0x94c	; 0x94c <USART_ReadData>
+ 6ac:	ec 2f       	mov	r30, r28
+ 6ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 6b0:	ea 5e       	subi	r30, 0xEA	; 234
+ 6b2:	fd 4f       	sbci	r31, 0xFD	; 253
+ 6b4:	80 83       	st	Z, r24
+ 6b6:	8d 30       	cpi	r24, 0x0D	; 13
+ 6b8:	39 f4       	brne	.+14     	; 0x6c8 <SIM300WaitForResponse+0x58>
+ 6ba:	cc 23       	and	r28, r28
+ 6bc:	29 f0       	breq	.+10     	; 0x6c8 <SIM300WaitForResponse+0x58>
+ 6be:	0e 94 13 05 	call	0xa26	; 0xa26 <UFlushBuffer>
+ 6c2:	81 e0       	ldi	r24, 0x01	; 1
+ 6c4:	8c 0f       	add	r24, r28
+ 6c6:	03 c0       	rjmp	.+6      	; 0x6ce <SIM300WaitForResponse+0x5e>
+ 6c8:	cf 5f       	subi	r28, 0xFF	; 255
+ 6ca:	e4 cf       	rjmp	.-56     	; 0x694 <SIM300WaitForResponse+0x24>
+ 6cc:	80 e0       	ldi	r24, 0x00	; 0
+ 6ce:	cf 91       	pop	r28
+ 6d0:	1f 91       	pop	r17
+ 6d2:	0f 91       	pop	r16
+ 6d4:	ff 90       	pop	r15
+ 6d6:	ef 90       	pop	r14
+ 6d8:	08 95       	ret
+
+000006da <SIM300GetNetStat>:
+ 6da:	cf 93       	push	r28
+ 6dc:	df 93       	push	r29
+ 6de:	8c e6       	ldi	r24, 0x6C	; 108
+ 6e0:	91 e0       	ldi	r25, 0x01	; 1
+ 6e2:	0e 94 74 02 	call	0x4e8	; 0x4e8 <SIM300Cmd>
+ 6e6:	ca e0       	ldi	r28, 0x0A	; 10
+ 6e8:	d0 e0       	ldi	r29, 0x00	; 0
+ 6ea:	0e 94 cc 04 	call	0x998	; 0x998 <UDataAvailable>
+ 6ee:	84 31       	cpi	r24, 0x14	; 20
+ 6f0:	50 f4       	brcc	.+20     	; 0x706 <SIM300GetNetStat+0x2c>
+ 6f2:	8f e1       	ldi	r24, 0x1F	; 31
+ 6f4:	9e e4       	ldi	r25, 0x4E	; 78
+ 6f6:	01 97       	sbiw	r24, 0x01	; 1
+ 6f8:	f1 f7       	brne	.-4      	; 0x6f6 <SIM300GetNetStat+0x1c>
+ 6fa:	00 c0       	rjmp	.+0      	; 0x6fc <SIM300GetNetStat+0x22>
+ 6fc:	00 00       	nop
+ 6fe:	21 97       	sbiw	r28, 0x01	; 1
+ 700:	a1 f7       	brne	.-24     	; 0x6ea <SIM300GetNetStat+0x10>
+ 702:	8d ef       	ldi	r24, 0xFD	; 253
+ 704:	15 c0       	rjmp	.+42     	; 0x730 <SIM300GetNetStat+0x56>
+ 706:	64 e1       	ldi	r22, 0x14	; 20
+ 708:	70 e0       	ldi	r23, 0x00	; 0
+ 70a:	86 e1       	ldi	r24, 0x16	; 22
+ 70c:	92 e0       	ldi	r25, 0x02	; 2
+ 70e:	0e 94 fd 04 	call	0x9fa	; 0x9fa <UReadBuffer>
+ 712:	80 91 21 02 	lds	r24, 0x0221	; 0x800221 <sim300_buffer+0xb>
+ 716:	81 33       	cpi	r24, 0x31	; 49
+ 718:	31 f0       	breq	.+12     	; 0x726 <SIM300GetNetStat+0x4c>
+ 71a:	82 33       	cpi	r24, 0x32	; 50
+ 71c:	31 f0       	breq	.+12     	; 0x72a <SIM300GetNetStat+0x50>
+ 71e:	85 33       	cpi	r24, 0x35	; 53
+ 720:	31 f0       	breq	.+12     	; 0x72e <SIM300GetNetStat+0x54>
+ 722:	83 e6       	ldi	r24, 0x63	; 99
+ 724:	05 c0       	rjmp	.+10     	; 0x730 <SIM300GetNetStat+0x56>
+ 726:	81 e0       	ldi	r24, 0x01	; 1
+ 728:	03 c0       	rjmp	.+6      	; 0x730 <SIM300GetNetStat+0x56>
+ 72a:	82 e0       	ldi	r24, 0x02	; 2
+ 72c:	01 c0       	rjmp	.+2      	; 0x730 <SIM300GetNetStat+0x56>
+ 72e:	85 e0       	ldi	r24, 0x05	; 5
+ 730:	df 91       	pop	r29
+ 732:	cf 91       	pop	r28
+ 734:	08 95       	ret
+
+00000736 <SIM300IsSIMInserted>:
+ 736:	cf 93       	push	r28
+ 738:	df 93       	push	r29
+ 73a:	0e 94 13 05 	call	0xa26	; 0xa26 <UFlushBuffer>
+ 73e:	85 e7       	ldi	r24, 0x75	; 117
+ 740:	91 e0       	ldi	r25, 0x01	; 1
+ 742:	0e 94 74 02 	call	0x4e8	; 0x4e8 <SIM300Cmd>
+ 746:	ce e1       	ldi	r28, 0x1E	; 30
+ 748:	d0 e0       	ldi	r29, 0x00	; 0
+ 74a:	0e 94 cc 04 	call	0x998	; 0x998 <UDataAvailable>
+ 74e:	86 31       	cpi	r24, 0x16	; 22
+ 750:	50 f4       	brcc	.+20     	; 0x766 <SIM300IsSIMInserted+0x30>
+ 752:	8f e1       	ldi	r24, 0x1F	; 31
+ 754:	9e e4       	ldi	r25, 0x4E	; 78
+ 756:	01 97       	sbiw	r24, 0x01	; 1
+ 758:	f1 f7       	brne	.-4      	; 0x756 <SIM300IsSIMInserted+0x20>
+ 75a:	00 c0       	rjmp	.+0      	; 0x75c <SIM300IsSIMInserted+0x26>
+ 75c:	00 00       	nop
+ 75e:	21 97       	sbiw	r28, 0x01	; 1
+ 760:	a1 f7       	brne	.-24     	; 0x74a <SIM300IsSIMInserted+0x14>
+ 762:	8d ef       	ldi	r24, 0xFD	; 253
+ 764:	0c c0       	rjmp	.+24     	; 0x77e <SIM300IsSIMInserted+0x48>
+ 766:	66 e1       	ldi	r22, 0x16	; 22
+ 768:	70 e0       	ldi	r23, 0x00	; 0
+ 76a:	86 e1       	ldi	r24, 0x16	; 22
+ 76c:	92 e0       	ldi	r25, 0x02	; 2
+ 76e:	0e 94 fd 04 	call	0x9fa	; 0x9fa <UReadBuffer>
+ 772:	81 e0       	ldi	r24, 0x01	; 1
+ 774:	90 91 23 02 	lds	r25, 0x0223	; 0x800223 <sim300_buffer+0xd>
+ 778:	91 33       	cpi	r25, 0x31	; 49
+ 77a:	09 f0       	breq	.+2      	; 0x77e <SIM300IsSIMInserted+0x48>
+ 77c:	80 e0       	ldi	r24, 0x00	; 0
+ 77e:	df 91       	pop	r29
+ 780:	cf 91       	pop	r28
+ 782:	08 95       	ret
+
+00000784 <SIM300GetProviderName>:
+ 784:	0f 93       	push	r16
+ 786:	1f 93       	push	r17
+ 788:	cf 93       	push	r28
+ 78a:	df 93       	push	r29
+ 78c:	ec 01       	movw	r28, r24
+ 78e:	0e 94 13 05 	call	0xa26	; 0xa26 <UFlushBuffer>
+ 792:	80 e8       	ldi	r24, 0x80	; 128
+ 794:	91 e0       	ldi	r25, 0x01	; 1
+ 796:	0e 94 74 02 	call	0x4e8	; 0x4e8 <SIM300Cmd>
+ 79a:	88 ee       	ldi	r24, 0xE8	; 232
+ 79c:	93 e0       	ldi	r25, 0x03	; 3
+ 79e:	0e 94 38 03 	call	0x670	; 0x670 <SIM300WaitForResponse>
+ 7a2:	88 23       	and	r24, r24
+ 7a4:	e1 f0       	breq	.+56     	; 0x7de <SIM300GetProviderName+0x5a>
+ 7a6:	62 e2       	ldi	r22, 0x22	; 34
+ 7a8:	70 e0       	ldi	r23, 0x00	; 0
+ 7aa:	86 e1       	ldi	r24, 0x16	; 22
+ 7ac:	92 e0       	ldi	r25, 0x02	; 2
+ 7ae:	0e 94 3d 05 	call	0xa7a	; 0xa7a <strchr>
+ 7b2:	8c 01       	movw	r16, r24
+ 7b4:	0f 5f       	subi	r16, 0xFF	; 255
+ 7b6:	1f 4f       	sbci	r17, 0xFF	; 255
+ 7b8:	62 e2       	ldi	r22, 0x22	; 34
+ 7ba:	70 e0       	ldi	r23, 0x00	; 0
+ 7bc:	c8 01       	movw	r24, r16
+ 7be:	0e 94 3d 05 	call	0xa7a	; 0xa7a <strchr>
+ 7c2:	fc 01       	movw	r30, r24
+ 7c4:	10 82       	st	Z, r1
+ 7c6:	b8 01       	movw	r22, r16
+ 7c8:	ce 01       	movw	r24, r28
+ 7ca:	0e 94 48 05 	call	0xa90	; 0xa90 <strcpy>
+ 7ce:	fe 01       	movw	r30, r28
+ 7d0:	01 90       	ld	r0, Z+
+ 7d2:	00 20       	and	r0, r0
+ 7d4:	e9 f7       	brne	.-6      	; 0x7d0 <SIM300GetProviderName+0x4c>
+ 7d6:	31 97       	sbiw	r30, 0x01	; 1
+ 7d8:	8e 2f       	mov	r24, r30
+ 7da:	8c 1b       	sub	r24, r28
+ 7dc:	01 c0       	rjmp	.+2      	; 0x7e0 <SIM300GetProviderName+0x5c>
+ 7de:	8d ef       	ldi	r24, 0xFD	; 253
+ 7e0:	df 91       	pop	r29
+ 7e2:	cf 91       	pop	r28
+ 7e4:	1f 91       	pop	r17
+ 7e6:	0f 91       	pop	r16
+ 7e8:	08 95       	ret
+
+000007ea <SIM300GetIMEI>:
+ 7ea:	cf 93       	push	r28
+ 7ec:	df 93       	push	r29
+ 7ee:	ec 01       	movw	r28, r24
+ 7f0:	0e 94 13 05 	call	0xa26	; 0xa26 <UFlushBuffer>
+ 7f4:	89 e8       	ldi	r24, 0x89	; 137
+ 7f6:	91 e0       	ldi	r25, 0x01	; 1
+ 7f8:	0e 94 74 02 	call	0x4e8	; 0x4e8 <SIM300Cmd>
+ 7fc:	88 ee       	ldi	r24, 0xE8	; 232
+ 7fe:	93 e0       	ldi	r25, 0x03	; 3
+ 800:	0e 94 38 03 	call	0x670	; 0x670 <SIM300WaitForResponse>
+ 804:	88 23       	and	r24, r24
+ 806:	61 f0       	breq	.+24     	; 0x820 <SIM300GetIMEI+0x36>
+ 808:	e8 2f       	mov	r30, r24
+ 80a:	f0 e0       	ldi	r31, 0x00	; 0
+ 80c:	eb 5e       	subi	r30, 0xEB	; 235
+ 80e:	fd 4f       	sbci	r31, 0xFD	; 253
+ 810:	10 82       	st	Z, r1
+ 812:	68 e1       	ldi	r22, 0x18	; 24
+ 814:	72 e0       	ldi	r23, 0x02	; 2
+ 816:	ce 01       	movw	r24, r28
+ 818:	0e 94 48 05 	call	0xa90	; 0xa90 <strcpy>
+ 81c:	81 e0       	ldi	r24, 0x01	; 1
+ 81e:	01 c0       	rjmp	.+2      	; 0x822 <SIM300GetIMEI+0x38>
+ 820:	8d ef       	ldi	r24, 0xFD	; 253
+ 822:	df 91       	pop	r29
+ 824:	cf 91       	pop	r28
+ 826:	08 95       	ret
+
+00000828 <SIM300GetModel>:
+
+/*
+--------------------Функция запроса индификатора модуля------------------------
+*/
+int8_t	SIM300GetModel(char *model)
+{
+ 828:	cf 93       	push	r28
+ 82a:	df 93       	push	r29
+ 82c:	ec 01       	movw	r28, r24
+	UFlushBuffer();
+ 82e:	0e 94 13 05 	call	0xa26	; 0xa26 <UFlushBuffer>
+	
+	//идентификатор модуля
+	SIM300Cmd("AT+GMM");
+ 832:	87 e9       	ldi	r24, 0x97	; 151
+ 834:	91 e0       	ldi	r25, 0x01	; 1
+ 836:	0e 94 74 02 	call	0x4e8	; 0x4e8 <SIM300Cmd>
+	
+	uint8_t len=SIM300WaitForResponse(1000);
+ 83a:	88 ee       	ldi	r24, 0xE8	; 232
+ 83c:	93 e0       	ldi	r25, 0x03	; 3
+ 83e:	0e 94 38 03 	call	0x670	; 0x670 <SIM300WaitForResponse>
+	
+	if(len==0)
+ 842:	88 23       	and	r24, r24
+ 844:	61 f0       	breq	.+24     	; 0x85e <SIM300GetModel+0x36>
+	return SIM300_TIMEOUT;
+	
+	sim300_buffer[len-1]='\0';
+ 846:	e8 2f       	mov	r30, r24
+ 848:	f0 e0       	ldi	r31, 0x00	; 0
+ 84a:	eb 5e       	subi	r30, 0xEB	; 235
+ 84c:	fd 4f       	sbci	r31, 0xFD	; 253
+ 84e:	10 82       	st	Z, r1
+	
+	strcpy(model,sim300_buffer+2);//исключаем \r\n
+ 850:	68 e1       	ldi	r22, 0x18	; 24
+ 852:	72 e0       	ldi	r23, 0x02	; 2
+ 854:	ce 01       	movw	r24, r28
+ 856:	0e 94 48 05 	call	0xa90	; 0xa90 <strcpy>
+	
+	return SIM300_OK;
+ 85a:	81 e0       	ldi	r24, 0x01	; 1
+ 85c:	01 c0       	rjmp	.+2      	; 0x860 <SIM300GetModel+0x38>
+	SIM300Cmd("AT+GMM");
+	
+	uint8_t len=SIM300WaitForResponse(1000);
+	
+	if(len==0)
+	return SIM300_TIMEOUT;
+ 85e:	8d ef       	ldi	r24, 0xFD	; 253
+	sim300_buffer[len-1]='\0';
+	
+	strcpy(model,sim300_buffer+2);//исключаем \r\n
+	
+	return SIM300_OK;
+}
+ 860:	df 91       	pop	r29
+ 862:	cf 91       	pop	r28
+ 864:	08 95       	ret
+
+00000866 <Usart_Init>:
+//
+//		long int baudrate - Передает функции значение скорости передачи в БОД.
+//-------------------------------------------------------------------------
+
+void Usart_Init(long int baudrate)
+{
+ 866:	9b 01       	movw	r18, r22
+ 868:	ac 01       	movw	r20, r24
+
+	UBRRH=((F_CPU/16/baudrate-1)>>8);
+ 86a:	60 e2       	ldi	r22, 0x20	; 32
+ 86c:	71 ea       	ldi	r23, 0xA1	; 161
+ 86e:	87 e0       	ldi	r24, 0x07	; 7
+ 870:	90 e0       	ldi	r25, 0x00	; 0
+ 872:	0e 94 1b 05 	call	0xa36	; 0xa36 <__udivmodsi4>
+ 876:	da 01       	movw	r26, r20
+ 878:	c9 01       	movw	r24, r18
+ 87a:	01 97       	sbiw	r24, 0x01	; 1
+ 87c:	a1 09       	sbc	r26, r1
+ 87e:	b1 09       	sbc	r27, r1
+ 880:	89 2f       	mov	r24, r25
+ 882:	9a 2f       	mov	r25, r26
+ 884:	ab 2f       	mov	r26, r27
+ 886:	bb 27       	eor	r27, r27
+ 888:	80 bd       	out	0x20, r24	; 32
+	UBRRL = (F_CPU/16/baudrate-1);
+ 88a:	21 50       	subi	r18, 0x01	; 1
+ 88c:	29 b9       	out	0x09, r18	; 9
+
+	UCSRA = 0x00;
+ 88e:	1b b8       	out	0x0b, r1	; 11
+	UCSRB |= (3 << TXEN) | (1 << RXCIE);
+ 890:	8a b1       	in	r24, 0x0a	; 10
+ 892:	88 69       	ori	r24, 0x98	; 152
+ 894:	8a b9       	out	0x0a, r24	; 10
+	UCSRC = (1 << URSEL) | (3 << UCSZ0);
+ 896:	86 e8       	ldi	r24, 0x86	; 134
+ 898:	80 bd       	out	0x20, r24	; 32
+ 89a:	08 95       	ret
+
+0000089c <Usart_Transmit_SendChar>:
+//-------------------------------------------------------------------------
+
+void Usart_Transmit_SendChar(char data)
+{
+
+	while (!( UCSRA & (1 << UDRE)));
+ 89c:	5d 9b       	sbis	0x0b, 5	; 11
+ 89e:	fe cf       	rjmp	.-4      	; 0x89c <Usart_Transmit_SendChar>
+	UDR = data;
+ 8a0:	8c b9       	out	0x0c, r24	; 12
+ 8a2:	08 95       	ret
+
+000008a4 <__vector_11>:
+}
+
+//=============================================================================================
+//The USART ISR
+ISR(USART_RXC_VECT)
+{
+ 8a4:	1f 92       	push	r1
+ 8a6:	0f 92       	push	r0
+ 8a8:	0f b6       	in	r0, 0x3f	; 63
+ 8aa:	0f 92       	push	r0
+ 8ac:	11 24       	eor	r1, r1
+ 8ae:	2f 93       	push	r18
+ 8b0:	3f 93       	push	r19
+ 8b2:	4f 93       	push	r20
+ 8b4:	8f 93       	push	r24
+ 8b6:	9f 93       	push	r25
+ 8b8:	ef 93       	push	r30
+ 8ba:	ff 93       	push	r31
+	//Read the data
+	char data=UDR;
+ 8bc:	4c b1       	in	r20, 0x0c	; 12
+
+	//Now add it to q
+
+	if(((UQEnd==RECEIVE_BUFF_SIZE-1) && UQFront==0) || ((UQEnd+1)==UQFront))
+ 8be:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 8c2:	8f 33       	cpi	r24, 0x3F	; 63
+ 8c4:	21 f4       	brne	.+8      	; 0x8ce <__vector_11+0x2a>
+ 8c6:	80 91 d4 01 	lds	r24, 0x01D4	; 0x8001d4 <__data_end>
+ 8ca:	88 23       	and	r24, r24
+ 8cc:	71 f0       	breq	.+28     	; 0x8ea <__vector_11+0x46>
+ 8ce:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 8d2:	20 91 d4 01 	lds	r18, 0x01D4	; 0x8001d4 <__data_end>
+ 8d6:	08 2e       	mov	r0, r24
+ 8d8:	00 0c       	add	r0, r0
+ 8da:	99 0b       	sbc	r25, r25
+ 8dc:	01 96       	adiw	r24, 0x01	; 1
+ 8de:	02 2e       	mov	r0, r18
+ 8e0:	00 0c       	add	r0, r0
+ 8e2:	33 0b       	sbc	r19, r19
+ 8e4:	82 17       	cp	r24, r18
+ 8e6:	93 07       	cpc	r25, r19
+ 8e8:	59 f4       	brne	.+22     	; 0x900 <__vector_11+0x5c>
+	{
+		//Q Full
+		UQFront++;
+ 8ea:	80 91 d4 01 	lds	r24, 0x01D4	; 0x8001d4 <__data_end>
+ 8ee:	8f 5f       	subi	r24, 0xFF	; 255
+ 8f0:	80 93 d4 01 	sts	0x01D4, r24	; 0x8001d4 <__data_end>
+		if(UQFront==RECEIVE_BUFF_SIZE) UQFront=0;
+ 8f4:	80 91 d4 01 	lds	r24, 0x01D4	; 0x8001d4 <__data_end>
+ 8f8:	80 34       	cpi	r24, 0x40	; 64
+ 8fa:	11 f4       	brne	.+4      	; 0x900 <__vector_11+0x5c>
+ 8fc:	10 92 d4 01 	sts	0x01D4, r1	; 0x8001d4 <__data_end>
+	}
+	
+
+	if(UQEnd==RECEIVE_BUFF_SIZE-1)
+ 900:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 904:	8f 33       	cpi	r24, 0x3F	; 63
+ 906:	19 f4       	brne	.+6      	; 0x90e <__vector_11+0x6a>
+	UQEnd=0;
+ 908:	10 92 d5 01 	sts	0x01D5, r1	; 0x8001d5 <UQEnd>
+ 90c:	05 c0       	rjmp	.+10     	; 0x918 <__vector_11+0x74>
+	else
+	UQEnd++;
+ 90e:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 912:	8f 5f       	subi	r24, 0xFF	; 255
+ 914:	80 93 d5 01 	sts	0x01D5, r24	; 0x8001d5 <UQEnd>
+
+
+	URBuff[UQEnd]=data;
+ 918:	e0 91 d5 01 	lds	r30, 0x01D5	; 0x8001d5 <UQEnd>
+ 91c:	0e 2e       	mov	r0, r30
+ 91e:	00 0c       	add	r0, r0
+ 920:	ff 0b       	sbc	r31, r31
+ 922:	ea 52       	subi	r30, 0x2A	; 42
+ 924:	fe 4f       	sbci	r31, 0xFE	; 254
+ 926:	40 83       	st	Z, r20
+
+	if(UQFront==-1) UQFront=0;
+ 928:	80 91 d4 01 	lds	r24, 0x01D4	; 0x8001d4 <__data_end>
+ 92c:	8f 3f       	cpi	r24, 0xFF	; 255
+ 92e:	11 f4       	brne	.+4      	; 0x934 <__vector_11+0x90>
+ 930:	10 92 d4 01 	sts	0x01D4, r1	; 0x8001d4 <__data_end>
+
+}
+ 934:	ff 91       	pop	r31
+ 936:	ef 91       	pop	r30
+ 938:	9f 91       	pop	r25
+ 93a:	8f 91       	pop	r24
+ 93c:	4f 91       	pop	r20
+ 93e:	3f 91       	pop	r19
+ 940:	2f 91       	pop	r18
+ 942:	0f 90       	pop	r0
+ 944:	0f be       	out	0x3f, r0	; 63
+ 946:	0f 90       	pop	r0
+ 948:	1f 90       	pop	r1
+ 94a:	18 95       	reti
+
+0000094c <USART_ReadData>:
+char USART_ReadData(void)
+{
+	char data;
+	
+	//Check if q is empty
+	if(UQFront==-1)
+ 94c:	80 91 d4 01 	lds	r24, 0x01D4	; 0x8001d4 <__data_end>
+ 950:	8f 3f       	cpi	r24, 0xFF	; 255
+ 952:	01 f1       	breq	.+64     	; 0x994 <USART_ReadData+0x48>
+	return 0;
+	
+	data=URBuff[UQFront];
+ 954:	e0 91 d4 01 	lds	r30, 0x01D4	; 0x8001d4 <__data_end>
+ 958:	0e 2e       	mov	r0, r30
+ 95a:	00 0c       	add	r0, r0
+ 95c:	ff 0b       	sbc	r31, r31
+ 95e:	ea 52       	subi	r30, 0x2A	; 42
+ 960:	fe 4f       	sbci	r31, 0xFE	; 254
+ 962:	80 81       	ld	r24, Z
+	
+	if(UQFront==UQEnd)
+ 964:	20 91 d4 01 	lds	r18, 0x01D4	; 0x8001d4 <__data_end>
+ 968:	90 91 d5 01 	lds	r25, 0x01D5	; 0x8001d5 <UQEnd>
+ 96c:	29 13       	cpse	r18, r25
+ 96e:	06 c0       	rjmp	.+12     	; 0x97c <USART_ReadData+0x30>
+	{
+		//If single data is left
+		//So empty q
+		UQFront=UQEnd=-1;
+ 970:	9f ef       	ldi	r25, 0xFF	; 255
+ 972:	90 93 d5 01 	sts	0x01D5, r25	; 0x8001d5 <UQEnd>
+ 976:	90 93 d4 01 	sts	0x01D4, r25	; 0x8001d4 <__data_end>
+ 97a:	08 95       	ret
+	}
+	else
+	{
+		UQFront++;
+ 97c:	90 91 d4 01 	lds	r25, 0x01D4	; 0x8001d4 <__data_end>
+ 980:	9f 5f       	subi	r25, 0xFF	; 255
+ 982:	90 93 d4 01 	sts	0x01D4, r25	; 0x8001d4 <__data_end>
+
+		if(UQFront==RECEIVE_BUFF_SIZE)
+ 986:	90 91 d4 01 	lds	r25, 0x01D4	; 0x8001d4 <__data_end>
+ 98a:	90 34       	cpi	r25, 0x40	; 64
+ 98c:	21 f4       	brne	.+8      	; 0x996 <USART_ReadData+0x4a>
+		UQFront=0;
+ 98e:	10 92 d4 01 	sts	0x01D4, r1	; 0x8001d4 <__data_end>
+ 992:	08 95       	ret
+{
+	char data;
+	
+	//Check if q is empty
+	if(UQFront==-1)
+	return 0;
+ 994:	80 e0       	ldi	r24, 0x00	; 0
+		if(UQFront==RECEIVE_BUFF_SIZE)
+		UQFront=0;
+	}
+
+	return data;
+}
+ 996:	08 95       	ret
+
+00000998 <UDataAvailable>:
+		uint8_t -возращает количество данных в очереди FIFO
+
+*/
+uint8_t UDataAvailable(void)
+{
+	if(UQFront==-1) return 0;
+ 998:	80 91 d4 01 	lds	r24, 0x01D4	; 0x8001d4 <__data_end>
+ 99c:	8f 3f       	cpi	r24, 0xFF	; 255
+ 99e:	d1 f0       	breq	.+52     	; 0x9d4 <UDataAvailable+0x3c>
+	if(UQFront<UQEnd)
+ 9a0:	90 91 d4 01 	lds	r25, 0x01D4	; 0x8001d4 <__data_end>
+ 9a4:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 9a8:	98 17       	cp	r25, r24
+ 9aa:	3c f4       	brge	.+14     	; 0x9ba <UDataAvailable+0x22>
+	return(UQEnd-UQFront+1);
+ 9ac:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 9b0:	90 91 d4 01 	lds	r25, 0x01D4	; 0x8001d4 <__data_end>
+ 9b4:	8f 5f       	subi	r24, 0xFF	; 255
+ 9b6:	89 1b       	sub	r24, r25
+ 9b8:	08 95       	ret
+	else if(UQFront>UQEnd)
+ 9ba:	90 91 d4 01 	lds	r25, 0x01D4	; 0x8001d4 <__data_end>
+ 9be:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 9c2:	89 17       	cp	r24, r25
+ 9c4:	4c f4       	brge	.+18     	; 0x9d8 <UDataAvailable+0x40>
+	return (RECEIVE_BUFF_SIZE-UQFront+UQEnd+1);
+ 9c6:	80 91 d5 01 	lds	r24, 0x01D5	; 0x8001d5 <UQEnd>
+ 9ca:	90 91 d4 01 	lds	r25, 0x01D4	; 0x8001d4 <__data_end>
+ 9ce:	8f 5b       	subi	r24, 0xBF	; 191
+ 9d0:	89 1b       	sub	r24, r25
+ 9d2:	08 95       	ret
+		uint8_t -возращает количество данных в очереди FIFO
+
+*/
+uint8_t UDataAvailable(void)
+{
+	if(UQFront==-1) return 0;
+ 9d4:	80 e0       	ldi	r24, 0x00	; 0
+ 9d6:	08 95       	ret
+	if(UQFront<UQEnd)
+	return(UQEnd-UQFront+1);
+	else if(UQFront>UQEnd)
+	return (RECEIVE_BUFF_SIZE-UQFront+UQEnd+1);
+	else
+	return 1;
+ 9d8:	81 e0       	ldi	r24, 0x01	; 1
+}
+ 9da:	08 95       	ret
+
+000009dc <USART_WriteString>:
+		Принимаемые значения:
+		str- массив символов(строка) для передачи
+*/
+
+void USART_WriteString(char *str)
+{
+ 9dc:	cf 93       	push	r28
+ 9de:	df 93       	push	r29
+ 9e0:	ec 01       	movw	r28, r24
+	while((*str)!='\0')
+ 9e2:	88 81       	ld	r24, Y
+ 9e4:	88 23       	and	r24, r24
+ 9e6:	31 f0       	breq	.+12     	; 0x9f4 <USART_WriteString+0x18>
+ 9e8:	21 96       	adiw	r28, 0x01	; 1
+	{
+		Usart_Transmit_SendChar(*str);
+ 9ea:	0e 94 4e 04 	call	0x89c	; 0x89c <Usart_Transmit_SendChar>
+		str- массив символов(строка) для передачи
+*/
+
+void USART_WriteString(char *str)
+{
+	while((*str)!='\0')
+ 9ee:	89 91       	ld	r24, Y+
+ 9f0:	81 11       	cpse	r24, r1
+ 9f2:	fb cf       	rjmp	.-10     	; 0x9ea <USART_WriteString+0xe>
+	{
+		Usart_Transmit_SendChar(*str);
+		str++;
+	}
+}
+ 9f4:	df 91       	pop	r29
+ 9f6:	cf 91       	pop	r28
+ 9f8:	08 95       	ret
+
+000009fa <UReadBuffer>:
+			buff-массив типа char для приема данных из буфера
+			len-количество данных
+*/
+
+void UReadBuffer(void *buff,uint16_t len)
+{
+ 9fa:	0f 93       	push	r16
+ 9fc:	1f 93       	push	r17
+ 9fe:	cf 93       	push	r28
+ a00:	df 93       	push	r29
+	uint16_t i;
+	for(i=0;i<len;i++)
+ a02:	61 15       	cp	r22, r1
+ a04:	71 05       	cpc	r23, r1
+ a06:	51 f0       	breq	.+20     	; 0xa1c <UReadBuffer+0x22>
+ a08:	8c 01       	movw	r16, r24
+ a0a:	ec 01       	movw	r28, r24
+ a0c:	06 0f       	add	r16, r22
+ a0e:	17 1f       	adc	r17, r23
+	{
+		((char*)buff)[i]=USART_ReadData();
+ a10:	0e 94 a6 04 	call	0x94c	; 0x94c <USART_ReadData>
+ a14:	89 93       	st	Y+, r24
+*/
+
+void UReadBuffer(void *buff,uint16_t len)
+{
+	uint16_t i;
+	for(i=0;i<len;i++)
+ a16:	c0 17       	cp	r28, r16
+ a18:	d1 07       	cpc	r29, r17
+ a1a:	d1 f7       	brne	.-12     	; 0xa10 <UReadBuffer+0x16>
+	{
+		((char*)buff)[i]=USART_ReadData();
+	}
+}
+ a1c:	df 91       	pop	r29
+ a1e:	cf 91       	pop	r28
+ a20:	1f 91       	pop	r17
+ a22:	0f 91       	pop	r16
+ a24:	08 95       	ret
+
+00000a26 <UFlushBuffer>:
+	модулю, сначала отмените ожидание 
+	данных FIFO буфером.
+*/
+void UFlushBuffer(void)
+{
+	while(UDataAvailable()>0)
+ a26:	02 c0       	rjmp	.+4      	; 0xa2c <UFlushBuffer+0x6>
+	{
+		USART_ReadData();
+ a28:	0e 94 a6 04 	call	0x94c	; 0x94c <USART_ReadData>
+	модулю, сначала отмените ожидание 
+	данных FIFO буфером.
+*/
+void UFlushBuffer(void)
+{
+	while(UDataAvailable()>0)
+ a2c:	0e 94 cc 04 	call	0x998	; 0x998 <UDataAvailable>
+ a30:	81 11       	cpse	r24, r1
+ a32:	fa cf       	rjmp	.-12     	; 0xa28 <UFlushBuffer+0x2>
+	{
+		USART_ReadData();
+	}
+}
+ a34:	08 95       	ret
+
+00000a36 <__udivmodsi4>:
+ a36:	a1 e2       	ldi	r26, 0x21	; 33
+ a38:	1a 2e       	mov	r1, r26
+ a3a:	aa 1b       	sub	r26, r26
+ a3c:	bb 1b       	sub	r27, r27
+ a3e:	fd 01       	movw	r30, r26
+ a40:	0d c0       	rjmp	.+26     	; 0xa5c <__udivmodsi4_ep>
+
+00000a42 <__udivmodsi4_loop>:
+ a42:	aa 1f       	adc	r26, r26
+ a44:	bb 1f       	adc	r27, r27
+ a46:	ee 1f       	adc	r30, r30
+ a48:	ff 1f       	adc	r31, r31
+ a4a:	a2 17       	cp	r26, r18
+ a4c:	b3 07       	cpc	r27, r19
+ a4e:	e4 07       	cpc	r30, r20
+ a50:	f5 07       	cpc	r31, r21
+ a52:	20 f0       	brcs	.+8      	; 0xa5c <__udivmodsi4_ep>
+ a54:	a2 1b       	sub	r26, r18
+ a56:	b3 0b       	sbc	r27, r19
+ a58:	e4 0b       	sbc	r30, r20
+ a5a:	f5 0b       	sbc	r31, r21
+
+00000a5c <__udivmodsi4_ep>:
+ a5c:	66 1f       	adc	r22, r22
+ a5e:	77 1f       	adc	r23, r23
+ a60:	88 1f       	adc	r24, r24
+ a62:	99 1f       	adc	r25, r25
+ a64:	1a 94       	dec	r1
+ a66:	69 f7       	brne	.-38     	; 0xa42 <__udivmodsi4_loop>
+ a68:	60 95       	com	r22
+ a6a:	70 95       	com	r23
+ a6c:	80 95       	com	r24
+ a6e:	90 95       	com	r25
+ a70:	9b 01       	movw	r18, r22
+ a72:	ac 01       	movw	r20, r24
+ a74:	bd 01       	movw	r22, r26
+ a76:	cf 01       	movw	r24, r30
+ a78:	08 95       	ret
+
+00000a7a <strchr>:
+ a7a:	fc 01       	movw	r30, r24
+ a7c:	81 91       	ld	r24, Z+
+ a7e:	86 17       	cp	r24, r22
+ a80:	21 f0       	breq	.+8      	; 0xa8a <strchr+0x10>
+ a82:	88 23       	and	r24, r24
+ a84:	d9 f7       	brne	.-10     	; 0xa7c <strchr+0x2>
+ a86:	99 27       	eor	r25, r25
+ a88:	08 95       	ret
+ a8a:	31 97       	sbiw	r30, 0x01	; 1
+ a8c:	cf 01       	movw	r24, r30
+ a8e:	08 95       	ret
+
+00000a90 <strcpy>:
+ a90:	fb 01       	movw	r30, r22
+ a92:	dc 01       	movw	r26, r24
+ a94:	01 90       	ld	r0, Z+
+ a96:	0d 92       	st	X+, r0
+ a98:	00 20       	and	r0, r0
+ a9a:	e1 f7       	brne	.-8      	; 0xa94 <strcpy+0x4>
+ a9c:	08 95       	ret
+
+00000a9e <_exit>:
+ a9e:	f8 94       	cli
+
+00000aa0 <__stop_program>:
+ aa0:	ff cf       	rjmp	.-2      	; 0xaa0 <__stop_program>
