@@ -1,0 +1,513 @@
+
+main.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000208  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000000c  00800060  00000208  0000027c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000288  2**0
+                  CONTENTS, READONLY
+  3 .debug_aranges 00000088  00000000  00000000  000002b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000b75  00000000  00000000  00000340  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000001d8  00000000  00000000  00000eb5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000003c9  00000000  00000000  0000108d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000148  00000000  00000000  00001458  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000001e8  00000000  00000000  000015a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    00000732  00000000  00000000  00001788  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000078  00000000  00000000  00001eba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	24 c0       	rjmp	.+72     	; 0x4c <__bad_interrupt>
+   4:	23 c0       	rjmp	.+70     	; 0x4c <__bad_interrupt>
+   6:	22 c0       	rjmp	.+68     	; 0x4c <__bad_interrupt>
+   8:	21 c0       	rjmp	.+66     	; 0x4c <__bad_interrupt>
+   a:	20 c0       	rjmp	.+64     	; 0x4c <__bad_interrupt>
+   c:	1f c0       	rjmp	.+62     	; 0x4c <__bad_interrupt>
+   e:	1e c0       	rjmp	.+60     	; 0x4c <__bad_interrupt>
+  10:	1d c0       	rjmp	.+58     	; 0x4c <__bad_interrupt>
+  12:	1c c0       	rjmp	.+56     	; 0x4c <__bad_interrupt>
+  14:	1b c0       	rjmp	.+54     	; 0x4c <__bad_interrupt>
+  16:	1a c0       	rjmp	.+52     	; 0x4c <__bad_interrupt>
+  18:	19 c0       	rjmp	.+50     	; 0x4c <__bad_interrupt>
+  1a:	18 c0       	rjmp	.+48     	; 0x4c <__bad_interrupt>
+  1c:	17 c0       	rjmp	.+46     	; 0x4c <__bad_interrupt>
+  1e:	16 c0       	rjmp	.+44     	; 0x4c <__bad_interrupt>
+  20:	15 c0       	rjmp	.+42     	; 0x4c <__bad_interrupt>
+  22:	14 c0       	rjmp	.+40     	; 0x4c <__bad_interrupt>
+  24:	13 c0       	rjmp	.+38     	; 0x4c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e8 e0       	ldi	r30, 0x08	; 8
+  3a:	f2 e0       	ldi	r31, 0x02	; 2
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	ac 36       	cpi	r26, 0x6C	; 108
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+  48:	d8 d0       	rcall	.+432    	; 0x1fa <main>
+  4a:	dc c0       	rjmp	.+440    	; 0x204 <_exit>
+
+0000004c <__bad_interrupt>:
+  4c:	d9 cf       	rjmp	.-78     	; 0x0 <__vectors>
+
+0000004e <i2c_stop>:
+		ONE_SDA();
+	}
+	I2C_DELAY();
+	ONE_SCL();
+	I2C_DELAY();
+	NULL_SCL();
+  4e:	b8 9a       	sbi	0x17, 0	; 23
+  50:	c0 98       	cbi	0x18, 0	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  52:	88 e1       	ldi	r24, 0x18	; 24
+  54:	8a 95       	dec	r24
+  56:	f1 f7       	brne	.-4      	; 0x54 <i2c_stop+0x6>
+  58:	00 c0       	rjmp	.+0      	; 0x5a <i2c_stop+0xc>
+	I2C_DELAY();
+	ONE_SDA();
+  5a:	b9 9a       	sbi	0x17, 1	; 23
+  5c:	c1 98       	cbi	0x18, 1	; 24
+	
+	return byte;
+}
+  5e:	98 e1       	ldi	r25, 0x18	; 24
+  60:	9a 95       	dec	r25
+  62:	f1 f7       	brne	.-4      	; 0x60 <i2c_stop+0x12>
+  64:	00 c0       	rjmp	.+0      	; 0x66 <i2c_stop+0x18>
+	NULL_SCL();
+	I2C_DELAY();
+	NULL_SDA();
+	I2C_DELAY();
+	
+	ONE_SCL();
+  66:	b8 98       	cbi	0x17, 0	; 23
+  68:	c0 9a       	sbi	0x18, 0	; 24
+  6a:	88 e1       	ldi	r24, 0x18	; 24
+  6c:	8a 95       	dec	r24
+  6e:	f1 f7       	brne	.-4      	; 0x6c <i2c_stop+0x1e>
+  70:	00 c0       	rjmp	.+0      	; 0x72 <i2c_stop+0x24>
+	I2C_DELAY();
+	ONE_SDA();
+  72:	b9 98       	cbi	0x17, 1	; 23
+  74:	c1 9a       	sbi	0x18, 1	; 24
+  76:	98 e1       	ldi	r25, 0x18	; 24
+  78:	9a 95       	dec	r25
+  7a:	f1 f7       	brne	.-4      	; 0x78 <i2c_stop+0x2a>
+  7c:	00 c0       	rjmp	.+0      	; 0x7e <i2c_stop+0x30>
+	I2C_DELAY();
+	
+	if((I2C_PIN & (1 << SDA)) == 0) error = SDA_FAIL;
+  7e:	b1 9b       	sbis	0x16, 1	; 22
+  80:	02 c0       	rjmp	.+4      	; 0x86 <i2c_stop+0x38>
+//
+//-------------------------------------------------------------------------
+
+BYTE i2c_stop(void)
+{
+	BYTE error = OK;
+  82:	80 e0       	ldi	r24, 0x00	; 0
+  84:	01 c0       	rjmp	.+2      	; 0x88 <i2c_stop+0x3a>
+	ONE_SCL();
+	I2C_DELAY();
+	ONE_SDA();
+	I2C_DELAY();
+	
+	if((I2C_PIN & (1 << SDA)) == 0) error = SDA_FAIL;
+  86:	82 e0       	ldi	r24, 0x02	; 2
+	if((I2C_PIN & (1 << SCL)) == 0) error += SCL_FAIL;
+  88:	b0 9b       	sbis	0x16, 0	; 22
+  8a:	8f 5f       	subi	r24, 0xFF	; 255
+  8c:	98 e1       	ldi	r25, 0x18	; 24
+  8e:	9a 95       	dec	r25
+  90:	f1 f7       	brne	.-4      	; 0x8e <i2c_stop+0x40>
+  92:	00 c0       	rjmp	.+0      	; 0x94 <i2c_stop+0x46>
+  94:	98 e1       	ldi	r25, 0x18	; 24
+  96:	9a 95       	dec	r25
+  98:	f1 f7       	brne	.-4      	; 0x96 <i2c_stop+0x48>
+  9a:	00 c0       	rjmp	.+0      	; 0x9c <i2c_stop+0x4e>
+  9c:	98 e1       	ldi	r25, 0x18	; 24
+  9e:	9a 95       	dec	r25
+  a0:	f1 f7       	brne	.-4      	; 0x9e <i2c_stop+0x50>
+  a2:	00 c0       	rjmp	.+0      	; 0xa4 <i2c_stop+0x56>
+  a4:	98 e1       	ldi	r25, 0x18	; 24
+  a6:	9a 95       	dec	r25
+  a8:	f1 f7       	brne	.-4      	; 0xa6 <i2c_stop+0x58>
+  aa:	00 c0       	rjmp	.+0      	; 0xac <i2c_stop+0x5e>
+	I2C_DELAY();
+	I2C_DELAY();
+	I2C_DELAY();
+	
+	return error;
+}
+  ac:	08 95       	ret
+
+000000ae <i2c_start>:
+//
+//-------------------------------------------------------------------------
+
+void i2c_start(void)
+{
+	NULL_SDA();
+  ae:	b9 9a       	sbi	0x17, 1	; 23
+  b0:	c1 98       	cbi	0x18, 1	; 24
+  b2:	88 e1       	ldi	r24, 0x18	; 24
+  b4:	8a 95       	dec	r24
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <i2c_start+0x6>
+  b8:	00 c0       	rjmp	.+0      	; 0xba <i2c_start+0xc>
+	I2C_DELAY();
+	NULL_SCL();
+  ba:	b8 9a       	sbi	0x17, 0	; 23
+  bc:	c0 98       	cbi	0x18, 0	; 24
+  be:	88 e1       	ldi	r24, 0x18	; 24
+  c0:	8a 95       	dec	r24
+  c2:	f1 f7       	brne	.-4      	; 0xc0 <i2c_start+0x12>
+  c4:	00 c0       	rjmp	.+0      	; 0xc6 <i2c_start+0x18>
+  c6:	08 95       	ret
+
+000000c8 <i2c_send_byte>:
+//
+//		РћС‚РІРµС‚ РѕС‚ РІРµРґРѕРјРѕРіРѕ СѓСЃС‚СЂРѕР№СЃС‚РІР° ACK РїСЂРёРЅСЏС‚Рѕ, NACK РѕС€РёР±РєР°.
+//-------------------------------------------------------------------------
+
+BYTE i2c_send_byte(BYTE data)
+{
+  c8:	98 e0       	ldi	r25, 0x08	; 8
+	BYTE i;
+	BYTE ask = ACK;
+	
+	for(i = 0; i < 8; i++)
+	{
+		if((data & 0x80) == 0)
+  ca:	88 23       	and	r24, r24
+  cc:	1c f0       	brlt	.+6      	; 0xd4 <i2c_send_byte+0xc>
+		{
+			NULL_SDA();
+  ce:	b9 9a       	sbi	0x17, 1	; 23
+  d0:	c1 98       	cbi	0x18, 1	; 24
+  d2:	02 c0       	rjmp	.+4      	; 0xd8 <i2c_send_byte+0x10>
+		}
+		else
+		{
+			ONE_SDA();
+  d4:	b9 98       	cbi	0x17, 1	; 23
+  d6:	c1 9a       	sbi	0x18, 1	; 24
+  d8:	28 e1       	ldi	r18, 0x18	; 24
+  da:	2a 95       	dec	r18
+  dc:	f1 f7       	brne	.-4      	; 0xda <i2c_send_byte+0x12>
+  de:	00 c0       	rjmp	.+0      	; 0xe0 <i2c_send_byte+0x18>
+		}
+		I2C_DELAY();
+		ONE_SCL();
+  e0:	b8 98       	cbi	0x17, 0	; 23
+  e2:	c0 9a       	sbi	0x18, 0	; 24
+  e4:	28 e1       	ldi	r18, 0x18	; 24
+  e6:	2a 95       	dec	r18
+  e8:	f1 f7       	brne	.-4      	; 0xe6 <i2c_send_byte+0x1e>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <i2c_send_byte+0x24>
+		I2C_DELAY();
+		NULL_SCL();
+  ec:	b8 9a       	sbi	0x17, 0	; 23
+  ee:	c0 98       	cbi	0x18, 0	; 24
+		
+		data = (data << 1);
+  f0:	88 0f       	add	r24, r24
+  f2:	91 50       	subi	r25, 0x01	; 1
+BYTE i2c_send_byte(BYTE data)
+{
+	BYTE i;
+	BYTE ask = ACK;
+	
+	for(i = 0; i < 8; i++)
+  f4:	51 f7       	brne	.-44     	; 0xca <i2c_send_byte+0x2>
+		NULL_SCL();
+		
+		data = (data << 1);
+	}
+	
+	ONE_SDA();
+  f6:	b9 98       	cbi	0x17, 1	; 23
+  f8:	c1 9a       	sbi	0x18, 1	; 24
+  fa:	88 e1       	ldi	r24, 0x18	; 24
+  fc:	8a 95       	dec	r24
+  fe:	f1 f7       	brne	.-4      	; 0xfc <i2c_send_byte+0x34>
+ 100:	00 c0       	rjmp	.+0      	; 0x102 <i2c_send_byte+0x3a>
+	I2C_DELAY();
+	ONE_SCL();
+ 102:	b8 98       	cbi	0x17, 0	; 23
+ 104:	c0 9a       	sbi	0x18, 0	; 24
+ 106:	28 e1       	ldi	r18, 0x18	; 24
+ 108:	2a 95       	dec	r18
+ 10a:	f1 f7       	brne	.-4      	; 0x108 <i2c_send_byte+0x40>
+ 10c:	00 c0       	rjmp	.+0      	; 0x10e <i2c_send_byte+0x46>
+	I2C_DELAY();
+	
+	if((I2C_PIN & (1 << SDA)) == (1 << SDA))
+ 10e:	86 b3       	in	r24, 0x16	; 22
+	else
+	{
+		ask = ACK;
+	}
+	
+	NULL_SCL();
+ 110:	b8 9a       	sbi	0x17, 0	; 23
+ 112:	c0 98       	cbi	0x18, 0	; 24
+	
+	return ask;
+}
+ 114:	86 95       	lsr	r24
+ 116:	81 70       	andi	r24, 0x01	; 1
+ 118:	08 95       	ret
+
+0000011a <pcf8574_byte_out>:
+//
+//	Р’РѕР·РІСЂР°С‰Р°РµС‚ ACK РїСЂРё СѓРґР°С‡Рµ Рё NACK РїСЂРё РЅРµСѓРґР°С‡Рµ
+//-------------------------------------------------------------------------
+
+BYTE pcf8574_byte_out(BYTE data, BYTE add)
+{
+ 11a:	cf 93       	push	r28
+ 11c:	df 93       	push	r29
+ 11e:	d8 2f       	mov	r29, r24
+ 120:	c6 2f       	mov	r28, r22
+	BYTE ask = ACK;
+	add &= 0xFE;
+	
+	i2c_start();
+ 122:	c5 df       	rcall	.-118    	; 0xae <i2c_start>
+	ask = i2c_send_byte(add);
+ 124:	8c 2f       	mov	r24, r28
+ 126:	8e 7f       	andi	r24, 0xFE	; 254
+ 128:	cf df       	rcall	.-98     	; 0xc8 <i2c_send_byte>
+ 12a:	c8 2f       	mov	r28, r24
+	if(!ask) ask = i2c_send_byte(data);
+ 12c:	81 11       	cpse	r24, r1
+ 12e:	03 c0       	rjmp	.+6      	; 0x136 <pcf8574_byte_out+0x1c>
+ 130:	8d 2f       	mov	r24, r29
+ 132:	ca df       	rcall	.-108    	; 0xc8 <i2c_send_byte>
+ 134:	c8 2f       	mov	r28, r24
+	i2c_stop();
+ 136:	8b df       	rcall	.-234    	; 0x4e <i2c_stop>
+	
+	return ask;
+}
+ 138:	8c 2f       	mov	r24, r28
+ 13a:	df 91       	pop	r29
+ 13c:	cf 91       	pop	r28
+ 13e:	08 95       	ret
+
+00000140 <com>:
+	
+На ножке P3 подключени подсветка. 1 вкл, 0 выкл.
+*/
+
+void com(BYTE com)
+{
+ 140:	cf 93       	push	r28
+ 142:	c8 2f       	mov	r28, r24
+	com |= 0x08;				// Р3 в единицу, дабы горела подсветка
+	pcf8574_byte_out(com, ADD);	// Вывод данных
+ 144:	6e e4       	ldi	r22, 0x4E	; 78
+ 146:	88 60       	ori	r24, 0x08	; 8
+ 148:	e8 df       	rcall	.-48     	; 0x11a <pcf8574_byte_out>
+	com |= 0x04;				// Е в единицу
+	pcf8574_byte_out(com, ADD);	// Вывод данных
+ 14a:	6e e4       	ldi	r22, 0x4E	; 78
+ 14c:	8c 2f       	mov	r24, r28
+ 14e:	8c 60       	ori	r24, 0x0C	; 12
+ 150:	e4 df       	rcall	.-56     	; 0x11a <pcf8574_byte_out>
+	com &= 0xFB;				// Е в ноль
+ 152:	8c 2f       	mov	r24, r28
+ 154:	8b 7f       	andi	r24, 0xFB	; 251
+	pcf8574_byte_out(com, ADD);	// Вывод данных
+ 156:	6e e4       	ldi	r22, 0x4E	; 78
+ 158:	88 60       	ori	r24, 0x08	; 8
+ 15a:	df df       	rcall	.-66     	; 0x11a <pcf8574_byte_out>
+}
+ 15c:	cf 91       	pop	r28
+ 15e:	08 95       	ret
+
+00000160 <init>:
+
+void init(void)
+{	
+	com(0x30);		// Переход в 4-х битный режим
+ 160:	80 e3       	ldi	r24, 0x30	; 48
+ 162:	ee df       	rcall	.-36     	; 0x140 <com>
+	com(0x30);		// Переход в 4-х битный режим
+ 164:	80 e3       	ldi	r24, 0x30	; 48
+ 166:	ec df       	rcall	.-40     	; 0x140 <com>
+	com(0x30);		// Переход в 4-х битный режим
+ 168:	80 e3       	ldi	r24, 0x30	; 48
+ 16a:	ea df       	rcall	.-44     	; 0x140 <com>
+	com(0x20);		// Переход в 4-х битный режим
+ 16c:	80 e2       	ldi	r24, 0x20	; 32
+ 16e:	e8 df       	rcall	.-48     	; 0x140 <com>
+	com(0x20);		// Установка параметров
+ 170:	80 e2       	ldi	r24, 0x20	; 32
+ 172:	e6 df       	rcall	.-52     	; 0x140 <com>
+	com(0x80);		// Установка параметров
+ 174:	80 e8       	ldi	r24, 0x80	; 128
+ 176:	e4 df       	rcall	.-56     	; 0x140 <com>
+	com(0x00);		// Выключаем дисплей
+ 178:	80 e0       	ldi	r24, 0x00	; 0
+ 17a:	e2 df       	rcall	.-60     	; 0x140 <com>
+	com(0x80);		// Выключаем дисплей
+ 17c:	80 e8       	ldi	r24, 0x80	; 128
+ 17e:	e0 df       	rcall	.-64     	; 0x140 <com>
+	com(0x00);		// Очищаем дисплей
+ 180:	80 e0       	ldi	r24, 0x00	; 0
+ 182:	de df       	rcall	.-68     	; 0x140 <com>
+	com(0x10);		// Очищаем дисплей
+ 184:	80 e1       	ldi	r24, 0x10	; 16
+ 186:	dc df       	rcall	.-72     	; 0x140 <com>
+	com(0x00);		// Устанавливаем режим ввода данных
+ 188:	80 e0       	ldi	r24, 0x00	; 0
+ 18a:	da df       	rcall	.-76     	; 0x140 <com>
+	com(0x60);		// Устанавливаем режим ввода данных
+ 18c:	80 e6       	ldi	r24, 0x60	; 96
+ 18e:	d8 df       	rcall	.-80     	; 0x140 <com>
+	com(0x00);		// Включаем дисплей с выбранным курсором
+ 190:	80 e0       	ldi	r24, 0x00	; 0
+ 192:	d6 df       	rcall	.-84     	; 0x140 <com>
+	com(0xC0);		// Включаем дисплей с выбранным курсором
+ 194:	80 ec       	ldi	r24, 0xC0	; 192
+ 196:	d4 df       	rcall	.-88     	; 0x140 <com>
+ 198:	08 95       	ret
+
+0000019a <char_out>:
+}
+
+void char_out(BYTE data)
+{	  
+ 19a:	cf 93       	push	r28
+ 19c:	df 93       	push	r29
+	BYTE data_h = ((data & 0xF0) + 0x09);
+ 19e:	d8 2f       	mov	r29, r24
+ 1a0:	d0 7f       	andi	r29, 0xF0	; 240
+ 1a2:	d7 5f       	subi	r29, 0xF7	; 247
+	BYTE data_l = ((data << 4) + 0x09);
+ 1a4:	c8 2f       	mov	r28, r24
+ 1a6:	c2 95       	swap	r28
+ 1a8:	c0 7f       	andi	r28, 0xF0	; 240
+ 1aa:	c7 5f       	subi	r28, 0xF7	; 247
+	       					
+	pcf8574_byte_out(data_h, ADD); // Передача старших 4 бит
+ 1ac:	6e e4       	ldi	r22, 0x4E	; 78
+ 1ae:	8d 2f       	mov	r24, r29
+ 1b0:	b4 df       	rcall	.-152    	; 0x11a <pcf8574_byte_out>
+	data_h |= 0x04;
+	pcf8574_byte_out(data_h, ADD); // Передача старших 4 бит
+ 1b2:	6e e4       	ldi	r22, 0x4E	; 78
+ 1b4:	8d 2f       	mov	r24, r29
+ 1b6:	84 60       	ori	r24, 0x04	; 4
+ 1b8:	b0 df       	rcall	.-160    	; 0x11a <pcf8574_byte_out>
+	data_h &= 0xF9;
+	pcf8574_byte_out(data_h, ADD); // Передача старших 4 бит
+ 1ba:	6e e4       	ldi	r22, 0x4E	; 78
+ 1bc:	8d 2f       	mov	r24, r29
+ 1be:	89 7f       	andi	r24, 0xF9	; 249
+ 1c0:	ac df       	rcall	.-168    	; 0x11a <pcf8574_byte_out>
+	
+	pcf8574_byte_out(data_l, ADD); // Передача младших 4 бит
+ 1c2:	6e e4       	ldi	r22, 0x4E	; 78
+ 1c4:	8c 2f       	mov	r24, r28
+ 1c6:	a9 df       	rcall	.-174    	; 0x11a <pcf8574_byte_out>
+	data_l |= 0x04;
+	pcf8574_byte_out(data_l, ADD); // Передача младших 4 бит
+ 1c8:	6e e4       	ldi	r22, 0x4E	; 78
+ 1ca:	8c 2f       	mov	r24, r28
+ 1cc:	84 60       	ori	r24, 0x04	; 4
+ 1ce:	a5 df       	rcall	.-182    	; 0x11a <pcf8574_byte_out>
+	data_l &= 0xF9;
+	pcf8574_byte_out(data_l, ADD); // Передача младших 4 бит
+ 1d0:	6e e4       	ldi	r22, 0x4E	; 78
+ 1d2:	8c 2f       	mov	r24, r28
+ 1d4:	89 7f       	andi	r24, 0xF9	; 249
+ 1d6:	a1 df       	rcall	.-190    	; 0x11a <pcf8574_byte_out>
+}
+ 1d8:	df 91       	pop	r29
+ 1da:	cf 91       	pop	r28
+ 1dc:	08 95       	ret
+
+000001de <str_out>:
+
+void str_out(BYTE *str)
+{
+ 1de:	cf 93       	push	r28
+ 1e0:	df 93       	push	r29
+ 1e2:	ec 01       	movw	r28, r24
+	while((*str) != '\0')
+ 1e4:	88 81       	ld	r24, Y
+ 1e6:	88 23       	and	r24, r24
+ 1e8:	29 f0       	breq	.+10     	; 0x1f4 <str_out+0x16>
+ 1ea:	21 96       	adiw	r28, 0x01	; 1
+	{
+		char_out(*str);
+ 1ec:	d6 df       	rcall	.-84     	; 0x19a <char_out>
+	pcf8574_byte_out(data_l, ADD); // Передача младших 4 бит
+}
+
+void str_out(BYTE *str)
+{
+	while((*str) != '\0')
+ 1ee:	89 91       	ld	r24, Y+
+ 1f0:	81 11       	cpse	r24, r1
+ 1f2:	fc cf       	rjmp	.-8      	; 0x1ec <str_out+0xe>
+	{
+		char_out(*str);
+		str++;
+	}
+}
+ 1f4:	df 91       	pop	r29
+ 1f6:	cf 91       	pop	r28
+ 1f8:	08 95       	ret
+
+000001fa <main>:
+
+int main(void)
+{
+	
+	init();
+ 1fa:	b2 df       	rcall	.-156    	; 0x160 <init>
+	str_out("ЁPҐBET MҐP!");
+ 1fc:	80 e6       	ldi	r24, 0x60	; 96
+ 1fe:	90 e0       	ldi	r25, 0x00	; 0
+ 200:	ee df       	rcall	.-36     	; 0x1de <str_out>
+ 202:	ff cf       	rjmp	.-2      	; 0x202 <main+0x8>
+
+00000204 <_exit>:
+ 204:	f8 94       	cli
+
+00000206 <__stop_program>:
+ 206:	ff cf       	rjmp	.-2      	; 0x206 <__stop_program>

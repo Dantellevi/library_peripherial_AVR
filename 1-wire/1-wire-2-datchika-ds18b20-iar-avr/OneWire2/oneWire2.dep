@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3025430514</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\bcd.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r90</file>
+      <file>$PROJ_DIR$\OWIHighLevelFunctions.h</file>
+      <file>$PROJ_DIR$\ds18b20.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWIcrc.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWIUARTBitFunctions.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWISWBitFunctions.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\ds18b20.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\oneWire2.pbd</file>
+      <file>$PROJ_DIR$\OWIPolled.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\lcd_lib.r90</file>
+      <file>$PROJ_DIR$\OWIBitFunctions.h</file>
+      <file>$TOOLKIT_DIR$\inc\inavr.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ds18b20.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\bcd.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWIHighLevelFunctions.r90</file>
+      <file>$PROJ_DIR$\bcd.h</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$PROJ_DIR$\common_files\OWIDeviceSpecific.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\lcd_lib.pbi</file>
+      <file>$PROJ_DIR$\common_files\OWIdefs.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWIHighLevelFunctions.pbi</file>
+      <file>$PROJ_DIR$\compilers.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWISWBitFunctions.pbi</file>
+      <file>$PROJ_DIR$\lcd_lib.c</file>
+      <file>$PROJ_DIR$\ds18b20.c</file>
+      <file>$PROJ_DIR$\common_files\OWIcrc.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWIUARTBitFunctions.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\oneWire2.hex</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg1soim.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\iom8535.h</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl1s-ec_mul.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\OWIcrc.pbi</file>
+      <file>$PROJ_DIR$\lcd_lib.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioavr.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgm8535.xcl</file>
+      <file>$PROJ_DIR$\OWIHighLevelFunctions.c</file>
+      <file>$PROJ_DIR$\OWISWBitFunctions.c</file>
+      <file>$PROJ_DIR$\OWIUARTBitFunctions.c</file>
+      <file>$PROJ_DIR$\common_files\OWIcrc.c</file>
+      <file>$PROJ_DIR$\bcd.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\oneWire2.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 24 26 30 35 0 22 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\lcd_lib.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 36 37 33 19 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 37 33 19 38</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\ds18b20.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 3 9 23 25 37 33 19 13 38 20 2 10 14 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3 9 23 25 37 33 19 13 38 20 2 10 14 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\oneWire2.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 39 32 17 6 5 4 16 11 1 34</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\OWIHighLevelFunctions.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 25 37 33 19 13 38 2 10 14 12 23 9 20 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 37 33 19 13 38 2 10 14 12 23 9 20 29</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\OWISWBitFunctions.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 9 23 25 37 33 19 13 38 20 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 23 25 37 33 19 13 38 20 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\OWIUARTBitFunctions.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 9 23 25 37 33 19 13 38 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 23 25 37 33 19 13 38 20</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\common_files\OWIcrc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 29 23 25 37 33 19 13 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29 23 25 37 33 19 13 38</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 18 36 37 33 19 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18 36 37 33 19 38</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 37 33 19 38 36 18 9 23 25 13 20 2 10 14 12 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37 33 19 38 36 18 9 23 25 13 20 2 10 14 12 29</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

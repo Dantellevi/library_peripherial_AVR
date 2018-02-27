@@ -28,12 +28,12 @@ int main(void)
 
     while (1) 
     {
-		 //Usart_str_rn("Hello world!!!");
-		 s=Usart_str_in(buf,10);
-		 LCDputsIntGotoXY(s,1,2);
-		 //
-		 //
-		 LCDstringXY(buf,1,3);
+		 Usart_str_rn("Hello world!!!");
+		 //s=Usart_str_in(buf,10);
+		 //LCDputsIntGotoXY(s,1,2);
+		 ////
+		 ////
+		 //LCDstringXY(buf,1,3);
 		 //
 		 _delay_ms(500);
     }

@@ -1,0 +1,414 @@
+
+I2CLCD80.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000026a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000028  00800060  0000026a  000002fe  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000001  00800088  00800088  00000326  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000326  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000c0  00000000  00000000  00000356  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a27  00000000  00000000  00000416  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000035a  00000000  00000000  00000e3d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000429  00000000  00000000  00001197  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000154  00000000  00000000  000015c0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000028b  00000000  00000000  00001714  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000003bf  00000000  00000000  0000199f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000090  00000000  00000000  00001d5e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ea e6       	ldi	r30, 0x6A	; 106
+  3a:	f2 e0       	ldi	r31, 0x02	; 2
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a8 38       	cpi	r26, 0x88	; 136
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	20 e0       	ldi	r18, 0x00	; 0
+  4a:	a8 e8       	ldi	r26, 0x88	; 136
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a9 38       	cpi	r26, 0x89	; 137
+  54:	b2 07       	cpc	r27, r18
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	02 d0       	rcall	.+4      	; 0x5e <main>
+  5a:	05 c1       	rjmp	.+522    	; 0x266 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <main>:
+#include "main.h"
+//----------------------------------------
+int main(void)
+{
+	I2C_Init();//инициализируем TWI
+  5e:	e5 d0       	rcall	.+458    	; 0x22a <I2C_Init>
+	LCD_ini();  //инициализируем дисплей
+  60:	7c d0       	rcall	.+248    	; 0x15a <LCD_ini>
+	clearlcd();//очистим дисплей
+  62:	cb d0       	rcall	.+406    	; 0x1fa <clearlcd>
+	setpos(0,0);
+  64:	60 e0       	ldi	r22, 0x00	; 0
+  66:	70 e0       	ldi	r23, 0x00	; 0
+  68:	80 e0       	ldi	r24, 0x00	; 0
+  6a:	59 d0       	rcall	.+178    	; 0x11e <setpos>
+	str_lcd("Hello World!");
+  6c:	80 e6       	ldi	r24, 0x60	; 96
+  6e:	90 e0       	ldi	r25, 0x00	; 0
+  70:	ce d0       	rcall	.+412    	; 0x20e <str_lcd>
+	setpos(2,1);
+  72:	61 e0       	ldi	r22, 0x01	; 1
+  74:	70 e0       	ldi	r23, 0x00	; 0
+  76:	82 e0       	ldi	r24, 0x02	; 2
+  78:	52 d0       	rcall	.+164    	; 0x11e <setpos>
+	str_lcd("String 2");
+  7a:	8d e6       	ldi	r24, 0x6D	; 109
+  7c:	90 e0       	ldi	r25, 0x00	; 0
+  7e:	c7 d0       	rcall	.+398    	; 0x20e <str_lcd>
+	setpos(4,2);
+  80:	62 e0       	ldi	r22, 0x02	; 2
+  82:	70 e0       	ldi	r23, 0x00	; 0
+  84:	84 e0       	ldi	r24, 0x04	; 4
+  86:	4b d0       	rcall	.+150    	; 0x11e <setpos>
+	str_lcd("String 3");
+  88:	86 e7       	ldi	r24, 0x76	; 118
+  8a:	90 e0       	ldi	r25, 0x00	; 0
+  8c:	c0 d0       	rcall	.+384    	; 0x20e <str_lcd>
+	setpos(6,3);
+  8e:	63 e0       	ldi	r22, 0x03	; 3
+  90:	70 e0       	ldi	r23, 0x00	; 0
+  92:	86 e0       	ldi	r24, 0x06	; 6
+  94:	44 d0       	rcall	.+136    	; 0x11e <setpos>
+	str_lcd("String 4");
+  96:	8f e7       	ldi	r24, 0x7F	; 127
+  98:	90 e0       	ldi	r25, 0x00	; 0
+  9a:	b9 d0       	rcall	.+370    	; 0x20e <str_lcd>
+  9c:	ff cf       	rjmp	.-2      	; 0x9c <main+0x3e>
+
+0000009e <sendhalfbyte>:
+  9e:	cf 93       	push	r28
+  a0:	c8 2f       	mov	r28, r24
+  a2:	90 91 88 00 	lds	r25, 0x0088
+  a6:	89 2f       	mov	r24, r25
+  a8:	84 60       	ori	r24, 0x04	; 4
+  aa:	80 93 88 00 	sts	0x0088, r24
+  ae:	6e e4       	ldi	r22, 0x4E	; 78
+  b0:	cc d0       	rcall	.+408    	; 0x24a <I2C_SendByteByADDR>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  b2:	85 e8       	ldi	r24, 0x85	; 133
+  b4:	8a 95       	dec	r24
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <sendhalfbyte+0x16>
+  b8:	00 00       	nop
+  ba:	c2 95       	swap	r28
+  bc:	c0 7f       	andi	r28, 0xF0	; 240
+  be:	80 91 88 00 	lds	r24, 0x0088
+  c2:	6e e4       	ldi	r22, 0x4E	; 78
+  c4:	8c 2b       	or	r24, r28
+  c6:	c1 d0       	rcall	.+386    	; 0x24a <I2C_SendByteByADDR>
+  c8:	80 91 88 00 	lds	r24, 0x0088
+  cc:	8b 7f       	andi	r24, 0xFB	; 251
+  ce:	80 93 88 00 	sts	0x0088, r24
+  d2:	6e e4       	ldi	r22, 0x4E	; 78
+  d4:	ba d0       	rcall	.+372    	; 0x24a <I2C_SendByteByADDR>
+  d6:	85 e8       	ldi	r24, 0x85	; 133
+  d8:	8a 95       	dec	r24
+  da:	f1 f7       	brne	.-4      	; 0xd8 <sendhalfbyte+0x3a>
+  dc:	00 00       	nop
+  de:	cf 91       	pop	r28
+  e0:	08 95       	ret
+
+000000e2 <sendbyte>:
+  e2:	cf 93       	push	r28
+  e4:	c8 2f       	mov	r28, r24
+  e6:	61 11       	cpse	r22, r1
+  e8:	08 c0       	rjmp	.+16     	; 0xfa <sendbyte+0x18>
+  ea:	80 91 88 00 	lds	r24, 0x0088
+  ee:	8e 7f       	andi	r24, 0xFE	; 254
+  f0:	80 93 88 00 	sts	0x0088, r24
+  f4:	6e e4       	ldi	r22, 0x4E	; 78
+  f6:	a9 d0       	rcall	.+338    	; 0x24a <I2C_SendByteByADDR>
+  f8:	07 c0       	rjmp	.+14     	; 0x108 <sendbyte+0x26>
+  fa:	80 91 88 00 	lds	r24, 0x0088
+  fe:	81 60       	ori	r24, 0x01	; 1
+ 100:	80 93 88 00 	sts	0x0088, r24
+ 104:	6e e4       	ldi	r22, 0x4E	; 78
+ 106:	a1 d0       	rcall	.+322    	; 0x24a <I2C_SendByteByADDR>
+ 108:	8c 2f       	mov	r24, r28
+ 10a:	82 95       	swap	r24
+ 10c:	8f 70       	andi	r24, 0x0F	; 15
+ 10e:	c7 df       	rcall	.-114    	; 0x9e <sendhalfbyte>
+ 110:	8c 2f       	mov	r24, r28
+ 112:	c5 df       	rcall	.-118    	; 0x9e <sendhalfbyte>
+ 114:	cf 91       	pop	r28
+ 116:	08 95       	ret
+
+00000118 <sendcharlcd>:
+ 118:	61 e0       	ldi	r22, 0x01	; 1
+ 11a:	e3 df       	rcall	.-58     	; 0xe2 <sendbyte>
+ 11c:	08 95       	ret
+
+0000011e <setpos>:
+ 11e:	61 30       	cpi	r22, 0x01	; 1
+ 120:	71 05       	cpc	r23, r1
+ 122:	61 f0       	breq	.+24     	; 0x13c <setpos+0x1e>
+ 124:	38 f0       	brcs	.+14     	; 0x134 <setpos+0x16>
+ 126:	62 30       	cpi	r22, 0x02	; 2
+ 128:	71 05       	cpc	r23, r1
+ 12a:	69 f0       	breq	.+26     	; 0x146 <setpos+0x28>
+ 12c:	63 30       	cpi	r22, 0x03	; 3
+ 12e:	71 05       	cpc	r23, r1
+ 130:	79 f0       	breq	.+30     	; 0x150 <setpos+0x32>
+ 132:	08 95       	ret
+ 134:	60 e0       	ldi	r22, 0x00	; 0
+ 136:	80 68       	ori	r24, 0x80	; 128
+ 138:	d4 df       	rcall	.-88     	; 0xe2 <sendbyte>
+ 13a:	08 95       	ret
+ 13c:	80 5c       	subi	r24, 0xC0	; 192
+ 13e:	60 e0       	ldi	r22, 0x00	; 0
+ 140:	80 68       	ori	r24, 0x80	; 128
+ 142:	cf df       	rcall	.-98     	; 0xe2 <sendbyte>
+ 144:	08 95       	ret
+ 146:	8c 5e       	subi	r24, 0xEC	; 236
+ 148:	60 e0       	ldi	r22, 0x00	; 0
+ 14a:	80 68       	ori	r24, 0x80	; 128
+ 14c:	ca df       	rcall	.-108    	; 0xe2 <sendbyte>
+ 14e:	08 95       	ret
+ 150:	8c 5a       	subi	r24, 0xAC	; 172
+ 152:	60 e0       	ldi	r22, 0x00	; 0
+ 154:	80 68       	ori	r24, 0x80	; 128
+ 156:	c5 df       	rcall	.-118    	; 0xe2 <sendbyte>
+ 158:	08 95       	ret
+
+0000015a <LCD_ini>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 15a:	8f e2       	ldi	r24, 0x2F	; 47
+ 15c:	95 e7       	ldi	r25, 0x75	; 117
+ 15e:	01 97       	sbiw	r24, 0x01	; 1
+ 160:	f1 f7       	brne	.-4      	; 0x15e <LCD_ini+0x4>
+ 162:	00 c0       	rjmp	.+0      	; 0x164 <LCD_ini+0xa>
+ 164:	00 00       	nop
+ 166:	83 e0       	ldi	r24, 0x03	; 3
+ 168:	9a df       	rcall	.-204    	; 0x9e <sendhalfbyte>
+ 16a:	8f e3       	ldi	r24, 0x3F	; 63
+ 16c:	9f e1       	ldi	r25, 0x1F	; 31
+ 16e:	01 97       	sbiw	r24, 0x01	; 1
+ 170:	f1 f7       	brne	.-4      	; 0x16e <LCD_ini+0x14>
+ 172:	00 c0       	rjmp	.+0      	; 0x174 <LCD_ini+0x1a>
+ 174:	00 00       	nop
+ 176:	83 e0       	ldi	r24, 0x03	; 3
+ 178:	92 df       	rcall	.-220    	; 0x9e <sendhalfbyte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 17a:	87 ec       	ldi	r24, 0xC7	; 199
+ 17c:	90 e0       	ldi	r25, 0x00	; 0
+ 17e:	01 97       	sbiw	r24, 0x01	; 1
+ 180:	f1 f7       	brne	.-4      	; 0x17e <LCD_ini+0x24>
+ 182:	00 c0       	rjmp	.+0      	; 0x184 <LCD_ini+0x2a>
+ 184:	00 00       	nop
+ 186:	83 e0       	ldi	r24, 0x03	; 3
+ 188:	8a df       	rcall	.-236    	; 0x9e <sendhalfbyte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 18a:	8f ec       	ldi	r24, 0xCF	; 207
+ 18c:	97 e0       	ldi	r25, 0x07	; 7
+ 18e:	01 97       	sbiw	r24, 0x01	; 1
+ 190:	f1 f7       	brne	.-4      	; 0x18e <LCD_ini+0x34>
+ 192:	00 c0       	rjmp	.+0      	; 0x194 <LCD_ini+0x3a>
+ 194:	00 00       	nop
+ 196:	82 e0       	ldi	r24, 0x02	; 2
+ 198:	82 df       	rcall	.-252    	; 0x9e <sendhalfbyte>
+ 19a:	8f ec       	ldi	r24, 0xCF	; 207
+ 19c:	97 e0       	ldi	r25, 0x07	; 7
+ 19e:	01 97       	sbiw	r24, 0x01	; 1
+ 1a0:	f1 f7       	brne	.-4      	; 0x19e <LCD_ini+0x44>
+ 1a2:	00 c0       	rjmp	.+0      	; 0x1a4 <LCD_ini+0x4a>
+ 1a4:	00 00       	nop
+ 1a6:	60 e0       	ldi	r22, 0x00	; 0
+ 1a8:	88 e2       	ldi	r24, 0x28	; 40
+ 1aa:	9b df       	rcall	.-202    	; 0xe2 <sendbyte>
+ 1ac:	8f ec       	ldi	r24, 0xCF	; 207
+ 1ae:	97 e0       	ldi	r25, 0x07	; 7
+ 1b0:	01 97       	sbiw	r24, 0x01	; 1
+ 1b2:	f1 f7       	brne	.-4      	; 0x1b0 <LCD_ini+0x56>
+ 1b4:	00 c0       	rjmp	.+0      	; 0x1b6 <LCD_ini+0x5c>
+ 1b6:	00 00       	nop
+ 1b8:	60 e0       	ldi	r22, 0x00	; 0
+ 1ba:	8c e0       	ldi	r24, 0x0C	; 12
+ 1bc:	92 df       	rcall	.-220    	; 0xe2 <sendbyte>
+ 1be:	8f ec       	ldi	r24, 0xCF	; 207
+ 1c0:	97 e0       	ldi	r25, 0x07	; 7
+ 1c2:	01 97       	sbiw	r24, 0x01	; 1
+ 1c4:	f1 f7       	brne	.-4      	; 0x1c2 <LCD_ini+0x68>
+ 1c6:	00 c0       	rjmp	.+0      	; 0x1c8 <LCD_ini+0x6e>
+ 1c8:	00 00       	nop
+ 1ca:	60 e0       	ldi	r22, 0x00	; 0
+ 1cc:	86 e0       	ldi	r24, 0x06	; 6
+ 1ce:	89 df       	rcall	.-238    	; 0xe2 <sendbyte>
+ 1d0:	8f ec       	ldi	r24, 0xCF	; 207
+ 1d2:	97 e0       	ldi	r25, 0x07	; 7
+ 1d4:	01 97       	sbiw	r24, 0x01	; 1
+ 1d6:	f1 f7       	brne	.-4      	; 0x1d4 <LCD_ini+0x7a>
+ 1d8:	00 c0       	rjmp	.+0      	; 0x1da <LCD_ini+0x80>
+ 1da:	00 00       	nop
+ 1dc:	80 91 88 00 	lds	r24, 0x0088
+ 1e0:	88 60       	ori	r24, 0x08	; 8
+ 1e2:	80 93 88 00 	sts	0x0088, r24
+ 1e6:	6e e4       	ldi	r22, 0x4E	; 78
+ 1e8:	30 d0       	rcall	.+96     	; 0x24a <I2C_SendByteByADDR>
+ 1ea:	80 91 88 00 	lds	r24, 0x0088
+ 1ee:	8d 7f       	andi	r24, 0xFD	; 253
+ 1f0:	80 93 88 00 	sts	0x0088, r24
+ 1f4:	6e e4       	ldi	r22, 0x4E	; 78
+ 1f6:	29 d0       	rcall	.+82     	; 0x24a <I2C_SendByteByADDR>
+ 1f8:	08 95       	ret
+
+000001fa <clearlcd>:
+ 1fa:	60 e0       	ldi	r22, 0x00	; 0
+ 1fc:	81 e0       	ldi	r24, 0x01	; 1
+ 1fe:	71 df       	rcall	.-286    	; 0xe2 <sendbyte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 200:	87 eb       	ldi	r24, 0xB7	; 183
+ 202:	9b e0       	ldi	r25, 0x0B	; 11
+ 204:	01 97       	sbiw	r24, 0x01	; 1
+ 206:	f1 f7       	brne	.-4      	; 0x204 <clearlcd+0xa>
+ 208:	00 c0       	rjmp	.+0      	; 0x20a <clearlcd+0x10>
+ 20a:	00 00       	nop
+ 20c:	08 95       	ret
+
+0000020e <str_lcd>:
+ 20e:	cf 93       	push	r28
+ 210:	df 93       	push	r29
+ 212:	ec 01       	movw	r28, r24
+ 214:	88 81       	ld	r24, Y
+ 216:	88 23       	and	r24, r24
+ 218:	29 f0       	breq	.+10     	; 0x224 <str_lcd+0x16>
+ 21a:	21 96       	adiw	r28, 0x01	; 1
+ 21c:	7d df       	rcall	.-262    	; 0x118 <sendcharlcd>
+ 21e:	89 91       	ld	r24, Y+
+ 220:	81 11       	cpse	r24, r1
+ 222:	fc cf       	rjmp	.-8      	; 0x21c <str_lcd+0xe>
+ 224:	df 91       	pop	r29
+ 226:	cf 91       	pop	r28
+ 228:	08 95       	ret
+
+0000022a <I2C_Init>:
+ 22a:	80 e2       	ldi	r24, 0x20	; 32
+ 22c:	80 b9       	out	0x00, r24	; 0
+ 22e:	08 95       	ret
+
+00000230 <I2C_StartCondition>:
+ 230:	84 ea       	ldi	r24, 0xA4	; 164
+ 232:	86 bf       	out	0x36, r24	; 54
+ 234:	06 b6       	in	r0, 0x36	; 54
+ 236:	07 fe       	sbrs	r0, 7
+ 238:	fd cf       	rjmp	.-6      	; 0x234 <I2C_StartCondition+0x4>
+ 23a:	08 95       	ret
+
+0000023c <I2C_SendByte>:
+ 23c:	83 b9       	out	0x03, r24	; 3
+ 23e:	84 e8       	ldi	r24, 0x84	; 132
+ 240:	86 bf       	out	0x36, r24	; 54
+ 242:	06 b6       	in	r0, 0x36	; 54
+ 244:	07 fe       	sbrs	r0, 7
+ 246:	fd cf       	rjmp	.-6      	; 0x242 <I2C_SendByte+0x6>
+ 248:	08 95       	ret
+
+0000024a <I2C_SendByteByADDR>:
+ 24a:	cf 93       	push	r28
+ 24c:	df 93       	push	r29
+ 24e:	c8 2f       	mov	r28, r24
+ 250:	d6 2f       	mov	r29, r22
+ 252:	ee df       	rcall	.-36     	; 0x230 <I2C_StartCondition>
+ 254:	8d 2f       	mov	r24, r29
+ 256:	f2 df       	rcall	.-28     	; 0x23c <I2C_SendByte>
+ 258:	8c 2f       	mov	r24, r28
+ 25a:	f0 df       	rcall	.-32     	; 0x23c <I2C_SendByte>
+ 25c:	84 e9       	ldi	r24, 0x94	; 148
+ 25e:	86 bf       	out	0x36, r24	; 54
+ 260:	df 91       	pop	r29
+ 262:	cf 91       	pop	r28
+ 264:	08 95       	ret
+
+00000266 <_exit>:
+ 266:	f8 94       	cli
+
+00000268 <__stop_program>:
+ 268:	ff cf       	rjmp	.-2      	; 0x268 <__stop_program>

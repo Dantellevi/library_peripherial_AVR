@@ -11,6 +11,8 @@ int main(void)
 
     while (1) 
     {
+	Usart_str_rn("Hello World");
+	_delay_ms(600);
     }
 }
 
