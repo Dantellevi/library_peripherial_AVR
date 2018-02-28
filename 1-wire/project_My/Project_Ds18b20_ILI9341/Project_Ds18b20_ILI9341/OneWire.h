@@ -12,50 +12,38 @@
 
 #include "Main.h"
 
+#define MATCH_ROM	0x55
+#define SKIP_ROM	0xCC
+#define	SEARCH_ROM	0xF0
 
-#define PORT_DQ PORTB
-#define DDR_DQ DDRB
-#define PIN_DQ PINB 
-#define Pin_Data PB0
+#define CONVERT_T	0x44		// DS1820 commands
+#define READ		0xBE
+#define WRITE		0x4E
+#define EE_WRITE	0x48
+#define EE_RECALL	0xB8
 
+#define	SEARCH_FIRST	0xFF		// start new search
+#define	PRESENCE_ERR	0xFF
+#define	DATA_ERR	0xFE
+#define LAST_DEVICE	0x00		// last device found
+//			0x01 ... 0x40: continue searching
 
-#define OWIRE_0 DDR_DQ|=(1<<Pin_Data);
-#define OWIRE_1 DDR_DQ&=~(1<<Pin_Data);
-
-
-//-------------------------------------------------------------------------
-//	--------------------Функция инициализации 1ware.------------------------
-//	Возвращает 1 если присутствует устройство на шине, иначе 0
-//
-//-------------------------------------------------------------------------
-uint8_t OneWire_Init(void);
-
-
-
-//-------------------------------------------------------------------------
-//	---------------Функция передачи байта в шину 1ware.------------------------
-//
-//	Принимает аргументы:
-//
-//		BYTE b - Байт который необходимо отправить по шине
-//-------------------------------------------------------------------------
-void OWire_Write(uint8_t b);
-
-//-------------------------------------------------------------------------
-//	----------------Функция чтения бита из шины.--------------------------
-//	Возвращает текущее значение бита
-//
-//-------------------------------------------------------------------------
-uint8_t OWire_Read_Bit(void);
+#ifndef W1_PIN
+#define W1_PIN	PD7
+#define W1_IN	PIND
+#define W1_OUT	PORTD
+#define W1_DDR	DDRD
+#endif
 
 
+unsigned char w1_reset(void);
 
-//-------------------------------------------------------------------------
-//	-------------------Функция чтения байта из шины.-----------------------
-//	Возвращает прочитанный байт
-//
-//-------------------------------------------------------------------------
-uint8_t OWire_read(void);
+unsigned int w1_byte_wr( unsigned char b );
+unsigned int w1_byte_rd( void );
+
+unsigned char w1_rom_search( unsigned char diff, unsigned char *id );
+
+void w1_command(  unsigned char command, unsigned char *id );
 
 
 #endif /* ONEWIRE_H_ */

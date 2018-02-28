@@ -1,123 +1,110 @@
 #include "OneWire.h"
 
-//-------------------------------------------------------------------------
-//	--------------------Функция инициализации 1ware.------------------------
-//	Возвращает 1 если присутствует устройство на шине, иначе 0
-//
-//-------------------------------------------------------------------------
-uint8_t OneWire_Init(void)
+unsigned char w1_reset(void)
 {
-	
-	uint8_t SREG_SAVE=SREG;
-	cli();
-	uint8_t i,j;
-	OWIRE_0;
+	unsigned char err;
+	W1_OUT &= ~(1<<W1_PIN);
+	W1_DDR |= 1<<W1_PIN;
 	_delay_us(480);
-	OWIRE_1;
-	_delay_us(2);
-
-	for (i=0;i<100;i++)
-	{
-		if (!(PIN_DQ&(1<<Pin_Data)))
-		{
-			for (j=1;j!=0;j++)
-			{
-				if (PIN_DQ&(1<<Pin_Data))
-				{
-					break;
-				}
-				_delay_us(1);
-			}
-
-			SREG = SREG_SAVE;
-			sei();
-			if(j)return 1; //инициализация успешна
-			else return 0;	// если уровень так и не подняли, то опустило его не устройство.
-		}
-		_delay_us(1);	
-	}
-	SREG = SREG_SAVE;
-	sei();
-	return 0;
+	W1_DDR &= ~(1<<W1_PIN);
+	_delay_us(66);
+	err = W1_IN & (1<<W1_PIN);
+	_delay_us(480-66);
+	if( (W1_IN & (1<<W1_PIN)) == 0 )		// short circuit
+	err = 1;
+	return err;
 }
 
-
-//-------------------------------------------------------------------------
-//	---------------Функция передачи байта в шину 1ware.------------------------
-//
-//	Принимает аргументы:
-//
-//		BYTE b - Байт который необходимо отправить по шине
-//-------------------------------------------------------------------------
-void OWire_Write(uint8_t b)
+unsigned char w1_bit_io( unsigned char b )
 {
-	cli();
-	uint8_t temp,i;
-
-	for(i=0; i<8; i++)
-	{
-		temp=(b&0x01);
-		if(temp)
-		{
-			OWIRE_0;
-			_delay_us(6);
-			OWIRE_1;
-			_delay_us(64);
-		}
-		else
-		{
-			OWIRE_0;
-			_delay_us(60);
-			OWIRE_1;
-			_delay_us(10);
-		}
-		b>>=1;
-	}
-	sei();
 	
+	W1_DDR |= 1<<W1_PIN;
+	_delay_us(1);
+	if( b )
+	W1_DDR &= ~(1<<W1_PIN);
+	_delay_us(14);
+	if( (W1_IN & (1<<W1_PIN)) == 0 )
+	b = 0;
+	_delay_us(45);
+	W1_DDR &= ~(1<<W1_PIN);
+	
+	return b;
 }
 
-//-------------------------------------------------------------------------
-//	----------------Функция чтения бита из шины.--------------------------
-//	Возвращает текущее значение бита
-//
-//-------------------------------------------------------------------------
-uint8_t OWire_Read_Bit(void)
-{
-	cli();	
-	uint8_t bit;
-	OWIRE_0;
-	_delay_us(2);
-	OWIRE_1;
-	_delay_us(5);
-	bit=PIN_DQ&(1<<Pin_Data);
-	_delay_us(80);
-	sei();
-	return bit;
 
+unsigned int w1_byte_wr( unsigned char b )
+{
+	unsigned char i = 8, j;
+	do{
+		j = w1_bit_io( b & 1 );
+		b >>= 1;
+		if( j )
+		b |= 0x80;
+	}while( --i );
+	return b;
 }
 
-//-------------------------------------------------------------------------
-//	-------------------Функция чтения байта из шины.-----------------------
-//	Возвращает прочитанный байт
-//
-//-------------------------------------------------------------------------
-uint8_t OWire_read(void)
+unsigned int w1_byte_rd( void )
 {
-	cli();
-	uint8_t byte=0;
-	uint8_t i=0;
-	for (i=0; i<8; i++)
-	{
-		byte >>= 1;
-		if (OWire_Read_Bit())
-		byte |= 0x80;
+	return w1_byte_wr( 0xFF );
+}
+
+
+unsigned char w1_rom_search( unsigned char diff, unsigned char *id )
+{
+	unsigned char i, j, next_diff;
+	unsigned char b;
+
+	if( w1_reset() )
+	return PRESENCE_ERR;			// error, no device found
+	w1_byte_wr( SEARCH_ROM );			// ROM search command
+	next_diff = LAST_DEVICE;			// unchanged on last device
+	i = 8 * 8;					// 8 bytes
+	do{
+		j = 8;					// 8 bits
+		do{
+			b = w1_bit_io( 1 );			// read bit
+			if( w1_bit_io( 1 ) ){			// read complement bit
+				if( b )					// 11
+				return DATA_ERR;			// data error
+				}else{
+				if( !b ){				// 00 = 2 devices
+					if( diff > i ||
+					((*id & 1) && diff != i) ){
+						b = 1;				// now 1
+						next_diff = i;			// next pass 0
+					}
+				}
+			}
+			w1_bit_io( b );     			// write bit
+			*id >>= 1;
+			if( b )					// store bit
+			*id |= 0x80;
+			i--;
+		}while( --j );
+		id++;					// next byte
+	}while( i );
+	return next_diff;				// to continue search
+}
+
+
+
+
+void w1_command( unsigned char command, unsigned char *id )
+{
+	unsigned char i;
+	w1_reset();
+	if( id ){
+		w1_byte_wr( MATCH_ROM );			// to a single device
+		i = 8;
+		do{
+			w1_byte_wr( *id );
+			id++;
+		}while( --i );
+		}else{
+		w1_byte_wr( SKIP_ROM );			// to all devices
 	}
-	sei();
-	return byte;
+	w1_byte_wr( command );
 }
-
-
-
 
 

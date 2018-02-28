@@ -9,7 +9,7 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-#define F_CPU 16000000UL
+#define F_CPU 8000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
@@ -21,6 +21,11 @@
 
 
 #include "OneWire.h"
+#include "DS18b20.h"
+#include "USART.h"
+#include "ILI9341.h"
+
+
 
 
 #endif /* MAIN_H_ */

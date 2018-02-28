@@ -37,9 +37,12 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../CicleBuffer.c \
 ../DS18b20.c \
+../ILI9341.c \
 ../main.c \
-../OneWire.c
+../OneWire.c \
+../USART.c
 
 
 PREPROCESSING_SRCS += 
@@ -49,24 +52,36 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+CicleBuffer.o \
 DS18b20.o \
+ILI9341.o \
 main.o \
-OneWire.o
+OneWire.o \
+USART.o
 
 OBJS_AS_ARGS +=  \
+CicleBuffer.o \
 DS18b20.o \
+ILI9341.o \
 main.o \
-OneWire.o
+OneWire.o \
+USART.o
 
 C_DEPS +=  \
+CicleBuffer.d \
 DS18b20.d \
+ILI9341.d \
 main.d \
-OneWire.d
+OneWire.d \
+USART.d
 
 C_DEPS_AS_ARGS +=  \
+CicleBuffer.d \
 DS18b20.d \
+ILI9341.d \
 main.d \
-OneWire.d
+OneWire.d \
+USART.d
 
 OUTPUT_FILE_PATH +=Project_Ds18b20_ILI9341.elf
 
@@ -82,6 +97,12 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 
