@@ -133,12 +133,6 @@
     <Compile Include="Fonts.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ILI9341.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="ILI9341.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Main.h">
       <SubType>compile</SubType>
     </Compile>
@@ -149,6 +143,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="OneWire.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SPFD5408A.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SPFD5408A.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="USART.c">

@@ -1,0 +1,3899 @@
+
+main.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000132a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000050  00800060  0000132a  000013be  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000011  008000b0  008000b0  0000140e  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  0000140e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000002e4  00000000  00000000  0000142e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001d0b  00000000  00000000  00001712  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000003a0  00000000  00000000  0000341d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000147a  00000000  00000000  000037bd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000002b0  00000000  00000000  00004c38  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000048a  00000000  00000000  00004ee8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000100c  00000000  00000000  00005372  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 4a 01 	jmp	0x294	; 0x294 <__ctors_end>
+       4:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+       8:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+       c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      10:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      14:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      18:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      1c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      20:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      24:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      28:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      2c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      30:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      34:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      38:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      3c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      40:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      44:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      48:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      4c:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+      50:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__bad_interrupt>
+
+00000054 <Levo_Font>:
+      54:	0f 36 08 f8 20 60 03 02 04 06 06 06 06 03 04 04     .6.. `..........
+      64:	05 06 03 04 02 05 06 04 06 06 06 06 06 05 06 06     ................
+      74:	02 03 04 04 04 06 05 06 05 06 06 06 06 06 06 04     ................
+      84:	05 06 05 06 06 06 06 06 06 06 06 06 06 06 06 06     ................
+      94:	06 04 04 04 06 05 03 05 05 05 05 05 04 05 05 02     ................
+      a4:	03 05 03 06 05 05 05 05 04 05 04 05 06 06 06 05     ................
+      b4:	06 04 02 04 06 02 00 00 00 5f 00 03 00 03 00 28     ........._.....(
+      c4:	7c 28 7c 28 00 24 2a 7f 2a 12 00 46 26 10 08 64     |(|(.$*.*..F&..d
+      d4:	62 36 49 55 22 50 00 04 02 00 18 24 42 00 42 24     b6IU"P.....$B.B$
+      e4:	18 00 54 38 38 54 00 10 10 7c 10 10 00 40 20 00     ..T88T...|...@ .
+      f4:	10 10 10 00 40 00 80 60 18 06 01 3e 41 41 41 3e     ....@..`...>AAA>
+     104:	00 42 7f 40 00 42 61 51 49 46 00 22 41 49 49 36     .B.@.BaQIF."AII6
+     114:	00 1e 10 10 7f 10 00 27 45 45 45 39 00 3e 49 49     .......'EEE9.>II
+     124:	49 32 00 61 11 09 07 00 36 49 49 49 36 00 26 49     I2.a....6III6.&I
+     134:	49 49 3e 00 24 00 40 24 00 08 14 22 00 14 14 14     II>.$.@$..."....
+     144:	00 22 14 08 00 02 01 51 09 06 00 3c 42 52 5e 00     .".....Q...<BR^.
+     154:	7e 11 11 11 7e 00 7f 49 49 36 00 3e 41 41 41 22     ~...~..II6.>AAA"
+     164:	00 7f 41 41 22 1c 00 7f 49 49 49 41 00 7f 09 09     ..AA"...IIIA....
+     174:	09 01 00 3e 41 49 49 3a 00 7f 08 08 08 7f 00 41     ...>AII:.......A
+     184:	7f 41 00 21 41 41 3f 00 7f 08 14 22 41 00 7f 40     .A.!AA?...."A..@
+     194:	40 40 00 7f 02 04 02 7f 00 7f 04 08 10 7f 00 3e     @@.............>
+     1a4:	41 41 41 3e 00 7f 09 09 09 06 00 3e 41 51 21 5e     AAA>.......>AQ!^
+     1b4:	00 7f 09 19 29 46 00 26 49 49 49 32 00 01 01 7f     ....)F.&III2....
+     1c4:	01 01 00 3f 40 40 40 3f 00 1f 20 40 20 1f 00 7f     ...?@@@?.. @ ...
+     1d4:	20 1c 20 7f 00 63 14 08 14 63 00 03 04 78 04 03      . ..c...c...x..
+     1e4:	00 61 51 49 45 43 00 7f 41 41 00 07 18 60 00 41     .aQIEC..AA...`.A
+     1f4:	41 7f 00 04 02 01 02 04 00 80 80 80 80 80 01 02     A...............
+     204:	00 20 54 54 78 00 7f 48 48 30 00 38 44 44 44 00     . TTx..HH0.8DDD.
+     214:	38 44 44 7f 00 38 54 54 58 00 7e 09 09 00 88 94     8DD..8TTX.~.....
+     224:	94 7c 00 7f 04 04 78 00 7d 00 80 fd 00 7f 10 28     .|....x.}......(
+     234:	44 00 3f 40 00 7c 04 7c 04 78 00 7c 04 04 78 00     D.?@.|.|.x.|..x.
+     244:	38 44 44 38 00 fc 24 24 18 00 18 24 24 fc 00 78     8DD8..$$...$$..x
+     254:	04 04 00 48 54 54 34 00 04 3f 44 00 3c 40 40 3c     ...HTT4..?D.<@@<
+     264:	00 1c 20 40 20 1c 00 3c 40 3c 40 3c 00 44 28 10     .. @ ..<@<@<.D(.
+     274:	28 44 00 9c a0 a0 7c 00 44 64 54 4c 44 00 08 36     (D....|.DdTLD..6
+     284:	41 00 ff 00 41 36 08 00 04 02 04 08 04 00 00 00     A...A6..........
+
+00000294 <__ctors_end>:
+     294:	11 24       	eor	r1, r1
+     296:	1f be       	out	0x3f, r1	; 63
+     298:	cf e5       	ldi	r28, 0x5F	; 95
+     29a:	d4 e0       	ldi	r29, 0x04	; 4
+     29c:	de bf       	out	0x3e, r29	; 62
+     29e:	cd bf       	out	0x3d, r28	; 61
+
+000002a0 <__do_copy_data>:
+     2a0:	10 e0       	ldi	r17, 0x00	; 0
+     2a2:	a0 e6       	ldi	r26, 0x60	; 96
+     2a4:	b0 e0       	ldi	r27, 0x00	; 0
+     2a6:	ea e2       	ldi	r30, 0x2A	; 42
+     2a8:	f3 e1       	ldi	r31, 0x13	; 19
+     2aa:	02 c0       	rjmp	.+4      	; 0x2b0 <.do_copy_data_start>
+
+000002ac <.do_copy_data_loop>:
+     2ac:	05 90       	lpm	r0, Z+
+     2ae:	0d 92       	st	X+, r0
+
+000002b0 <.do_copy_data_start>:
+     2b0:	a0 3b       	cpi	r26, 0xB0	; 176
+     2b2:	b1 07       	cpc	r27, r17
+     2b4:	d9 f7       	brne	.-10     	; 0x2ac <.do_copy_data_loop>
+
+000002b6 <__do_clear_bss>:
+     2b6:	10 e0       	ldi	r17, 0x00	; 0
+     2b8:	a0 eb       	ldi	r26, 0xB0	; 176
+     2ba:	b0 e0       	ldi	r27, 0x00	; 0
+     2bc:	01 c0       	rjmp	.+2      	; 0x2c0 <.do_clear_bss_start>
+
+000002be <.do_clear_bss_loop>:
+     2be:	1d 92       	st	X+, r1
+
+000002c0 <.do_clear_bss_start>:
+     2c0:	a1 3c       	cpi	r26, 0xC1	; 193
+     2c2:	b1 07       	cpc	r27, r17
+     2c4:	e1 f7       	brne	.-8      	; 0x2be <.do_clear_bss_loop>
+     2c6:	0e 94 5c 08 	call	0x10b8	; 0x10b8 <main>
+     2ca:	0c 94 93 09 	jmp	0x1326	; 0x1326 <_exit>
+
+000002ce <__bad_interrupt>:
+     2ce:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000002d2 <SPI_MasterInit>:
+
+
+void SPI_MasterInit(void)
+{
+	// Set MOSI and SCK output, all others input
+	DDR_SPI |= (1<<SPI_MOSI)|(1<<SPI_SCK)|(1<<SPI_SS);
+     2d2:	87 b3       	in	r24, 0x17	; 23
+     2d4:	80 6b       	ori	r24, 0xB0	; 176
+     2d6:	87 bb       	out	0x17, r24	; 23
+	PORTB |= _BV(SPI_MISO); // pull-up?
+     2d8:	c6 9a       	sbi	0x18, 6	; 24
+	
+	SPCR = ((0<<SPIE)|(1<<SPE)|(0<<DORD)|(1<<MSTR)|(1<<CPOL)|(1<<CPHA)|(0<<SPR1)|(0<<SPR0));
+     2da:	8c e5       	ldi	r24, 0x5C	; 92
+     2dc:	8d b9       	out	0x0d, r24	; 13
+	
+	SPSR = _BV(SPI2X); // SPI double speed. Total spi speed=Fosc/2=12MHz/2=6MHz
+     2de:	81 e0       	ldi	r24, 0x01	; 1
+     2e0:	8e b9       	out	0x0e, r24	; 14
+}
+     2e2:	08 95       	ret
+
+000002e4 <SPI_MasterTransmit>:
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     2e4:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     2e6:	77 9b       	sbis	0x0e, 7	; 14
+     2e8:	fe cf       	rjmp	.-4      	; 0x2e6 <SPI_MasterTransmit+0x2>
+	return SPDR;
+     2ea:	8f b1       	in	r24, 0x0f	; 15
+}
+     2ec:	08 95       	ret
+
+000002ee <spi_flush>:
+//			c=SPI_MasterTransmit(b>>16);
+//			c=SPI_MasterTransmit(b>>8);
+//			c=SPI_MasterTransmit(b);
+
+void spi_flush( void )
+{
+     2ee:	df 93       	push	r29
+     2f0:	cf 93       	push	r28
+     2f2:	0f 92       	push	r0
+     2f4:	cd b7       	in	r28, 0x3d	; 61
+     2f6:	de b7       	in	r29, 0x3e	; 62
+    volatile uint8_t dummy;
+    dummy = SPSR;    // clear status flags
+     2f8:	8e b1       	in	r24, 0x0e	; 14
+     2fa:	89 83       	std	Y+1, r24	; 0x01
+    dummy = SPDR;    // flush receiver buffer
+     2fc:	8f b1       	in	r24, 0x0f	; 15
+     2fe:	89 83       	std	Y+1, r24	; 0x01
+}
+     300:	0f 90       	pop	r0
+     302:	cf 91       	pop	r28
+     304:	df 91       	pop	r29
+     306:	08 95       	ret
+
+00000308 <lcd_write>:
+static void lcd_write(uint8_t data,uint8_t rs) 
+{
+    unsigned char dataBits ;
+
+
+    if (rs) {   /* write data        (RS=1, RW=0) */
+     308:	66 23       	and	r22, r22
+     30a:	11 f0       	breq	.+4      	; 0x310 <lcd_write+0x8>
+       lcd_rs_high();
+     30c:	93 9a       	sbi	0x12, 3	; 18
+     30e:	01 c0       	rjmp	.+2      	; 0x312 <lcd_write+0xa>
+    } else {    /* write instruction (RS=0, RW=0) */
+       lcd_rs_low();
+     310:	93 98       	cbi	0x12, 3	; 18
+    }
+    lcd_rw_low();
+     312:	aa 98       	cbi	0x15, 2	; 21
+        LCD_DATA0_PORT = dataBits | 0x0F;
+    }
+    else
+    {
+        /* configure data pins as output */
+        DDR(LCD_DATA0_PORT) |= _BV(LCD_DATA0_PIN);
+     314:	8c 9a       	sbi	0x11, 4	; 17
+        DDR(LCD_DATA1_PORT) |= _BV(LCD_DATA1_PIN);
+     316:	8d 9a       	sbi	0x11, 5	; 17
+        DDR(LCD_DATA2_PORT) |= _BV(LCD_DATA2_PIN);
+     318:	8e 9a       	sbi	0x11, 6	; 17
+        DDR(LCD_DATA3_PORT) |= _BV(LCD_DATA3_PIN);
+     31a:	8f 9a       	sbi	0x11, 7	; 17
+        
+        /* output high nibble first */
+        LCD_DATA3_PORT &= ~_BV(LCD_DATA3_PIN);
+     31c:	97 98       	cbi	0x12, 7	; 18
+        LCD_DATA2_PORT &= ~_BV(LCD_DATA2_PIN);
+     31e:	96 98       	cbi	0x12, 6	; 18
+        LCD_DATA1_PORT &= ~_BV(LCD_DATA1_PIN);
+     320:	95 98       	cbi	0x12, 5	; 18
+        LCD_DATA0_PORT &= ~_BV(LCD_DATA0_PIN);
+     322:	94 98       	cbi	0x12, 4	; 18
+    	if(data & 0x80) LCD_DATA3_PORT |= _BV(LCD_DATA3_PIN);
+     324:	87 fd       	sbrc	r24, 7
+     326:	97 9a       	sbi	0x12, 7	; 18
+    	if(data & 0x40) LCD_DATA2_PORT |= _BV(LCD_DATA2_PIN);
+     328:	86 fd       	sbrc	r24, 6
+     32a:	96 9a       	sbi	0x12, 6	; 18
+    	if(data & 0x20) LCD_DATA1_PORT |= _BV(LCD_DATA1_PIN);
+     32c:	85 fd       	sbrc	r24, 5
+     32e:	95 9a       	sbi	0x12, 5	; 18
+    	if(data & 0x10) LCD_DATA0_PORT |= _BV(LCD_DATA0_PIN);   
+     330:	84 fd       	sbrc	r24, 4
+     332:	94 9a       	sbi	0x12, 4	; 18
+
+#if LCD_IO_MODE
+/* toggle Enable Pin to initiate write */
+static void toggle_e(void)
+{
+    lcd_e_high();
+     334:	ab 9a       	sbi	0x15, 3	; 21
+    lcd_e_delay();
+     336:	00 c0       	rjmp	.+0      	; 0x338 <lcd_write+0x30>
+    lcd_e_low();
+     338:	ab 98       	cbi	0x15, 3	; 21
+    	if(data & 0x20) LCD_DATA1_PORT |= _BV(LCD_DATA1_PIN);
+    	if(data & 0x10) LCD_DATA0_PORT |= _BV(LCD_DATA0_PIN);   
+        lcd_e_toggle();
+        
+        /* output low nibble */
+        LCD_DATA3_PORT &= ~_BV(LCD_DATA3_PIN);
+     33a:	97 98       	cbi	0x12, 7	; 18
+        LCD_DATA2_PORT &= ~_BV(LCD_DATA2_PIN);
+     33c:	96 98       	cbi	0x12, 6	; 18
+        LCD_DATA1_PORT &= ~_BV(LCD_DATA1_PIN);
+     33e:	95 98       	cbi	0x12, 5	; 18
+        LCD_DATA0_PORT &= ~_BV(LCD_DATA0_PIN);
+     340:	94 98       	cbi	0x12, 4	; 18
+    	if(data & 0x08) LCD_DATA3_PORT |= _BV(LCD_DATA3_PIN);
+     342:	83 fd       	sbrc	r24, 3
+     344:	97 9a       	sbi	0x12, 7	; 18
+    	if(data & 0x04) LCD_DATA2_PORT |= _BV(LCD_DATA2_PIN);
+     346:	82 fd       	sbrc	r24, 2
+     348:	96 9a       	sbi	0x12, 6	; 18
+    	if(data & 0x02) LCD_DATA1_PORT |= _BV(LCD_DATA1_PIN);
+     34a:	81 fd       	sbrc	r24, 1
+     34c:	95 9a       	sbi	0x12, 5	; 18
+    	if(data & 0x01) LCD_DATA0_PORT |= _BV(LCD_DATA0_PIN);
+     34e:	80 fd       	sbrc	r24, 0
+     350:	94 9a       	sbi	0x12, 4	; 18
+
+#if LCD_IO_MODE
+/* toggle Enable Pin to initiate write */
+static void toggle_e(void)
+{
+    lcd_e_high();
+     352:	ab 9a       	sbi	0x15, 3	; 21
+    lcd_e_delay();
+     354:	00 c0       	rjmp	.+0      	; 0x356 <lcd_write+0x4e>
+    lcd_e_low();
+     356:	ab 98       	cbi	0x15, 3	; 21
+    	if(data & 0x02) LCD_DATA1_PORT |= _BV(LCD_DATA1_PIN);
+    	if(data & 0x01) LCD_DATA0_PORT |= _BV(LCD_DATA0_PIN);
+        lcd_e_toggle();        
+        
+        /* all data pins high (inactive) */
+        LCD_DATA0_PORT |= _BV(LCD_DATA0_PIN);
+     358:	94 9a       	sbi	0x12, 4	; 18
+        LCD_DATA1_PORT |= _BV(LCD_DATA1_PIN);
+     35a:	95 9a       	sbi	0x12, 5	; 18
+        LCD_DATA2_PORT |= _BV(LCD_DATA2_PIN);
+     35c:	96 9a       	sbi	0x12, 6	; 18
+        LCD_DATA3_PORT |= _BV(LCD_DATA3_PIN);
+     35e:	97 9a       	sbi	0x12, 7	; 18
+    }
+}
+     360:	08 95       	ret
+
+00000362 <lcd_read>:
+static uint8_t lcd_read(uint8_t rs) 
+{
+    uint8_t data;
+    
+    
+    if (rs)
+     362:	88 23       	and	r24, r24
+     364:	11 f0       	breq	.+4      	; 0x36a <lcd_read+0x8>
+        lcd_rs_high();                       /* RS=1: read data      */
+     366:	93 9a       	sbi	0x12, 3	; 18
+     368:	01 c0       	rjmp	.+2      	; 0x36c <lcd_read+0xa>
+    else
+        lcd_rs_low();                        /* RS=0: read busy flag */
+     36a:	93 98       	cbi	0x12, 3	; 18
+    lcd_rw_high();                           /* RW=1  read mode      */
+     36c:	aa 9a       	sbi	0x15, 2	; 21
+        lcd_e_low();
+    }
+    else
+    {
+        /* configure data pins as input */
+        DDR(LCD_DATA0_PORT) &= ~_BV(LCD_DATA0_PIN);
+     36e:	8c 98       	cbi	0x11, 4	; 17
+        DDR(LCD_DATA1_PORT) &= ~_BV(LCD_DATA1_PIN);
+     370:	8d 98       	cbi	0x11, 5	; 17
+        DDR(LCD_DATA2_PORT) &= ~_BV(LCD_DATA2_PIN);
+     372:	8e 98       	cbi	0x11, 6	; 17
+        DDR(LCD_DATA3_PORT) &= ~_BV(LCD_DATA3_PIN);
+     374:	8f 98       	cbi	0x11, 7	; 17
+                
+        /* read high nibble first */
+        lcd_e_high();
+     376:	ab 9a       	sbi	0x15, 3	; 21
+        lcd_e_delay();        
+     378:	00 c0       	rjmp	.+0      	; 0x37a <lcd_read+0x18>
+        data = 0;
+        if ( PIN(LCD_DATA0_PORT) & _BV(LCD_DATA0_PIN) ) data |= 0x10;
+     37a:	84 9b       	sbis	0x10, 4	; 16
+     37c:	02 c0       	rjmp	.+4      	; 0x382 <lcd_read+0x20>
+     37e:	80 e1       	ldi	r24, 0x10	; 16
+     380:	01 c0       	rjmp	.+2      	; 0x384 <lcd_read+0x22>
+     382:	80 e0       	ldi	r24, 0x00	; 0
+        if ( PIN(LCD_DATA1_PORT) & _BV(LCD_DATA1_PIN) ) data |= 0x20;
+     384:	85 99       	sbic	0x10, 5	; 16
+     386:	80 62       	ori	r24, 0x20	; 32
+        if ( PIN(LCD_DATA2_PORT) & _BV(LCD_DATA2_PIN) ) data |= 0x40;
+     388:	86 99       	sbic	0x10, 6	; 16
+     38a:	80 64       	ori	r24, 0x40	; 64
+        if ( PIN(LCD_DATA3_PORT) & _BV(LCD_DATA3_PIN) ) data |= 0x80;
+     38c:	87 99       	sbic	0x10, 7	; 16
+     38e:	80 68       	ori	r24, 0x80	; 128
+        lcd_e_low();
+     390:	ab 98       	cbi	0x15, 3	; 21
+
+        lcd_e_delay();                       /* Enable 500ns low       */
+     392:	00 c0       	rjmp	.+0      	; 0x394 <lcd_read+0x32>
+    
+        /* read low nibble */    
+        lcd_e_high();
+     394:	ab 9a       	sbi	0x15, 3	; 21
+        lcd_e_delay();
+     396:	00 c0       	rjmp	.+0      	; 0x398 <lcd_read+0x36>
+        if ( PIN(LCD_DATA0_PORT) & _BV(LCD_DATA0_PIN) ) data |= 0x01;
+     398:	84 99       	sbic	0x10, 4	; 16
+     39a:	81 60       	ori	r24, 0x01	; 1
+        if ( PIN(LCD_DATA1_PORT) & _BV(LCD_DATA1_PIN) ) data |= 0x02;
+     39c:	85 99       	sbic	0x10, 5	; 16
+     39e:	82 60       	ori	r24, 0x02	; 2
+        if ( PIN(LCD_DATA2_PORT) & _BV(LCD_DATA2_PIN) ) data |= 0x04;
+     3a0:	86 99       	sbic	0x10, 6	; 16
+     3a2:	84 60       	ori	r24, 0x04	; 4
+        if ( PIN(LCD_DATA3_PORT) & _BV(LCD_DATA3_PIN) ) data |= 0x08;        
+     3a4:	87 99       	sbic	0x10, 7	; 16
+     3a6:	88 60       	ori	r24, 0x08	; 8
+        lcd_e_low();
+     3a8:	ab 98       	cbi	0x15, 3	; 21
+    }
+    return data;
+}
+     3aa:	08 95       	ret
+
+000003ac <lcd_waitbusy>:
+
+{
+    register uint8_t c;
+    
+    /* wait until busy flag is cleared */
+    while ( (c=lcd_read(0)) & (1<<LCD_BUSY)) {}
+     3ac:	80 e0       	ldi	r24, 0x00	; 0
+     3ae:	0e 94 b1 01 	call	0x362	; 0x362 <lcd_read>
+     3b2:	87 fd       	sbrc	r24, 7
+     3b4:	fb cf       	rjmp	.-10     	; 0x3ac <lcd_waitbusy>
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+     3b6:	86 e0       	ldi	r24, 0x06	; 6
+     3b8:	90 e0       	ldi	r25, 0x00	; 0
+     3ba:	01 97       	sbiw	r24, 0x01	; 1
+     3bc:	f1 f7       	brne	.-4      	; 0x3ba <lcd_waitbusy+0xe>
+    
+    /* the address counter is updated 4us after the busy flag is cleared */
+    delay(2);
+
+    /* now read the address counter */
+    return (lcd_read(0));  // return address counter
+     3be:	80 e0       	ldi	r24, 0x00	; 0
+     3c0:	0e 94 b1 01 	call	0x362	; 0x362 <lcd_read>
+    
+}/* lcd_waitbusy */
+     3c4:	08 95       	ret
+
+000003c6 <lcd_command>:
+Send LCD controller instruction command
+Input:   instruction to send to LCD controller, see HD44780 data sheet
+Returns: none
+*************************************************************************/
+void lcd_command(uint8_t cmd)
+{
+     3c6:	1f 93       	push	r17
+     3c8:	18 2f       	mov	r17, r24
+    lcd_waitbusy();
+     3ca:	0e 94 d6 01 	call	0x3ac	; 0x3ac <lcd_waitbusy>
+    lcd_write(cmd,0);
+     3ce:	81 2f       	mov	r24, r17
+     3d0:	60 e0       	ldi	r22, 0x00	; 0
+     3d2:	0e 94 84 01 	call	0x308	; 0x308 <lcd_write>
+}
+     3d6:	1f 91       	pop	r17
+     3d8:	08 95       	ret
+
+000003da <lcd_data>:
+Send data byte to LCD controller 
+Input:   data to send to LCD controller, see HD44780 data sheet
+Returns: none
+*************************************************************************/
+void lcd_data(uint8_t data)
+{
+     3da:	1f 93       	push	r17
+     3dc:	18 2f       	mov	r17, r24
+    lcd_waitbusy();
+     3de:	0e 94 d6 01 	call	0x3ac	; 0x3ac <lcd_waitbusy>
+    lcd_write(data,1);
+     3e2:	81 2f       	mov	r24, r17
+     3e4:	61 e0       	ldi	r22, 0x01	; 1
+     3e6:	0e 94 84 01 	call	0x308	; 0x308 <lcd_write>
+}
+     3ea:	1f 91       	pop	r17
+     3ec:	08 95       	ret
+
+000003ee <lcd_gotoxy>:
+Returns:  none
+*************************************************************************/
+void lcd_gotoxy(uint8_t x, uint8_t y)
+{
+#if LCD_LINES==1
+    lcd_command((1<<LCD_DDRAM)+LCD_START_LINE1+x);
+     3ee:	80 58       	subi	r24, 0x80	; 128
+     3f0:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+        lcd_command((1<<LCD_DDRAM)+LCD_START_LINE3+x);
+    else /* y==3 */
+        lcd_command((1<<LCD_DDRAM)+LCD_START_LINE4+x);
+#endif
+
+}/* lcd_gotoxy */
+     3f4:	08 95       	ret
+
+000003f6 <lcd_getxy>:
+
+/*************************************************************************
+*************************************************************************/
+int lcd_getxy(void)
+{
+    return lcd_waitbusy();
+     3f6:	0e 94 d6 01 	call	0x3ac	; 0x3ac <lcd_waitbusy>
+}
+     3fa:	90 e0       	ldi	r25, 0x00	; 0
+     3fc:	08 95       	ret
+
+000003fe <lcd_clrscr>:
+/*************************************************************************
+Clear display and set cursor to home position
+*************************************************************************/
+void lcd_clrscr(void)
+{
+    lcd_command(1<<LCD_CLR);
+     3fe:	81 e0       	ldi	r24, 0x01	; 1
+     400:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+}
+     404:	08 95       	ret
+
+00000406 <lcd_home>:
+/*************************************************************************
+Set cursor to home position
+*************************************************************************/
+void lcd_home(void)
+{
+    lcd_command(1<<LCD_HOME);
+     406:	82 e0       	ldi	r24, 0x02	; 2
+     408:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+}
+     40c:	08 95       	ret
+
+0000040e <lcd_putc>:
+Display character at current cursor position 
+Input:    character to be displayed                                       
+Returns:  none
+*************************************************************************/
+void lcd_putc(char c)
+{
+     40e:	1f 93       	push	r17
+     410:	18 2f       	mov	r17, r24
+    uint8_t pos;
+
+
+    pos = lcd_waitbusy();   // read busy-flag and address counter
+     412:	0e 94 d6 01 	call	0x3ac	; 0x3ac <lcd_waitbusy>
+    if (c=='\n')
+     416:	1a 30       	cpi	r17, 0x0A	; 10
+     418:	21 f4       	brne	.+8      	; 0x422 <lcd_putc+0x14>
+        addressCounter = LCD_START_LINE4;
+    else 
+        addressCounter = LCD_START_LINE1;
+#endif
+#endif
+    lcd_command((1<<LCD_DDRAM)+addressCounter);
+     41a:	80 e8       	ldi	r24, 0x80	; 128
+     41c:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+     420:	04 c0       	rjmp	.+8      	; 0x42a <lcd_putc+0x1c>
+            lcd_write((1<<LCD_DDRAM)+LCD_START_LINE1,0);
+        }
+#endif
+        lcd_waitbusy();
+#endif
+        lcd_write(c, 1);
+     422:	81 2f       	mov	r24, r17
+     424:	61 e0       	ldi	r22, 0x01	; 1
+     426:	0e 94 84 01 	call	0x308	; 0x308 <lcd_write>
+    }
+
+}/* lcd_putc */
+     42a:	1f 91       	pop	r17
+     42c:	08 95       	ret
+
+0000042e <lcd_puts>:
+Input:    string to be displayed
+Returns:  none
+*************************************************************************/
+void lcd_puts(const char *s)
+/* print string on lcd (no auto linefeed) */
+{
+     42e:	cf 93       	push	r28
+     430:	df 93       	push	r29
+     432:	ec 01       	movw	r28, r24
+     434:	02 c0       	rjmp	.+4      	; 0x43a <lcd_puts+0xc>
+    register char c;
+
+    while ( (c = *s++) ) {
+        lcd_putc(c);
+     436:	0e 94 07 02 	call	0x40e	; 0x40e <lcd_putc>
+void lcd_puts(const char *s)
+/* print string on lcd (no auto linefeed) */
+{
+    register char c;
+
+    while ( (c = *s++) ) {
+     43a:	89 91       	ld	r24, Y+
+     43c:	88 23       	and	r24, r24
+     43e:	d9 f7       	brne	.-10     	; 0x436 <lcd_puts+0x8>
+        lcd_putc(c);
+    }
+
+}/* lcd_puts */
+     440:	df 91       	pop	r29
+     442:	cf 91       	pop	r28
+     444:	08 95       	ret
+
+00000446 <lcd_puts_p>:
+Input:     string from program memory be be displayed                                        
+Returns:   none
+*************************************************************************/
+void lcd_puts_p(const char *progmem_s)
+/* print string from program memory on lcd (no auto linefeed) */
+{
+     446:	cf 93       	push	r28
+     448:	df 93       	push	r29
+     44a:	ec 01       	movw	r28, r24
+     44c:	02 c0       	rjmp	.+4      	; 0x452 <lcd_puts_p+0xc>
+    register char c;
+
+    while ( (c = pgm_read_byte(progmem_s++)) ) {
+        lcd_putc(c);
+     44e:	0e 94 07 02 	call	0x40e	; 0x40e <lcd_putc>
+     452:	fe 01       	movw	r30, r28
+void lcd_puts_p(const char *progmem_s)
+/* print string from program memory on lcd (no auto linefeed) */
+{
+    register char c;
+
+    while ( (c = pgm_read_byte(progmem_s++)) ) {
+     454:	21 96       	adiw	r28, 0x01	; 1
+     456:	84 91       	lpm	r24, Z+
+     458:	88 23       	and	r24, r24
+     45a:	c9 f7       	brne	.-14     	; 0x44e <lcd_puts_p+0x8>
+        lcd_putc(c);
+    }
+
+}/* lcd_puts_p */
+     45c:	df 91       	pop	r29
+     45e:	cf 91       	pop	r28
+     460:	08 95       	ret
+
+00000462 <lcd_init>:
+                   LCD_DISP_ON_CURSOR      display on, cursor on
+                   LCD_DISP_CURSOR_BLINK   display on, cursor on flashing
+Returns:  none
+*************************************************************************/
+void lcd_init(uint8_t dispAttr)
+{
+     462:	1f 93       	push	r17
+     464:	18 2f       	mov	r17, r24
+        DDR(LCD_E_PORT)     |= _BV(LCD_E_PIN);
+    }
+    else
+    {
+        /* configure all port bits as output (LCD data and control lines on different ports */
+        DDR(LCD_RS_PORT)    |= _BV(LCD_RS_PIN);
+     466:	8b 9a       	sbi	0x11, 3	; 17
+        DDR(LCD_RW_PORT)    |= _BV(LCD_RW_PIN);
+     468:	a2 9a       	sbi	0x14, 2	; 20
+        DDR(LCD_E_PORT)     |= _BV(LCD_E_PIN);
+     46a:	a3 9a       	sbi	0x14, 3	; 20
+        DDR(LCD_DATA0_PORT) |= _BV(LCD_DATA0_PIN);
+     46c:	8c 9a       	sbi	0x11, 4	; 17
+        DDR(LCD_DATA1_PORT) |= _BV(LCD_DATA1_PIN);
+     46e:	8d 9a       	sbi	0x11, 5	; 17
+        DDR(LCD_DATA2_PORT) |= _BV(LCD_DATA2_PIN);
+     470:	8e 9a       	sbi	0x11, 6	; 17
+        DDR(LCD_DATA3_PORT) |= _BV(LCD_DATA3_PIN);
+     472:	8f 9a       	sbi	0x11, 7	; 17
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+     474:	80 e8       	ldi	r24, 0x80	; 128
+     476:	9b eb       	ldi	r25, 0xBB	; 187
+     478:	01 97       	sbiw	r24, 0x01	; 1
+     47a:	f1 f7       	brne	.-4      	; 0x478 <lcd_init+0x16>
+        DDR(LCD_DATA3_PORT) |= _BV(LCD_DATA3_PIN);
+    }
+    delay(16000);        /* wait 16ms or more after power-on       */
+    
+    /* initial write to lcd is 8bit */
+    LCD_DATA1_PORT |= _BV(LCD_DATA1_PIN);  // _BV(LCD_FUNCTION)>>4;
+     47c:	95 9a       	sbi	0x12, 5	; 18
+    LCD_DATA0_PORT |= _BV(LCD_DATA0_PIN);  // _BV(LCD_FUNCTION_8BIT)>>4;
+     47e:	94 9a       	sbi	0x12, 4	; 18
+
+#if LCD_IO_MODE
+/* toggle Enable Pin to initiate write */
+static void toggle_e(void)
+{
+    lcd_e_high();
+     480:	ab 9a       	sbi	0x15, 3	; 21
+    lcd_e_delay();
+     482:	00 c0       	rjmp	.+0      	; 0x484 <lcd_init+0x22>
+    lcd_e_low();
+     484:	ab 98       	cbi	0x15, 3	; 21
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+     486:	80 e8       	ldi	r24, 0x80	; 128
+     488:	9a e3       	ldi	r25, 0x3A	; 58
+     48a:	01 97       	sbiw	r24, 0x01	; 1
+     48c:	f1 f7       	brne	.-4      	; 0x48a <lcd_init+0x28>
+
+#if LCD_IO_MODE
+/* toggle Enable Pin to initiate write */
+static void toggle_e(void)
+{
+    lcd_e_high();
+     48e:	ab 9a       	sbi	0x15, 3	; 21
+    lcd_e_delay();
+     490:	00 c0       	rjmp	.+0      	; 0x492 <lcd_init+0x30>
+    lcd_e_low();
+     492:	ab 98       	cbi	0x15, 3	; 21
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+     494:	80 ec       	ldi	r24, 0xC0	; 192
+     496:	90 e0       	ldi	r25, 0x00	; 0
+     498:	fc 01       	movw	r30, r24
+     49a:	31 97       	sbiw	r30, 0x01	; 1
+     49c:	f1 f7       	brne	.-4      	; 0x49a <lcd_init+0x38>
+
+#if LCD_IO_MODE
+/* toggle Enable Pin to initiate write */
+static void toggle_e(void)
+{
+    lcd_e_high();
+     49e:	ab 9a       	sbi	0x15, 3	; 21
+    lcd_e_delay();
+     4a0:	00 c0       	rjmp	.+0      	; 0x4a2 <lcd_init+0x40>
+    lcd_e_low();
+     4a2:	ab 98       	cbi	0x15, 3	; 21
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+     4a4:	fc 01       	movw	r30, r24
+     4a6:	31 97       	sbiw	r30, 0x01	; 1
+     4a8:	f1 f7       	brne	.-4      	; 0x4a6 <lcd_init+0x44>
+    /* repeat last command a third time */
+    lcd_e_toggle();      
+    delay(64);           /* delay, busy flag can't be checked here */
+
+    /* now configure for 4bit mode */
+    LCD_DATA0_PORT &= ~_BV(LCD_DATA0_PIN);   // LCD_FUNCTION_4BIT_1LINE>>4
+     4aa:	94 98       	cbi	0x12, 4	; 18
+
+#if LCD_IO_MODE
+/* toggle Enable Pin to initiate write */
+static void toggle_e(void)
+{
+    lcd_e_high();
+     4ac:	ab 9a       	sbi	0x15, 3	; 21
+    lcd_e_delay();
+     4ae:	00 c0       	rjmp	.+0      	; 0x4b0 <lcd_init+0x4e>
+    lcd_e_low();
+     4b0:	ab 98       	cbi	0x15, 3	; 21
+static inline void _delayFourCycles(unsigned int __count)
+{
+    if ( __count == 0 )    
+        __asm__ __volatile__( "rjmp 1f\n 1:" );    // 2 cycles
+    else
+        __asm__ __volatile__ (
+     4b2:	01 97       	sbiw	r24, 0x01	; 1
+     4b4:	f1 f7       	brne	.-4      	; 0x4b2 <lcd_init+0x50>
+    /* Display with KS0073 controller requires special commands for enabling 4 line mode */
+	lcd_command(KS0073_EXTENDED_FUNCTION_REGISTER_ON);
+	lcd_command(KS0073_4LINES_MODE);
+	lcd_command(KS0073_EXTENDED_FUNCTION_REGISTER_OFF);
+#else
+    lcd_command(LCD_FUNCTION_DEFAULT);      /* function set: display lines  */
+     4b6:	80 e2       	ldi	r24, 0x20	; 32
+     4b8:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+#endif
+    lcd_command(LCD_DISP_OFF);              /* display off                  */
+     4bc:	88 e0       	ldi	r24, 0x08	; 8
+     4be:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+    lcd_clrscr();                           /* display clear                */ 
+     4c2:	0e 94 ff 01 	call	0x3fe	; 0x3fe <lcd_clrscr>
+    lcd_command(LCD_MODE_DEFAULT);          /* set entry mode               */
+     4c6:	86 e0       	ldi	r24, 0x06	; 6
+     4c8:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+    lcd_command(dispAttr);                  /* display/cursor control       */
+     4cc:	81 2f       	mov	r24, r17
+     4ce:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+
+}/* lcd_init */
+     4d2:	1f 91       	pop	r17
+     4d4:	08 95       	ret
+
+000004d6 <ili9341_send_word>:
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     4d6:	9f b9       	out	0x0f, r25	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     4d8:	77 9b       	sbis	0x0e, 7	; 14
+     4da:	fe cf       	rjmp	.-4      	; 0x4d8 <ili9341_send_word+0x2>
+	return SPDR;
+     4dc:	9f b1       	in	r25, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     4de:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     4e0:	77 9b       	sbis	0x0e, 7	; 14
+     4e2:	fe cf       	rjmp	.-4      	; 0x4e0 <ili9341_send_word+0xa>
+	return SPDR;
+     4e4:	8f b1       	in	r24, 0x0f	; 15
+}
+inline static void ili9341_send_word(unsigned int data)
+{
+	SPI_MasterTransmit(data >> 8);
+	SPI_MasterTransmit(data );
+}
+     4e6:	08 95       	ret
+
+000004e8 <ili9341_send_command>:
+{
+	PORTB |= CONF_ILI9341_CS_PIN;
+}
+inline void ili9341_select_command_mode(void)
+{
+	PORTB &= ~CONF_ILI9341_DC_PIN;
+     4e8:	c3 98       	cbi	0x18, 3	; 24
+#define LCD_WIDTH 320
+#define LCD_HEIGHT 240
+
+inline void ili9341_select_chip(void)
+{
+	PORTB &= ~CONF_ILI9341_CS_PIN;
+     4ea:	c4 98       	cbi	0x18, 4	; 24
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     4ec:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     4ee:	77 9b       	sbis	0x0e, 7	; 14
+     4f0:	fe cf       	rjmp	.-4      	; 0x4ee <ili9341_send_command+0x6>
+	return SPDR;
+     4f2:	8f b1       	in	r24, 0x0f	; 15
+{
+	PORTB &= ~CONF_ILI9341_DC_PIN;
+}
+inline void ili9341_select_data_mode(void)
+{
+	PORTB |= CONF_ILI9341_DC_PIN;
+     4f4:	c3 9a       	sbi	0x18, 3	; 24
+{
+    ili9341_select_command_mode();
+    ili9341_select_chip();
+    ili9341_send_byte(command);
+    ili9341_select_data_mode();
+}
+     4f6:	08 95       	ret
+
+000004f8 <ili9341_interface_init>:
+void ili9341_interface_init(void)
+{ 
+	DDRB |= CONF_ILI9341_RESET_PIN | CONF_ILI9341_DC_PIN | CONF_ILI9341_CS_PIN;
+     4f8:	87 b3       	in	r24, 0x17	; 23
+     4fa:	8c 61       	ori	r24, 0x1C	; 28
+     4fc:	87 bb       	out	0x17, r24	; 23
+{
+	PORTB &= ~CONF_ILI9341_CS_PIN;
+}
+inline void ili9341_deselect_chip(void)
+{
+	PORTB |= CONF_ILI9341_CS_PIN;
+     4fe:	c4 9a       	sbi	0x18, 4	; 24
+}
+void ili9341_interface_init(void)
+{ 
+	DDRB |= CONF_ILI9341_RESET_PIN | CONF_ILI9341_DC_PIN | CONF_ILI9341_CS_PIN;
+	ili9341_deselect_chip();
+	SPI_MasterInit();
+     500:	0e 94 69 01 	call	0x2d2	; 0x2d2 <SPI_MasterInit>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     504:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     506:	77 9b       	sbis	0x0e, 7	; 14
+     508:	fe cf       	rjmp	.-4      	; 0x506 <ili9341_interface_init+0xe>
+	return SPDR;
+     50a:	8f b1       	in	r24, 0x0f	; 15
+	SPI_MasterTransmit(0);
+}
+     50c:	08 95       	ret
+
+0000050e <ili9341_write_buffer>:
+{
+	PORTB &= ~CONF_ILI9341_DC_PIN;
+}
+inline void ili9341_select_data_mode(void)
+{
+	PORTB |= CONF_ILI9341_DC_PIN;
+     50e:	c3 9a       	sbi	0x18, 3	; 24
+#define LCD_WIDTH 320
+#define LCD_HEIGHT 240
+
+inline void ili9341_select_chip(void)
+{
+	PORTB &= ~CONF_ILI9341_CS_PIN;
+     510:	c4 98       	cbi	0x18, 4	; 24
+     512:	fc 01       	movw	r30, r24
+     514:	90 e0       	ldi	r25, 0x00	; 0
+     516:	07 c0       	rjmp	.+14     	; 0x526 <ili9341_write_buffer+0x18>
+unsigned char count, data1; //, data2;
+ili9341_select_data_mode();
+ili9341_select_chip();
+for(count=0;count<len;count++)
+	{
+		data1 = buffer[count]; //>>8;
+     518:	80 81       	ld	r24, Z
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     51a:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     51c:	77 9b       	sbis	0x0e, 7	; 14
+     51e:	fe cf       	rjmp	.-4      	; 0x51c <ili9341_write_buffer+0xe>
+	return SPDR;
+     520:	8f b1       	in	r24, 0x0f	; 15
+void ili9341_write_buffer(char *buffer, unsigned char len)
+{
+unsigned char count, data1; //, data2;
+ili9341_select_data_mode();
+ili9341_select_chip();
+for(count=0;count<len;count++)
+     522:	9f 5f       	subi	r25, 0xFF	; 255
+     524:	31 96       	adiw	r30, 0x01	; 1
+     526:	96 17       	cp	r25, r22
+     528:	b8 f3       	brcs	.-18     	; 0x518 <ili9341_write_buffer+0xa>
+//        SPI.transfer(data1);
+//        SPI.transfer(data2);
+//    }
+//    TFT_CS_HIGH;
+
+}
+     52a:	08 95       	ret
+
+0000052c <ili9341_read_register>:
+
+
+unsigned char ili9341_read_register(unsigned char addr, unsigned char xparam)
+{
+     52c:	0f 93       	push	r16
+     52e:	1f 93       	push	r17
+     530:	08 2f       	mov	r16, r24
+     532:	16 2f       	mov	r17, r22
+unsigned char data;
+	ili9341_send_command(0xD9); /* ext command                  */
+     534:	89 ed       	ldi	r24, 0xD9	; 217
+     536:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+	ili9341_send_byte(0x10+xparam); /* 0x11 is the first Parameter  */
+     53a:	10 5f       	subi	r17, 0xF0	; 240
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     53c:	1f b9       	out	0x0f, r17	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     53e:	77 9b       	sbis	0x0e, 7	; 14
+     540:	fe cf       	rjmp	.-4      	; 0x53e <ili9341_read_register+0x12>
+	return SPDR;
+     542:	8f b1       	in	r24, 0x0f	; 15
+{
+	PORTB |= CONF_ILI9341_CS_PIN;
+}
+inline void ili9341_select_command_mode(void)
+{
+	PORTB &= ~CONF_ILI9341_DC_PIN;
+     544:	c3 98       	cbi	0x18, 3	; 24
+#define LCD_WIDTH 320
+#define LCD_HEIGHT 240
+
+inline void ili9341_select_chip(void)
+{
+	PORTB &= ~CONF_ILI9341_CS_PIN;
+     546:	c4 98       	cbi	0x18, 4	; 24
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     548:	0f b9       	out	0x0f, r16	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     54a:	77 9b       	sbis	0x0e, 7	; 14
+     54c:	fe cf       	rjmp	.-4      	; 0x54a <ili9341_read_register+0x1e>
+	return SPDR;
+     54e:	8f b1       	in	r24, 0x0f	; 15
+{
+	PORTB &= ~CONF_ILI9341_DC_PIN;
+}
+inline void ili9341_select_data_mode(void)
+{
+	PORTB |= CONF_ILI9341_DC_PIN;
+     550:	c3 9a       	sbi	0x18, 3	; 24
+#define LCD_WIDTH 320
+#define LCD_HEIGHT 240
+
+inline void ili9341_select_chip(void)
+{
+	PORTB &= ~CONF_ILI9341_CS_PIN;
+     552:	c4 98       	cbi	0x18, 4	; 24
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     554:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     556:	77 9b       	sbis	0x0e, 7	; 14
+     558:	fe cf       	rjmp	.-4      	; 0x556 <ili9341_read_register+0x2a>
+	return SPDR;
+     55a:	8f b1       	in	r24, 0x0f	; 15
+}
+inline void ili9341_deselect_chip(void)
+{
+	PORTB |= CONF_ILI9341_CS_PIN;
+     55c:	c4 9a       	sbi	0x18, 4	; 24
+	ili9341_send_byte(addr);
+	ili9341_select_data_mode();
+	data=ili9341_read_byte();
+	ili9341_deselect_chip();
+	return data;
+}
+     55e:	1f 91       	pop	r17
+     560:	0f 91       	pop	r16
+     562:	08 95       	ret
+
+00000564 <ili9341_read_ID>:
+
+//INT8U TFT::readID(void)
+unsigned char ili9341_read_ID(void)
+{
+     564:	ef 92       	push	r14
+     566:	ff 92       	push	r15
+     568:	0f 93       	push	r16
+     56a:	1f 93       	push	r17
+     56c:	df 93       	push	r29
+     56e:	cf 93       	push	r28
+     570:	00 d0       	rcall	.+0      	; 0x572 <ili9341_read_ID+0xe>
+     572:	0f 92       	push	r0
+     574:	cd b7       	in	r28, 0x3d	; 61
+     576:	de b7       	in	r29, 0x3e	; 62
+unsigned char i;
+unsigned char data[3];
+unsigned char id[3]= {0x00, 0x93, 0x41};
+     578:	de 01       	movw	r26, r28
+     57a:	11 96       	adiw	r26, 0x01	; 1
+     57c:	ec ea       	ldi	r30, 0xAC	; 172
+     57e:	f0 e0       	ldi	r31, 0x00	; 0
+     580:	83 e0       	ldi	r24, 0x03	; 3
+     582:	01 90       	ld	r0, Z+
+     584:	0d 92       	st	X+, r0
+     586:	81 50       	subi	r24, 0x01	; 1
+     588:	e1 f7       	brne	.-8      	; 0x582 <ili9341_read_ID+0x1e>
+     58a:	8e 01       	movw	r16, r28
+     58c:	0f 5f       	subi	r16, 0xFF	; 255
+     58e:	1f 4f       	sbci	r17, 0xFF	; 255
+     590:	ff 24       	eor	r15, r15
+     592:	ee 24       	eor	r14, r14
+     594:	ea 94       	dec	r14
+unsigned char ToF=0xFF;
+    for(i=0;i<3;i++)
+    {
+        data[i]=ili9341_read_register(0xd3,i+1);
+     596:	f3 94       	inc	r15
+     598:	83 ed       	ldi	r24, 0xD3	; 211
+     59a:	6f 2d       	mov	r22, r15
+     59c:	0e 94 96 02 	call	0x52c	; 0x52c <ili9341_read_register>
+        if(data[i] != id[i])
+     5a0:	f8 01       	movw	r30, r16
+     5a2:	90 81       	ld	r25, Z
+     5a4:	89 13       	cpse	r24, r25
+     5a6:	ee 24       	eor	r14, r14
+     5a8:	0f 5f       	subi	r16, 0xFF	; 255
+     5aa:	1f 4f       	sbci	r17, 0xFF	; 255
+{
+unsigned char i;
+unsigned char data[3];
+unsigned char id[3]= {0x00, 0x93, 0x41};
+unsigned char ToF=0xFF;
+    for(i=0;i<3;i++)
+     5ac:	f3 e0       	ldi	r31, 0x03	; 3
+     5ae:	ff 16       	cp	r15, r31
+     5b0:	91 f7       	brne	.-28     	; 0x596 <ili9341_read_ID+0x32>
+        {
+            ToF=0;
+        }
+    }
+
+    if(!ToF)                                                            /* data!=ID                     */
+     5b2:	ee 20       	and	r14, r14
+     5b4:	09 f4       	brne	.+2      	; 0x5b8 <ili9341_read_ID+0x54>
+     5b6:	ff cf       	rjmp	.-2      	; 0x5b6 <ili9341_read_ID+0x52>
+//       }
+//        Serial.println();
+		while(1){}
+	}
+   return ToF;
+}
+     5b8:	8e 2d       	mov	r24, r14
+     5ba:	0f 90       	pop	r0
+     5bc:	0f 90       	pop	r0
+     5be:	0f 90       	pop	r0
+     5c0:	cf 91       	pop	r28
+     5c2:	df 91       	pop	r29
+     5c4:	1f 91       	pop	r17
+     5c6:	0f 91       	pop	r16
+     5c8:	ff 90       	pop	r15
+     5ca:	ef 90       	pop	r14
+     5cc:	08 95       	ret
+
+000005ce <ili9341_controller_init_registers>:
+void ili9341_controller_init_registers(void)
+{
+    unsigned char i=0, TFTDriver=0;
+    for(i=0;i<3;i++)
+	{
+		TFTDriver = ili9341_read_ID();
+     5ce:	0e 94 b2 02 	call	0x564	; 0x564 <ili9341_read_ID>
+     5d2:	0e 94 b2 02 	call	0x564	; 0x564 <ili9341_read_ID>
+     5d6:	0e 94 b2 02 	call	0x564	; 0x564 <ili9341_read_ID>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+     5da:	88 ea       	ldi	r24, 0xA8	; 168
+     5dc:	91 e6       	ldi	r25, 0x61	; 97
+     5de:	01 97       	sbiw	r24, 0x01	; 1
+     5e0:	f1 f7       	brne	.-4      	; 0x5de <ili9341_controller_init_registers+0x10>
+	}
+	_delay_ms(100);
+
+	ili9341_send_command(ILI9341_CMD_SOFTWARE_RESET);
+     5e2:	81 e0       	ldi	r24, 0x01	; 1
+     5e4:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+     5e8:	80 e5       	ldi	r24, 0x50	; 80
+     5ea:	93 ec       	ldi	r25, 0xC3	; 195
+     5ec:	01 97       	sbiw	r24, 0x01	; 1
+     5ee:	f1 f7       	brne	.-4      	; 0x5ec <ili9341_controller_init_registers+0x1e>
+	_delay_ms(200);	
+	
+	ili9341_send_command(ILI9341_CMD_SLEEP_OUT);	// Exit Sleep
+     5f0:	81 e1       	ldi	r24, 0x11	; 17
+     5f2:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+	PORTB &= ~CONF_ILI9341_CS_PIN;
+}
+inline void ili9341_deselect_chip(void)
+{
+	PORTB |= CONF_ILI9341_CS_PIN;
+     5f6:	c4 9a       	sbi	0x18, 4	; 24
+     5f8:	88 ed       	ldi	r24, 0xD8	; 216
+     5fa:	96 ed       	ldi	r25, 0xD6	; 214
+     5fc:	01 97       	sbiw	r24, 0x01	; 1
+     5fe:	f1 f7       	brne	.-4      	; 0x5fc <ili9341_controller_init_registers+0x2e>
+	
+	ili9341_send_command(ILI9341_CMD_SLEEP_OUT);	// Exit Sleep
+	ili9341_deselect_chip();
+    _delay_ms(220);
+
+	ili9341_send_command(ILI9341_CMD_POWER_CONTROL_B);
+     600:	8f ec       	ldi	r24, 0xCF	; 207
+     602:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     606:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     608:	77 9b       	sbis	0x0e, 7	; 14
+     60a:	fe cf       	rjmp	.-4      	; 0x608 <ili9341_controller_init_registers+0x3a>
+	return SPDR;
+     60c:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     60e:	8b e8       	ldi	r24, 0x8B	; 139
+     610:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     612:	77 9b       	sbis	0x0e, 7	; 14
+     614:	fe cf       	rjmp	.-4      	; 0x612 <ili9341_controller_init_registers+0x44>
+	return SPDR;
+     616:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     618:	80 e3       	ldi	r24, 0x30	; 48
+     61a:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     61c:	77 9b       	sbis	0x0e, 7	; 14
+     61e:	fe cf       	rjmp	.-4      	; 0x61c <ili9341_controller_init_registers+0x4e>
+	return SPDR;
+     620:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x00);
+    ili9341_send_byte(0x8B); //83
+    ili9341_send_byte(0X30);
+
+    ili9341_send_command(0xED); //Power on sequence control
+     622:	8d ee       	ldi	r24, 0xED	; 237
+     624:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     628:	87 e6       	ldi	r24, 0x67	; 103
+     62a:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     62c:	77 9b       	sbis	0x0e, 7	; 14
+     62e:	fe cf       	rjmp	.-4      	; 0x62c <ili9341_controller_init_registers+0x5e>
+	return SPDR;
+     630:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     632:	83 e0       	ldi	r24, 0x03	; 3
+     634:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     636:	77 9b       	sbis	0x0e, 7	; 14
+     638:	fe cf       	rjmp	.-4      	; 0x636 <ili9341_controller_init_registers+0x68>
+	return SPDR;
+     63a:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     63c:	82 e1       	ldi	r24, 0x12	; 18
+     63e:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     640:	77 9b       	sbis	0x0e, 7	; 14
+     642:	fe cf       	rjmp	.-4      	; 0x640 <ili9341_controller_init_registers+0x72>
+	return SPDR;
+     644:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     646:	81 e8       	ldi	r24, 0x81	; 129
+     648:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     64a:	77 9b       	sbis	0x0e, 7	; 14
+     64c:	fe cf       	rjmp	.-4      	; 0x64a <ili9341_controller_init_registers+0x7c>
+	return SPDR;
+     64e:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x67); //64
+    ili9341_send_byte(0x03); 
+    ili9341_send_byte(0X12);
+    ili9341_send_byte(0X81);
+    ili9341_send_command(ILI9341_CMD_DRIVER_TIMING_CONTROL_A);
+     650:	88 ee       	ldi	r24, 0xE8	; 232
+     652:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     656:	85 e8       	ldi	r24, 0x85	; 133
+     658:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     65a:	77 9b       	sbis	0x0e, 7	; 14
+     65c:	fe cf       	rjmp	.-4      	; 0x65a <ili9341_controller_init_registers+0x8c>
+	return SPDR;
+     65e:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     660:	80 e1       	ldi	r24, 0x10	; 16
+     662:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     664:	77 9b       	sbis	0x0e, 7	; 14
+     666:	fe cf       	rjmp	.-4      	; 0x664 <ili9341_controller_init_registers+0x96>
+	return SPDR;
+     668:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     66a:	8a e7       	ldi	r24, 0x7A	; 122
+     66c:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     66e:	77 9b       	sbis	0x0e, 7	; 14
+     670:	fe cf       	rjmp	.-4      	; 0x66e <ili9341_controller_init_registers+0xa0>
+	return SPDR;
+     672:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x85);
+    ili9341_send_byte(0x10);
+    ili9341_send_byte(0x7A); //79
+
+    ili9341_send_command(ILI9341_CMD_POWER_ON_SEQ_CONTROL);
+     674:	8b ec       	ldi	r24, 0xCB	; 203
+     676:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     67a:	89 e3       	ldi	r24, 0x39	; 57
+     67c:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     67e:	77 9b       	sbis	0x0e, 7	; 14
+     680:	fe cf       	rjmp	.-4      	; 0x67e <ili9341_controller_init_registers+0xb0>
+	return SPDR;
+     682:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     684:	8c e2       	ldi	r24, 0x2C	; 44
+     686:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     688:	77 9b       	sbis	0x0e, 7	; 14
+     68a:	fe cf       	rjmp	.-4      	; 0x688 <ili9341_controller_init_registers+0xba>
+	return SPDR;
+     68c:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     68e:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     690:	77 9b       	sbis	0x0e, 7	; 14
+     692:	fe cf       	rjmp	.-4      	; 0x690 <ili9341_controller_init_registers+0xc2>
+	return SPDR;
+     694:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     696:	84 e3       	ldi	r24, 0x34	; 52
+     698:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     69a:	77 9b       	sbis	0x0e, 7	; 14
+     69c:	fe cf       	rjmp	.-4      	; 0x69a <ili9341_controller_init_registers+0xcc>
+	return SPDR;
+     69e:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     6a0:	82 e0       	ldi	r24, 0x02	; 2
+     6a2:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     6a4:	77 9b       	sbis	0x0e, 7	; 14
+     6a6:	fe cf       	rjmp	.-4      	; 0x6a4 <ili9341_controller_init_registers+0xd6>
+	return SPDR;
+     6a8:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x2C);
+    ili9341_send_byte(0x00);
+    ili9341_send_byte(0x34);
+    ili9341_send_byte(0x02);
+
+    ili9341_send_command(ILI9341_CMD_PUMP_RATIO_CONTROL);
+     6aa:	87 ef       	ldi	r24, 0xF7	; 247
+     6ac:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     6b0:	80 e2       	ldi	r24, 0x20	; 32
+     6b2:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     6b4:	77 9b       	sbis	0x0e, 7	; 14
+     6b6:	fe cf       	rjmp	.-4      	; 0x6b4 <ili9341_controller_init_registers+0xe6>
+	return SPDR;
+     6b8:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x20);
+
+    ili9341_send_command(ILI9341_CMD_DRIVER_TIMING_CONTROL_B);
+     6ba:	8a ee       	ldi	r24, 0xEA	; 234
+     6bc:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     6c0:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     6c2:	77 9b       	sbis	0x0e, 7	; 14
+     6c4:	fe cf       	rjmp	.-4      	; 0x6c2 <ili9341_controller_init_registers+0xf4>
+	return SPDR;
+     6c6:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     6c8:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     6ca:	77 9b       	sbis	0x0e, 7	; 14
+     6cc:	fe cf       	rjmp	.-4      	; 0x6ca <ili9341_controller_init_registers+0xfc>
+	return SPDR;
+     6ce:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x00);
+    ili9341_send_byte(0x00);
+
+    ili9341_send_command(ILI9341_CMD_POWER_CONTROL_1 );		// Power control                
+     6d0:	80 ec       	ldi	r24, 0xC0	; 192
+     6d2:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     6d6:	8b e1       	ldi	r24, 0x1B	; 27
+     6d8:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     6da:	77 9b       	sbis	0x0e, 7	; 14
+     6dc:	fe cf       	rjmp	.-4      	; 0x6da <ili9341_controller_init_registers+0x10c>
+	return SPDR;
+     6de:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x1B); //26								// VRH[5:0]       
+
+    ili9341_send_command(ILI9341_CMD_POWER_CONTROL_2);		// Power control                
+     6e0:	81 ec       	ldi	r24, 0xC1	; 193
+     6e2:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     6e6:	80 e1       	ldi	r24, 0x10	; 16
+     6e8:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     6ea:	77 9b       	sbis	0x0e, 7	; 14
+     6ec:	fe cf       	rjmp	.-4      	; 0x6ea <ili9341_controller_init_registers+0x11c>
+	return SPDR;
+     6ee:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x10); //11							// SAP[2:0];BT[3:0]             
+
+    ili9341_send_command(ILI9341_CMD_VCOM_CONTROL_1);		// VCM control                  
+     6f0:	85 ec       	ldi	r24, 0xC5	; 197
+     6f2:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     6f6:	8f e3       	ldi	r24, 0x3F	; 63
+     6f8:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     6fa:	77 9b       	sbis	0x0e, 7	; 14
+     6fc:	fe cf       	rjmp	.-4      	; 0x6fa <ili9341_controller_init_registers+0x12c>
+	return SPDR;
+     6fe:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     700:	8c e3       	ldi	r24, 0x3C	; 60
+     702:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     704:	77 9b       	sbis	0x0e, 7	; 14
+     706:	fe cf       	rjmp	.-4      	; 0x704 <ili9341_controller_init_registers+0x136>
+	return SPDR;
+     708:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x3F); //35
+    ili9341_send_byte(0x3C); //3e
+
+    ili9341_send_command(ILI9341_CMD_VCOM_CONTROL_2);		// VCM control2                 
+     70a:	87 ec       	ldi	r24, 0xC7	; 199
+     70c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     710:	87 eb       	ldi	r24, 0xB7	; 183
+     712:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     714:	77 9b       	sbis	0x0e, 7	; 14
+     716:	fe cf       	rjmp	.-4      	; 0x714 <ili9341_controller_init_registers+0x146>
+	return SPDR;
+     718:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0xB7); //be
+
+    ili9341_send_command(ILI9341_CMD_MEMORY_ACCESS_CONTROL);	// Memory Access Control        
+     71a:	86 e3       	ldi	r24, 0x36	; 54
+     71c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     720:	88 e0       	ldi	r24, 0x08	; 8
+     722:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     724:	77 9b       	sbis	0x0e, 7	; 14
+     726:	fe cf       	rjmp	.-4      	; 0x724 <ili9341_controller_init_registers+0x156>
+	return SPDR;
+     728:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x08);
+
+    ili9341_send_command(ILI9341_CMD_COLMOD_PIXEL_FORMAT_SET);
+     72a:	8a e3       	ldi	r24, 0x3A	; 58
+     72c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     730:	85 e5       	ldi	r24, 0x55	; 85
+     732:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     734:	77 9b       	sbis	0x0e, 7	; 14
+     736:	fe cf       	rjmp	.-4      	; 0x734 <ili9341_controller_init_registers+0x166>
+	return SPDR;
+     738:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x55);
+
+    ili9341_send_command(ILI9341_CMD_FRAME_RATE_CONTROL_NORMAL);
+     73a:	81 eb       	ldi	r24, 0xB1	; 177
+     73c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     740:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     742:	77 9b       	sbis	0x0e, 7	; 14
+     744:	fe cf       	rjmp	.-4      	; 0x742 <ili9341_controller_init_registers+0x174>
+	return SPDR;
+     746:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     748:	8b e1       	ldi	r24, 0x1B	; 27
+     74a:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     74c:	77 9b       	sbis	0x0e, 7	; 14
+     74e:	fe cf       	rjmp	.-4      	; 0x74c <ili9341_controller_init_registers+0x17e>
+	return SPDR;
+     750:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x00);
+    ili9341_send_byte(0x1B);
+
+    ili9341_send_command(ILI9341_CMD_DISPLAY_FUNCTION_CONTROL);	// Display Function Control    
+     752:	86 eb       	ldi	r24, 0xB6	; 182
+     754:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     758:	8a e0       	ldi	r24, 0x0A	; 10
+     75a:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     75c:	77 9b       	sbis	0x0e, 7	; 14
+     75e:	fe cf       	rjmp	.-4      	; 0x75c <ili9341_controller_init_registers+0x18e>
+	return SPDR;
+     760:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     762:	82 ea       	ldi	r24, 0xA2	; 162
+     764:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     766:	77 9b       	sbis	0x0e, 7	; 14
+     768:	fe cf       	rjmp	.-4      	; 0x766 <ili9341_controller_init_registers+0x198>
+	return SPDR;
+     76a:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x0A);
+    ili9341_send_byte(0xA2);
+
+    ili9341_send_command(ILI9341_CMD_ENABLE_3_GAMMA_CONTROL);	// 3Gamma Function Disable     
+     76c:	82 ef       	ldi	r24, 0xF2	; 242
+     76e:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     772:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     774:	77 9b       	sbis	0x0e, 7	; 14
+     776:	fe cf       	rjmp	.-4      	; 0x774 <ili9341_controller_init_registers+0x1a6>
+	return SPDR;
+     778:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x00);
+
+    ili9341_send_command(ILI9341_CMD_GAMMA_SET); 				// Gamma curve selected         
+     77a:	86 e2       	ldi	r24, 0x26	; 38
+     77c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     780:	81 e0       	ldi	r24, 0x01	; 1
+     782:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     784:	77 9b       	sbis	0x0e, 7	; 14
+     786:	fe cf       	rjmp	.-4      	; 0x784 <ili9341_controller_init_registers+0x1b6>
+	return SPDR;
+     788:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x01);
+
+    ili9341_send_command(ILI9341_CMD_POSITIVE_GAMMA_CORRECTION);	// Set Gamma                  
+     78a:	80 ee       	ldi	r24, 0xE0	; 224
+     78c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     790:	8f e0       	ldi	r24, 0x0F	; 15
+     792:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     794:	77 9b       	sbis	0x0e, 7	; 14
+     796:	fe cf       	rjmp	.-4      	; 0x794 <ili9341_controller_init_registers+0x1c6>
+	return SPDR;
+     798:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     79a:	8a e2       	ldi	r24, 0x2A	; 42
+     79c:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     79e:	77 9b       	sbis	0x0e, 7	; 14
+     7a0:	fe cf       	rjmp	.-4      	; 0x79e <ili9341_controller_init_registers+0x1d0>
+	return SPDR;
+     7a2:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7a4:	88 e2       	ldi	r24, 0x28	; 40
+     7a6:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7a8:	77 9b       	sbis	0x0e, 7	; 14
+     7aa:	fe cf       	rjmp	.-4      	; 0x7a8 <ili9341_controller_init_registers+0x1da>
+	return SPDR;
+     7ac:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7ae:	88 e0       	ldi	r24, 0x08	; 8
+     7b0:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7b2:	77 9b       	sbis	0x0e, 7	; 14
+     7b4:	fe cf       	rjmp	.-4      	; 0x7b2 <ili9341_controller_init_registers+0x1e4>
+	return SPDR;
+     7b6:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7b8:	8e e0       	ldi	r24, 0x0E	; 14
+     7ba:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7bc:	77 9b       	sbis	0x0e, 7	; 14
+     7be:	fe cf       	rjmp	.-4      	; 0x7bc <ili9341_controller_init_registers+0x1ee>
+	return SPDR;
+     7c0:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7c2:	88 e0       	ldi	r24, 0x08	; 8
+     7c4:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7c6:	77 9b       	sbis	0x0e, 7	; 14
+     7c8:	fe cf       	rjmp	.-4      	; 0x7c6 <ili9341_controller_init_registers+0x1f8>
+	return SPDR;
+     7ca:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7cc:	84 e5       	ldi	r24, 0x54	; 84
+     7ce:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7d0:	77 9b       	sbis	0x0e, 7	; 14
+     7d2:	fe cf       	rjmp	.-4      	; 0x7d0 <ili9341_controller_init_registers+0x202>
+	return SPDR;
+     7d4:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7d6:	89 ea       	ldi	r24, 0xA9	; 169
+     7d8:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7da:	77 9b       	sbis	0x0e, 7	; 14
+     7dc:	fe cf       	rjmp	.-4      	; 0x7da <ili9341_controller_init_registers+0x20c>
+	return SPDR;
+     7de:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7e0:	83 e4       	ldi	r24, 0x43	; 67
+     7e2:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7e4:	77 9b       	sbis	0x0e, 7	; 14
+     7e6:	fe cf       	rjmp	.-4      	; 0x7e4 <ili9341_controller_init_registers+0x216>
+	return SPDR;
+     7e8:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7ea:	8a e0       	ldi	r24, 0x0A	; 10
+     7ec:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7ee:	77 9b       	sbis	0x0e, 7	; 14
+     7f0:	fe cf       	rjmp	.-4      	; 0x7ee <ili9341_controller_init_registers+0x220>
+	return SPDR;
+     7f2:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7f4:	8f e0       	ldi	r24, 0x0F	; 15
+     7f6:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     7f8:	77 9b       	sbis	0x0e, 7	; 14
+     7fa:	fe cf       	rjmp	.-4      	; 0x7f8 <ili9341_controller_init_registers+0x22a>
+	return SPDR;
+     7fc:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     7fe:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     800:	77 9b       	sbis	0x0e, 7	; 14
+     802:	fe cf       	rjmp	.-4      	; 0x800 <ili9341_controller_init_registers+0x232>
+	return SPDR;
+     804:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     806:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     808:	77 9b       	sbis	0x0e, 7	; 14
+     80a:	fe cf       	rjmp	.-4      	; 0x808 <ili9341_controller_init_registers+0x23a>
+	return SPDR;
+     80c:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     80e:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     810:	77 9b       	sbis	0x0e, 7	; 14
+     812:	fe cf       	rjmp	.-4      	; 0x810 <ili9341_controller_init_registers+0x242>
+	return SPDR;
+     814:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     816:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     818:	77 9b       	sbis	0x0e, 7	; 14
+     81a:	fe cf       	rjmp	.-4      	; 0x818 <ili9341_controller_init_registers+0x24a>
+	return SPDR;
+     81c:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x00);
+    ili9341_send_byte(0x00);
+    ili9341_send_byte(0x00);
+    ili9341_send_byte(0x00);
+
+    ili9341_send_command(ILI9341_CMD_NEGATIVE_GAMMA_CORRECTION);	// Set Gamma         
+     81e:	81 ee       	ldi	r24, 0xE1	; 225
+     820:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     824:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     826:	77 9b       	sbis	0x0e, 7	; 14
+     828:	fe cf       	rjmp	.-4      	; 0x826 <ili9341_controller_init_registers+0x258>
+	return SPDR;
+     82a:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     82c:	85 e1       	ldi	r24, 0x15	; 21
+     82e:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     830:	77 9b       	sbis	0x0e, 7	; 14
+     832:	fe cf       	rjmp	.-4      	; 0x830 <ili9341_controller_init_registers+0x262>
+	return SPDR;
+     834:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     836:	87 e1       	ldi	r24, 0x17	; 23
+     838:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     83a:	77 9b       	sbis	0x0e, 7	; 14
+     83c:	fe cf       	rjmp	.-4      	; 0x83a <ili9341_controller_init_registers+0x26c>
+	return SPDR;
+     83e:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     840:	87 e0       	ldi	r24, 0x07	; 7
+     842:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     844:	77 9b       	sbis	0x0e, 7	; 14
+     846:	fe cf       	rjmp	.-4      	; 0x844 <ili9341_controller_init_registers+0x276>
+	return SPDR;
+     848:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     84a:	81 e1       	ldi	r24, 0x11	; 17
+     84c:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     84e:	77 9b       	sbis	0x0e, 7	; 14
+     850:	fe cf       	rjmp	.-4      	; 0x84e <ili9341_controller_init_registers+0x280>
+	return SPDR;
+     852:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     854:	86 e0       	ldi	r24, 0x06	; 6
+     856:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     858:	77 9b       	sbis	0x0e, 7	; 14
+     85a:	fe cf       	rjmp	.-4      	; 0x858 <ili9341_controller_init_registers+0x28a>
+	return SPDR;
+     85c:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     85e:	8b e2       	ldi	r24, 0x2B	; 43
+     860:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     862:	77 9b       	sbis	0x0e, 7	; 14
+     864:	fe cf       	rjmp	.-4      	; 0x862 <ili9341_controller_init_registers+0x294>
+	return SPDR;
+     866:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     868:	86 e5       	ldi	r24, 0x56	; 86
+     86a:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     86c:	77 9b       	sbis	0x0e, 7	; 14
+     86e:	fe cf       	rjmp	.-4      	; 0x86c <ili9341_controller_init_registers+0x29e>
+	return SPDR;
+     870:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     872:	8c e3       	ldi	r24, 0x3C	; 60
+     874:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     876:	77 9b       	sbis	0x0e, 7	; 14
+     878:	fe cf       	rjmp	.-4      	; 0x876 <ili9341_controller_init_registers+0x2a8>
+	return SPDR;
+     87a:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     87c:	85 e0       	ldi	r24, 0x05	; 5
+     87e:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     880:	77 9b       	sbis	0x0e, 7	; 14
+     882:	fe cf       	rjmp	.-4      	; 0x880 <ili9341_controller_init_registers+0x2b2>
+	return SPDR;
+     884:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     886:	80 e1       	ldi	r24, 0x10	; 16
+     888:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     88a:	77 9b       	sbis	0x0e, 7	; 14
+     88c:	fe cf       	rjmp	.-4      	; 0x88a <ili9341_controller_init_registers+0x2bc>
+	return SPDR;
+     88e:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     890:	8f e0       	ldi	r24, 0x0F	; 15
+     892:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     894:	77 9b       	sbis	0x0e, 7	; 14
+     896:	fe cf       	rjmp	.-4      	; 0x894 <ili9341_controller_init_registers+0x2c6>
+	return SPDR;
+     898:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     89a:	8f e3       	ldi	r24, 0x3F	; 63
+     89c:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     89e:	77 9b       	sbis	0x0e, 7	; 14
+     8a0:	fe cf       	rjmp	.-4      	; 0x89e <ili9341_controller_init_registers+0x2d0>
+	return SPDR;
+     8a2:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     8a4:	8f e3       	ldi	r24, 0x3F	; 63
+     8a6:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     8a8:	77 9b       	sbis	0x0e, 7	; 14
+     8aa:	fe cf       	rjmp	.-4      	; 0x8a8 <ili9341_controller_init_registers+0x2da>
+	return SPDR;
+     8ac:	8f b1       	in	r24, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     8ae:	8f e0       	ldi	r24, 0x0F	; 15
+     8b0:	8f b9       	out	0x0f, r24	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     8b2:	77 9b       	sbis	0x0e, 7	; 14
+     8b4:	fe cf       	rjmp	.-4      	; 0x8b2 <ili9341_controller_init_registers+0x2e4>
+	return SPDR;
+     8b6:	8f b1       	in	r24, 0x0f	; 15
+    ili9341_send_byte(0x10);
+    ili9341_send_byte(0x0F);
+    ili9341_send_byte(0x3F);
+    ili9341_send_byte(0x3F);
+    ili9341_send_byte(0x0F);
+}
+     8b8:	08 95       	ret
+
+000008ba <ili9341_reset_display>:
+
+void ili9341_reset_display(void)
+{
+	PORTB |= CONF_ILI9341_RESET_PIN;
+     8ba:	c2 9a       	sbi	0x18, 2	; 24
+     8bc:	88 e8       	ldi	r24, 0x88	; 136
+     8be:	93 e1       	ldi	r25, 0x13	; 19
+     8c0:	01 97       	sbiw	r24, 0x01	; 1
+     8c2:	f1 f7       	brne	.-4      	; 0x8c0 <ili9341_reset_display+0x6>
+	_delay_ms(20);
+	PORTB &= ~CONF_ILI9341_RESET_PIN;
+     8c4:	c2 98       	cbi	0x18, 2	; 24
+     8c6:	80 e3       	ldi	r24, 0x30	; 48
+     8c8:	95 e7       	ldi	r25, 0x75	; 117
+     8ca:	01 97       	sbiw	r24, 0x01	; 1
+     8cc:	f1 f7       	brne	.-4      	; 0x8ca <ili9341_reset_display+0x10>
+	_delay_ms(120);
+	PORTB |= CONF_ILI9341_RESET_PIN;
+     8ce:	c2 9a       	sbi	0x18, 2	; 24
+     8d0:	84 e2       	ldi	r24, 0x24	; 36
+     8d2:	94 ef       	ldi	r25, 0xF4	; 244
+     8d4:	01 97       	sbiw	r24, 0x01	; 1
+     8d6:	f1 f7       	brne	.-4      	; 0x8d4 <ili9341_reset_display+0x1a>
+	_delay_ms(250);
+}
+     8d8:	08 95       	ret
+
+000008da <ili9341_exit_standby>:
+void ili9341_exit_standby(void)
+{
+    ili9341_send_command(ILI9341_CMD_SLEEP_OUT);
+     8da:	81 e1       	ldi	r24, 0x11	; 17
+     8dc:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+     8e0:	8c e7       	ldi	r24, 0x7C	; 124
+     8e2:	92 e9       	ldi	r25, 0x92	; 146
+     8e4:	01 97       	sbiw	r24, 0x01	; 1
+     8e6:	f1 f7       	brne	.-4      	; 0x8e4 <ili9341_exit_standby+0xa>
+    _delay_ms(150);
+    ili9341_send_command(ILI9341_CMD_DISPLAY_ON);
+     8e8:	89 e2       	ldi	r24, 0x29	; 41
+     8ea:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+}
+     8ee:	08 95       	ret
+
+000008f0 <ili9341_init>:
+void ili9341_init(void)
+{
+    /* Initialize the communication interface */
+    ili9341_interface_init();
+     8f0:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <ili9341_interface_init>
+
+    /* Harware Reset the display */
+    ili9341_reset_display();
+     8f4:	0e 94 5d 04 	call	0x8ba	; 0x8ba <ili9341_reset_display>
+
+    /* Write all the controller registers with correct values */
+    ili9341_controller_init_registers();
+     8f8:	0e 94 e7 02 	call	0x5ce	; 0x5ce <ili9341_controller_init_registers>
+	    /* Send commands to exit standby mode */
+    ili9341_exit_standby();
+     8fc:	0e 94 6d 04 	call	0x8da	; 0x8da <ili9341_exit_standby>
+{
+	PORTB &= ~CONF_ILI9341_CS_PIN;
+}
+inline void ili9341_deselect_chip(void)
+{
+	PORTB |= CONF_ILI9341_CS_PIN;
+     900:	c4 9a       	sbi	0x18, 4	; 24
+    ili9341_controller_init_registers();
+	    /* Send commands to exit standby mode */
+    ili9341_exit_standby();
+	ili9341_deselect_chip();
+	
+}
+     902:	08 95       	ret
+
+00000904 <ili9341_setCol>:
+
+
+
+void ili9341_setCol(unsigned int x0,unsigned int x1)
+{
+     904:	ef 92       	push	r14
+     906:	ff 92       	push	r15
+     908:	0f 93       	push	r16
+     90a:	1f 93       	push	r17
+     90c:	8c 01       	movw	r16, r24
+     90e:	7b 01       	movw	r14, r22
+    ili9341_send_command(0x2A);                                                      /* Column Command address       */
+     910:	8a e2       	ldi	r24, 0x2A	; 42
+     912:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+    ili9341_send_word(x0);
+     916:	c8 01       	movw	r24, r16
+     918:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+    ili9341_send_word(x1);
+     91c:	c7 01       	movw	r24, r14
+     91e:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+}
+     922:	1f 91       	pop	r17
+     924:	0f 91       	pop	r16
+     926:	ff 90       	pop	r15
+     928:	ef 90       	pop	r14
+     92a:	08 95       	ret
+
+0000092c <ili9341_setPage>:
+
+void ili9341_setPage(unsigned int y0,unsigned int y1)
+{
+     92c:	ef 92       	push	r14
+     92e:	ff 92       	push	r15
+     930:	0f 93       	push	r16
+     932:	1f 93       	push	r17
+     934:	8c 01       	movw	r16, r24
+     936:	7b 01       	movw	r14, r22
+    ili9341_send_command(0x2B);                                                      /* Column Command address       */
+     938:	8b e2       	ldi	r24, 0x2B	; 43
+     93a:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+    ili9341_send_word(y0);
+     93e:	c8 01       	movw	r24, r16
+     940:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+    ili9341_send_word(y1);
+     944:	c7 01       	movw	r24, r14
+     946:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+}
+     94a:	1f 91       	pop	r17
+     94c:	0f 91       	pop	r16
+     94e:	ff 90       	pop	r15
+     950:	ef 90       	pop	r14
+     952:	08 95       	ret
+
+00000954 <ili9341_setXY>:
+
+void ili9341_setXY(unsigned int x, unsigned int y)
+{
+     954:	0f 93       	push	r16
+     956:	1f 93       	push	r17
+     958:	9c 01       	movw	r18, r24
+     95a:	8b 01       	movw	r16, r22
+    ili9341_setCol(x, x);
+     95c:	b9 01       	movw	r22, r18
+     95e:	0e 94 82 04 	call	0x904	; 0x904 <ili9341_setCol>
+    ili9341_setPage(y, y);
+     962:	c8 01       	movw	r24, r16
+     964:	b8 01       	movw	r22, r16
+     966:	0e 94 96 04 	call	0x92c	; 0x92c <ili9341_setPage>
+}
+     96a:	1f 91       	pop	r17
+     96c:	0f 91       	pop	r16
+     96e:	08 95       	ret
+
+00000970 <lcdDrawPixel>:
+
+
+/* ********************** common subs ***************** */
+
+void lcdDrawPixel(unsigned int poX, unsigned int poY, unsigned int color)
+{
+     970:	0f 93       	push	r16
+     972:	1f 93       	push	r17
+     974:	8a 01       	movw	r16, r20
+    ili9341_setXY(poX, poY);
+     976:	0e 94 aa 04 	call	0x954	; 0x954 <ili9341_setXY>
+	ili9341_send_command(0x2c);
+     97a:	8c e2       	ldi	r24, 0x2C	; 44
+     97c:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+    ili9341_send_word(color);
+     980:	c8 01       	movw	r24, r16
+     982:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+}
+     986:	1f 91       	pop	r17
+     988:	0f 91       	pop	r16
+     98a:	08 95       	ret
+
+0000098c <lcdFilledRec>:
+/* ******** same as drawpixel, but bigger ***** */
+void lcdFilledRec(unsigned int x, unsigned int y, unsigned int w, unsigned int h,unsigned int color)
+{
+     98c:	4f 92       	push	r4
+     98e:	5f 92       	push	r5
+     990:	6f 92       	push	r6
+     992:	7f 92       	push	r7
+     994:	8f 92       	push	r8
+     996:	9f 92       	push	r9
+     998:	af 92       	push	r10
+     99a:	bf 92       	push	r11
+     99c:	cf 92       	push	r12
+     99e:	df 92       	push	r13
+     9a0:	ef 92       	push	r14
+     9a2:	ff 92       	push	r15
+     9a4:	0f 93       	push	r16
+     9a6:	1f 93       	push	r17
+     9a8:	cf 93       	push	r28
+     9aa:	df 93       	push	r29
+     9ac:	6c 01       	movw	r12, r24
+     9ae:	4b 01       	movw	r8, r22
+     9b0:	7a 01       	movw	r14, r20
+     9b2:	59 01       	movw	r10, r18
+     9b4:	e8 01       	movw	r28, r16
+unsigned long i;
+unsigned long n=(unsigned long) w*h;
+     9b6:	b9 01       	movw	r22, r18
+     9b8:	80 e0       	ldi	r24, 0x00	; 0
+     9ba:	90 e0       	ldi	r25, 0x00	; 0
+     9bc:	9a 01       	movw	r18, r20
+     9be:	40 e0       	ldi	r20, 0x00	; 0
+     9c0:	50 e0       	ldi	r21, 0x00	; 0
+     9c2:	0e 94 2f 09 	call	0x125e	; 0x125e <__mulsi3>
+     9c6:	2b 01       	movw	r4, r22
+     9c8:	3c 01       	movw	r6, r24
+unsigned int x1=x+w-1;
+unsigned int y1=y+h-1;
+
+    ili9341_setCol( x, x1);
+     9ca:	b6 01       	movw	r22, r12
+     9cc:	61 50       	subi	r22, 0x01	; 1
+     9ce:	70 40       	sbci	r23, 0x00	; 0
+     9d0:	6e 0d       	add	r22, r14
+     9d2:	7f 1d       	adc	r23, r15
+     9d4:	c6 01       	movw	r24, r12
+     9d6:	0e 94 82 04 	call	0x904	; 0x904 <ili9341_setCol>
+    ili9341_setPage(y, y1);
+     9da:	b4 01       	movw	r22, r8
+     9dc:	61 50       	subi	r22, 0x01	; 1
+     9de:	70 40       	sbci	r23, 0x00	; 0
+     9e0:	6a 0d       	add	r22, r10
+     9e2:	7b 1d       	adc	r23, r11
+     9e4:	c4 01       	movw	r24, r8
+     9e6:	0e 94 96 04 	call	0x92c	; 0x92c <ili9341_setPage>
+    ili9341_send_command(0x2c);
+     9ea:	8c e2       	ldi	r24, 0x2C	; 44
+     9ec:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+     9f0:	ee 24       	eor	r14, r14
+     9f2:	ff 24       	eor	r15, r15
+     9f4:	87 01       	movw	r16, r14
+     9f6:	08 c0       	rjmp	.+16     	; 0xa08 <lcdFilledRec+0x7c>
+	for(i=0;i<n;i++) { ili9341_send_word(color); }
+     9f8:	ce 01       	movw	r24, r28
+     9fa:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+     9fe:	08 94       	sec
+     a00:	e1 1c       	adc	r14, r1
+     a02:	f1 1c       	adc	r15, r1
+     a04:	01 1d       	adc	r16, r1
+     a06:	11 1d       	adc	r17, r1
+     a08:	e4 14       	cp	r14, r4
+     a0a:	f5 04       	cpc	r15, r5
+     a0c:	06 05       	cpc	r16, r6
+     a0e:	17 05       	cpc	r17, r7
+     a10:	98 f3       	brcs	.-26     	; 0x9f8 <lcdFilledRec+0x6c>
+}
+     a12:	df 91       	pop	r29
+     a14:	cf 91       	pop	r28
+     a16:	1f 91       	pop	r17
+     a18:	0f 91       	pop	r16
+     a1a:	ff 90       	pop	r15
+     a1c:	ef 90       	pop	r14
+     a1e:	df 90       	pop	r13
+     a20:	cf 90       	pop	r12
+     a22:	bf 90       	pop	r11
+     a24:	af 90       	pop	r10
+     a26:	9f 90       	pop	r9
+     a28:	8f 90       	pop	r8
+     a2a:	7f 90       	pop	r7
+     a2c:	6f 90       	pop	r6
+     a2e:	5f 90       	pop	r5
+     a30:	4f 90       	pop	r4
+     a32:	08 95       	ret
+
+00000a34 <lcdFillRGB>:
+/* ********** Clear screen ************ */
+void lcdFillRGB(uint16_t color)
+{
+     a34:	0f 93       	push	r16
+     a36:	1f 93       	push	r17
+     a38:	8c 01       	movw	r16, r24
+	lcdFilledRec(0,0,LCD_HEIGHT,LCD_WIDTH,color);
+     a3a:	80 e0       	ldi	r24, 0x00	; 0
+     a3c:	90 e0       	ldi	r25, 0x00	; 0
+     a3e:	60 e0       	ldi	r22, 0x00	; 0
+     a40:	70 e0       	ldi	r23, 0x00	; 0
+     a42:	40 ef       	ldi	r20, 0xF0	; 240
+     a44:	50 e0       	ldi	r21, 0x00	; 0
+     a46:	20 e4       	ldi	r18, 0x40	; 64
+     a48:	31 e0       	ldi	r19, 0x01	; 1
+     a4a:	0e 94 c6 04 	call	0x98c	; 0x98c <lcdFilledRec>
+}
+     a4e:	1f 91       	pop	r17
+     a50:	0f 91       	pop	r16
+     a52:	08 95       	ret
+
+00000a54 <lcdDrawHLine>:
+/***********H Line*************************************/
+void lcdDrawHLine(uint16_t x0, uint16_t y, uint16_t x1, uint16_t color)
+{
+     a54:	cf 92       	push	r12
+     a56:	df 92       	push	r13
+     a58:	ef 92       	push	r14
+     a5a:	ff 92       	push	r15
+     a5c:	0f 93       	push	r16
+     a5e:	1f 93       	push	r17
+     a60:	cf 93       	push	r28
+     a62:	df 93       	push	r29
+     a64:	ec 01       	movw	r28, r24
+     a66:	8b 01       	movw	r16, r22
+     a68:	7a 01       	movw	r14, r20
+     a6a:	69 01       	movw	r12, r18
+  // Allows for slightly better performance than setting individual pixels
+  uint16_t x, pixels;
+
+  if (x1 < x0)
+     a6c:	48 17       	cp	r20, r24
+     a6e:	59 07       	cpc	r21, r25
+     a70:	10 f4       	brcc	.+4      	; 0xa76 <lcdDrawHLine+0x22>
+     a72:	7e 01       	movw	r14, r28
+     a74:	ea 01       	movw	r28, r20
+    x1 = x0;
+    x0 = x;
+  }
+
+  // Check limits
+  if (x1 >= LCD_WIDTH)
+     a76:	80 e4       	ldi	r24, 0x40	; 64
+     a78:	e8 16       	cp	r14, r24
+     a7a:	81 e0       	ldi	r24, 0x01	; 1
+     a7c:	f8 06       	cpc	r15, r24
+     a7e:	20 f0       	brcs	.+8      	; 0xa88 <lcdDrawHLine+0x34>
+     a80:	80 e4       	ldi	r24, 0x40	; 64
+     a82:	e8 2e       	mov	r14, r24
+     a84:	81 e0       	ldi	r24, 0x01	; 1
+     a86:	f8 2e       	mov	r15, r24
+  {
+    x1 = LCD_WIDTH ;
+  }
+  if (x0 >= LCD_WIDTH)
+     a88:	91 e0       	ldi	r25, 0x01	; 1
+     a8a:	c0 34       	cpi	r28, 0x40	; 64
+     a8c:	d9 07       	cpc	r29, r25
+     a8e:	10 f0       	brcs	.+4      	; 0xa94 <lcdDrawHLine+0x40>
+     a90:	c0 e4       	ldi	r28, 0x40	; 64
+     a92:	d1 e0       	ldi	r29, 0x01	; 1
+  {
+    x0 = LCD_WIDTH;
+  }
+    ili9341_setCol( x0, x1);
+     a94:	ce 01       	movw	r24, r28
+     a96:	b7 01       	movw	r22, r14
+     a98:	0e 94 82 04 	call	0x904	; 0x904 <ili9341_setCol>
+    ili9341_setPage(y, y);
+     a9c:	c8 01       	movw	r24, r16
+     a9e:	b8 01       	movw	r22, r16
+     aa0:	0e 94 96 04 	call	0x92c	; 0x92c <ili9341_setPage>
+    ili9341_send_command(0x2c);
+     aa4:	8c e2       	ldi	r24, 0x2C	; 44
+     aa6:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+     aaa:	00 e0       	ldi	r16, 0x00	; 0
+     aac:	10 e0       	ldi	r17, 0x00	; 0
+  
+   for (pixels = 0; pixels < x1 - x0 ; pixels++)
+     aae:	c7 01       	movw	r24, r14
+     ab0:	8c 1b       	sub	r24, r28
+     ab2:	9d 0b       	sbc	r25, r29
+     ab4:	ec 01       	movw	r28, r24
+     ab6:	05 c0       	rjmp	.+10     	; 0xac2 <lcdDrawHLine+0x6e>
+  {
+    ili9341_send_word(color);
+     ab8:	c6 01       	movw	r24, r12
+     aba:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+  }
+    ili9341_setCol( x0, x1);
+    ili9341_setPage(y, y);
+    ili9341_send_command(0x2c);
+  
+   for (pixels = 0; pixels < x1 - x0 ; pixels++)
+     abe:	0f 5f       	subi	r16, 0xFF	; 255
+     ac0:	1f 4f       	sbci	r17, 0xFF	; 255
+     ac2:	0c 17       	cp	r16, r28
+     ac4:	1d 07       	cpc	r17, r29
+     ac6:	c0 f3       	brcs	.-16     	; 0xab8 <lcdDrawHLine+0x64>
+  {
+    ili9341_send_word(color);
+  }
+  
+}
+     ac8:	df 91       	pop	r29
+     aca:	cf 91       	pop	r28
+     acc:	1f 91       	pop	r17
+     ace:	0f 91       	pop	r16
+     ad0:	ff 90       	pop	r15
+     ad2:	ef 90       	pop	r14
+     ad4:	df 90       	pop	r13
+     ad6:	cf 90       	pop	r12
+     ad8:	08 95       	ret
+
+00000ada <lcdDrawVLine>:
+/***********V Line*************************************/
+void lcdDrawVLine(uint16_t x, uint16_t y0, uint16_t y1, uint16_t color)
+{
+     ada:	cf 92       	push	r12
+     adc:	df 92       	push	r13
+     ade:	ef 92       	push	r14
+     ae0:	ff 92       	push	r15
+     ae2:	0f 93       	push	r16
+     ae4:	1f 93       	push	r17
+     ae6:	cf 93       	push	r28
+     ae8:	df 93       	push	r29
+     aea:	fc 01       	movw	r30, r24
+     aec:	69 01       	movw	r12, r18
+ // Allows for slightly better performance than setting individual pixels
+  uint16_t y, pixels;
+
+  if (y1 < y0)
+     aee:	46 17       	cp	r20, r22
+     af0:	57 07       	cpc	r21, r23
+     af2:	18 f4       	brcc	.+6      	; 0xafa <lcdDrawVLine+0x20>
+     af4:	ca 01       	movw	r24, r20
+     af6:	ab 01       	movw	r20, r22
+     af8:	bc 01       	movw	r22, r24
+     afa:	7a 01       	movw	r14, r20
+     afc:	40 3f       	cpi	r20, 0xF0	; 240
+     afe:	51 05       	cpc	r21, r1
+     b00:	18 f0       	brcs	.+6      	; 0xb08 <lcdDrawVLine+0x2e>
+     b02:	9f ee       	ldi	r25, 0xEF	; 239
+     b04:	e9 2e       	mov	r14, r25
+     b06:	f1 2c       	mov	r15, r1
+     b08:	8b 01       	movw	r16, r22
+     b0a:	60 3f       	cpi	r22, 0xF0	; 240
+     b0c:	71 05       	cpc	r23, r1
+     b0e:	10 f0       	brcs	.+4      	; 0xb14 <lcdDrawVLine+0x3a>
+     b10:	0f ee       	ldi	r16, 0xEF	; 239
+     b12:	10 e0       	ldi	r17, 0x00	; 0
+  if (y0 >= LCD_HEIGHT)
+  {
+    y0 = LCD_HEIGHT - 1;
+  }
+
+    ili9341_setCol( x, x);
+     b14:	cf 01       	movw	r24, r30
+     b16:	bf 01       	movw	r22, r30
+     b18:	0e 94 82 04 	call	0x904	; 0x904 <ili9341_setCol>
+    ili9341_setPage(y0, y1);
+     b1c:	c8 01       	movw	r24, r16
+     b1e:	b7 01       	movw	r22, r14
+     b20:	0e 94 96 04 	call	0x92c	; 0x92c <ili9341_setPage>
+    ili9341_send_command(0x2c);
+     b24:	8c e2       	ldi	r24, 0x2C	; 44
+     b26:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+     b2a:	c0 e0       	ldi	r28, 0x00	; 0
+     b2c:	d0 e0       	ldi	r29, 0x00	; 0
+	
+  for (pixels = 0; pixels < y1 - y0 ; pixels++)
+     b2e:	c7 01       	movw	r24, r14
+     b30:	80 1b       	sub	r24, r16
+     b32:	91 0b       	sbc	r25, r17
+     b34:	8c 01       	movw	r16, r24
+     b36:	04 c0       	rjmp	.+8      	; 0xb40 <lcdDrawVLine+0x66>
+  {
+	ili9341_send_word(color);
+     b38:	c6 01       	movw	r24, r12
+     b3a:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+
+    ili9341_setCol( x, x);
+    ili9341_setPage(y0, y1);
+    ili9341_send_command(0x2c);
+	
+  for (pixels = 0; pixels < y1 - y0 ; pixels++)
+     b3e:	21 96       	adiw	r28, 0x01	; 1
+     b40:	c0 17       	cp	r28, r16
+     b42:	d1 07       	cpc	r29, r17
+     b44:	c8 f3       	brcs	.-14     	; 0xb38 <lcdDrawVLine+0x5e>
+  {
+	ili9341_send_word(color);
+  }
+
+}
+     b46:	df 91       	pop	r29
+     b48:	cf 91       	pop	r28
+     b4a:	1f 91       	pop	r17
+     b4c:	0f 91       	pop	r16
+     b4e:	ff 90       	pop	r15
+     b50:	ef 90       	pop	r14
+     b52:	df 90       	pop	r13
+     b54:	cf 90       	pop	r12
+     b56:	08 95       	ret
+
+00000b58 <lcdDrawBMP>:
+
+
+
+
+void lcdDrawBMP(uint16_t x, uint16_t y, uint16_t w, uint16_t h, unsigned char *buffer)
+{
+     b58:	8f 92       	push	r8
+     b5a:	9f 92       	push	r9
+     b5c:	af 92       	push	r10
+     b5e:	bf 92       	push	r11
+     b60:	cf 92       	push	r12
+     b62:	df 92       	push	r13
+     b64:	ef 92       	push	r14
+     b66:	ff 92       	push	r15
+     b68:	0f 93       	push	r16
+     b6a:	1f 93       	push	r17
+     b6c:	cf 93       	push	r28
+     b6e:	df 93       	push	r29
+     b70:	7b 01       	movw	r14, r22
+     b72:	5a 01       	movw	r10, r20
+     b74:	69 01       	movw	r12, r18
+     b76:	48 01       	movw	r8, r16
+unsigned int i, color;
+unsigned char r,g,b;
+    ili9341_setCol( x, x+w-1);
+     b78:	bc 01       	movw	r22, r24
+     b7a:	61 50       	subi	r22, 0x01	; 1
+     b7c:	70 40       	sbci	r23, 0x00	; 0
+     b7e:	64 0f       	add	r22, r20
+     b80:	75 1f       	adc	r23, r21
+     b82:	0e 94 82 04 	call	0x904	; 0x904 <ili9341_setCol>
+    ili9341_setPage(y,y+h-1);
+     b86:	b7 01       	movw	r22, r14
+     b88:	61 50       	subi	r22, 0x01	; 1
+     b8a:	70 40       	sbci	r23, 0x00	; 0
+     b8c:	6c 0d       	add	r22, r12
+     b8e:	7d 1d       	adc	r23, r13
+     b90:	c7 01       	movw	r24, r14
+     b92:	0e 94 96 04 	call	0x92c	; 0x92c <ili9341_setPage>
+  
+  ili9341_send_command(0x2c);  // write to RAM
+     b96:	8c e2       	ldi	r24, 0x2C	; 44
+     b98:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+  for(i=0;i < (w * h);i++)
+     b9c:	ca 9c       	mul	r12, r10
+     b9e:	70 01       	movw	r14, r0
+     ba0:	cb 9c       	mul	r12, r11
+     ba2:	f0 0c       	add	r15, r0
+     ba4:	da 9c       	mul	r13, r10
+     ba6:	f0 0c       	add	r15, r0
+     ba8:	11 24       	eor	r1, r1
+     baa:	c0 e0       	ldi	r28, 0x00	; 0
+     bac:	d0 e0       	ldi	r29, 0x00	; 0
+     bae:	1e c0       	rjmp	.+60     	; 0xbec <lcdDrawBMP+0x94>
+  {
+	r = *buffer++;
+     bb0:	f4 01       	movw	r30, r8
+     bb2:	20 81       	ld	r18, Z
+	g = *buffer++;
+     bb4:	81 81       	ldd	r24, Z+1	; 0x01
+	b = *buffer++;
+     bb6:	42 81       	ldd	r20, Z+2	; 0x02
+
+
+
+
+void lcdDrawBMP(uint16_t x, uint16_t y, uint16_t w, uint16_t h, unsigned char *buffer)
+{
+     bb8:	63 e0       	ldi	r22, 0x03	; 3
+     bba:	70 e0       	ldi	r23, 0x00	; 0
+     bbc:	86 0e       	add	r8, r22
+     bbe:	97 1e       	adc	r9, r23
+  {
+	r = *buffer++;
+	g = *buffer++;
+	b = *buffer++;
+	color=ILI9341_COLOR(r,g,b);
+	ili9341_send_word(color);
+     bc0:	12 2f       	mov	r17, r18
+     bc2:	18 7f       	andi	r17, 0xF8	; 248
+     bc4:	00 e0       	ldi	r16, 0x00	; 0
+     bc6:	86 95       	lsr	r24
+     bc8:	86 95       	lsr	r24
+     bca:	90 e0       	ldi	r25, 0x00	; 0
+     bcc:	25 e0       	ldi	r18, 0x05	; 5
+     bce:	88 0f       	add	r24, r24
+     bd0:	99 1f       	adc	r25, r25
+     bd2:	2a 95       	dec	r18
+     bd4:	e1 f7       	brne	.-8      	; 0xbce <lcdDrawBMP+0x76>
+     bd6:	80 2b       	or	r24, r16
+     bd8:	91 2b       	or	r25, r17
+     bda:	46 95       	lsr	r20
+     bdc:	46 95       	lsr	r20
+     bde:	46 95       	lsr	r20
+     be0:	50 e0       	ldi	r21, 0x00	; 0
+     be2:	84 2b       	or	r24, r20
+     be4:	95 2b       	or	r25, r21
+     be6:	0e 94 6b 02 	call	0x4d6	; 0x4d6 <ili9341_send_word>
+unsigned char r,g,b;
+    ili9341_setCol( x, x+w-1);
+    ili9341_setPage(y,y+h-1);
+  
+  ili9341_send_command(0x2c);  // write to RAM
+  for(i=0;i < (w * h);i++)
+     bea:	21 96       	adiw	r28, 0x01	; 1
+     bec:	ce 15       	cp	r28, r14
+     bee:	df 05       	cpc	r29, r15
+     bf0:	f8 f2       	brcs	.-66     	; 0xbb0 <lcdDrawBMP+0x58>
+	b = *buffer++;
+	color=ILI9341_COLOR(r,g,b);
+	ili9341_send_word(color);
+  }
+  
+}
+     bf2:	df 91       	pop	r29
+     bf4:	cf 91       	pop	r28
+     bf6:	1f 91       	pop	r17
+     bf8:	0f 91       	pop	r16
+     bfa:	ff 90       	pop	r15
+     bfc:	ef 90       	pop	r14
+     bfe:	df 90       	pop	r13
+     c00:	cf 90       	pop	r12
+     c02:	bf 90       	pop	r11
+     c04:	af 90       	pop	r10
+     c06:	9f 90       	pop	r9
+     c08:	8f 90       	pop	r8
+     c0a:	08 95       	ret
+
+00000c0c <lcdDrawCBMP>:
+/* ************** copy bitmap picture to screen (compressed RGB, 16bit) ********** */ 
+void lcdDrawCBMP(uint16_t x, uint16_t y, uint16_t w, uint16_t h, unsigned char *buffer)
+{
+     c0c:	af 92       	push	r10
+     c0e:	bf 92       	push	r11
+     c10:	cf 92       	push	r12
+     c12:	df 92       	push	r13
+     c14:	ef 92       	push	r14
+     c16:	ff 92       	push	r15
+     c18:	0f 93       	push	r16
+     c1a:	1f 93       	push	r17
+     c1c:	cf 93       	push	r28
+     c1e:	df 93       	push	r29
+     c20:	7b 01       	movw	r14, r22
+     c22:	5a 01       	movw	r10, r20
+     c24:	69 01       	movw	r12, r18
+     c26:	e8 01       	movw	r28, r16
+unsigned int i;
+unsigned char c1,c2;
+    ili9341_setCol( x, x+w-1);
+     c28:	bc 01       	movw	r22, r24
+     c2a:	61 50       	subi	r22, 0x01	; 1
+     c2c:	70 40       	sbci	r23, 0x00	; 0
+     c2e:	64 0f       	add	r22, r20
+     c30:	75 1f       	adc	r23, r21
+     c32:	0e 94 82 04 	call	0x904	; 0x904 <ili9341_setCol>
+    ili9341_setPage(y,y+h-1);
+     c36:	b7 01       	movw	r22, r14
+     c38:	61 50       	subi	r22, 0x01	; 1
+     c3a:	70 40       	sbci	r23, 0x00	; 0
+     c3c:	6c 0d       	add	r22, r12
+     c3e:	7d 1d       	adc	r23, r13
+     c40:	c7 01       	movw	r24, r14
+     c42:	0e 94 96 04 	call	0x92c	; 0x92c <ili9341_setPage>
+  ili9341_send_command(0x2c);  // write to RAM
+     c46:	8c e2       	ldi	r24, 0x2C	; 44
+     c48:	0e 94 74 02 	call	0x4e8	; 0x4e8 <ili9341_send_command>
+  for(i=0;i < (w * h);i++)
+     c4c:	ca 9c       	mul	r12, r10
+     c4e:	a0 01       	movw	r20, r0
+     c50:	cb 9c       	mul	r12, r11
+     c52:	50 0d       	add	r21, r0
+     c54:	da 9c       	mul	r13, r10
+     c56:	50 0d       	add	r21, r0
+     c58:	11 24       	eor	r1, r1
+     c5a:	80 e0       	ldi	r24, 0x00	; 0
+     c5c:	90 e0       	ldi	r25, 0x00	; 0
+     c5e:	0b c0       	rjmp	.+22     	; 0xc76 <lcdDrawCBMP+0x6a>
+  {
+  c1 = *buffer++;
+  c2 = *buffer++;
+     c60:	29 81       	ldd	r18, Y+1	; 0x01
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     c62:	1f b8       	out	0x0f, r1	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     c64:	77 9b       	sbis	0x0e, 7	; 14
+     c66:	fe cf       	rjmp	.-4      	; 0xc64 <lcdDrawCBMP+0x58>
+	return SPDR;
+     c68:	3f b1       	in	r19, 0x0f	; 15
+{
+
+
+
+	/* Start transmission */
+	SPDR = cData;
+     c6a:	2f b9       	out	0x0f, r18	; 15
+	/* Wait for transmission complete */
+	while(!(SPSR & (1<<SPIF)));
+     c6c:	77 9b       	sbis	0x0e, 7	; 14
+     c6e:	fe cf       	rjmp	.-4      	; 0xc6c <lcdDrawCBMP+0x60>
+  }
+  
+}
+/* ************** copy bitmap picture to screen (compressed RGB, 16bit) ********** */ 
+void lcdDrawCBMP(uint16_t x, uint16_t y, uint16_t w, uint16_t h, unsigned char *buffer)
+{
+     c70:	22 96       	adiw	r28, 0x02	; 2
+	return SPDR;
+     c72:	2f b1       	in	r18, 0x0f	; 15
+unsigned int i;
+unsigned char c1,c2;
+    ili9341_setCol( x, x+w-1);
+    ili9341_setPage(y,y+h-1);
+  ili9341_send_command(0x2c);  // write to RAM
+  for(i=0;i < (w * h);i++)
+     c74:	01 96       	adiw	r24, 0x01	; 1
+     c76:	84 17       	cp	r24, r20
+     c78:	95 07       	cpc	r25, r21
+     c7a:	90 f3       	brcs	.-28     	; 0xc60 <lcdDrawCBMP+0x54>
+  ili9341_send_byte(c1 >> 8);  
+  ili9341_send_byte(c2);
+  }
+
+  
+}
+     c7c:	df 91       	pop	r29
+     c7e:	cf 91       	pop	r28
+     c80:	1f 91       	pop	r17
+     c82:	0f 91       	pop	r16
+     c84:	ff 90       	pop	r15
+     c86:	ef 90       	pop	r14
+     c88:	df 90       	pop	r13
+     c8a:	cf 90       	pop	r12
+     c8c:	bf 90       	pop	r11
+     c8e:	af 90       	pop	r10
+     c90:	08 95       	ret
+
+00000c92 <lcdDrawRectangle>:
+
+/* ********draw simple frame (rectangle ) *********** */
+void lcdDrawRectangle(uint16_t poX, uint16_t poY, uint16_t length, uint16_t width, uint16_t color)
+{
+     c92:	6f 92       	push	r6
+     c94:	7f 92       	push	r7
+     c96:	8f 92       	push	r8
+     c98:	9f 92       	push	r9
+     c9a:	af 92       	push	r10
+     c9c:	bf 92       	push	r11
+     c9e:	cf 92       	push	r12
+     ca0:	df 92       	push	r13
+     ca2:	ef 92       	push	r14
+     ca4:	ff 92       	push	r15
+     ca6:	0f 93       	push	r16
+     ca8:	1f 93       	push	r17
+     caa:	5c 01       	movw	r10, r24
+     cac:	7b 01       	movw	r14, r22
+     cae:	6a 01       	movw	r12, r20
+     cb0:	49 01       	movw	r8, r18
+    lcdDrawHLine(poX, poY, poX + length-1, color);
+     cb2:	c8 0e       	add	r12, r24
+     cb4:	d9 1e       	adc	r13, r25
+     cb6:	36 01       	movw	r6, r12
+     cb8:	08 94       	sec
+     cba:	61 08       	sbc	r6, r1
+     cbc:	71 08       	sbc	r7, r1
+     cbe:	a3 01       	movw	r20, r6
+     cc0:	98 01       	movw	r18, r16
+     cc2:	0e 94 2a 05 	call	0xa54	; 0xa54 <lcdDrawHLine>
+    lcdDrawHLine(poX, poY + width-1, poX+length, color);
+     cc6:	08 94       	sec
+     cc8:	e1 08       	sbc	r14, r1
+     cca:	f1 08       	sbc	r15, r1
+     ccc:	8e 0c       	add	r8, r14
+     cce:	9f 1c       	adc	r9, r15
+     cd0:	08 94       	sec
+     cd2:	e1 1c       	adc	r14, r1
+     cd4:	f1 1c       	adc	r15, r1
+     cd6:	c5 01       	movw	r24, r10
+     cd8:	b4 01       	movw	r22, r8
+     cda:	a6 01       	movw	r20, r12
+     cdc:	98 01       	movw	r18, r16
+     cde:	0e 94 2a 05 	call	0xa54	; 0xa54 <lcdDrawHLine>
+	
+    lcdDrawVLine(poX, poY, poY + width-1, color);
+     ce2:	c5 01       	movw	r24, r10
+     ce4:	b7 01       	movw	r22, r14
+     ce6:	a4 01       	movw	r20, r8
+     ce8:	98 01       	movw	r18, r16
+     cea:	0e 94 6d 05 	call	0xada	; 0xada <lcdDrawVLine>
+    lcdDrawVLine(poX + length-1, poY, poY+width-1, color);
+     cee:	c3 01       	movw	r24, r6
+     cf0:	b7 01       	movw	r22, r14
+     cf2:	a4 01       	movw	r20, r8
+     cf4:	98 01       	movw	r18, r16
+     cf6:	0e 94 6d 05 	call	0xada	; 0xada <lcdDrawVLine>
+}
+     cfa:	1f 91       	pop	r17
+     cfc:	0f 91       	pop	r16
+     cfe:	ff 90       	pop	r15
+     d00:	ef 90       	pop	r14
+     d02:	df 90       	pop	r13
+     d04:	cf 90       	pop	r12
+     d06:	bf 90       	pop	r11
+     d08:	af 90       	pop	r10
+     d0a:	9f 90       	pop	r9
+     d0c:	8f 90       	pop	r8
+     d0e:	7f 90       	pop	r7
+     d10:	6f 90       	pop	r6
+     d12:	08 95       	ret
+
+00000d14 <lcdDrawCircle>:
+
+/* yeap, round circule */
+void lcdDrawCircle(int poX, int poY, int r,uint16_t color)
+{
+     d14:	2f 92       	push	r2
+     d16:	3f 92       	push	r3
+     d18:	4f 92       	push	r4
+     d1a:	5f 92       	push	r5
+     d1c:	6f 92       	push	r6
+     d1e:	7f 92       	push	r7
+     d20:	8f 92       	push	r8
+     d22:	9f 92       	push	r9
+     d24:	af 92       	push	r10
+     d26:	bf 92       	push	r11
+     d28:	cf 92       	push	r12
+     d2a:	df 92       	push	r13
+     d2c:	ef 92       	push	r14
+     d2e:	ff 92       	push	r15
+     d30:	0f 93       	push	r16
+     d32:	1f 93       	push	r17
+     d34:	cf 93       	push	r28
+     d36:	df 93       	push	r29
+     d38:	1c 01       	movw	r2, r24
+     d3a:	2b 01       	movw	r4, r22
+     d3c:	39 01       	movw	r6, r18
+    int x = -r, y = 0, err = 2-2*r, e2;
+     d3e:	aa 24       	eor	r10, r10
+     d40:	bb 24       	eor	r11, r11
+     d42:	a4 1a       	sub	r10, r20
+     d44:	b5 0a       	sbc	r11, r21
+     d46:	c1 e0       	ldi	r28, 0x01	; 1
+     d48:	d0 e0       	ldi	r29, 0x00	; 0
+     d4a:	c4 1b       	sub	r28, r20
+     d4c:	d5 0b       	sbc	r29, r21
+     d4e:	cc 0f       	add	r28, r28
+     d50:	dd 1f       	adc	r29, r29
+     d52:	88 24       	eor	r8, r8
+     d54:	99 24       	eor	r9, r9
+    do {
+        lcdDrawPixel(poX-x, poY+y,color);
+     d56:	61 01       	movw	r12, r2
+     d58:	ca 18       	sub	r12, r10
+     d5a:	db 08       	sbc	r13, r11
+     d5c:	74 01       	movw	r14, r8
+     d5e:	e4 0c       	add	r14, r4
+     d60:	f5 1c       	adc	r15, r5
+     d62:	c6 01       	movw	r24, r12
+     d64:	b7 01       	movw	r22, r14
+     d66:	a3 01       	movw	r20, r6
+     d68:	0e 94 b8 04 	call	0x970	; 0x970 <lcdDrawPixel>
+        lcdDrawPixel(poX+x, poY+y,color);
+     d6c:	85 01       	movw	r16, r10
+     d6e:	02 0d       	add	r16, r2
+     d70:	13 1d       	adc	r17, r3
+     d72:	c8 01       	movw	r24, r16
+     d74:	b7 01       	movw	r22, r14
+     d76:	a3 01       	movw	r20, r6
+     d78:	0e 94 b8 04 	call	0x970	; 0x970 <lcdDrawPixel>
+        lcdDrawPixel(poX+x, poY-y,color);
+     d7c:	72 01       	movw	r14, r4
+     d7e:	e8 18       	sub	r14, r8
+     d80:	f9 08       	sbc	r15, r9
+     d82:	c8 01       	movw	r24, r16
+     d84:	b7 01       	movw	r22, r14
+     d86:	a3 01       	movw	r20, r6
+     d88:	0e 94 b8 04 	call	0x970	; 0x970 <lcdDrawPixel>
+        lcdDrawPixel(poX-x, poY-y,color);
+     d8c:	c6 01       	movw	r24, r12
+     d8e:	b7 01       	movw	r22, r14
+     d90:	a3 01       	movw	r20, r6
+     d92:	0e 94 b8 04 	call	0x970	; 0x970 <lcdDrawPixel>
+        e2 = err;
+        if (e2 <= y) {
+     d96:	8c 16       	cp	r8, r28
+     d98:	9d 06       	cpc	r9, r29
+     d9a:	14 f4       	brge	.+4      	; 0xda0 <lcdDrawCircle+0x8c>
+     d9c:	ce 01       	movw	r24, r28
+     d9e:	1c c0       	rjmp	.+56     	; 0xdd8 <lcdDrawCircle+0xc4>
+            err += ++y*2+1;
+     da0:	08 94       	sec
+     da2:	81 1c       	adc	r8, r1
+     da4:	91 1c       	adc	r9, r1
+     da6:	21 96       	adiw	r28, 0x01	; 1
+     da8:	94 01       	movw	r18, r8
+     daa:	22 0f       	add	r18, r18
+     dac:	33 1f       	adc	r19, r19
+     dae:	2c 0f       	add	r18, r28
+     db0:	3d 1f       	adc	r19, r29
+     db2:	21 97       	sbiw	r28, 0x01	; 1
+            if (-x == y && e2 <= x) e2 = 0;
+     db4:	88 27       	eor	r24, r24
+     db6:	99 27       	eor	r25, r25
+     db8:	8a 19       	sub	r24, r10
+     dba:	9b 09       	sbc	r25, r11
+     dbc:	88 15       	cp	r24, r8
+     dbe:	99 05       	cpc	r25, r9
+     dc0:	19 f0       	breq	.+6      	; 0xdc8 <lcdDrawCircle+0xb4>
+     dc2:	ce 01       	movw	r24, r28
+     dc4:	e9 01       	movw	r28, r18
+     dc6:	08 c0       	rjmp	.+16     	; 0xdd8 <lcdDrawCircle+0xc4>
+     dc8:	ac 16       	cp	r10, r28
+     dca:	bd 06       	cpc	r11, r29
+     dcc:	14 f4       	brge	.+4      	; 0xdd2 <lcdDrawCircle+0xbe>
+     dce:	e9 01       	movw	r28, r18
+     dd0:	06 c0       	rjmp	.+12     	; 0xdde <lcdDrawCircle+0xca>
+     dd2:	e9 01       	movw	r28, r18
+     dd4:	80 e0       	ldi	r24, 0x00	; 0
+     dd6:	90 e0       	ldi	r25, 0x00	; 0
+        }
+        if (e2 > x) err += ++x*2+1;
+     dd8:	a8 16       	cp	r10, r24
+     dda:	b9 06       	cpc	r11, r25
+     ddc:	4c f4       	brge	.+18     	; 0xdf0 <lcdDrawCircle+0xdc>
+     dde:	08 94       	sec
+     de0:	a1 1c       	adc	r10, r1
+     de2:	b1 1c       	adc	r11, r1
+     de4:	c5 01       	movw	r24, r10
+     de6:	88 0f       	add	r24, r24
+     de8:	99 1f       	adc	r25, r25
+     dea:	01 96       	adiw	r24, 0x01	; 1
+     dec:	c8 0f       	add	r28, r24
+     dee:	d9 1f       	adc	r29, r25
+    } while (x <= 0);
+     df0:	1a 14       	cp	r1, r10
+     df2:	1b 04       	cpc	r1, r11
+     df4:	0c f0       	brlt	.+2      	; 0xdf8 <lcdDrawCircle+0xe4>
+     df6:	af cf       	rjmp	.-162    	; 0xd56 <lcdDrawCircle+0x42>
+}
+     df8:	df 91       	pop	r29
+     dfa:	cf 91       	pop	r28
+     dfc:	1f 91       	pop	r17
+     dfe:	0f 91       	pop	r16
+     e00:	ff 90       	pop	r15
+     e02:	ef 90       	pop	r14
+     e04:	df 90       	pop	r13
+     e06:	cf 90       	pop	r12
+     e08:	bf 90       	pop	r11
+     e0a:	af 90       	pop	r10
+     e0c:	9f 90       	pop	r9
+     e0e:	8f 90       	pop	r8
+     e10:	7f 90       	pop	r7
+     e12:	6f 90       	pop	r6
+     e14:	5f 90       	pop	r5
+     e16:	4f 90       	pop	r4
+     e18:	3f 90       	pop	r3
+     e1a:	2f 90       	pop	r2
+     e1c:	08 95       	ret
+
+00000e1e <lcdFillCircle>:
+void lcdFillCircle(int poX, int poY, int r,uint16_t color)
+{
+     e1e:	4f 92       	push	r4
+     e20:	5f 92       	push	r5
+     e22:	6f 92       	push	r6
+     e24:	7f 92       	push	r7
+     e26:	8f 92       	push	r8
+     e28:	9f 92       	push	r9
+     e2a:	af 92       	push	r10
+     e2c:	bf 92       	push	r11
+     e2e:	cf 92       	push	r12
+     e30:	df 92       	push	r13
+     e32:	ef 92       	push	r14
+     e34:	ff 92       	push	r15
+     e36:	0f 93       	push	r16
+     e38:	1f 93       	push	r17
+     e3a:	cf 93       	push	r28
+     e3c:	df 93       	push	r29
+     e3e:	2c 01       	movw	r4, r24
+     e40:	3b 01       	movw	r6, r22
+     e42:	49 01       	movw	r8, r18
+    int x = -r, y = 0, err = 2-2*r, e2;
+     e44:	cc 24       	eor	r12, r12
+     e46:	dd 24       	eor	r13, r13
+     e48:	c4 1a       	sub	r12, r20
+     e4a:	d5 0a       	sbc	r13, r21
+     e4c:	c1 e0       	ldi	r28, 0x01	; 1
+     e4e:	d0 e0       	ldi	r29, 0x00	; 0
+     e50:	c4 1b       	sub	r28, r20
+     e52:	d5 0b       	sbc	r29, r21
+     e54:	cc 0f       	add	r28, r28
+     e56:	dd 1f       	adc	r29, r29
+     e58:	aa 24       	eor	r10, r10
+     e5a:	bb 24       	eor	r11, r11
+    do {
+
+        lcdDrawVLine(poX-x, poY-y, poY-y+ 2*y, color);
+     e5c:	83 01       	movw	r16, r6
+     e5e:	0a 19       	sub	r16, r10
+     e60:	1b 09       	sbc	r17, r11
+     e62:	75 01       	movw	r14, r10
+     e64:	e6 0c       	add	r14, r6
+     e66:	f7 1c       	adc	r15, r7
+     e68:	c2 01       	movw	r24, r4
+     e6a:	8c 19       	sub	r24, r12
+     e6c:	9d 09       	sbc	r25, r13
+     e6e:	b8 01       	movw	r22, r16
+     e70:	a7 01       	movw	r20, r14
+     e72:	94 01       	movw	r18, r8
+     e74:	0e 94 6d 05 	call	0xada	; 0xada <lcdDrawVLine>
+        lcdDrawVLine(poX+x, poY-y, poY-y+ 2*y, color);
+     e78:	c6 01       	movw	r24, r12
+     e7a:	84 0d       	add	r24, r4
+     e7c:	95 1d       	adc	r25, r5
+     e7e:	b8 01       	movw	r22, r16
+     e80:	a7 01       	movw	r20, r14
+     e82:	94 01       	movw	r18, r8
+     e84:	0e 94 6d 05 	call	0xada	; 0xada <lcdDrawVLine>
+
+        e2 = err;
+        if (e2 <= y) {
+     e88:	ac 16       	cp	r10, r28
+     e8a:	bd 06       	cpc	r11, r29
+     e8c:	14 f4       	brge	.+4      	; 0xe92 <lcdFillCircle+0x74>
+     e8e:	ce 01       	movw	r24, r28
+     e90:	1c c0       	rjmp	.+56     	; 0xeca <lcdFillCircle+0xac>
+            err += ++y*2+1;
+     e92:	08 94       	sec
+     e94:	a1 1c       	adc	r10, r1
+     e96:	b1 1c       	adc	r11, r1
+     e98:	21 96       	adiw	r28, 0x01	; 1
+     e9a:	95 01       	movw	r18, r10
+     e9c:	22 0f       	add	r18, r18
+     e9e:	33 1f       	adc	r19, r19
+     ea0:	2c 0f       	add	r18, r28
+     ea2:	3d 1f       	adc	r19, r29
+     ea4:	21 97       	sbiw	r28, 0x01	; 1
+            if (-x == y && e2 <= x) e2 = 0;
+     ea6:	88 27       	eor	r24, r24
+     ea8:	99 27       	eor	r25, r25
+     eaa:	8c 19       	sub	r24, r12
+     eac:	9d 09       	sbc	r25, r13
+     eae:	8a 15       	cp	r24, r10
+     eb0:	9b 05       	cpc	r25, r11
+     eb2:	19 f0       	breq	.+6      	; 0xeba <lcdFillCircle+0x9c>
+     eb4:	ce 01       	movw	r24, r28
+     eb6:	e9 01       	movw	r28, r18
+     eb8:	08 c0       	rjmp	.+16     	; 0xeca <lcdFillCircle+0xac>
+     eba:	cc 16       	cp	r12, r28
+     ebc:	dd 06       	cpc	r13, r29
+     ebe:	14 f4       	brge	.+4      	; 0xec4 <lcdFillCircle+0xa6>
+     ec0:	e9 01       	movw	r28, r18
+     ec2:	06 c0       	rjmp	.+12     	; 0xed0 <lcdFillCircle+0xb2>
+     ec4:	e9 01       	movw	r28, r18
+     ec6:	80 e0       	ldi	r24, 0x00	; 0
+     ec8:	90 e0       	ldi	r25, 0x00	; 0
+        }
+        if (e2 > x) err += ++x*2+1;
+     eca:	c8 16       	cp	r12, r24
+     ecc:	d9 06       	cpc	r13, r25
+     ece:	4c f4       	brge	.+18     	; 0xee2 <lcdFillCircle+0xc4>
+     ed0:	08 94       	sec
+     ed2:	c1 1c       	adc	r12, r1
+     ed4:	d1 1c       	adc	r13, r1
+     ed6:	c6 01       	movw	r24, r12
+     ed8:	88 0f       	add	r24, r24
+     eda:	99 1f       	adc	r25, r25
+     edc:	01 96       	adiw	r24, 0x01	; 1
+     ede:	c8 0f       	add	r28, r24
+     ee0:	d9 1f       	adc	r29, r25
+    } while (x <= 0);
+     ee2:	1c 14       	cp	r1, r12
+     ee4:	1d 04       	cpc	r1, r13
+     ee6:	0c f0       	brlt	.+2      	; 0xeea <lcdFillCircle+0xcc>
+     ee8:	b9 cf       	rjmp	.-142    	; 0xe5c <lcdFillCircle+0x3e>
+
+}
+     eea:	df 91       	pop	r29
+     eec:	cf 91       	pop	r28
+     eee:	1f 91       	pop	r17
+     ef0:	0f 91       	pop	r16
+     ef2:	ff 90       	pop	r15
+     ef4:	ef 90       	pop	r14
+     ef6:	df 90       	pop	r13
+     ef8:	cf 90       	pop	r12
+     efa:	bf 90       	pop	r11
+     efc:	af 90       	pop	r10
+     efe:	9f 90       	pop	r9
+     f00:	8f 90       	pop	r8
+     f02:	7f 90       	pop	r7
+     f04:	6f 90       	pop	r6
+     f06:	5f 90       	pop	r5
+     f08:	4f 90       	pop	r4
+     f0a:	08 95       	ret
+
+00000f0c <lcdDrawChar>:
+/* draw char or print text. Two versions of fonts- monospace and proportional */
+
+#ifdef PROPORCINIS
+
+unsigned char lcdDrawChar(unsigned char charToWrite, unsigned char poX, unsigned char poY,unsigned char size, unsigned int fgcolor)
+{
+     f0c:	2f 92       	push	r2
+     f0e:	3f 92       	push	r3
+     f10:	4f 92       	push	r4
+     f12:	5f 92       	push	r5
+     f14:	6f 92       	push	r6
+     f16:	7f 92       	push	r7
+     f18:	8f 92       	push	r8
+     f1a:	9f 92       	push	r9
+     f1c:	af 92       	push	r10
+     f1e:	bf 92       	push	r11
+     f20:	cf 92       	push	r12
+     f22:	df 92       	push	r13
+     f24:	ef 92       	push	r14
+     f26:	ff 92       	push	r15
+     f28:	0f 93       	push	r16
+     f2a:	1f 93       	push	r17
+     f2c:	df 93       	push	r29
+     f2e:	cf 93       	push	r28
+     f30:	cd b7       	in	r28, 0x3d	; 61
+     f32:	de b7       	in	r29, 0x3e	; 62
+     f34:	2b 97       	sbiw	r28, 0x0b	; 11
+     f36:	0f b6       	in	r0, 0x3f	; 63
+     f38:	f8 94       	cli
+     f3a:	de bf       	out	0x3e, r29	; 62
+     f3c:	0f be       	out	0x3f, r0	; 63
+     f3e:	cd bf       	out	0x3d, r28	; 61
+     f40:	2a 83       	std	Y+2, r18	; 0x02
+     f42:	1c 83       	std	Y+4, r17	; 0x04
+     f44:	0b 83       	std	Y+3, r16	; 0x03
+int i;
+charToWrite -= 32; 
+
+unsigned char char_width=pgm_read_byte(&Levo_Font[charToWrite+6]);
+     f46:	e8 2f       	mov	r30, r24
+     f48:	e0 52       	subi	r30, 0x20	; 32
+     f4a:	ee 2e       	mov	r14, r30
+     f4c:	ff 24       	eor	r15, r15
+     f4e:	8a e5       	ldi	r24, 0x5A	; 90
+     f50:	90 e0       	ldi	r25, 0x00	; 0
+     f52:	e8 0e       	add	r14, r24
+     f54:	f9 1e       	adc	r15, r25
+     f56:	f7 01       	movw	r30, r14
+     f58:	f4 91       	lpm	r31, Z+
+     f5a:	f9 83       	std	Y+1, r31	; 0x01
+
+int font_data=pgm_read_byte(&Levo_Font[5])+6;
+     f5c:	29 e5       	ldi	r18, 0x59	; 89
+     f5e:	30 e0       	ldi	r19, 0x00	; 0
+     f60:	f9 01       	movw	r30, r18
+     f62:	84 91       	lpm	r24, Z+
+     f64:	08 2f       	mov	r16, r24
+     f66:	10 e0       	ldi	r17, 0x00	; 0
+     f68:	0a 5f       	subi	r16, 0xFA	; 250
+     f6a:	1f 4f       	sbci	r17, 0xFF	; 255
+     f6c:	2f 5f       	subi	r18, 0xFF	; 255
+     f6e:	3f 4f       	sbci	r19, 0xFF	; 255
+     f70:	a0 e0       	ldi	r26, 0x00	; 0
+     f72:	b0 e0       	ldi	r27, 0x00	; 0
+     f74:	06 c0       	rjmp	.+12     	; 0xf82 <lcdDrawChar+0x76>
+int font_offset=0;
+
+for(i=0; i < charToWrite; i++) font_offset=font_offset+pgm_read_byte(&Levo_Font[6+i]);
+     f76:	f9 01       	movw	r30, r18
+     f78:	84 91       	lpm	r24, Z+
+     f7a:	a8 0f       	add	r26, r24
+     f7c:	b1 1d       	adc	r27, r1
+     f7e:	2f 5f       	subi	r18, 0xFF	; 255
+     f80:	3f 4f       	sbci	r19, 0xFF	; 255
+     f82:	2e 15       	cp	r18, r14
+     f84:	3f 05       	cpc	r19, r15
+     f86:	b9 f7       	brne	.-18     	; 0xf76 <lcdDrawChar+0x6a>
+     f88:	fa 81       	ldd	r31, Y+2	; 0x02
+     f8a:	6f 2e       	mov	r6, r31
+     f8c:	77 24       	eor	r7, r7
+     f8e:	48 01       	movw	r8, r16
+     f90:	8a 0e       	add	r8, r26
+     f92:	9b 1e       	adc	r9, r27
+     f94:	84 e5       	ldi	r24, 0x54	; 84
+     f96:	90 e0       	ldi	r25, 0x00	; 0
+     f98:	88 0e       	add	r8, r24
+     f9a:	99 1e       	adc	r9, r25
+     f9c:	c6 2e       	mov	r12, r22
+     f9e:	dd 24       	eor	r13, r13
+     fa0:	26 01       	movw	r4, r12
+
+for(i = 0; i < char_width; i++) {
+     fa2:	d6 01       	movw	r26, r12
+     fa4:	e9 81       	ldd	r30, Y+1	; 0x01
+     fa6:	ae 0f       	add	r26, r30
+     fa8:	b1 1d       	adc	r27, r1
+     faa:	be 83       	std	Y+6, r27	; 0x06
+     fac:	ad 83       	std	Y+5, r26	; 0x05
+	//GLCD_WriteData(GLCD_ReadByteFromROMMemory((char *)((int)Levo_Font + font_data + font_offset + i))); 
+unsigned char temp = pgm_read_byte(&Levo_Font[font_data + font_offset + i]);
+     fae:	49 87       	std	Y+9, r20	; 0x09
+     fb0:	78 86       	std	Y+8, r7	; 0x08
+     fb2:	6f 82       	std	Y+7, r6	; 0x07
+     fb4:	3b c0       	rjmp	.+118    	; 0x102c <lcdDrawChar+0x120>
+     fb6:	f4 01       	movw	r30, r8
+     fb8:	84 91       	lpm	r24, Z+
+     fba:	29 85       	ldd	r18, Y+9	; 0x09
+     fbc:	30 e0       	ldi	r19, 0x00	; 0
+     fbe:	59 01       	movw	r10, r18
+     fc0:	79 01       	movw	r14, r18
+     fc2:	1b 86       	std	Y+11, r1	; 0x0b
+     fc4:	1a 86       	std	Y+10, r1	; 0x0a
+        for(unsigned char f=0;f<8;f++)
+        {
+            if((temp>>f)&0x01)
+     fc6:	28 2e       	mov	r2, r24
+     fc8:	33 24       	eor	r3, r3
+     fca:	c1 01       	movw	r24, r2
+     fcc:	0a 84       	ldd	r0, Y+10	; 0x0a
+     fce:	02 c0       	rjmp	.+4      	; 0xfd4 <lcdDrawChar+0xc8>
+     fd0:	95 95       	asr	r25
+     fd2:	87 95       	ror	r24
+     fd4:	0a 94       	dec	r0
+     fd6:	e2 f7       	brpl	.-8      	; 0xfd0 <lcdDrawChar+0xc4>
+     fd8:	80 ff       	sbrs	r24, 0
+     fda:	12 c0       	rjmp	.+36     	; 0x1000 <lcdDrawChar+0xf4>
+            {
+                
+				if(size==1) {lcdDrawPixel(poX+i*size, poY+f*size,fgcolor);}
+     fdc:	fa 81       	ldd	r31, Y+2	; 0x02
+     fde:	f1 30       	cpi	r31, 0x01	; 1
+     fe0:	39 f4       	brne	.+14     	; 0xff0 <lcdDrawChar+0xe4>
+     fe2:	c6 01       	movw	r24, r12
+     fe4:	b7 01       	movw	r22, r14
+     fe6:	4b 81       	ldd	r20, Y+3	; 0x03
+     fe8:	5c 81       	ldd	r21, Y+4	; 0x04
+     fea:	0e 94 b8 04 	call	0x970	; 0x970 <lcdDrawPixel>
+     fee:	08 c0       	rjmp	.+16     	; 0x1000 <lcdDrawChar+0xf4>
+				else {lcdFilledRec(poX+i*size, poY+f*size, size, size, fgcolor);}
+     ff0:	c2 01       	movw	r24, r4
+     ff2:	b5 01       	movw	r22, r10
+     ff4:	a3 01       	movw	r20, r6
+     ff6:	93 01       	movw	r18, r6
+     ff8:	0b 81       	ldd	r16, Y+3	; 0x03
+     ffa:	1c 81       	ldd	r17, Y+4	; 0x04
+     ffc:	0e 94 c6 04 	call	0x98c	; 0x98c <lcdFilledRec>
+    1000:	8a 85       	ldd	r24, Y+10	; 0x0a
+    1002:	9b 85       	ldd	r25, Y+11	; 0x0b
+    1004:	01 96       	adiw	r24, 0x01	; 1
+    1006:	9b 87       	std	Y+11, r25	; 0x0b
+    1008:	8a 87       	std	Y+10, r24	; 0x0a
+    100a:	08 94       	sec
+    100c:	e1 1c       	adc	r14, r1
+    100e:	f1 1c       	adc	r15, r1
+    1010:	af 81       	ldd	r26, Y+7	; 0x07
+    1012:	b8 85       	ldd	r27, Y+8	; 0x08
+    1014:	aa 0e       	add	r10, r26
+    1016:	bb 1e       	adc	r11, r27
+for(i=0; i < charToWrite; i++) font_offset=font_offset+pgm_read_byte(&Levo_Font[6+i]);
+
+for(i = 0; i < char_width; i++) {
+	//GLCD_WriteData(GLCD_ReadByteFromROMMemory((char *)((int)Levo_Font + font_data + font_offset + i))); 
+unsigned char temp = pgm_read_byte(&Levo_Font[font_data + font_offset + i]);
+        for(unsigned char f=0;f<8;f++)
+    1018:	08 97       	sbiw	r24, 0x08	; 8
+    101a:	b9 f6       	brne	.-82     	; 0xfca <lcdDrawChar+0xbe>
+    101c:	08 94       	sec
+    101e:	c1 1c       	adc	r12, r1
+    1020:	d1 1c       	adc	r13, r1
+    1022:	46 0c       	add	r4, r6
+    1024:	57 1c       	adc	r5, r7
+    1026:	08 94       	sec
+    1028:	81 1c       	adc	r8, r1
+    102a:	91 1c       	adc	r9, r1
+int font_data=pgm_read_byte(&Levo_Font[5])+6;
+int font_offset=0;
+
+for(i=0; i < charToWrite; i++) font_offset=font_offset+pgm_read_byte(&Levo_Font[6+i]);
+
+for(i = 0; i < char_width; i++) {
+    102c:	ed 81       	ldd	r30, Y+5	; 0x05
+    102e:	fe 81       	ldd	r31, Y+6	; 0x06
+    1030:	ce 16       	cp	r12, r30
+    1032:	df 06       	cpc	r13, r31
+    1034:	09 f0       	breq	.+2      	; 0x1038 <lcdDrawChar+0x12c>
+    1036:	bf cf       	rjmp	.-130    	; 0xfb6 <lcdDrawChar+0xaa>
+            }
+
+        }
+}
+return char_width;
+}
+    1038:	89 81       	ldd	r24, Y+1	; 0x01
+    103a:	2b 96       	adiw	r28, 0x0b	; 11
+    103c:	0f b6       	in	r0, 0x3f	; 63
+    103e:	f8 94       	cli
+    1040:	de bf       	out	0x3e, r29	; 62
+    1042:	0f be       	out	0x3f, r0	; 63
+    1044:	cd bf       	out	0x3d, r28	; 61
+    1046:	cf 91       	pop	r28
+    1048:	df 91       	pop	r29
+    104a:	1f 91       	pop	r17
+    104c:	0f 91       	pop	r16
+    104e:	ff 90       	pop	r15
+    1050:	ef 90       	pop	r14
+    1052:	df 90       	pop	r13
+    1054:	cf 90       	pop	r12
+    1056:	bf 90       	pop	r11
+    1058:	af 90       	pop	r10
+    105a:	9f 90       	pop	r9
+    105c:	8f 90       	pop	r8
+    105e:	7f 90       	pop	r7
+    1060:	6f 90       	pop	r6
+    1062:	5f 90       	pop	r5
+    1064:	4f 90       	pop	r4
+    1066:	3f 90       	pop	r3
+    1068:	2f 90       	pop	r2
+    106a:	08 95       	ret
+
+0000106c <lcdDrawString>:
+
+void lcdDrawString(const char *string,unsigned char poX, unsigned char poY, unsigned char size,unsigned int fgcolor)
+{
+    106c:	bf 92       	push	r11
+    106e:	cf 92       	push	r12
+    1070:	df 92       	push	r13
+    1072:	ef 92       	push	r14
+    1074:	ff 92       	push	r15
+    1076:	0f 93       	push	r16
+    1078:	1f 93       	push	r17
+    107a:	cf 93       	push	r28
+    107c:	df 93       	push	r29
+    107e:	ec 01       	movw	r28, r24
+    1080:	f6 2e       	mov	r15, r22
+    1082:	b4 2e       	mov	r11, r20
+    1084:	e2 2e       	mov	r14, r18
+    1086:	68 01       	movw	r12, r16
+    1088:	0a c0       	rjmp	.+20     	; 0x109e <lcdDrawString+0x32>
+    unsigned char c,w;
+
+    while ( (c = *string++) )
+	{
+		w=lcdDrawChar(c, poX, poY, size, fgcolor);
+    108a:	6f 2d       	mov	r22, r15
+    108c:	4b 2d       	mov	r20, r11
+    108e:	2e 2d       	mov	r18, r14
+    1090:	86 01       	movw	r16, r12
+    1092:	0e 94 86 07 	call	0xf0c	; 0xf0c <lcdDrawChar>
+        if(poX < LCD_WIDTH)
+        {
+            poX += w*size;                                     /* Move cursor right            */
+    1096:	8e 9d       	mul	r24, r14
+    1098:	80 2d       	mov	r24, r0
+    109a:	11 24       	eor	r1, r1
+    109c:	f8 0e       	add	r15, r24
+
+void lcdDrawString(const char *string,unsigned char poX, unsigned char poY, unsigned char size,unsigned int fgcolor)
+{
+    unsigned char c,w;
+
+    while ( (c = *string++) )
+    109e:	89 91       	ld	r24, Y+
+    10a0:	88 23       	and	r24, r24
+    10a2:	99 f7       	brne	.-26     	; 0x108a <lcdDrawString+0x1e>
+            poX += w*size;                                     /* Move cursor right            */
+        }
+    }
+
+
+}
+    10a4:	df 91       	pop	r29
+    10a6:	cf 91       	pop	r28
+    10a8:	1f 91       	pop	r17
+    10aa:	0f 91       	pop	r16
+    10ac:	ff 90       	pop	r15
+    10ae:	ef 90       	pop	r14
+    10b0:	df 90       	pop	r13
+    10b2:	cf 90       	pop	r12
+    10b4:	bf 90       	pop	r11
+    10b6:	08 95       	ret
+
+000010b8 <main>:
+
+
+
+
+int main(void)
+{
+    10b8:	4f 92       	push	r4
+    10ba:	5f 92       	push	r5
+    10bc:	6f 92       	push	r6
+    10be:	7f 92       	push	r7
+    10c0:	8f 92       	push	r8
+    10c2:	9f 92       	push	r9
+    10c4:	af 92       	push	r10
+    10c6:	bf 92       	push	r11
+    10c8:	cf 92       	push	r12
+    10ca:	df 92       	push	r13
+    10cc:	ef 92       	push	r14
+    10ce:	ff 92       	push	r15
+    10d0:	0f 93       	push	r16
+    10d2:	1f 93       	push	r17
+    10d4:	df 93       	push	r29
+    10d6:	cf 93       	push	r28
+    10d8:	cd b7       	in	r28, 0x3d	; 61
+    10da:	de b7       	in	r29, 0x3e	; 62
+    10dc:	e0 97       	sbiw	r28, 0x30	; 48
+    10de:	0f b6       	in	r0, 0x3f	; 63
+    10e0:	f8 94       	cli
+    10e2:	de bf       	out	0x3e, r29	; 62
+    10e4:	0f be       	out	0x3f, r0	; 63
+    10e6:	cd bf       	out	0x3d, r28	; 61
+0xFF,3,3, 0xFF,0xFF,0xFF, 0xFF,0xFF,0xFF, 3,0xFF,3,
+0xFF,3,3, 3,3,3, 3,3,3, 3,0xFF,3,
+0xFF,3,3, 3,3,3, 3,3,3, 3,0xFF,3,
+0xFF,3,3, 3,3,0xFF, 3,3,0xFF, 3,0xFF,3
+
+};
+    10e8:	de 01       	movw	r26, r28
+    10ea:	11 96       	adiw	r26, 0x01	; 1
+    10ec:	ec e7       	ldi	r30, 0x7C	; 124
+    10ee:	f0 e0       	ldi	r31, 0x00	; 0
+    10f0:	80 e3       	ldi	r24, 0x30	; 48
+    10f2:	01 90       	ld	r0, Z+
+    10f4:	0d 92       	st	X+, r0
+    10f6:	81 50       	subi	r24, 0x01	; 1
+    10f8:	e1 f7       	brne	.-8      	; 0x10f2 <main+0x3a>
+
+
+
+ili9341_init();	
+    10fa:	0e 94 78 04 	call	0x8f0	; 0x8f0 <ili9341_init>
+
+/* tekstinio LCD debugas */
+    lcd_init(LCD_DISP_ON);
+    10fe:	8c e0       	ldi	r24, 0x0C	; 12
+    1100:	0e 94 31 02 	call	0x462	; 0x462 <lcd_init>
+	lcd_command(LCD_DISP_ON);
+    1104:	8c e0       	ldi	r24, 0x0C	; 12
+    1106:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+	lcd_clrscr();
+    110a:	0e 94 ff 01 	call	0x3fe	; 0x3fe <lcd_clrscr>
+	lcd_puts("C:");
+    110e:	80 e6       	ldi	r24, 0x60	; 96
+    1110:	90 e0       	ldi	r25, 0x00	; 0
+    1112:	0e 94 17 02 	call	0x42e	; 0x42e <lcd_puts>
+/* tekstinio LCD */
+
+lcdFillRGB(BLACK);
+    1116:	80 e0       	ldi	r24, 0x00	; 0
+    1118:	90 e0       	ldi	r25, 0x00	; 0
+    111a:	0e 94 1a 05 	call	0xa34	; 0xa34 <lcdFillRGB>
+
+
+c=0;
+for(;;){
+
+lcdDrawVLine(120,100, 50, CYAN);
+    111e:	88 e7       	ldi	r24, 0x78	; 120
+    1120:	90 e0       	ldi	r25, 0x00	; 0
+    1122:	64 e6       	ldi	r22, 0x64	; 100
+    1124:	70 e0       	ldi	r23, 0x00	; 0
+    1126:	42 e3       	ldi	r20, 0x32	; 50
+    1128:	50 e0       	ldi	r21, 0x00	; 0
+    112a:	2f ef       	ldi	r18, 0xFF	; 255
+    112c:	37 e0       	ldi	r19, 0x07	; 7
+    112e:	0e 94 6d 05 	call	0xada	; 0xada <lcdDrawVLine>
+lcdDrawHLine(120,100, 50, YELLOW);
+    1132:	88 e7       	ldi	r24, 0x78	; 120
+    1134:	90 e0       	ldi	r25, 0x00	; 0
+    1136:	64 e6       	ldi	r22, 0x64	; 100
+    1138:	70 e0       	ldi	r23, 0x00	; 0
+    113a:	42 e3       	ldi	r20, 0x32	; 50
+    113c:	50 e0       	ldi	r21, 0x00	; 0
+    113e:	20 ee       	ldi	r18, 0xE0	; 224
+    1140:	3f ef       	ldi	r19, 0xFF	; 255
+    1142:	0e 94 2a 05 	call	0xa54	; 0xa54 <lcdDrawHLine>
+lcdFillCircle(50,50,10,CYAN);
+    1146:	82 e3       	ldi	r24, 0x32	; 50
+    1148:	90 e0       	ldi	r25, 0x00	; 0
+    114a:	62 e3       	ldi	r22, 0x32	; 50
+    114c:	70 e0       	ldi	r23, 0x00	; 0
+    114e:	4a e0       	ldi	r20, 0x0A	; 10
+    1150:	50 e0       	ldi	r21, 0x00	; 0
+    1152:	2f ef       	ldi	r18, 0xFF	; 255
+    1154:	37 e0       	ldi	r19, 0x07	; 7
+    1156:	0e 94 0f 07 	call	0xe1e	; 0xe1e <lcdFillCircle>
+lcdDrawRectangle(20,20,30,30,MAGENTA);
+    115a:	84 e1       	ldi	r24, 0x14	; 20
+    115c:	90 e0       	ldi	r25, 0x00	; 0
+    115e:	64 e1       	ldi	r22, 0x14	; 20
+    1160:	70 e0       	ldi	r23, 0x00	; 0
+    1162:	4e e1       	ldi	r20, 0x1E	; 30
+    1164:	50 e0       	ldi	r21, 0x00	; 0
+    1166:	2e e1       	ldi	r18, 0x1E	; 30
+    1168:	30 e0       	ldi	r19, 0x00	; 0
+    116a:	0f e1       	ldi	r16, 0x1F	; 31
+    116c:	18 ef       	ldi	r17, 0xF8	; 248
+    116e:	0e 94 49 06 	call	0xc92	; 0xc92 <lcdDrawRectangle>
+
+lcdDrawBMP(100,160,4,4,buffer);
+    1172:	84 e6       	ldi	r24, 0x64	; 100
+    1174:	90 e0       	ldi	r25, 0x00	; 0
+    1176:	60 ea       	ldi	r22, 0xA0	; 160
+    1178:	70 e0       	ldi	r23, 0x00	; 0
+    117a:	44 e0       	ldi	r20, 0x04	; 4
+    117c:	50 e0       	ldi	r21, 0x00	; 0
+    117e:	24 e0       	ldi	r18, 0x04	; 4
+    1180:	30 e0       	ldi	r19, 0x00	; 0
+    1182:	8e 01       	movw	r16, r28
+    1184:	0f 5f       	subi	r16, 0xFF	; 255
+    1186:	1f 4f       	sbci	r17, 0xFF	; 255
+    1188:	0e 94 ac 05 	call	0xb58	; 0xb58 <lcdDrawBMP>
+lcdDrawString("http://www.vabolis.lt",5,120,1,WHITE);
+    118c:	83 e6       	ldi	r24, 0x63	; 99
+    118e:	90 e0       	ldi	r25, 0x00	; 0
+    1190:	65 e0       	ldi	r22, 0x05	; 5
+    1192:	48 e7       	ldi	r20, 0x78	; 120
+    1194:	21 e0       	ldi	r18, 0x01	; 1
+    1196:	0f ef       	ldi	r16, 0xFF	; 255
+    1198:	1f ef       	ldi	r17, 0xFF	; 255
+    119a:	0e 94 36 08 	call	0x106c	; 0x106c <lcdDrawString>
+lcdDrawString("http://www.vabolis.lt",5,180,2,WHITE);
+    119e:	83 e6       	ldi	r24, 0x63	; 99
+    11a0:	90 e0       	ldi	r25, 0x00	; 0
+    11a2:	65 e0       	ldi	r22, 0x05	; 5
+    11a4:	44 eb       	ldi	r20, 0xB4	; 180
+    11a6:	22 e0       	ldi	r18, 0x02	; 2
+    11a8:	0e 94 36 08 	call	0x106c	; 0x106c <lcdDrawString>
+
+
+c++;
+		itoa( c, tbuffer, 10);
+    11ac:	81 e0       	ldi	r24, 0x01	; 1
+    11ae:	90 e0       	ldi	r25, 0x00	; 0
+    11b0:	60 eb       	ldi	r22, 0xB0	; 176
+    11b2:	70 e0       	ldi	r23, 0x00	; 0
+    11b4:	4a e0       	ldi	r20, 0x0A	; 10
+    11b6:	50 e0       	ldi	r21, 0x00	; 0
+    11b8:	0e 94 4e 09 	call	0x129c	; 0x129c <itoa>
+Returns:  none
+*************************************************************************/
+void lcd_gotoxy(uint8_t x, uint8_t y)
+{
+#if LCD_LINES==1
+    lcd_command((1<<LCD_DDRAM)+LCD_START_LINE1+x);
+    11bc:	83 e8       	ldi	r24, 0x83	; 131
+    11be:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <lcd_command>
+		lcd_gotoxy(3,0);
+		lcd_puts(tbuffer); lcd_puts("  ");
+    11c2:	80 eb       	ldi	r24, 0xB0	; 176
+    11c4:	90 e0       	ldi	r25, 0x00	; 0
+    11c6:	0e 94 17 02 	call	0x42e	; 0x42e <lcd_puts>
+    11ca:	89 e7       	ldi	r24, 0x79	; 121
+    11cc:	90 e0       	ldi	r25, 0x00	; 0
+    11ce:	0e 94 17 02 	call	0x42e	; 0x42e <lcd_puts>
+    11d2:	88 ec       	ldi	r24, 0xC8	; 200
+    11d4:	e8 2e       	mov	r14, r24
+    11d6:	f1 2c       	mov	r15, r1
+    11d8:	01 e0       	ldi	r16, 0x01	; 1
+    11da:	60 2e       	mov	r6, r16
+    11dc:	71 2c       	mov	r7, r1
+
+while(1){
+	for(x=200;x < 240; x=x+5)
+    11de:	18 e1       	ldi	r17, 0x18	; 24
+    11e0:	41 2e       	mov	r4, r17
+    11e2:	11 e0       	ldi	r17, 0x01	; 1
+    11e4:	51 2e       	mov	r5, r17
+    11e6:	23 c0       	rjmp	.+70     	; 0x122e <main+0x176>
+	{
+		for(y=280;y<320;y=y+5)
+			{
+				//lcdDrawPixel(x,y,x*y+c);
+				lcdFilledRec(x,y,3,3,x*y+c);
+    11e8:	c7 01       	movw	r24, r14
+    11ea:	b6 01       	movw	r22, r12
+    11ec:	43 e0       	ldi	r20, 0x03	; 3
+    11ee:	50 e0       	ldi	r21, 0x00	; 0
+    11f0:	23 e0       	ldi	r18, 0x03	; 3
+    11f2:	30 e0       	ldi	r19, 0x00	; 0
+    11f4:	85 01       	movw	r16, r10
+    11f6:	0e 94 c6 04 	call	0x98c	; 0x98c <lcdFilledRec>
+		lcd_puts(tbuffer); lcd_puts("  ");
+
+while(1){
+	for(x=200;x < 240; x=x+5)
+	{
+		for(y=280;y<320;y=y+5)
+    11fa:	85 e0       	ldi	r24, 0x05	; 5
+    11fc:	90 e0       	ldi	r25, 0x00	; 0
+    11fe:	c8 0e       	add	r12, r24
+    1200:	d9 1e       	adc	r13, r25
+    1202:	a8 0c       	add	r10, r8
+    1204:	b9 1c       	adc	r11, r9
+    1206:	90 e4       	ldi	r25, 0x40	; 64
+    1208:	c9 16       	cp	r12, r25
+    120a:	91 e0       	ldi	r25, 0x01	; 1
+    120c:	d9 06       	cpc	r13, r25
+    120e:	61 f7       	brne	.-40     	; 0x11e8 <main+0x130>
+    1210:	88 e0       	ldi	r24, 0x08	; 8
+    1212:	90 e0       	ldi	r25, 0x00	; 0
+    1214:	68 0e       	add	r6, r24
+    1216:	79 1e       	adc	r7, r25
+		itoa( c, tbuffer, 10);
+		lcd_gotoxy(3,0);
+		lcd_puts(tbuffer); lcd_puts("  ");
+
+while(1){
+	for(x=200;x < 240; x=x+5)
+    1218:	85 e0       	ldi	r24, 0x05	; 5
+    121a:	90 e0       	ldi	r25, 0x00	; 0
+    121c:	e8 0e       	add	r14, r24
+    121e:	f9 1e       	adc	r15, r25
+    1220:	90 ef       	ldi	r25, 0xF0	; 240
+    1222:	e9 16       	cp	r14, r25
+    1224:	f1 04       	cpc	r15, r1
+    1226:	18 f0       	brcs	.+6      	; 0x122e <main+0x176>
+    1228:	b8 ec       	ldi	r27, 0xC8	; 200
+    122a:	eb 2e       	mov	r14, r27
+    122c:	f1 2c       	mov	r15, r1
+    122e:	47 01       	movw	r8, r14
+    1230:	88 0c       	add	r8, r8
+    1232:	99 1c       	adc	r9, r9
+    1234:	88 0c       	add	r8, r8
+    1236:	99 1c       	adc	r9, r9
+    1238:	8e 0c       	add	r8, r14
+    123a:	9f 1c       	adc	r9, r15
+    123c:	08 94       	sec
+    123e:	81 1c       	adc	r8, r1
+    1240:	91 1c       	adc	r9, r1
+    1242:	e4 9c       	mul	r14, r4
+    1244:	50 01       	movw	r10, r0
+    1246:	e5 9c       	mul	r14, r5
+    1248:	b0 0c       	add	r11, r0
+    124a:	f4 9c       	mul	r15, r4
+    124c:	b0 0c       	add	r11, r0
+    124e:	11 24       	eor	r1, r1
+    1250:	a6 0c       	add	r10, r6
+    1252:	b7 1c       	adc	r11, r7
+    1254:	f8 e1       	ldi	r31, 0x18	; 24
+    1256:	cf 2e       	mov	r12, r31
+    1258:	f1 e0       	ldi	r31, 0x01	; 1
+    125a:	df 2e       	mov	r13, r31
+    125c:	c5 cf       	rjmp	.-118    	; 0x11e8 <main+0x130>
+
+0000125e <__mulsi3>:
+    125e:	62 9f       	mul	r22, r18
+    1260:	d0 01       	movw	r26, r0
+    1262:	73 9f       	mul	r23, r19
+    1264:	f0 01       	movw	r30, r0
+    1266:	82 9f       	mul	r24, r18
+    1268:	e0 0d       	add	r30, r0
+    126a:	f1 1d       	adc	r31, r1
+    126c:	64 9f       	mul	r22, r20
+    126e:	e0 0d       	add	r30, r0
+    1270:	f1 1d       	adc	r31, r1
+    1272:	92 9f       	mul	r25, r18
+    1274:	f0 0d       	add	r31, r0
+    1276:	83 9f       	mul	r24, r19
+    1278:	f0 0d       	add	r31, r0
+    127a:	74 9f       	mul	r23, r20
+    127c:	f0 0d       	add	r31, r0
+    127e:	65 9f       	mul	r22, r21
+    1280:	f0 0d       	add	r31, r0
+    1282:	99 27       	eor	r25, r25
+    1284:	72 9f       	mul	r23, r18
+    1286:	b0 0d       	add	r27, r0
+    1288:	e1 1d       	adc	r30, r1
+    128a:	f9 1f       	adc	r31, r25
+    128c:	63 9f       	mul	r22, r19
+    128e:	b0 0d       	add	r27, r0
+    1290:	e1 1d       	adc	r30, r1
+    1292:	f9 1f       	adc	r31, r25
+    1294:	bd 01       	movw	r22, r26
+    1296:	cf 01       	movw	r24, r30
+    1298:	11 24       	eor	r1, r1
+    129a:	08 95       	ret
+
+0000129c <itoa>:
+    129c:	fb 01       	movw	r30, r22
+    129e:	9f 01       	movw	r18, r30
+    12a0:	e8 94       	clt
+    12a2:	42 30       	cpi	r20, 0x02	; 2
+    12a4:	c4 f0       	brlt	.+48     	; 0x12d6 <itoa+0x3a>
+    12a6:	45 32       	cpi	r20, 0x25	; 37
+    12a8:	b4 f4       	brge	.+44     	; 0x12d6 <itoa+0x3a>
+    12aa:	4a 30       	cpi	r20, 0x0A	; 10
+    12ac:	29 f4       	brne	.+10     	; 0x12b8 <itoa+0x1c>
+    12ae:	97 fb       	bst	r25, 7
+    12b0:	1e f4       	brtc	.+6      	; 0x12b8 <itoa+0x1c>
+    12b2:	90 95       	com	r25
+    12b4:	81 95       	neg	r24
+    12b6:	9f 4f       	sbci	r25, 0xFF	; 255
+    12b8:	64 2f       	mov	r22, r20
+    12ba:	77 27       	eor	r23, r23
+    12bc:	0e 94 7f 09 	call	0x12fe	; 0x12fe <__udivmodhi4>
+    12c0:	80 5d       	subi	r24, 0xD0	; 208
+    12c2:	8a 33       	cpi	r24, 0x3A	; 58
+    12c4:	0c f0       	brlt	.+2      	; 0x12c8 <itoa+0x2c>
+    12c6:	89 5d       	subi	r24, 0xD9	; 217
+    12c8:	81 93       	st	Z+, r24
+    12ca:	cb 01       	movw	r24, r22
+    12cc:	00 97       	sbiw	r24, 0x00	; 0
+    12ce:	a1 f7       	brne	.-24     	; 0x12b8 <itoa+0x1c>
+    12d0:	16 f4       	brtc	.+4      	; 0x12d6 <itoa+0x3a>
+    12d2:	5d e2       	ldi	r21, 0x2D	; 45
+    12d4:	51 93       	st	Z+, r21
+    12d6:	10 82       	st	Z, r1
+    12d8:	c9 01       	movw	r24, r18
+    12da:	0c 94 6f 09 	jmp	0x12de	; 0x12de <strrev>
+
+000012de <strrev>:
+    12de:	dc 01       	movw	r26, r24
+    12e0:	fc 01       	movw	r30, r24
+    12e2:	67 2f       	mov	r22, r23
+    12e4:	71 91       	ld	r23, Z+
+    12e6:	77 23       	and	r23, r23
+    12e8:	e1 f7       	brne	.-8      	; 0x12e2 <strrev+0x4>
+    12ea:	32 97       	sbiw	r30, 0x02	; 2
+    12ec:	04 c0       	rjmp	.+8      	; 0x12f6 <strrev+0x18>
+    12ee:	7c 91       	ld	r23, X
+    12f0:	6d 93       	st	X+, r22
+    12f2:	70 83       	st	Z, r23
+    12f4:	62 91       	ld	r22, -Z
+    12f6:	ae 17       	cp	r26, r30
+    12f8:	bf 07       	cpc	r27, r31
+    12fa:	c8 f3       	brcs	.-14     	; 0x12ee <strrev+0x10>
+    12fc:	08 95       	ret
+
+000012fe <__udivmodhi4>:
+    12fe:	aa 1b       	sub	r26, r26
+    1300:	bb 1b       	sub	r27, r27
+    1302:	51 e1       	ldi	r21, 0x11	; 17
+    1304:	07 c0       	rjmp	.+14     	; 0x1314 <__udivmodhi4_ep>
+
+00001306 <__udivmodhi4_loop>:
+    1306:	aa 1f       	adc	r26, r26
+    1308:	bb 1f       	adc	r27, r27
+    130a:	a6 17       	cp	r26, r22
+    130c:	b7 07       	cpc	r27, r23
+    130e:	10 f0       	brcs	.+4      	; 0x1314 <__udivmodhi4_ep>
+    1310:	a6 1b       	sub	r26, r22
+    1312:	b7 0b       	sbc	r27, r23
+
+00001314 <__udivmodhi4_ep>:
+    1314:	88 1f       	adc	r24, r24
+    1316:	99 1f       	adc	r25, r25
+    1318:	5a 95       	dec	r21
+    131a:	a9 f7       	brne	.-22     	; 0x1306 <__udivmodhi4_loop>
+    131c:	80 95       	com	r24
+    131e:	90 95       	com	r25
+    1320:	bc 01       	movw	r22, r24
+    1322:	cd 01       	movw	r24, r26
+    1324:	08 95       	ret
+
+00001326 <_exit>:
+    1326:	f8 94       	cli
+
+00001328 <__stop_program>:
+    1328:	ff cf       	rjmp	.-2      	; 0x1328 <__stop_program>

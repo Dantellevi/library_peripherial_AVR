@@ -20,7 +20,7 @@ CicleBuffer.d CicleBuffer.o: .././CicleBuffer.c .././CicleBuffer.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdarg.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
- .././OneWire.h .././DS18b20.h .././USART.h .././ILI9341.h \
+ .././OneWire.h .././DS18b20.h .././USART.h .././SPFD5408A.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
 
 .././CicleBuffer.h:
@@ -73,6 +73,6 @@ c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include
 
 .././USART.h:
 
-.././ILI9341.h:
+.././SPFD5408A.h:
 
 c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:

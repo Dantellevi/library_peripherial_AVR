@@ -39,9 +39,9 @@ SUBDIRS :=
 C_SRCS +=  \
 ../CicleBuffer.c \
 ../DS18b20.c \
-../ILI9341.c \
 ../main.c \
 ../OneWire.c \
+../SPFD5408A.c \
 ../USART.c
 
 
@@ -54,33 +54,33 @@ ASM_SRCS +=
 OBJS +=  \
 CicleBuffer.o \
 DS18b20.o \
-ILI9341.o \
 main.o \
 OneWire.o \
+SPFD5408A.o \
 USART.o
 
 OBJS_AS_ARGS +=  \
 CicleBuffer.o \
 DS18b20.o \
-ILI9341.o \
 main.o \
 OneWire.o \
+SPFD5408A.o \
 USART.o
 
 C_DEPS +=  \
 CicleBuffer.d \
 DS18b20.d \
-ILI9341.d \
 main.d \
 OneWire.d \
+SPFD5408A.d \
 USART.d
 
 C_DEPS_AS_ARGS +=  \
 CicleBuffer.d \
 DS18b20.d \
-ILI9341.d \
 main.d \
 OneWire.d \
+SPFD5408A.d \
 USART.d
 
 OUTPUT_FILE_PATH +=Project_Ds18b20_ILI9341.elf

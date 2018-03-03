@@ -19,7 +19,7 @@ DS18b20.d DS18b20.o: .././DS18b20.c .././DS18b20.h .././Main.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdarg.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
- .././OneWire.h .././USART.h .././CicleBuffer.h .././ILI9341.h \
+ .././OneWire.h .././USART.h .././CicleBuffer.h .././SPFD5408A.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
 
 .././DS18b20.h:
@@ -72,6 +72,6 @@ c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include
 
 .././CicleBuffer.h:
 
-.././ILI9341.h:
+.././SPFD5408A.h:
 
 c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:

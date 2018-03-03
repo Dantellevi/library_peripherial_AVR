@@ -20,7 +20,7 @@ main.d main.o: .././main.c .././Main.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdarg.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
  .././OneWire.h .././DS18b20.h .././USART.h .././CicleBuffer.h \
- .././ILI9341.h \
+ .././SPFD5408A.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
 
 .././Main.h:
@@ -73,6 +73,6 @@ c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include
 
 .././CicleBuffer.h:
 
-.././ILI9341.h:
+.././SPFD5408A.h:
 
 c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
